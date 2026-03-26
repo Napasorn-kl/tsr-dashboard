@@ -9,15 +9,14 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 
 <script>
 tailwind.config = {
   theme: {
     extend: {
       fontFamily: { sans: ['Sarabun','Inter','sans-serif'] },
-      colors: {
-        brand: { 500:'#6366f1', 600:'#4f46e5' }
-      },
+      colors: { brand: { 500:'#6366f1', 600:'#4f46e5' } },
       screens: { xs: '400px' }
     }
   }
@@ -27,6 +26,15 @@ tailwind.config = {
 <style>
   * { font-family:'Sarabun','Inter',sans-serif; }
   .num { font-family:'Inter',sans-serif !important; }
+
+  /* Lucide icon sizing */
+  [data-lucide] { display:inline-block; vertical-align:middle; }
+  .ic-sm  [data-lucide] { width:14px; height:14px; stroke-width:2; }
+  .ic-base [data-lucide] { width:18px; height:18px; stroke-width:1.75; }
+  .ic-md  [data-lucide] { width:20px; height:20px; stroke-width:1.75; }
+  .ic-lg  [data-lucide] { width:22px; height:22px; stroke-width:1.5; }
+  .ic-xl  [data-lucide] { width:26px; height:26px; stroke-width:1.5; }
+  .ic-2xl [data-lucide] { width:32px; height:32px; stroke-width:1.25; }
 
   /* Page transitions */
   .page { display:none; }
@@ -52,93 +60,65 @@ tailwind.config = {
     border-radius:12px 12px 0 0; background:var(--c);
   }
 
-  /* Progress */
-  .pb { height:6px; border-radius:99px; background:#e2e8f0; overflow:hidden; }
+  /* Progress bar */
+  .pb { height:5px; border-radius:99px; background:#e2e8f0; overflow:hidden; }
   .pf { height:100%; border-radius:99px; transition:width 1.2s cubic-bezier(.34,1.56,.64,1); }
 
   /* Pill badge */
   .pill {
     display:inline-flex; align-items:center; gap:3px;
     padding:2px 9px; border-radius:99px;
-    font-size:11px; font-weight:600; line-height:1.6;
+    font-size:11px; font-weight:600; line-height:1.7;
   }
 
-  /* Nav active */
-  .nav-btn.active {
-    color:#4f46e5;
-    border-bottom:2px solid #4f46e5;
-    background:rgba(99,102,241,.05);
-  }
+  /* Desktop nav active */
   .nav-btn { border-bottom:2px solid transparent; }
+  .nav-btn.active { color:#4f46e5; border-bottom:2px solid #4f46e5; background:rgba(99,102,241,.05); }
 
-  /* Mobile bottom nav */
+  /* Mobile bottom nav active */
   .mob-nav-btn.active .mob-icon { color:#4f46e5; }
   .mob-nav-btn.active .mob-label { color:#4f46e5; font-weight:700; }
 
-  /* Table row */
-  tr.hover:hover td { background:#f8fafc; }
-
   /* Section heading */
-  .sec-head {
-    display:flex; align-items:center; gap:10px; margin-bottom:16px;
-  }
-  .sec-head-bar {
-    width:3px; height:16px; border-radius:99px;
-    background:linear-gradient(180deg,#6366f1,#a855f7);
-    flex-shrink:0;
-  }
-  .sec-head-line { flex:1; height:1px; background:#e2e8f0; }
-  .sec-head-label {
-    font-size:10px; font-weight:700; letter-spacing:.1em;
-    text-transform:uppercase; color:#94a3b8;
-  }
+  .sec-head { display:flex; align-items:center; gap:10px; margin-bottom:16px; }
+  .sec-bar { width:3px; height:16px; border-radius:99px; background:linear-gradient(180deg,#6366f1,#a855f7); flex-shrink:0; }
+  .sec-line { flex:1; height:1px; background:#e2e8f0; }
+  .sec-label { font-size:10px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:#94a3b8; }
 
   /* Timeline */
   .tl-wrap { position:relative; padding-left:40px; }
-  .tl-spine {
-    position:absolute; left:19px; top:20px; bottom:0;
-    width:1px; background:linear-gradient(180deg,#6366f1,#a5b4fc80,transparent);
-  }
-  .tl-dot {
-    position:absolute; left:-29px; top:6px;
-    width:10px; height:10px; border-radius:50%;
-    border:2px solid currentColor; background:white;
-  }
+  .tl-spine { position:absolute; left:19px; top:20px; bottom:0; width:1px; background:linear-gradient(180deg,#6366f1,#a5b4fc50,transparent); }
+  .tl-dot { position:absolute; left:-29px; top:6px; width:10px; height:10px; border-radius:50%; border:2px solid currentColor; background:white; }
 
-  /* Gradient text */
-  .grad-text {
-    background:linear-gradient(135deg,#6366f1,#a855f7);
-    -webkit-background-clip:text; -webkit-text-fill-color:transparent;
-    background-clip:text;
-  }
-
-  /* Spotlight card */
-  .spotlight-bg {
-    background:linear-gradient(135deg,#faf5ff 0%,#ede9fe 60%,#f0f9ff 100%);
-  }
-  .orb {
-    position:absolute; border-radius:50%; filter:blur(40px); pointer-events:none;
-  }
-
-  /* Stagger animation */
+  /* Stagger */
+  .stagger > * { animation:fadeUp .4s ease both; }
   .stagger > *:nth-child(1) { animation-delay:.04s; }
   .stagger > *:nth-child(2) { animation-delay:.08s; }
   .stagger > *:nth-child(3) { animation-delay:.12s; }
   .stagger > *:nth-child(4) { animation-delay:.16s; }
   .stagger > *:nth-child(5) { animation-delay:.20s; }
-  .stagger > * { animation:fadeUp .4s ease both; }
 
-  /* Sticky header blur */
-  .glass { background:rgba(255,255,255,.85); backdrop-filter:blur(12px); }
+  /* Glass header */
+  .glass { background:rgba(255,255,255,.88); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); }
 
-  /* Mobile padding bottom for bottom nav */
-  .main-wrap { padding-bottom: 80px; }
+  /* Mobile padding for bottom nav */
+  .main-wrap { padding-bottom:80px; }
   @media(min-width:768px) { .main-wrap { padding-bottom:32px; } }
 
   /* Rank badges */
-  .rank-1 { background:linear-gradient(135deg,#fbbf24,#f59e0b); color:white; }
-  .rank-2 { background:linear-gradient(135deg,#94a3b8,#64748b); color:white; }
-  .rank-3 { background:linear-gradient(135deg,#fb923c,#ea580c); color:white; }
+  .rank-gold   { background:linear-gradient(135deg,#fbbf24,#f59e0b); color:white; }
+  .rank-silver { background:linear-gradient(135deg,#94a3b8,#64748b); color:white; }
+  .rank-bronze { background:linear-gradient(135deg,#fb923c,#ea580c); color:white; }
+
+  /* Spotlight gradient bg */
+  .spotlight-bg { background:linear-gradient(135deg,#faf5ff 0%,#ede9fe 60%,#f0f9ff 100%); }
+  .orb { position:absolute; border-radius:50%; filter:blur(40px); pointer-events:none; }
+
+  /* Icon circle wrapper */
+  .icon-wrap {
+    display:flex; align-items:center; justify-content:center;
+    border-radius:10px; flex-shrink:0;
+  }
 </style>
 </head>
 
@@ -149,11 +129,12 @@ tailwind.config = {
   <div class="max-w-screen-xl mx-auto px-4 md:px-6 h-14 flex items-center justify-between gap-3">
 
     <div class="flex items-center gap-2.5">
+      <!-- Logo mark -->
       <div class="w-8 h-8 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center shadow-md shadow-indigo-200 flex-shrink-0">
-        <span class="text-white font-black text-xs num">TSR</span>
+        <span class="text-white font-black text-xs num leading-none">TSR</span>
       </div>
       <div class="leading-tight">
-        <p class="text-sm font-bold text-slate-800 leading-tight">TSR Situation Room</p>
+        <p class="text-sm font-bold text-slate-800">TSR Situation Room</p>
         <p class="text-xs text-slate-400 hidden sm:block">สุราชุมชน · Brand &amp; Influencer</p>
       </div>
     </div>
@@ -172,21 +153,28 @@ tailwind.config = {
 <nav class="bg-white border-b border-slate-200 sticky top-14 z-40 hidden md:block">
   <div class="max-w-screen-xl mx-auto px-6">
     <div class="flex gap-0 overflow-x-auto">
-      <button onclick="showPage('overview')" data-page="overview" class="nav-btn active px-5 py-3 text-xs font-semibold whitespace-nowrap transition-all">
-        📊 ภาพรวม
+
+      <button onclick="showPage('overview')" data-page="overview"
+        class="nav-btn active px-5 py-3 text-xs font-semibold whitespace-nowrap transition-all flex items-center gap-1.5">
+        <span class="ic-sm text-current"><i data-lucide="layout-dashboard"></i></span>ภาพรวม
       </button>
-      <button onclick="showPage('brands')" data-page="brands" class="nav-btn px-5 py-3 text-xs font-medium text-slate-500 hover:text-slate-700 whitespace-nowrap transition-all">
-        🍶 แบรนด์
+      <button onclick="showPage('brands')" data-page="brands"
+        class="nav-btn px-5 py-3 text-xs font-medium text-slate-500 hover:text-slate-700 whitespace-nowrap transition-all flex items-center gap-1.5">
+        <span class="ic-sm text-current"><i data-lucide="tag"></i></span>แบรนด์
       </button>
-      <button onclick="showPage('influencers')" data-page="influencers" class="nav-btn px-5 py-3 text-xs font-medium text-slate-500 hover:text-slate-700 whitespace-nowrap transition-all">
-        📣 อินฟลูเอนเซอร์
+      <button onclick="showPage('influencers')" data-page="influencers"
+        class="nav-btn px-5 py-3 text-xs font-medium text-slate-500 hover:text-slate-700 whitespace-nowrap transition-all flex items-center gap-1.5">
+        <span class="ic-sm text-current"><i data-lucide="users"></i></span>อินฟลูเอนเซอร์
       </button>
-      <button onclick="showPage('events')" data-page="events" class="nav-btn px-5 py-3 text-xs font-medium text-slate-500 hover:text-slate-700 whitespace-nowrap transition-all">
-        📅 กิจกรรม
+      <button onclick="showPage('events')" data-page="events"
+        class="nav-btn px-5 py-3 text-xs font-medium text-slate-500 hover:text-slate-700 whitespace-nowrap transition-all flex items-center gap-1.5">
+        <span class="ic-sm text-current"><i data-lucide="calendar"></i></span>กิจกรรม
       </button>
-      <button onclick="showPage('spotlight')" data-page="spotlight" class="nav-btn px-5 py-3 text-xs font-medium text-slate-500 hover:text-slate-700 whitespace-nowrap transition-all">
-        ✨ Brand Spotlight
+      <button onclick="showPage('spotlight')" data-page="spotlight"
+        class="nav-btn px-5 py-3 text-xs font-medium text-slate-500 hover:text-slate-700 whitespace-nowrap transition-all flex items-center gap-1.5">
+        <span class="ic-sm text-current"><i data-lucide="star"></i></span>Brand Spotlight
       </button>
+
     </div>
   </div>
 </nav>
@@ -194,60 +182,76 @@ tailwind.config = {
 <!-- ══════════════ MAIN ══════════════ -->
 <main class="max-w-screen-xl mx-auto px-4 md:px-6 py-6 space-y-8 main-wrap">
 
+
 <!-- ════════════════════════════════════
-     PAGE 1: ภาพรวม (Overview)
+     PAGE 1 · ภาพรวม
 ════════════════════════════════════ -->
 <div id="page-overview" class="page active space-y-8">
 
   <!-- KPI Cards -->
   <section>
     <div class="sec-head">
-      <div class="sec-head-bar"></div>
-      <span class="sec-head-label">ตัวชี้วัดหลัก · Key Metrics</span>
-      <div class="sec-head-line"></div>
+      <div class="sec-bar"></div>
+      <span class="sec-label">ตัวชี้วัดหลัก · Key Metrics</span>
+      <div class="sec-line"></div>
     </div>
 
     <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 stagger">
 
+      <!-- Total Brands -->
       <div class="relative bg-white rounded-2xl p-4 md:p-5 shadow-sm border border-slate-100 card kpi-top overflow-hidden"
            style="--c:linear-gradient(90deg,#6366f1,#818cf8)">
-        <div class="absolute top-3 right-3 w-9 h-9 rounded-xl bg-indigo-50 flex items-center justify-center text-base">🏭</div>
+        <div class="icon-wrap w-9 h-9 bg-indigo-50 absolute top-3 right-3 ic-base text-indigo-400">
+          <i data-lucide="boxes"></i>
+        </div>
         <p class="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-1.5">แบรนด์ทั้งหมด</p>
         <p class="num text-2xl md:text-3xl font-black text-slate-800 leading-none">1,432</p>
         <p class="text-xs text-slate-400 mt-1.5">8 ภูมิภาค</p>
         <div class="mt-3 pb"><div class="pf bg-gradient-to-r from-indigo-400 to-indigo-600" style="width:100%"></div></div>
       </div>
 
+      <!-- Spirits -->
       <div class="relative bg-white rounded-2xl p-4 md:p-5 shadow-sm border border-slate-100 card kpi-top overflow-hidden"
            style="--c:linear-gradient(90deg,#8b5cf6,#a78bfa)">
-        <div class="absolute top-3 right-3 w-9 h-9 rounded-xl bg-violet-50 flex items-center justify-center text-base">🍶</div>
-        <p class="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-1.5">สุรา</p>
+        <div class="icon-wrap w-9 h-9 bg-violet-50 absolute top-3 right-3 ic-base text-violet-400">
+          <i data-lucide="wine"></i>
+        </div>
+        <p class="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-1.5">แบรนด์สุรา</p>
         <p class="num text-2xl md:text-3xl font-black text-slate-800 leading-none">1,198</p>
         <p class="text-xs text-slate-400 mt-1.5">83.7%</p>
         <div class="mt-3 pb"><div class="pf bg-gradient-to-r from-violet-400 to-violet-600" style="width:83.7%"></div></div>
       </div>
 
+      <!-- Beer -->
       <div class="relative bg-white rounded-2xl p-4 md:p-5 shadow-sm border border-slate-100 card kpi-top overflow-hidden"
            style="--c:linear-gradient(90deg,#f59e0b,#fbbf24)">
-        <div class="absolute top-3 right-3 w-9 h-9 rounded-xl bg-amber-50 flex items-center justify-center text-base">🍺</div>
-        <p class="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-1.5">เบียร์</p>
+        <div class="icon-wrap w-9 h-9 bg-amber-50 absolute top-3 right-3 ic-base text-amber-400">
+          <i data-lucide="beer"></i>
+        </div>
+        <p class="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-1.5">แบรนด์เบียร์</p>
         <p class="num text-2xl md:text-3xl font-black text-slate-800 leading-none">234</p>
         <p class="text-xs text-slate-400 mt-1.5">16.3%</p>
         <div class="mt-3 pb"><div class="pf bg-gradient-to-r from-amber-400 to-amber-500" style="width:16.3%"></div></div>
       </div>
 
+      <!-- Influencers -->
       <div class="relative bg-white rounded-2xl p-4 md:p-5 shadow-sm border border-slate-100 card kpi-top overflow-hidden"
            style="--c:linear-gradient(90deg,#06b6d4,#22d3ee)">
-        <div class="absolute top-3 right-3 w-9 h-9 rounded-xl bg-cyan-50 flex items-center justify-center text-base">📣</div>
+        <div class="icon-wrap w-9 h-9 bg-cyan-50 absolute top-3 right-3 ic-base text-cyan-400">
+          <i data-lucide="megaphone"></i>
+        </div>
         <p class="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-1.5">อินฟลูเอนเซอร์</p>
         <p class="num text-2xl md:text-3xl font-black text-slate-800 leading-none">835</p>
         <p class="text-xs text-slate-400 mt-1.5">5 แพลตฟอร์ม</p>
         <div class="mt-3 pb"><div class="pf bg-gradient-to-r from-cyan-400 to-cyan-500" style="width:75%"></div></div>
       </div>
 
+      <!-- Unknown Region -->
       <div class="relative bg-white rounded-2xl p-4 md:p-5 shadow-sm border border-slate-100 card kpi-top overflow-hidden col-span-2 sm:col-span-1"
            style="--c:linear-gradient(90deg,#f43f5e,#fb7185)">
-        <div class="absolute top-3 right-3 w-9 h-9 rounded-xl bg-rose-50 flex items-center justify-center text-base">⚠️</div>
+        <div class="icon-wrap w-9 h-9 bg-rose-50 absolute top-3 right-3 ic-base text-rose-400">
+          <i data-lucide="alert-circle"></i>
+        </div>
         <p class="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-1.5">ไม่ระบุภูมิภาค</p>
         <p class="num text-2xl md:text-3xl font-black text-slate-800 leading-none">254</p>
         <p class="text-xs text-slate-400 mt-1.5">17.7% ต้องตรวจสอบ</p>
@@ -260,37 +264,35 @@ tailwind.config = {
   <!-- Regional + Type -->
   <section>
     <div class="sec-head">
-      <div class="sec-head-bar"></div>
-      <span class="sec-head-label">การกระจายแบรนด์ · Brand Distribution</span>
-      <div class="sec-head-line"></div>
+      <div class="sec-bar"></div>
+      <span class="sec-label">การกระจายแบรนด์ · Brand Distribution</span>
+      <div class="sec-line"></div>
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-5 gap-4">
 
-      <!-- Regional chart -->
       <div class="lg:col-span-3 bg-white rounded-2xl p-5 shadow-sm border border-slate-100 card">
         <p class="text-sm font-bold text-slate-800">จำนวนแบรนด์แยกตามภูมิภาค</p>
         <p class="text-xs text-slate-400 mt-0.5 mb-4">Regional Distribution · 8 ภาค + ไม่ระบุ</p>
-        <div class="relative h-56 md:h-64">
-          <canvas id="regionalChart"></canvas>
-        </div>
+        <div class="relative h-56 md:h-64"><canvas id="regionalChart"></canvas></div>
       </div>
 
-      <!-- Type donut -->
       <div class="lg:col-span-2 bg-white rounded-2xl p-5 shadow-sm border border-slate-100 card">
         <p class="text-sm font-bold text-slate-800">สัดส่วนประเภทผลิตภัณฑ์</p>
         <p class="text-xs text-slate-400 mt-0.5 mb-3">Product Type</p>
-        <div class="relative h-40">
-          <canvas id="typeChart"></canvas>
-        </div>
+        <div class="relative h-40"><canvas id="typeChart"></canvas></div>
         <div class="mt-3 pt-3 border-t border-slate-100 grid grid-cols-2 gap-2">
           <div class="bg-violet-50 rounded-xl p-3 border border-violet-100">
-            <p class="text-xs text-violet-500 font-semibold">สุรา</p>
+            <div class="flex items-center gap-1.5 mb-1 ic-sm text-violet-400"><i data-lucide="wine"></i>
+              <span class="text-xs text-violet-500 font-semibold">สุรา</span>
+            </div>
             <p class="num text-xl font-black text-violet-700">1,198</p>
             <div class="mt-1.5 pb"><div class="pf bg-gradient-to-r from-violet-400 to-violet-600" style="width:83.7%"></div></div>
           </div>
           <div class="bg-amber-50 rounded-xl p-3 border border-amber-100">
-            <p class="text-xs text-amber-600 font-semibold">เบียร์</p>
+            <div class="flex items-center gap-1.5 mb-1 ic-sm text-amber-400"><i data-lucide="beer"></i>
+              <span class="text-xs text-amber-600 font-semibold">เบียร์</span>
+            </div>
             <p class="num text-xl font-black text-amber-700">234</p>
             <div class="mt-1.5 pb"><div class="pf bg-gradient-to-r from-amber-400 to-amber-500" style="width:16.3%"></div></div>
           </div>
@@ -299,86 +301,114 @@ tailwind.config = {
     </div>
   </section>
 
-  <!-- Quick Trending -->
+  <!-- Trending Quick View -->
   <section>
     <div class="sec-head">
-      <div class="sec-head-bar"></div>
-      <span class="sec-head-label">แบรนด์เทรนดิ้ง · Trending Now</span>
-      <div class="sec-head-line"></div>
+      <div class="sec-bar"></div>
+      <span class="sec-label">แบรนด์เทรนดิ้ง · Trending Now</span>
+      <div class="sec-line"></div>
       <button onclick="showPage('brands')" class="text-xs text-indigo-500 font-semibold hover:underline flex-shrink-0">ดูทั้งหมด →</button>
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+
       <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-100 card flex items-center gap-3">
-        <div class="w-10 h-10 rounded-xl bg-indigo-50 border border-indigo-100 flex items-center justify-center font-black text-indigo-500 text-sm num flex-shrink-0">1</div>
+        <div class="icon-wrap w-9 h-9 bg-indigo-50 border border-indigo-100 ic-base text-indigo-500 font-black text-sm num">
+          <span class="font-black text-sm num">1</span>
+        </div>
         <div class="flex-1 min-w-0">
           <p class="font-bold text-slate-800 text-sm truncate">นานวนจันทร์</p>
           <div class="mt-1 pb"><div class="pf bg-gradient-to-r from-indigo-400 to-indigo-600" style="width:100%"></div></div>
         </div>
         <div class="text-right flex-shrink-0">
           <p class="num font-bold text-slate-800 text-sm">2,491</p>
-          <p class="text-xs font-semibold text-emerald-600">▲ +27.66%</p>
+          <div class="flex items-center justify-end gap-0.5 ic-sm text-emerald-600">
+            <i data-lucide="trending-up"></i><span class="text-xs font-semibold">+27.66%</span>
+          </div>
         </div>
       </div>
+
       <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-100 card flex items-center gap-3">
-        <div class="w-10 h-10 rounded-xl bg-violet-50 border border-violet-100 flex items-center justify-center font-black text-violet-500 text-sm num flex-shrink-0">2</div>
+        <div class="icon-wrap w-9 h-9 bg-violet-50 border border-violet-100 ic-base text-violet-500">
+          <span class="font-black text-sm num">2</span>
+        </div>
         <div class="flex-1 min-w-0">
           <p class="font-bold text-slate-800 text-sm truncate">Chaiyaphum</p>
           <div class="mt-1 pb"><div class="pf bg-gradient-to-r from-violet-400 to-violet-600" style="width:65%"></div></div>
         </div>
         <div class="text-right flex-shrink-0">
           <p class="num font-bold text-slate-800 text-sm">1,632</p>
-          <p class="text-xs font-semibold text-rose-500">▼ -0.33%</p>
+          <div class="flex items-center justify-end gap-0.5 ic-sm text-rose-500">
+            <i data-lucide="trending-down"></i><span class="text-xs font-semibold">-0.33%</span>
+          </div>
         </div>
       </div>
+
       <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-100 card flex items-center gap-3">
-        <div class="w-10 h-10 rounded-xl bg-cyan-50 border border-cyan-100 flex items-center justify-center font-black text-cyan-500 text-sm num flex-shrink-0">3</div>
+        <div class="icon-wrap w-9 h-9 bg-cyan-50 border border-cyan-100 ic-base text-cyan-500">
+          <span class="font-black text-sm num">3</span>
+        </div>
         <div class="flex-1 min-w-0">
           <p class="font-bold text-slate-800 text-sm truncate">ออนซอน</p>
           <div class="mt-1 pb"><div class="pf bg-gradient-to-r from-cyan-400 to-cyan-600" style="width:61%"></div></div>
         </div>
         <div class="text-right flex-shrink-0">
           <p class="num font-bold text-slate-800 text-sm">1,528</p>
-          <p class="text-xs font-semibold text-emerald-600">▲ +14.75%</p>
+          <div class="flex items-center justify-end gap-0.5 ic-sm text-emerald-600">
+            <i data-lucide="trending-up"></i><span class="text-xs font-semibold">+14.75%</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Upcoming events quick view -->
+  <!-- Upcoming Events Quick -->
   <section>
     <div class="sec-head">
-      <div class="sec-head-bar"></div>
-      <span class="sec-head-label">กิจกรรมใกล้ถึง · Upcoming</span>
-      <div class="sec-head-line"></div>
+      <div class="sec-bar"></div>
+      <span class="sec-label">กิจกรรมใกล้ถึง · Upcoming</span>
+      <div class="sec-line"></div>
       <button onclick="showPage('events')" class="text-xs text-indigo-500 font-semibold hover:underline flex-shrink-0">ดูทั้งหมด →</button>
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+
       <div class="bg-white rounded-2xl p-4 shadow-sm border border-indigo-100 card">
-        <div class="text-indigo-400 text-xs font-bold uppercase tracking-wide mb-1">28 มี.ค. 2569</div>
+        <div class="flex items-center gap-1.5 text-indigo-400 text-xs font-bold uppercase tracking-wide mb-1 ic-sm">
+          <i data-lucide="calendar"></i><span>28 มี.ค. 2569</span>
+        </div>
         <p class="font-bold text-slate-800 text-sm">Craft Brewing Program</p>
-        <p class="text-xs text-slate-500 mt-1">รอบที่ 1 · Workshop</p>
-        <span class="pill bg-indigo-100 text-indigo-600 mt-2 inline-block">Workshop</span>
+        <p class="text-xs text-slate-500 mt-0.5">รอบที่ 1 · Workshop</p>
+        <span class="pill bg-indigo-100 text-indigo-600 mt-2 inline-flex">Workshop</span>
       </div>
+
       <div class="bg-white rounded-2xl p-4 shadow-sm border border-violet-100 card">
-        <div class="text-violet-400 text-xs font-bold uppercase tracking-wide mb-1">3–5 เม.ย. 2569</div>
+        <div class="flex items-center gap-1.5 text-violet-400 text-xs font-bold uppercase tracking-wide mb-1 ic-sm">
+          <i data-lucide="calendar"></i><span>3–5 เม.ย. 2569</span>
+        </div>
         <p class="font-bold text-slate-800 text-sm">Grove Brew Fest</p>
-        <p class="text-xs text-slate-500 mt-1">ภูเก็ต · 60 แบรนด์</p>
-        <span class="pill bg-violet-100 text-violet-600 mt-2 inline-block">Festival</span>
+        <p class="text-xs text-slate-500 mt-0.5">ภูเก็ต · 60 แบรนด์</p>
+        <span class="pill bg-violet-100 text-violet-600 mt-2 inline-flex">Festival</span>
       </div>
+
       <div class="bg-white rounded-2xl p-4 shadow-sm border border-cyan-100 card">
-        <div class="text-cyan-500 text-xs font-bold uppercase tracking-wide mb-1">25 เม.ย. 2569</div>
+        <div class="flex items-center gap-1.5 text-cyan-500 text-xs font-bold uppercase tracking-wide mb-1 ic-sm">
+          <i data-lucide="calendar"></i><span>25 เม.ย. 2569</span>
+        </div>
         <p class="font-bold text-slate-800 text-sm">Craft Brewing Program</p>
-        <p class="text-xs text-slate-500 mt-1">รอบที่ 2 · Workshop</p>
-        <span class="pill bg-cyan-100 text-cyan-700 mt-2 inline-block">Workshop</span>
+        <p class="text-xs text-slate-500 mt-0.5">รอบที่ 2 · Workshop</p>
+        <span class="pill bg-cyan-100 text-cyan-700 mt-2 inline-flex">Workshop</span>
       </div>
+
       <div class="bg-white rounded-2xl p-4 shadow-sm border border-amber-100 card">
-        <div class="text-amber-500 text-xs font-bold uppercase tracking-wide mb-1">8–10 พ.ค. 2569</div>
+        <div class="flex items-center gap-1.5 text-amber-500 text-xs font-bold uppercase tracking-wide mb-1 ic-sm">
+          <i data-lucide="calendar"></i><span>8–10 พ.ค. 2569</span>
+        </div>
         <p class="font-bold text-slate-800 text-sm">คราฟต์กลางกรุง</p>
-        <p class="text-xs text-slate-500 mt-1">กรุงเทพฯ · 46 แบรนด์</p>
-        <span class="pill bg-amber-100 text-amber-700 mt-2 inline-block">Festival</span>
+        <p class="text-xs text-slate-500 mt-0.5">กรุงเทพฯ · 46 แบรนด์</p>
+        <span class="pill bg-amber-100 text-amber-700 mt-2 inline-flex">Festival</span>
       </div>
+
     </div>
   </section>
 
@@ -386,16 +416,16 @@ tailwind.config = {
 
 
 <!-- ════════════════════════════════════
-     PAGE 2: แบรนด์ (Brands)
+     PAGE 2 · แบรนด์
 ════════════════════════════════════ -->
 <div id="page-brands" class="page space-y-8">
 
   <!-- Distribution Chart -->
   <section>
     <div class="sec-head">
-      <div class="sec-head-bar"></div>
-      <span class="sec-head-label">อัตราการกระจายสินค้า · Distribution Rate</span>
-      <div class="sec-head-line"></div>
+      <div class="sec-bar"></div>
+      <span class="sec-label">อัตราการกระจายสินค้า · Distribution Rate</span>
+      <div class="sec-line"></div>
     </div>
 
     <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100 card">
@@ -409,51 +439,47 @@ tailwind.config = {
           <span class="pill bg-slate-100 text-slate-500 border border-slate-200">ก.พ. 2567</span>
         </div>
       </div>
-      <div class="relative h-64 md:h-80">
-        <canvas id="distChart"></canvas>
-      </div>
+      <div class="relative h-64 md:h-80"><canvas id="distChart"></canvas></div>
     </div>
   </section>
 
-  <!-- Full table -->
+  <!-- Full Table -->
   <section>
     <div class="sec-head">
-      <div class="sec-head-bar"></div>
-      <span class="sec-head-label">ตารางการกระจายสินค้า · Distribution Table</span>
-      <div class="sec-head-line"></div>
+      <div class="sec-bar"></div>
+      <span class="sec-label">ตารางการกระจายสินค้า · Distribution Table</span>
+      <div class="sec-line"></div>
     </div>
 
     <div class="bg-white rounded-2xl shadow-sm border border-slate-100 card overflow-hidden">
       <div class="p-5 border-b border-slate-100">
         <p class="text-sm font-bold text-slate-800">Top Distribution Brands</p>
-        <p class="text-xs text-slate-400">อัตราการกระจายสินค้า มีนาคม vs กุมภาพันธ์ 2567</p>
+        <p class="text-xs text-slate-400">มีนาคม vs กุมภาพันธ์ 2567</p>
       </div>
       <div class="overflow-x-auto">
         <table class="w-full text-sm">
           <thead>
             <tr class="bg-slate-50">
-              <th class="text-left py-3 px-4 text-xs font-semibold text-slate-400 whitespace-nowrap">#</th>
-              <th class="text-left py-3 px-4 text-xs font-semibold text-slate-400 whitespace-nowrap">แบรนด์</th>
-              <th class="text-left py-3 px-4 text-xs font-semibold text-slate-400 whitespace-nowrap">มี.ค. 67</th>
-              <th class="text-left py-3 px-4 text-xs font-semibold text-slate-400 whitespace-nowrap">ก.พ. 67</th>
-              <th class="text-left py-3 px-4 text-xs font-semibold text-slate-400 whitespace-nowrap">เปลี่ยนแปลง</th>
-              <th class="text-left py-3 px-4 text-xs font-semibold text-slate-400 whitespace-nowrap">Progress</th>
+              <th class="text-left py-3 px-4 text-xs font-semibold text-slate-400">#</th>
+              <th class="text-left py-3 px-4 text-xs font-semibold text-slate-400">แบรนด์</th>
+              <th class="text-left py-3 px-4 text-xs font-semibold text-slate-400">มี.ค. 67</th>
+              <th class="text-left py-3 px-4 text-xs font-semibold text-slate-400">ก.พ. 67</th>
+              <th class="text-left py-3 px-4 text-xs font-semibold text-slate-400">เปลี่ยนแปลง</th>
+              <th class="text-left py-3 px-4 text-xs font-semibold text-slate-400 hidden sm:table-cell">Progress</th>
             </tr>
           </thead>
-          <tbody class="divide-y divide-slate-50">
-            <tr id="brands-data"></tr>
-          </tbody>
+          <tbody id="brands-tbody" class="divide-y divide-slate-50"></tbody>
         </table>
       </div>
     </div>
   </section>
 
-  <!-- Trending engagement -->
+  <!-- Trending + New Entrants -->
   <section>
     <div class="sec-head">
-      <div class="sec-head-bar"></div>
-      <span class="sec-head-label">Engagement Rankings</span>
-      <div class="sec-head-line"></div>
+      <div class="sec-bar"></div>
+      <span class="sec-label">Engagement Rankings &amp; New Entrants</span>
+      <div class="sec-line"></div>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -462,59 +488,74 @@ tailwind.config = {
         <p class="text-sm font-bold text-slate-800 mb-1">Top Engagement Score</p>
         <p class="text-xs text-slate-400 mb-4">คะแนน Engagement รายแบรนด์</p>
         <div class="space-y-1">
+
           <div class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-slate-50 transition-colors">
-            <div class="w-7 h-7 rounded-xl rank-1 flex items-center justify-center text-xs font-black num flex-shrink-0">1</div>
+            <div class="icon-wrap w-7 h-7 rank-gold rounded-xl text-xs font-black num flex-shrink-0">1</div>
             <div class="flex-1 min-w-0">
               <p class="text-sm font-semibold text-slate-800">นานวนจันทร์</p>
               <div class="mt-1 pb"><div class="pf bg-gradient-to-r from-indigo-400 to-indigo-600" style="width:100%"></div></div>
             </div>
             <div class="text-right flex-shrink-0">
               <p class="num text-sm font-bold text-slate-800">2,491</p>
-              <p class="text-xs font-semibold text-emerald-600">▲ +27.66%</p>
+              <div class="flex items-center justify-end gap-0.5 ic-sm text-emerald-600">
+                <i data-lucide="trending-up"></i><span class="text-xs font-semibold">+27.66%</span>
+              </div>
             </div>
           </div>
+
           <div class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-slate-50 transition-colors">
-            <div class="w-7 h-7 rounded-xl rank-2 flex items-center justify-center text-xs font-black num flex-shrink-0">2</div>
+            <div class="icon-wrap w-7 h-7 rank-silver rounded-xl text-xs font-black num flex-shrink-0">2</div>
             <div class="flex-1 min-w-0">
               <p class="text-sm font-semibold text-slate-800">Chaiyaphum</p>
               <div class="mt-1 pb"><div class="pf bg-gradient-to-r from-violet-400 to-violet-600" style="width:65%"></div></div>
             </div>
             <div class="text-right flex-shrink-0">
               <p class="num text-sm font-bold text-slate-800">1,632</p>
-              <p class="text-xs font-semibold text-rose-500">▼ -0.33%</p>
+              <div class="flex items-center justify-end gap-0.5 ic-sm text-rose-500">
+                <i data-lucide="trending-down"></i><span class="text-xs font-semibold">-0.33%</span>
+              </div>
             </div>
           </div>
+
           <div class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-slate-50 transition-colors">
-            <div class="w-7 h-7 rounded-xl rank-3 flex items-center justify-center text-xs font-black num flex-shrink-0">3</div>
+            <div class="icon-wrap w-7 h-7 rank-bronze rounded-xl text-xs font-black num flex-shrink-0">3</div>
             <div class="flex-1 min-w-0">
               <p class="text-sm font-semibold text-slate-800">ออนซอน</p>
               <div class="mt-1 pb"><div class="pf bg-gradient-to-r from-cyan-400 to-cyan-600" style="width:61%"></div></div>
             </div>
             <div class="text-right flex-shrink-0">
               <p class="num text-sm font-bold text-slate-800">1,528</p>
-              <p class="text-xs font-semibold text-emerald-600">▲ +14.75%</p>
+              <div class="flex items-center justify-end gap-0.5 ic-sm text-emerald-600">
+                <i data-lucide="trending-up"></i><span class="text-xs font-semibold">+14.75%</span>
+              </div>
             </div>
           </div>
+
           <div class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-slate-50 transition-colors">
-            <div class="w-7 h-7 rounded-xl bg-slate-100 flex items-center justify-center text-xs font-black text-slate-500 num flex-shrink-0">4</div>
+            <div class="icon-wrap w-7 h-7 bg-slate-100 rounded-xl text-xs font-black text-slate-500 num flex-shrink-0">4</div>
             <div class="flex-1 min-w-0">
               <p class="text-sm font-semibold text-slate-800">สักทองแพร่</p>
               <div class="mt-1 pb"><div class="pf bg-gradient-to-r from-amber-400 to-amber-500" style="width:45%"></div></div>
             </div>
             <div class="text-right flex-shrink-0">
               <p class="num text-sm font-bold text-slate-800">4.1%</p>
-              <p class="text-xs font-semibold text-emerald-600">▲ +0.6pp</p>
+              <div class="flex items-center justify-end gap-0.5 ic-sm text-emerald-600">
+                <i data-lucide="trending-up"></i><span class="text-xs font-semibold">+0.6pp</span>
+              </div>
             </div>
           </div>
+
           <div class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-slate-50 transition-colors">
-            <div class="w-7 h-7 rounded-xl bg-slate-100 flex items-center justify-center text-xs font-black text-slate-500 num flex-shrink-0">5</div>
+            <div class="icon-wrap w-7 h-7 bg-slate-100 rounded-xl text-xs font-black text-slate-500 num flex-shrink-0">5</div>
             <div class="flex-1 min-w-0">
               <p class="text-sm font-semibold text-slate-800">เงาจันทร์</p>
               <div class="mt-1 pb"><div class="pf bg-gradient-to-r from-emerald-400 to-emerald-600" style="width:40%"></div></div>
             </div>
             <div class="text-right flex-shrink-0">
               <p class="num text-sm font-bold text-slate-800">3.5%</p>
-              <p class="text-xs font-semibold text-emerald-600">▲ +0.8pp</p>
+              <div class="flex items-center justify-end gap-0.5 ic-sm text-emerald-600">
+                <i data-lucide="trending-up"></i><span class="text-xs font-semibold">+0.8pp</span>
+              </div>
             </div>
           </div>
         </div>
@@ -522,14 +563,18 @@ tailwind.config = {
 
       <!-- New Entrants -->
       <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100 card">
-        <p class="text-sm font-bold text-slate-800 mb-1">แบรนด์ใหม่เข้าตลาด</p>
+        <div class="flex items-center gap-2 mb-1 ic-sm text-emerald-500">
+          <i data-lucide="sparkles"></i>
+          <p class="text-sm font-bold text-slate-800">แบรนด์ใหม่เข้าตลาด</p>
+        </div>
         <p class="text-xs text-slate-400 mb-4">New Entrants · มีนาคม 2567</p>
         <div class="space-y-3">
+
           <div class="p-4 rounded-xl bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-100">
             <div class="flex items-center justify-between">
               <div>
                 <p class="font-bold text-slate-800">สามเจดีย์</p>
-                <p class="text-xs text-slate-500 mt-0.5">New entrant · ก.พ. → มี.ค. 2567</p>
+                <p class="text-xs text-slate-500 mt-0.5">New entry · ก.พ. → มี.ค. 2567</p>
               </div>
               <div class="text-right">
                 <p class="num font-black text-emerald-600 text-sm">0.4%</p>
@@ -538,11 +583,12 @@ tailwind.config = {
             </div>
             <div class="mt-2 pb"><div class="pf bg-gradient-to-r from-emerald-400 to-emerald-600" style="width:100%"></div></div>
           </div>
+
           <div class="p-4 rounded-xl bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-100">
             <div class="flex items-center justify-between">
               <div>
                 <p class="font-bold text-slate-800">น้ำใสเสือห้า</p>
-                <p class="text-xs text-slate-500 mt-0.5">New entrant · ก.พ. → มี.ค. 2567</p>
+                <p class="text-xs text-slate-500 mt-0.5">New entry · ก.พ. → มี.ค. 2567</p>
               </div>
               <div class="text-right">
                 <p class="num font-black text-blue-600 text-sm">0.4%</p>
@@ -551,11 +597,12 @@ tailwind.config = {
             </div>
             <div class="mt-2 pb"><div class="pf bg-gradient-to-r from-blue-400 to-blue-600" style="width:100%"></div></div>
           </div>
+
           <div class="p-4 rounded-xl bg-gradient-to-r from-violet-50 to-purple-50 border border-violet-100">
             <div class="flex items-center justify-between">
               <div>
                 <p class="font-bold text-slate-800">เทพเมรัย</p>
-                <p class="text-xs text-slate-500 mt-0.5">New entrant · ก.พ. → มี.ค. 2567</p>
+                <p class="text-xs text-slate-500 mt-0.5">New entry · ก.พ. → มี.ค. 2567</p>
               </div>
               <div class="text-right">
                 <p class="num font-black text-violet-600 text-sm">0.4%</p>
@@ -564,6 +611,7 @@ tailwind.config = {
             </div>
             <div class="mt-2 pb"><div class="pf bg-gradient-to-r from-violet-400 to-violet-600" style="width:100%"></div></div>
           </div>
+
         </div>
       </div>
     </div>
@@ -573,101 +621,115 @@ tailwind.config = {
 
 
 <!-- ════════════════════════════════════
-     PAGE 3: อินฟลูเอนเซอร์
+     PAGE 3 · อินฟลูเอนเซอร์
 ════════════════════════════════════ -->
 <div id="page-influencers" class="page space-y-8">
 
   <!-- Platform KPIs -->
   <section>
     <div class="sec-head">
-      <div class="sec-head-bar"></div>
-      <span class="sec-head-label">แพลตฟอร์ม · Platform Overview</span>
-      <div class="sec-head-line"></div>
+      <div class="sec-bar"></div>
+      <span class="sec-label">แพลตฟอร์ม · Platform Overview</span>
+      <div class="sec-line"></div>
     </div>
 
     <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 stagger">
+
       <div class="bg-white rounded-2xl p-4 shadow-sm border border-blue-100 card text-center">
-        <div class="text-2xl mb-2">👥</div>
+        <div class="icon-wrap w-10 h-10 bg-blue-50 rounded-xl mx-auto mb-2 ic-md text-blue-500">
+          <i data-lucide="facebook"></i>
+        </div>
         <p class="text-xs text-blue-500 font-bold mb-1">Facebook</p>
         <p class="num text-2xl font-black text-blue-600">278</p>
         <p class="text-xs text-slate-400 mt-1">33.3%</p>
         <div class="mt-2 pb"><div class="pf bg-gradient-to-r from-blue-400 to-blue-600" style="width:33.3%"></div></div>
       </div>
-      <div class="bg-white rounded-2xl p-4 shadow-sm border border-red-100 card text-center">
-        <div class="text-2xl mb-2">🎵</div>
-        <p class="text-xs text-red-400 font-bold mb-1">TikTok</p>
-        <p class="num text-2xl font-black text-red-500">284</p>
+
+      <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-200 card text-center">
+        <div class="icon-wrap w-10 h-10 bg-slate-100 rounded-xl mx-auto mb-2 ic-md text-slate-600">
+          <i data-lucide="music-2"></i>
+        </div>
+        <p class="text-xs text-slate-600 font-bold mb-1">TikTok</p>
+        <p class="num text-2xl font-black text-slate-700">284</p>
         <p class="text-xs text-slate-400 mt-1">34.0%</p>
-        <div class="mt-2 pb"><div class="pf bg-gradient-to-r from-red-400 to-rose-500" style="width:34%"></div></div>
+        <div class="mt-2 pb"><div class="pf bg-gradient-to-r from-slate-500 to-slate-700" style="width:34%"></div></div>
       </div>
-      <div class="bg-white rounded-2xl p-4 shadow-sm border border-amber-100 card text-center">
-        <div class="text-2xl mb-2">📸</div>
-        <p class="text-xs text-amber-500 font-bold mb-1">Instagram</p>
-        <p class="num text-2xl font-black text-amber-600">216</p>
+
+      <div class="bg-white rounded-2xl p-4 shadow-sm border border-rose-100 card text-center">
+        <div class="icon-wrap w-10 h-10 bg-rose-50 rounded-xl mx-auto mb-2 ic-md text-rose-500">
+          <i data-lucide="instagram"></i>
+        </div>
+        <p class="text-xs text-rose-500 font-bold mb-1">Instagram</p>
+        <p class="num text-2xl font-black text-rose-600">216</p>
         <p class="text-xs text-slate-400 mt-1">25.9%</p>
-        <div class="mt-2 pb"><div class="pf bg-gradient-to-r from-amber-400 to-amber-500" style="width:25.9%"></div></div>
+        <div class="mt-2 pb"><div class="pf bg-gradient-to-r from-rose-400 to-rose-500" style="width:25.9%"></div></div>
       </div>
+
       <div class="bg-white rounded-2xl p-4 shadow-sm border border-red-100 card text-center">
-        <div class="text-2xl mb-2">▶️</div>
+        <div class="icon-wrap w-10 h-10 bg-red-50 rounded-xl mx-auto mb-2 ic-md text-red-500">
+          <i data-lucide="youtube"></i>
+        </div>
         <p class="text-xs text-red-500 font-bold mb-1">YouTube</p>
-        <p class="num text-2xl font-black text-red-500">37</p>
+        <p class="num text-2xl font-black text-red-600">37</p>
         <p class="text-xs text-slate-400 mt-1">4.4%</p>
         <div class="mt-2 pb"><div class="pf bg-gradient-to-r from-red-500 to-red-600" style="width:4.4%"></div></div>
       </div>
+
       <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-200 card text-center col-span-2 sm:col-span-1">
-        <div class="text-2xl mb-2">✖️</div>
-        <p class="text-xs text-slate-400 font-bold mb-1">X (Twitter)</p>
+        <div class="icon-wrap w-10 h-10 bg-slate-100 rounded-xl mx-auto mb-2 ic-md text-slate-600">
+          <i data-lucide="twitter"></i>
+        </div>
+        <p class="text-xs text-slate-500 font-bold mb-1">X (Twitter)</p>
         <p class="num text-2xl font-black text-slate-600">20</p>
         <p class="text-xs text-slate-400 mt-1">2.4%</p>
         <div class="mt-2 pb"><div class="pf bg-slate-400" style="width:2.4%"></div></div>
       </div>
+
     </div>
   </section>
 
-  <!-- Platform chart + Top influencers -->
+  <!-- Chart + Top Influencers -->
   <section>
     <div class="sec-head">
-      <div class="sec-head-bar"></div>
-      <span class="sec-head-label">การวิเคราะห์ · Analytics</span>
-      <div class="sec-head-line"></div>
+      <div class="sec-bar"></div>
+      <span class="sec-label">การวิเคราะห์ · Analytics</span>
+      <div class="sec-line"></div>
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
 
       <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100 card">
-        <p class="text-sm font-bold text-slate-800 mb-1">สัดส่วนอินฟลูเอนเซอร์ต่อแพลตฟอร์ม</p>
+        <p class="text-sm font-bold text-slate-800 mb-1">สัดส่วนต่อแพลตฟอร์ม</p>
         <p class="text-xs text-slate-400 mb-4">Platform Distribution</p>
-        <div class="relative h-56">
-          <canvas id="platformChart"></canvas>
-        </div>
+        <div class="relative h-52"><canvas id="platformChart"></canvas></div>
         <div class="mt-4 space-y-2">
           <div>
             <div class="flex justify-between text-xs mb-1">
               <span class="font-semibold text-blue-500">Facebook</span>
               <span class="num font-bold text-slate-700">33.3%</span>
             </div>
-            <div class="pb"><div class="pf bg-gradient-to-r from-blue-400 to-blue-500" style="width:33.3%"></div></div>
+            <div class="pb"><div class="pf bg-blue-400" style="width:33.3%"></div></div>
           </div>
           <div>
             <div class="flex justify-between text-xs mb-1">
-              <span class="font-semibold text-red-400">TikTok</span>
+              <span class="font-semibold text-slate-600">TikTok</span>
               <span class="num font-bold text-slate-700">34.0%</span>
             </div>
-            <div class="pb"><div class="pf bg-gradient-to-r from-red-400 to-rose-400" style="width:34%"></div></div>
+            <div class="pb"><div class="pf bg-slate-600" style="width:34%"></div></div>
           </div>
           <div>
             <div class="flex justify-between text-xs mb-1">
-              <span class="font-semibold text-amber-500">Instagram</span>
+              <span class="font-semibold text-rose-500">Instagram</span>
               <span class="num font-bold text-slate-700">25.9%</span>
             </div>
-            <div class="pb"><div class="pf bg-gradient-to-r from-amber-400 to-amber-500" style="width:25.9%"></div></div>
+            <div class="pb"><div class="pf bg-rose-400" style="width:25.9%"></div></div>
           </div>
           <div>
             <div class="flex justify-between text-xs mb-1">
               <span class="font-semibold text-red-500">YouTube</span>
               <span class="num font-bold text-slate-700">4.4%</span>
             </div>
-            <div class="pb"><div class="pf bg-gradient-to-r from-red-400 to-red-500" style="width:4.4%"></div></div>
+            <div class="pb"><div class="pf bg-red-500" style="width:4.4%"></div></div>
           </div>
           <div>
             <div class="flex justify-between text-xs mb-1">
@@ -679,20 +741,23 @@ tailwind.config = {
         </div>
       </div>
 
-      <!-- Top influencers table -->
+      <!-- Top influencer cards -->
       <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100 card">
         <p class="text-sm font-bold text-slate-800 mb-1">Top Influencers by Platform</p>
-        <p class="text-xs text-slate-400 mb-4">อินฟลูเอนเซอร์ที่มี Reach สูงสุด</p>
+        <p class="text-xs text-slate-400 mb-4">Reach สูงสุดในแต่ละแพลตฟอร์ม</p>
 
         <div class="space-y-3">
+
           <div class="p-4 rounded-xl bg-blue-50 border border-blue-100 flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-blue-100 border-2 border-blue-300 flex items-center justify-center text-xl flex-shrink-0">👥</div>
+            <div class="icon-wrap w-10 h-10 bg-blue-100 rounded-xl ic-md text-blue-500 flex-shrink-0">
+              <i data-lucide="facebook"></i>
+            </div>
             <div class="flex-1 min-w-0">
-              <div class="flex items-center gap-2 flex-wrap">
-                <span class="pill bg-blue-100 text-blue-600 text-xs">Facebook</span>
+              <div class="flex items-center gap-2">
+                <span class="pill bg-blue-100 text-blue-600">Facebook</span>
                 <span class="text-xs text-slate-400">#1</span>
               </div>
-              <p class="font-bold text-slate-800 mt-1 truncate">ป่ะ ไปไหนไปกัน</p>
+              <p class="font-bold text-slate-800 mt-1 text-sm truncate">ป่ะ ไปไหนไปกัน</p>
               <div class="mt-1.5 pb"><div class="pf bg-gradient-to-r from-blue-400 to-blue-600" style="width:100%"></div></div>
             </div>
             <div class="text-right flex-shrink-0">
@@ -701,67 +766,75 @@ tailwind.config = {
             </div>
           </div>
 
-          <div class="p-4 rounded-xl bg-red-50 border border-red-100 flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-red-100 border-2 border-red-300 flex items-center justify-center text-xl flex-shrink-0">🎵</div>
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-3">
+            <div class="icon-wrap w-10 h-10 bg-slate-200 rounded-xl ic-md text-slate-600 flex-shrink-0">
+              <i data-lucide="music-2"></i>
+            </div>
             <div class="flex-1 min-w-0">
-              <div class="flex items-center gap-2 flex-wrap">
-                <span class="pill bg-red-100 text-red-500 text-xs">TikTok</span>
+              <div class="flex items-center gap-2">
+                <span class="pill bg-slate-200 text-slate-600">TikTok</span>
                 <span class="text-xs text-slate-400">#1</span>
               </div>
-              <p class="font-bold text-slate-800 mt-1 truncate">coco_samui_asmr</p>
-              <div class="mt-1.5 pb"><div class="pf bg-gradient-to-r from-red-400 to-rose-500" style="width:34%"></div></div>
+              <p class="font-bold text-slate-800 mt-1 text-sm truncate">coco_samui_asmr</p>
+              <div class="mt-1.5 pb"><div class="pf bg-slate-600" style="width:34%"></div></div>
             </div>
             <div class="text-right flex-shrink-0">
-              <p class="num font-black text-red-500 text-base">4.3M</p>
+              <p class="num font-black text-slate-700 text-base">4.3M</p>
               <p class="text-xs text-slate-400">followers</p>
             </div>
           </div>
 
-          <div class="p-4 rounded-xl bg-amber-50 border border-amber-100 flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-amber-100 border-2 border-amber-300 flex items-center justify-center text-xl flex-shrink-0">📸</div>
+          <div class="p-4 rounded-xl bg-rose-50 border border-rose-100 flex items-center gap-3">
+            <div class="icon-wrap w-10 h-10 bg-rose-100 rounded-xl ic-md text-rose-500 flex-shrink-0">
+              <i data-lucide="instagram"></i>
+            </div>
             <div class="flex-1 min-w-0">
-              <div class="flex items-center gap-2 flex-wrap">
-                <span class="pill bg-amber-100 text-amber-600 text-xs">Instagram</span>
+              <div class="flex items-center gap-2">
+                <span class="pill bg-rose-100 text-rose-600">Instagram</span>
                 <span class="text-xs text-slate-400">#1</span>
               </div>
-              <p class="font-bold text-slate-800 mt-1 truncate">mookworranit</p>
-              <div class="mt-1.5 pb"><div class="pf bg-gradient-to-r from-amber-400 to-amber-500" style="width:35%"></div></div>
+              <p class="font-bold text-slate-800 mt-1 text-sm truncate">mookworranit</p>
+              <div class="mt-1.5 pb"><div class="pf bg-rose-400" style="width:35%"></div></div>
             </div>
             <div class="text-right flex-shrink-0">
-              <p class="num font-black text-amber-600 text-base">4.4M</p>
+              <p class="num font-black text-rose-600 text-base">4.4M</p>
               <p class="text-xs text-slate-400">followers</p>
             </div>
           </div>
 
           <div class="p-4 rounded-xl bg-red-50 border border-red-100 flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-red-100 border-2 border-red-300 flex items-center justify-center text-xl flex-shrink-0">▶️</div>
+            <div class="icon-wrap w-10 h-10 bg-red-100 rounded-xl ic-md text-red-500 flex-shrink-0">
+              <i data-lucide="youtube"></i>
+            </div>
             <div class="flex-1 min-w-0">
-              <div class="flex items-center gap-2 flex-wrap">
-                <span class="pill bg-red-100 text-red-600 text-xs">YouTube</span>
+              <div class="flex items-center gap-2">
+                <span class="pill bg-red-100 text-red-600">YouTube</span>
                 <span class="text-xs text-slate-400">#1</span>
               </div>
-              <p class="font-bold text-slate-800 mt-1 truncate">NANAKE555</p>
-              <div class="mt-1.5 pb"><div class="pf bg-gradient-to-r from-red-500 to-red-600" style="width:19%"></div></div>
+              <p class="font-bold text-slate-800 mt-1 text-sm truncate">NANAKE555</p>
+              <div class="mt-1.5 pb"><div class="pf bg-red-500" style="width:19%"></div></div>
             </div>
             <div class="text-right flex-shrink-0">
               <p class="num font-black text-red-600 text-base">2.4M</p>
               <p class="text-xs text-slate-400">subscribers</p>
             </div>
           </div>
+
         </div>
       </div>
+
     </div>
   </section>
 
-  <!-- Influencer count by platform detail -->
+  <!-- Summary table -->
   <section>
     <div class="sec-head">
-      <div class="sec-head-bar"></div>
-      <span class="sec-head-label">สรุปจำนวนอินฟลูเอนเซอร์ · Count Summary</span>
-      <div class="sec-head-line"></div>
+      <div class="sec-bar"></div>
+      <span class="sec-label">สรุปจำนวน · Count Summary</span>
+      <div class="sec-line"></div>
     </div>
 
-    <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100 card">
+    <div class="bg-white rounded-2xl shadow-sm border border-slate-100 card overflow-hidden">
       <div class="overflow-x-auto">
         <table class="w-full text-sm">
           <thead>
@@ -775,35 +848,55 @@ tailwind.config = {
           </thead>
           <tbody class="divide-y divide-slate-50">
             <tr class="hover:bg-slate-50 transition-colors">
-              <td class="py-3 px-4"><span class="pill bg-blue-100 text-blue-600">👥 Facebook</span></td>
+              <td class="py-3 px-4">
+                <div class="flex items-center gap-2 ic-sm text-blue-500">
+                  <i data-lucide="facebook"></i><span class="pill bg-blue-50 text-blue-600">Facebook</span>
+                </div>
+              </td>
               <td class="py-3 px-4 num font-bold text-slate-800">278</td>
               <td class="py-3 px-4"><div class="flex items-center gap-2"><div class="w-20 pb hidden sm:block"><div class="pf bg-blue-400" style="width:33.3%"></div></div><span class="num text-xs font-bold text-slate-600">33.3%</span></div></td>
-              <td class="py-3 px-4 font-semibold text-slate-700 hidden sm:table-cell">ป่ะ ไปไหนไปกัน</td>
+              <td class="py-3 px-4 font-semibold text-slate-700 text-xs hidden sm:table-cell">ป่ะ ไปไหนไปกัน</td>
               <td class="py-3 px-4 num font-bold text-indigo-600 text-xs hidden sm:table-cell">12.6M</td>
             </tr>
             <tr class="hover:bg-slate-50 transition-colors">
-              <td class="py-3 px-4"><span class="pill bg-red-100 text-red-500">🎵 TikTok</span></td>
+              <td class="py-3 px-4">
+                <div class="flex items-center gap-2 ic-sm text-slate-600">
+                  <i data-lucide="music-2"></i><span class="pill bg-slate-100 text-slate-600">TikTok</span>
+                </div>
+              </td>
               <td class="py-3 px-4 num font-bold text-slate-800">284</td>
-              <td class="py-3 px-4"><div class="flex items-center gap-2"><div class="w-20 pb hidden sm:block"><div class="pf bg-red-400" style="width:34%"></div></div><span class="num text-xs font-bold text-slate-600">34.0%</span></div></td>
-              <td class="py-3 px-4 font-semibold text-slate-700 hidden sm:table-cell">coco_samui_asmr</td>
+              <td class="py-3 px-4"><div class="flex items-center gap-2"><div class="w-20 pb hidden sm:block"><div class="pf bg-slate-600" style="width:34%"></div></div><span class="num text-xs font-bold text-slate-600">34.0%</span></div></td>
+              <td class="py-3 px-4 font-semibold text-slate-700 text-xs hidden sm:table-cell">coco_samui_asmr</td>
               <td class="py-3 px-4 num font-bold text-indigo-600 text-xs hidden sm:table-cell">4.3M</td>
             </tr>
             <tr class="hover:bg-slate-50 transition-colors">
-              <td class="py-3 px-4"><span class="pill bg-amber-100 text-amber-600">📸 Instagram</span></td>
+              <td class="py-3 px-4">
+                <div class="flex items-center gap-2 ic-sm text-rose-500">
+                  <i data-lucide="instagram"></i><span class="pill bg-rose-50 text-rose-600">Instagram</span>
+                </div>
+              </td>
               <td class="py-3 px-4 num font-bold text-slate-800">216</td>
-              <td class="py-3 px-4"><div class="flex items-center gap-2"><div class="w-20 pb hidden sm:block"><div class="pf bg-amber-400" style="width:25.9%"></div></div><span class="num text-xs font-bold text-slate-600">25.9%</span></div></td>
-              <td class="py-3 px-4 font-semibold text-slate-700 hidden sm:table-cell">mookworranit</td>
+              <td class="py-3 px-4"><div class="flex items-center gap-2"><div class="w-20 pb hidden sm:block"><div class="pf bg-rose-400" style="width:25.9%"></div></div><span class="num text-xs font-bold text-slate-600">25.9%</span></div></td>
+              <td class="py-3 px-4 font-semibold text-slate-700 text-xs hidden sm:table-cell">mookworranit</td>
               <td class="py-3 px-4 num font-bold text-indigo-600 text-xs hidden sm:table-cell">4.4M</td>
             </tr>
             <tr class="hover:bg-slate-50 transition-colors">
-              <td class="py-3 px-4"><span class="pill bg-red-100 text-red-600">▶️ YouTube</span></td>
+              <td class="py-3 px-4">
+                <div class="flex items-center gap-2 ic-sm text-red-500">
+                  <i data-lucide="youtube"></i><span class="pill bg-red-50 text-red-600">YouTube</span>
+                </div>
+              </td>
               <td class="py-3 px-4 num font-bold text-slate-800">37</td>
               <td class="py-3 px-4"><div class="flex items-center gap-2"><div class="w-20 pb hidden sm:block"><div class="pf bg-red-500" style="width:4.4%"></div></div><span class="num text-xs font-bold text-slate-600">4.4%</span></div></td>
-              <td class="py-3 px-4 font-semibold text-slate-700 hidden sm:table-cell">NANAKE555</td>
+              <td class="py-3 px-4 font-semibold text-slate-700 text-xs hidden sm:table-cell">NANAKE555</td>
               <td class="py-3 px-4 num font-bold text-indigo-600 text-xs hidden sm:table-cell">2.4M</td>
             </tr>
             <tr class="hover:bg-slate-50 transition-colors">
-              <td class="py-3 px-4"><span class="pill bg-slate-100 text-slate-500">✖️ X (Twitter)</span></td>
+              <td class="py-3 px-4">
+                <div class="flex items-center gap-2 ic-sm text-slate-500">
+                  <i data-lucide="twitter"></i><span class="pill bg-slate-100 text-slate-500">X (Twitter)</span>
+                </div>
+              </td>
               <td class="py-3 px-4 num font-bold text-slate-800">20</td>
               <td class="py-3 px-4"><div class="flex items-center gap-2"><div class="w-20 pb hidden sm:block"><div class="pf bg-slate-400" style="width:2.4%"></div></div><span class="num text-xs font-bold text-slate-600">2.4%</span></div></td>
               <td class="py-3 px-4 text-slate-400 text-xs hidden sm:table-cell">—</td>
@@ -827,36 +920,44 @@ tailwind.config = {
 
 
 <!-- ════════════════════════════════════
-     PAGE 4: กิจกรรม (Events)
+     PAGE 4 · กิจกรรม
 ════════════════════════════════════ -->
 <div id="page-events" class="page space-y-8">
 
-  <!-- Summary -->
+  <!-- Summary KPIs -->
   <section>
     <div class="sec-head">
-      <div class="sec-head-bar"></div>
-      <span class="sec-head-label">กิจกรรมทั้งหมด · All Events Q1–Q2 2569</span>
-      <div class="sec-head-line"></div>
+      <div class="sec-bar"></div>
+      <span class="sec-label">สรุปภาพรวมกิจกรรม · Events Summary</span>
+      <div class="sec-line"></div>
     </div>
 
     <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 stagger">
-      <div class="bg-white rounded-2xl p-4 shadow-sm border border-indigo-100 card text-center">
-        <div class="text-2xl mb-2">🎪</div>
+      <div class="bg-white rounded-2xl p-4 shadow-sm border border-indigo-100 card">
+        <div class="icon-wrap w-10 h-10 bg-indigo-50 rounded-xl mb-3 ic-md text-indigo-500">
+          <i data-lucide="calendar-range"></i>
+        </div>
         <p class="num text-2xl font-black text-indigo-600">4</p>
         <p class="text-xs text-slate-500 font-semibold mt-1">กิจกรรมทั้งหมด</p>
       </div>
-      <div class="bg-white rounded-2xl p-4 shadow-sm border border-violet-100 card text-center">
-        <div class="text-2xl mb-2">🍺</div>
+      <div class="bg-white rounded-2xl p-4 shadow-sm border border-violet-100 card">
+        <div class="icon-wrap w-10 h-10 bg-violet-50 rounded-xl mb-3 ic-md text-violet-500">
+          <i data-lucide="tag"></i>
+        </div>
         <p class="num text-2xl font-black text-violet-600">106</p>
         <p class="text-xs text-slate-500 font-semibold mt-1">แบรนด์เข้าร่วม</p>
       </div>
-      <div class="bg-white rounded-2xl p-4 shadow-sm border border-amber-100 card text-center">
-        <div class="text-2xl mb-2">🏙️</div>
+      <div class="bg-white rounded-2xl p-4 shadow-sm border border-amber-100 card">
+        <div class="icon-wrap w-10 h-10 bg-amber-50 rounded-xl mb-3 ic-md text-amber-500">
+          <i data-lucide="map-pin"></i>
+        </div>
         <p class="num text-2xl font-black text-amber-600">2</p>
         <p class="text-xs text-slate-500 font-semibold mt-1">เมืองหลัก</p>
       </div>
-      <div class="bg-white rounded-2xl p-4 shadow-sm border border-emerald-100 card text-center">
-        <div class="text-2xl mb-2">📅</div>
+      <div class="bg-white rounded-2xl p-4 shadow-sm border border-emerald-100 card">
+        <div class="icon-wrap w-10 h-10 bg-emerald-50 rounded-xl mb-3 ic-md text-emerald-500">
+          <i data-lucide="clock"></i>
+        </div>
         <p class="num text-2xl font-black text-emerald-600">43</p>
         <p class="text-xs text-slate-500 font-semibold mt-1">วันจนสิ้นสุด</p>
       </div>
@@ -866,9 +967,9 @@ tailwind.config = {
   <!-- Timeline -->
   <section>
     <div class="sec-head">
-      <div class="sec-head-bar"></div>
-      <span class="sec-head-label">ไทม์ไลน์กิจกรรม · Event Timeline</span>
-      <div class="sec-head-line"></div>
+      <div class="sec-bar"></div>
+      <span class="sec-label">ไทม์ไลน์กิจกรรม · Event Timeline</span>
+      <div class="sec-line"></div>
     </div>
 
     <div class="bg-white rounded-2xl p-5 md:p-6 shadow-sm border border-slate-100 card">
@@ -881,15 +982,16 @@ tailwind.config = {
           <div class="bg-gradient-to-r from-indigo-50 to-blue-50 rounded-2xl p-4 border border-indigo-100 hover:shadow-md transition-shadow">
             <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3">
               <div>
-                <div class="flex items-center gap-2 mb-2">
-                  <span class="pill bg-indigo-100 text-indigo-600">📅 28 มีนาคม 2569</span>
-                  <span class="pill bg-green-100 text-green-700">ใกล้ถึง</span>
+                <div class="flex items-center gap-2 mb-2 ic-sm text-indigo-400">
+                  <i data-lucide="calendar"></i>
+                  <span class="text-xs font-bold text-indigo-400 uppercase tracking-wide">28 มีนาคม 2569</span>
+                  <span class="pill bg-emerald-100 text-emerald-700">ใกล้ถึง</span>
                 </div>
                 <h3 class="font-bold text-slate-800 text-base">Craft Brewing Program — รอบที่ 1</h3>
-                <p class="text-sm text-slate-600 mt-1">โปรแกรมพัฒนาผู้ผลิตคราฟต์รุ่นใหม่ รอบแรก สำหรับผู้ผลิตที่ต้องการยกระดับมาตรฐานการผลิต</p>
+                <p class="text-sm text-slate-500 mt-1 leading-relaxed">โปรแกรมพัฒนาผู้ผลิตคราฟต์รุ่นใหม่ รอบแรก สำหรับผู้ผลิตที่ต้องการยกระดับมาตรฐานการผลิต</p>
               </div>
-              <div class="flex-shrink-0 text-center sm:text-right">
-                <div class="inline-block bg-indigo-100 rounded-xl px-3 py-2">
+              <div class="flex-shrink-0">
+                <div class="bg-indigo-100 rounded-xl px-4 py-2 text-center">
                   <p class="num text-xl font-black text-indigo-700">2</p>
                   <p class="text-xs text-indigo-400 font-semibold">วันอีก</p>
                 </div>
@@ -898,7 +1000,7 @@ tailwind.config = {
             <div class="flex flex-wrap gap-1.5 mt-3">
               <span class="pill bg-white text-indigo-600 border border-indigo-200">Craft Brewing</span>
               <span class="pill bg-white text-emerald-700 border border-emerald-200">Workshop</span>
-              <span class="pill bg-white text-slate-600 border border-slate-200">1 วัน</span>
+              <span class="pill bg-white text-slate-500 border border-slate-200">1 วัน</span>
             </div>
           </div>
         </div>
@@ -909,15 +1011,15 @@ tailwind.config = {
           <div class="bg-gradient-to-r from-violet-50 to-purple-50 rounded-2xl p-4 border border-violet-100 hover:shadow-md transition-shadow">
             <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3">
               <div>
-                <div class="flex items-center gap-2 mb-2 flex-wrap">
-                  <span class="pill bg-violet-100 text-violet-600">📅 3–5 เมษายน 2569</span>
-                  <span class="pill bg-violet-100 text-violet-700">เมษายน</span>
+                <div class="flex items-center gap-2 mb-2 ic-sm text-violet-400">
+                  <i data-lucide="calendar"></i>
+                  <span class="text-xs font-bold text-violet-400 uppercase tracking-wide">3–5 เมษายน 2569</span>
                 </div>
                 <h3 class="font-bold text-slate-800 text-base">Grove Brew Fest 2026</h3>
-                <p class="text-sm text-slate-600 mt-1">เทศกาลคราฟต์ใหญ่ประจำภาคใต้ที่ภูเก็ต รวมแบรนด์คราฟต์ชั้นนำ 60 แบรนด์ พร้อมกิจกรรม workshop และการแข่งขัน</p>
+                <p class="text-sm text-slate-500 mt-1 leading-relaxed">เทศกาลคราฟต์ใหญ่ประจำภาคใต้ที่ภูเก็ต รวมแบรนด์คราฟต์ชั้นนำ 60 แบรนด์ พร้อมกิจกรรม workshop</p>
               </div>
-              <div class="flex-shrink-0 text-center sm:text-right">
-                <div class="inline-block bg-violet-100 rounded-xl px-3 py-2">
+              <div class="flex-shrink-0">
+                <div class="bg-violet-100 rounded-xl px-4 py-2 text-center">
                   <p class="num text-xl font-black text-violet-700">60</p>
                   <p class="text-xs text-violet-400 font-semibold">แบรนด์</p>
                 </div>
@@ -926,8 +1028,10 @@ tailwind.config = {
             <div class="flex flex-wrap gap-1.5 mt-3">
               <span class="pill bg-white text-violet-600 border border-violet-200">Festival</span>
               <span class="pill bg-white text-amber-700 border border-amber-200">60 Brands</span>
-              <span class="pill bg-white text-cyan-700 border border-cyan-200">📍 Phuket</span>
-              <span class="pill bg-white text-slate-600 border border-slate-200">3 วัน</span>
+              <div class="flex items-center gap-1 pill bg-white text-cyan-700 border border-cyan-200 ic-sm">
+                <i data-lucide="map-pin"></i><span>Phuket</span>
+              </div>
+              <span class="pill bg-white text-slate-500 border border-slate-200">3 วัน</span>
             </div>
           </div>
         </div>
@@ -938,15 +1042,15 @@ tailwind.config = {
           <div class="bg-gradient-to-r from-cyan-50 to-teal-50 rounded-2xl p-4 border border-cyan-100 hover:shadow-md transition-shadow">
             <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3">
               <div>
-                <div class="flex items-center gap-2 mb-2">
-                  <span class="pill bg-cyan-100 text-cyan-700">📅 25 เมษายน 2569</span>
-                  <span class="pill bg-cyan-100 text-cyan-600">เมษายน</span>
+                <div class="flex items-center gap-2 mb-2 ic-sm text-cyan-500">
+                  <i data-lucide="calendar"></i>
+                  <span class="text-xs font-bold text-cyan-500 uppercase tracking-wide">25 เมษายน 2569</span>
                 </div>
                 <h3 class="font-bold text-slate-800 text-base">Craft Brewing Program — รอบที่ 2</h3>
-                <p class="text-sm text-slate-600 mt-1">โปรแกรมพัฒนาผู้ผลิตคราฟต์รุ่นใหม่ รอบที่สอง ต่อเนื่องจากรอบแรก เน้นการพัฒนาสูตรและ packaging</p>
+                <p class="text-sm text-slate-500 mt-1 leading-relaxed">โปรแกรมพัฒนาผู้ผลิตคราฟต์รอบที่สอง เน้นการพัฒนาสูตรและ packaging</p>
               </div>
-              <div class="flex-shrink-0 text-center sm:text-right">
-                <div class="inline-block bg-cyan-100 rounded-xl px-3 py-2">
+              <div class="flex-shrink-0">
+                <div class="bg-cyan-100 rounded-xl px-4 py-2 text-center">
                   <p class="num text-xl font-black text-cyan-700">30</p>
                   <p class="text-xs text-cyan-400 font-semibold">วันอีก</p>
                 </div>
@@ -955,7 +1059,7 @@ tailwind.config = {
             <div class="flex flex-wrap gap-1.5 mt-3">
               <span class="pill bg-white text-cyan-700 border border-cyan-200">Craft Brewing</span>
               <span class="pill bg-white text-emerald-700 border border-emerald-200">Workshop</span>
-              <span class="pill bg-white text-slate-600 border border-slate-200">1 วัน</span>
+              <span class="pill bg-white text-slate-500 border border-slate-200">1 วัน</span>
             </div>
           </div>
         </div>
@@ -966,15 +1070,15 @@ tailwind.config = {
           <div class="bg-gradient-to-r from-amber-50 to-orange-50 rounded-2xl p-4 border border-amber-100 hover:shadow-md transition-shadow">
             <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3">
               <div>
-                <div class="flex items-center gap-2 mb-2 flex-wrap">
-                  <span class="pill bg-amber-100 text-amber-700">📅 8–10 พฤษภาคม 2569</span>
-                  <span class="pill bg-amber-100 text-amber-600">พฤษภาคม</span>
+                <div class="flex items-center gap-2 mb-2 ic-sm text-amber-500">
+                  <i data-lucide="calendar"></i>
+                  <span class="text-xs font-bold text-amber-500 uppercase tracking-wide">8–10 พฤษภาคม 2569</span>
                 </div>
                 <h3 class="font-bold text-slate-800 text-base">คราฟต์กลางกรุง 2026</h3>
-                <p class="text-sm text-slate-600 mt-1">เทศกาลคราฟต์ในกรุงเทพฯ รวม 46 แบรนด์จากทั่วประเทศ โอกาสพิเศษสำหรับผู้ผลิตรายใหม่ในการเข้าถึงตลาดกรุงเทพฯ</p>
+                <p class="text-sm text-slate-500 mt-1 leading-relaxed">เทศกาลคราฟต์ในกรุงเทพฯ รวม 46 แบรนด์จากทั่วประเทศ โอกาสพิเศษสำหรับผู้ผลิตรายใหม่</p>
               </div>
-              <div class="flex-shrink-0 text-center sm:text-right">
-                <div class="inline-block bg-amber-100 rounded-xl px-3 py-2">
+              <div class="flex-shrink-0">
+                <div class="bg-amber-100 rounded-xl px-4 py-2 text-center">
                   <p class="num text-xl font-black text-amber-700">46</p>
                   <p class="text-xs text-amber-400 font-semibold">แบรนด์</p>
                 </div>
@@ -983,8 +1087,10 @@ tailwind.config = {
             <div class="flex flex-wrap gap-1.5 mt-3">
               <span class="pill bg-white text-amber-700 border border-amber-200">Festival</span>
               <span class="pill bg-white text-rose-600 border border-rose-200">46 Brands</span>
-              <span class="pill bg-white text-indigo-600 border border-indigo-200">📍 Bangkok</span>
-              <span class="pill bg-white text-slate-600 border border-slate-200">3 วัน</span>
+              <div class="flex items-center gap-1 pill bg-white text-indigo-600 border border-indigo-200 ic-sm">
+                <i data-lucide="map-pin"></i><span>Bangkok</span>
+              </div>
+              <span class="pill bg-white text-slate-500 border border-slate-200">3 วัน</span>
             </div>
           </div>
         </div>
@@ -993,12 +1099,12 @@ tailwind.config = {
     </div>
   </section>
 
-  <!-- Events calendar grid -->
+  <!-- Events Table -->
   <section>
     <div class="sec-head">
-      <div class="sec-head-bar"></div>
-      <span class="sec-head-label">สรุปกิจกรรม · Events Summary</span>
-      <div class="sec-head-line"></div>
+      <div class="sec-bar"></div>
+      <span class="sec-label">ตารางกิจกรรม · Events Table</span>
+      <div class="sec-line"></div>
     </div>
 
     <div class="bg-white rounded-2xl shadow-sm border border-slate-100 card overflow-hidden">
@@ -1006,36 +1112,36 @@ tailwind.config = {
         <table class="w-full text-sm">
           <thead>
             <tr class="bg-slate-50">
-              <th class="text-left py-3 px-4 text-xs font-semibold text-slate-400 whitespace-nowrap">กิจกรรม</th>
-              <th class="text-left py-3 px-4 text-xs font-semibold text-slate-400 whitespace-nowrap">วันที่</th>
-              <th class="text-left py-3 px-4 text-xs font-semibold text-slate-400 whitespace-nowrap hidden sm:table-cell">สถานที่</th>
-              <th class="text-left py-3 px-4 text-xs font-semibold text-slate-400 whitespace-nowrap">แบรนด์</th>
-              <th class="text-left py-3 px-4 text-xs font-semibold text-slate-400 whitespace-nowrap hidden md:table-cell">ประเภท</th>
+              <th class="text-left py-3 px-4 text-xs font-semibold text-slate-400">กิจกรรม</th>
+              <th class="text-left py-3 px-4 text-xs font-semibold text-slate-400">วันที่</th>
+              <th class="text-left py-3 px-4 text-xs font-semibold text-slate-400 hidden sm:table-cell">สถานที่</th>
+              <th class="text-left py-3 px-4 text-xs font-semibold text-slate-400">แบรนด์</th>
+              <th class="text-left py-3 px-4 text-xs font-semibold text-slate-400 hidden md:table-cell">ประเภท</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-slate-50">
-            <tr class="hover:bg-slate-50">
+            <tr class="hover:bg-slate-50 transition-colors">
               <td class="py-3 px-4 font-semibold text-slate-800">Craft Brewing Program #1</td>
               <td class="py-3 px-4 text-xs num text-slate-600 whitespace-nowrap">28 มี.ค. 2569</td>
               <td class="py-3 px-4 text-xs text-slate-500 hidden sm:table-cell">—</td>
-              <td class="py-3 px-4 num font-bold text-indigo-600">—</td>
+              <td class="py-3 px-4 num font-bold text-slate-400 text-xs">—</td>
               <td class="py-3 px-4 hidden md:table-cell"><span class="pill bg-indigo-100 text-indigo-600">Workshop</span></td>
             </tr>
-            <tr class="hover:bg-slate-50">
+            <tr class="hover:bg-slate-50 transition-colors">
               <td class="py-3 px-4 font-semibold text-slate-800">Grove Brew Fest 2026</td>
               <td class="py-3 px-4 text-xs num text-slate-600 whitespace-nowrap">3–5 เม.ย. 2569</td>
               <td class="py-3 px-4 text-xs text-slate-500 hidden sm:table-cell">ภูเก็ต</td>
               <td class="py-3 px-4 num font-bold text-indigo-600">60</td>
               <td class="py-3 px-4 hidden md:table-cell"><span class="pill bg-violet-100 text-violet-600">Festival</span></td>
             </tr>
-            <tr class="hover:bg-slate-50">
+            <tr class="hover:bg-slate-50 transition-colors">
               <td class="py-3 px-4 font-semibold text-slate-800">Craft Brewing Program #2</td>
               <td class="py-3 px-4 text-xs num text-slate-600 whitespace-nowrap">25 เม.ย. 2569</td>
               <td class="py-3 px-4 text-xs text-slate-500 hidden sm:table-cell">—</td>
-              <td class="py-3 px-4 num font-bold text-indigo-600">—</td>
+              <td class="py-3 px-4 num font-bold text-slate-400 text-xs">—</td>
               <td class="py-3 px-4 hidden md:table-cell"><span class="pill bg-cyan-100 text-cyan-700">Workshop</span></td>
             </tr>
-            <tr class="hover:bg-slate-50">
+            <tr class="hover:bg-slate-50 transition-colors">
               <td class="py-3 px-4 font-semibold text-slate-800">คราฟต์กลางกรุง 2026</td>
               <td class="py-3 px-4 text-xs num text-slate-600 whitespace-nowrap">8–10 พ.ค. 2569</td>
               <td class="py-3 px-4 text-xs text-slate-500 hidden sm:table-cell">กรุงเทพฯ</td>
@@ -1052,7 +1158,7 @@ tailwind.config = {
 
 
 <!-- ════════════════════════════════════
-     PAGE 5: Brand Spotlight
+     PAGE 5 · Brand Spotlight
 ════════════════════════════════════ -->
 <div id="page-spotlight" class="page space-y-8">
 
@@ -1063,14 +1169,14 @@ tailwind.config = {
       <div class="orb w-48 h-48 bg-gradient-to-tr from-indigo-300/30 to-blue-300/20 -bottom-12 -left-12"></div>
 
       <div class="relative p-6 md:p-8">
-        <div class="flex items-center gap-2 mb-5">
-          <div class="w-1.5 h-5 rounded bg-gradient-to-b from-violet-500 to-purple-600"></div>
-          <span class="text-xs font-bold tracking-widest text-violet-400 uppercase">✨ Brand Spotlight · มีนาคม 2569</span>
+        <div class="flex items-center gap-2 mb-5 ic-sm text-violet-400">
+          <i data-lucide="star"></i>
+          <span class="text-xs font-bold tracking-widest text-violet-400 uppercase">Brand Spotlight · มีนาคม 2569</span>
         </div>
 
         <div class="flex flex-col sm:flex-row items-start gap-5">
-          <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-violet-500 to-purple-700 flex items-center justify-center text-4xl shadow-lg shadow-violet-200 flex-shrink-0">
-            🏺
+          <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-violet-500 to-purple-700 flex items-center justify-center shadow-lg shadow-violet-200 flex-shrink-0 ic-2xl text-white">
+            <i data-lucide="flask-conical"></i>
           </div>
           <div>
             <h1 class="text-2xl md:text-3xl font-black text-slate-800">
@@ -1090,7 +1196,6 @@ tailwind.config = {
         <p class="text-sm text-slate-600 leading-relaxed mt-5 md:max-w-2xl">
           ผู้ผลิตสาโทคราฟต์พรีเมียมจากนนทบุรี ใช้ข้าวไทยแท้และกระบวนการหมักแบบดั้งเดิม
           ผสมผสานกับนวัตกรรมการหมักสมัยใหม่ สร้างเครื่องดื่มคราฟต์คุณภาพระดับ Premium
-          ที่ได้รับการยอมรับทั้งในตลาดในประเทศและต่างประเทศ
         </p>
       </div>
     </div>
@@ -1099,14 +1204,17 @@ tailwind.config = {
   <!-- Product Line -->
   <section>
     <div class="sec-head">
-      <div class="sec-head-bar"></div>
-      <span class="sec-head-label">สายผลิตภัณฑ์ · Product Line</span>
-      <div class="sec-head-line"></div>
+      <div class="sec-bar"></div>
+      <span class="sec-label">สายผลิตภัณฑ์ · Product Line</span>
+      <div class="sec-line"></div>
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 stagger">
+
       <div class="bg-white rounded-2xl p-5 shadow-sm border border-violet-100 card">
-        <div class="text-3xl mb-3">🍶</div>
+        <div class="icon-wrap w-12 h-12 bg-violet-50 rounded-2xl mb-3 ic-lg text-violet-500">
+          <i data-lucide="flask-conical"></i>
+        </div>
         <p class="text-xs text-slate-400 font-semibold uppercase tracking-wide mb-1">Craft Sato</p>
         <p class="font-bold text-slate-800 mb-2">สาโทคราฟต์</p>
         <p class="text-xs text-slate-500 leading-relaxed mb-4">หมักจากข้าวไทยแท้ 100% กระบวนการหมักแบบดั้งเดิมผสมเทคโนโลยีสมัยใหม่ รสชาติกลมกล่อม</p>
@@ -1118,10 +1226,12 @@ tailwind.config = {
       </div>
 
       <div class="bg-white rounded-2xl p-5 shadow-sm border border-amber-100 card">
-        <div class="text-3xl mb-3">🌾</div>
+        <div class="icon-wrap w-12 h-12 bg-amber-50 rounded-2xl mb-3 ic-lg text-amber-500">
+          <i data-lucide="wheat"></i>
+        </div>
         <p class="text-xs text-slate-400 font-semibold uppercase tracking-wide mb-1">Local Thai Rice</p>
         <p class="font-bold text-slate-800 mb-2">ข้าวไทยท้องถิ่น</p>
-        <p class="text-xs text-slate-500 leading-relaxed mb-4">สุราจากข้าวพันธุ์ท้องถิ่น คัดสรรพิเศษจากแหล่งปลูกทั่วภาค ความหอมของข้าวไทยแท้ระดับ Premium</p>
+        <p class="text-xs text-slate-500 leading-relaxed mb-4">สุราจากข้าวพันธุ์ท้องถิ่น คัดสรรพิเศษจากแหล่งปลูกทั่วภาค ความหอมของข้าวไทยแท้</p>
         <div class="pt-3 border-t border-slate-100 flex items-end justify-between">
           <p class="text-xs text-slate-400">ราคา</p>
           <p class="num text-2xl font-black text-amber-700">฿320–740</p>
@@ -1130,176 +1240,179 @@ tailwind.config = {
       </div>
 
       <div class="bg-white rounded-2xl p-5 shadow-sm border border-blue-100 card">
-        <div class="text-3xl mb-3">🍯</div>
+        <div class="icon-wrap w-12 h-12 bg-blue-50 rounded-2xl mb-3 ic-lg text-blue-500">
+          <i data-lucide="droplets"></i>
+        </div>
         <p class="text-xs text-slate-400 font-semibold uppercase tracking-wide mb-1">Nonthaburi Mead</p>
         <p class="font-bold text-slate-800 mb-2">มีดนนทบุรี</p>
-        <p class="text-xs text-slate-500 leading-relaxed mb-4">ไวน์น้ำผึ้งสไตล์ Mead จากน้ำผึ้งธรรมชาติของนนทบุรี สูตรพิเศษเฉพาะตัว ไม่มีใครเหมือน</p>
+        <p class="text-xs text-slate-500 leading-relaxed mb-4">ไวน์น้ำผึ้งสไตล์ Mead จากน้ำผึ้งธรรมชาติของนนทบุรี สูตรพิเศษเฉพาะตัว</p>
         <div class="pt-3 border-t border-slate-100 flex items-end justify-between">
           <p class="text-xs text-slate-400">ราคา</p>
           <p class="num text-2xl font-black text-blue-700">฿200</p>
         </div>
         <div class="mt-2 pb"><div class="pf bg-gradient-to-r from-blue-400 to-blue-600" style="width:50%"></div></div>
       </div>
+
     </div>
   </section>
 
-  <!-- Price comparison -->
+  <!-- Price Table + Brand Story -->
   <section>
     <div class="sec-head">
-      <div class="sec-head-bar"></div>
-      <span class="sec-head-label">เปรียบเทียบราคา · Price Comparison</span>
-      <div class="sec-head-line"></div>
-    </div>
-
-    <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100 card">
-      <div class="overflow-x-auto">
-        <table class="w-full text-sm">
-          <thead>
-            <tr class="bg-slate-50">
-              <th class="text-left py-3 px-4 text-xs font-semibold text-slate-400">ผลิตภัณฑ์</th>
-              <th class="text-left py-3 px-4 text-xs font-semibold text-slate-400">ประเภท</th>
-              <th class="text-left py-3 px-4 text-xs font-semibold text-slate-400">ราคา (บาท)</th>
-              <th class="text-left py-3 px-4 text-xs font-semibold text-slate-400 hidden md:table-cell">Segment</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-slate-50">
-            <tr class="hover:bg-slate-50">
-              <td class="py-3 px-4 font-semibold text-slate-800">Craft Sato</td>
-              <td class="py-3 px-4"><span class="pill bg-violet-100 text-violet-600">สาโทคราฟต์</span></td>
-              <td class="py-3 px-4 num font-bold text-violet-700">฿180</td>
-              <td class="py-3 px-4 hidden md:table-cell"><span class="pill bg-amber-100 text-amber-600">Premium</span></td>
-            </tr>
-            <tr class="hover:bg-slate-50">
-              <td class="py-3 px-4 font-semibold text-slate-800">Local Thai Rice (Entry)</td>
-              <td class="py-3 px-4"><span class="pill bg-amber-100 text-amber-600">สุราข้าว</span></td>
-              <td class="py-3 px-4 num font-bold text-amber-700">฿320</td>
-              <td class="py-3 px-4 hidden md:table-cell"><span class="pill bg-amber-100 text-amber-600">Premium</span></td>
-            </tr>
-            <tr class="hover:bg-slate-50">
-              <td class="py-3 px-4 font-semibold text-slate-800">Local Thai Rice (Top)</td>
-              <td class="py-3 px-4"><span class="pill bg-amber-100 text-amber-600">สุราข้าว</span></td>
-              <td class="py-3 px-4 num font-bold text-amber-700">฿740</td>
-              <td class="py-3 px-4 hidden md:table-cell"><span class="pill bg-rose-100 text-rose-600">Ultra Premium</span></td>
-            </tr>
-            <tr class="hover:bg-slate-50">
-              <td class="py-3 px-4 font-semibold text-slate-800">Nonthaburi Mead</td>
-              <td class="py-3 px-4"><span class="pill bg-blue-100 text-blue-600">Mead</span></td>
-              <td class="py-3 px-4 num font-bold text-blue-700">฿200</td>
-              <td class="py-3 px-4 hidden md:table-cell"><span class="pill bg-amber-100 text-amber-600">Premium</span></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <!-- Brand story -->
-  <section>
-    <div class="sec-head">
-      <div class="sec-head-bar"></div>
-      <span class="sec-head-label">เรื่องราวแบรนด์ · Brand Story</span>
-      <div class="sec-head-line"></div>
+      <div class="sec-bar"></div>
+      <span class="sec-label">รายละเอียด · Details</span>
+      <div class="sec-line"></div>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-      <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100 card">
-        <div class="flex items-center gap-3 mb-4">
-          <div class="w-10 h-10 rounded-xl bg-violet-50 border border-violet-100 flex items-center justify-center text-xl">🎯</div>
-          <div>
-            <p class="font-bold text-slate-800">จุดเด่น</p>
-            <p class="text-xs text-slate-400">Key Differentiators</p>
-          </div>
+
+      <!-- Price table -->
+      <div class="bg-white rounded-2xl shadow-sm border border-slate-100 card overflow-hidden">
+        <div class="p-5 border-b border-slate-100">
+          <p class="text-sm font-bold text-slate-800">เปรียบเทียบราคา · Price Comparison</p>
         </div>
-        <ul class="space-y-2.5">
-          <li class="flex items-start gap-2 text-sm text-slate-600">
-            <span class="w-5 h-5 rounded-full bg-violet-100 text-violet-600 flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
-            ใช้ข้าวไทยแท้ 100% คัดสรรจากแหล่งผลิตที่มีคุณภาพ
-          </li>
-          <li class="flex items-start gap-2 text-sm text-slate-600">
-            <span class="w-5 h-5 rounded-full bg-violet-100 text-violet-600 flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
-            กระบวนการหมักแบบดั้งเดิมผสมนวัตกรรมสมัยใหม่
-          </li>
-          <li class="flex items-start gap-2 text-sm text-slate-600">
-            <span class="w-5 h-5 rounded-full bg-violet-100 text-violet-600 flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
-            Packaging ระดับ Premium เหมาะสำหรับเป็นของขวัญ
-          </li>
-          <li class="flex items-start gap-2 text-sm text-slate-600">
-            <span class="w-5 h-5 rounded-full bg-violet-100 text-violet-600 flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
-            ผ่านมาตรฐาน อย. และการรับรองจากหน่วยงานที่เกี่ยวข้อง
-          </li>
-        </ul>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="bg-slate-50">
+                <th class="text-left py-3 px-4 text-xs font-semibold text-slate-400">ผลิตภัณฑ์</th>
+                <th class="text-left py-3 px-4 text-xs font-semibold text-slate-400">ประเภท</th>
+                <th class="text-left py-3 px-4 text-xs font-semibold text-slate-400">ราคา</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-50">
+              <tr class="hover:bg-slate-50 transition-colors">
+                <td class="py-3 px-4 font-semibold text-slate-800">Craft Sato</td>
+                <td class="py-3 px-4"><span class="pill bg-violet-100 text-violet-600">สาโทคราฟต์</span></td>
+                <td class="py-3 px-4 num font-black text-violet-700">฿180</td>
+              </tr>
+              <tr class="hover:bg-slate-50 transition-colors">
+                <td class="py-3 px-4 font-semibold text-slate-800">Local Thai Rice (Entry)</td>
+                <td class="py-3 px-4"><span class="pill bg-amber-100 text-amber-600">สุราข้าว</span></td>
+                <td class="py-3 px-4 num font-black text-amber-700">฿320</td>
+              </tr>
+              <tr class="hover:bg-slate-50 transition-colors">
+                <td class="py-3 px-4 font-semibold text-slate-800">Local Thai Rice (Top)</td>
+                <td class="py-3 px-4"><span class="pill bg-amber-100 text-amber-600">สุราข้าว</span></td>
+                <td class="py-3 px-4 num font-black text-amber-700">฿740</td>
+              </tr>
+              <tr class="hover:bg-slate-50 transition-colors">
+                <td class="py-3 px-4 font-semibold text-slate-800">Nonthaburi Mead</td>
+                <td class="py-3 px-4"><span class="pill bg-blue-100 text-blue-600">Mead</span></td>
+                <td class="py-3 px-4 num font-black text-blue-700">฿200</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
 
-      <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100 card">
-        <div class="flex items-center gap-3 mb-4">
-          <div class="w-10 h-10 rounded-xl bg-indigo-50 border border-indigo-100 flex items-center justify-center text-xl">📍</div>
-          <div>
-            <p class="font-bold text-slate-800">ข้อมูลแบรนด์</p>
-            <p class="text-xs text-slate-400">Brand Info</p>
+      <!-- Brand story -->
+      <div class="space-y-3">
+        <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100 card">
+          <div class="flex items-center gap-2.5 mb-4 ic-base text-violet-500">
+            <i data-lucide="zap"></i>
+            <p class="font-bold text-slate-800">จุดเด่น · Key Differentiators</p>
           </div>
+          <ul class="space-y-2.5">
+            <li class="flex items-start gap-2.5 text-sm text-slate-600">
+              <div class="icon-wrap w-5 h-5 bg-violet-100 rounded-full ic-sm text-violet-600 flex-shrink-0 mt-0.5">
+                <i data-lucide="check"></i>
+              </div>
+              ใช้ข้าวไทยแท้ 100% คัดสรรจากแหล่งผลิตที่มีคุณภาพ
+            </li>
+            <li class="flex items-start gap-2.5 text-sm text-slate-600">
+              <div class="icon-wrap w-5 h-5 bg-violet-100 rounded-full ic-sm text-violet-600 flex-shrink-0 mt-0.5">
+                <i data-lucide="check"></i>
+              </div>
+              กระบวนการหมักแบบดั้งเดิมผสมนวัตกรรมสมัยใหม่
+            </li>
+            <li class="flex items-start gap-2.5 text-sm text-slate-600">
+              <div class="icon-wrap w-5 h-5 bg-violet-100 rounded-full ic-sm text-violet-600 flex-shrink-0 mt-0.5">
+                <i data-lucide="check"></i>
+              </div>
+              Packaging ระดับ Premium เหมาะสำหรับเป็นของขวัญ
+            </li>
+            <li class="flex items-start gap-2.5 text-sm text-slate-600">
+              <div class="icon-wrap w-5 h-5 bg-violet-100 rounded-full ic-sm text-violet-600 flex-shrink-0 mt-0.5">
+                <i data-lucide="check"></i>
+              </div>
+              ผ่านมาตรฐาน อย. และการรับรองจากหน่วยงานที่เกี่ยวข้อง
+            </li>
+          </ul>
         </div>
-        <div class="space-y-3">
-          <div class="flex justify-between py-2 border-b border-slate-50">
-            <span class="text-xs text-slate-400 font-semibold">ชื่อแบรนด์</span>
-            <span class="text-sm font-bold text-slate-800">Devanom (เทพนม)</span>
+
+        <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100 card">
+          <div class="flex items-center gap-2.5 mb-4 ic-base text-indigo-500">
+            <i data-lucide="info"></i>
+            <p class="font-bold text-slate-800">ข้อมูลแบรนด์ · Brand Info</p>
           </div>
-          <div class="flex justify-between py-2 border-b border-slate-50">
-            <span class="text-xs text-slate-400 font-semibold">ที่ตั้ง</span>
-            <span class="text-sm font-bold text-slate-800">นนทบุรี</span>
-          </div>
-          <div class="flex justify-between py-2 border-b border-slate-50">
-            <span class="text-xs text-slate-400 font-semibold">หมวดหมู่</span>
-            <span class="text-sm font-bold text-slate-800">Craft Sato / Mead</span>
-          </div>
-          <div class="flex justify-between py-2 border-b border-slate-50">
-            <span class="text-xs text-slate-400 font-semibold">ระดับราคา</span>
-            <span class="pill bg-amber-100 text-amber-700">Premium</span>
-          </div>
-          <div class="flex justify-between py-2">
-            <span class="text-xs text-slate-400 font-semibold">สถานะ</span>
-            <span class="pill bg-emerald-100 text-emerald-700">Active</span>
+          <div class="space-y-2">
+            <div class="flex justify-between py-2 border-b border-slate-50">
+              <span class="text-xs text-slate-400 font-semibold">ชื่อแบรนด์</span>
+              <span class="text-sm font-bold text-slate-800">Devanom (เทพนม)</span>
+            </div>
+            <div class="flex justify-between py-2 border-b border-slate-50">
+              <span class="text-xs text-slate-400 font-semibold">ที่ตั้ง</span>
+              <span class="text-sm font-bold text-slate-800">นนทบุรี</span>
+            </div>
+            <div class="flex justify-between py-2 border-b border-slate-50">
+              <span class="text-xs text-slate-400 font-semibold">หมวดหมู่</span>
+              <span class="text-sm font-bold text-slate-800">Craft Sato / Mead</span>
+            </div>
+            <div class="flex justify-between py-2">
+              <span class="text-xs text-slate-400 font-semibold">สถานะ</span>
+              <span class="pill bg-emerald-100 text-emerald-700">Active</span>
+            </div>
           </div>
         </div>
       </div>
+
     </div>
   </section>
 
 </div><!-- /page-spotlight -->
 
-</main><!-- /main -->
+</main>
 
-<!-- ══════════════════════════════════════
-     MOBILE BOTTOM NAV
-══════════════════════════════════════ -->
-<nav class="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-white border-t border-slate-200 shadow-lg">
+<!-- ══════════════ MOBILE BOTTOM NAV ══════════════ -->
+<nav class="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-white/95 backdrop-blur border-t border-slate-200 shadow-lg">
   <div class="flex">
-    <button onclick="showPage('overview')" data-mob="overview" class="mob-nav-btn active flex-1 flex flex-col items-center justify-center py-2.5 gap-0.5">
-      <span class="mob-icon text-xl text-slate-400">📊</span>
+
+    <button onclick="showPage('overview')" data-mob="overview"
+      class="mob-nav-btn active flex-1 flex flex-col items-center justify-center py-2.5 gap-0.5">
+      <span class="mob-icon ic-base text-slate-400"><i data-lucide="layout-dashboard"></i></span>
       <span class="mob-label text-xs text-slate-400 font-medium">ภาพรวม</span>
     </button>
-    <button onclick="showPage('brands')" data-mob="brands" class="mob-nav-btn flex-1 flex flex-col items-center justify-center py-2.5 gap-0.5">
-      <span class="mob-icon text-xl text-slate-400">🍶</span>
+
+    <button onclick="showPage('brands')" data-mob="brands"
+      class="mob-nav-btn flex-1 flex flex-col items-center justify-center py-2.5 gap-0.5">
+      <span class="mob-icon ic-base text-slate-400"><i data-lucide="tag"></i></span>
       <span class="mob-label text-xs text-slate-400 font-medium">แบรนด์</span>
     </button>
-    <button onclick="showPage('influencers')" data-mob="influencers" class="mob-nav-btn flex-1 flex flex-col items-center justify-center py-2.5 gap-0.5">
-      <span class="mob-icon text-xl text-slate-400">📣</span>
+
+    <button onclick="showPage('influencers')" data-mob="influencers"
+      class="mob-nav-btn flex-1 flex flex-col items-center justify-center py-2.5 gap-0.5">
+      <span class="mob-icon ic-base text-slate-400"><i data-lucide="users"></i></span>
       <span class="mob-label text-xs text-slate-400 font-medium">อินฟลู</span>
     </button>
-    <button onclick="showPage('events')" data-mob="events" class="mob-nav-btn flex-1 flex flex-col items-center justify-center py-2.5 gap-0.5">
-      <span class="mob-icon text-xl text-slate-400">📅</span>
+
+    <button onclick="showPage('events')" data-mob="events"
+      class="mob-nav-btn flex-1 flex flex-col items-center justify-center py-2.5 gap-0.5">
+      <span class="mob-icon ic-base text-slate-400"><i data-lucide="calendar"></i></span>
       <span class="mob-label text-xs text-slate-400 font-medium">กิจกรรม</span>
     </button>
-    <button onclick="showPage('spotlight')" data-mob="spotlight" class="mob-nav-btn flex-1 flex flex-col items-center justify-center py-2.5 gap-0.5">
-      <span class="mob-icon text-xl text-slate-400">✨</span>
+
+    <button onclick="showPage('spotlight')" data-mob="spotlight"
+      class="mob-nav-btn flex-1 flex flex-col items-center justify-center py-2.5 gap-0.5">
+      <span class="mob-icon ic-base text-slate-400"><i data-lucide="star"></i></span>
       <span class="mob-label text-xs text-slate-400 font-medium">Spotlight</span>
     </button>
+
   </div>
 </nav>
 
-<!-- ══════════════════════════════════════
-     FOOTER
-══════════════════════════════════════ -->
-<footer class="hidden md:block bg-white border-t border-slate-200 py-4 pb-6">
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer class="hidden md:block bg-white border-t border-slate-200 py-4">
   <div class="max-w-screen-xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-2">
     <p class="text-xs text-slate-400">© 2569 TSR Situation Room · ThaiBev Intelligence Dashboard</p>
     <p class="text-xs text-slate-400 num">รายงานวันที่ 26 มีนาคม 2569 · #TSR-20260326</p>
@@ -1307,66 +1420,63 @@ tailwind.config = {
 </footer>
 
 
-<!-- ══════════════════════════════════════
-     SCRIPTS
-══════════════════════════════════════ -->
+<!-- ══════════════ SCRIPTS ══════════════ -->
 <script>
+// ─── Init Lucide icons ──────────────────────────────────────
+lucide.createIcons();
+
 // ─── Page Router ────────────────────────────────────────────
 let charts = {};
 
 function showPage(name) {
-  // Hide all pages
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.getElementById('page-' + name).classList.add('active');
 
-  // Update desktop nav
   document.querySelectorAll('[data-page]').forEach(btn => {
-    btn.classList.remove('active');
-    if (btn.dataset.page === name) btn.classList.add('active');
+    btn.classList.toggle('active', btn.dataset.page === name);
   });
-
-  // Update mobile nav
   document.querySelectorAll('[data-mob]').forEach(btn => {
-    btn.classList.remove('active');
-    if (btn.dataset.mob === name) btn.classList.add('active');
+    btn.classList.toggle('active', btn.dataset.mob === name);
   });
 
-  // Init charts for this page
-  setTimeout(() => initChartsForPage(name), 50);
+  setTimeout(() => {
+    initChartsForPage(name);
+    lucide.createIcons(); // re-render icons in newly shown page
+  }, 50);
+
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// ─── Chart defaults ─────────────────────────────────────────
+// ─── Chart defaults ──────────────────────────────────────────
 Chart.defaults.font.family = "'Inter', sans-serif";
 Chart.defaults.color = '#94a3b8';
 Chart.defaults.plugins.legend.labels.boxWidth = 10;
 Chart.defaults.plugins.legend.labels.borderRadius = 4;
-Chart.defaults.plugins.tooltip.backgroundColor = 'rgba(255,255,255,0.95)';
+Chart.defaults.plugins.tooltip.backgroundColor = 'rgba(255,255,255,.96)';
 Chart.defaults.plugins.tooltip.titleColor = '#1e293b';
 Chart.defaults.plugins.tooltip.bodyColor = '#64748b';
 Chart.defaults.plugins.tooltip.borderColor = '#e2e8f0';
 Chart.defaults.plugins.tooltip.borderWidth = 1;
 Chart.defaults.plugins.tooltip.padding = 10;
 Chart.defaults.plugins.tooltip.cornerRadius = 10;
-Chart.defaults.plugins.tooltip.boxShadow = '0 4px 12px rgba(0,0,0,.08)';
 
-// ─── Initialize charts ───────────────────────────────────────
+// ─── Chart init per page ─────────────────────────────────────
 function initChartsForPage(page) {
+
   if (page === 'overview' && !charts.regional) {
     charts.regional = new Chart(document.getElementById('regionalChart'), {
       type: 'bar',
       data: {
-        labels: ['R5 เหนือ','ไม่ระบุ','R8 ใต้','R1 กทม.','R3 อีสานใต้','R2 ตะวันออก','R4 อีสานเหนือ','R7 ตะวันตก','R6 กลางบน'],
+        labels: ['R5 เหนือ','ไม่ระบุ','R8 ใต้','R1 กทม.','R3 อีสาน','R2 ตะวันออก','R4 อีสานเหนือ','R7 ตะวันตก','R6 กลาง'],
         datasets: [{
           label: 'จำนวนแบรนด์',
           data: [625, 254, 114, 107, 78, 76, 69, 57, 52],
           backgroundColor: [
-            'rgba(99,102,241,.85)','rgba(244,63,94,.75)','rgba(139,92,246,.8)',
+            'rgba(99,102,241,.8)','rgba(244,63,94,.7)','rgba(139,92,246,.8)',
             'rgba(6,182,212,.8)','rgba(245,158,11,.8)','rgba(16,185,129,.8)',
-            'rgba(239,68,68,.8)','rgba(249,115,22,.8)','rgba(168,85,247,.8)'
+            'rgba(239,68,68,.75)','rgba(249,115,22,.75)','rgba(168,85,247,.75)'
           ],
-          borderRadius: 8,
-          borderSkipped: false,
+          borderRadius: 7, borderSkipped: false,
         }]
       },
       options: {
@@ -1391,7 +1501,7 @@ function initChartsForPage(page) {
       },
       options: {
         responsive: true, maintainAspectRatio: false, cutout: '68%',
-        plugins: { legend: { position: 'bottom', labels: { padding: 12, font: { size: 11 } } } }
+        plugins: { legend: { position: 'bottom', labels: { padding: 14, font: { size: 11 } } } }
       }
     });
   }
@@ -1400,17 +1510,17 @@ function initChartsForPage(page) {
     charts.dist = new Chart(document.getElementById('distChart'), {
       type: 'bar',
       data: {
-        labels: ['สักทองแพร่','เงาจันทร์','ข้าวใจ','อ้อยใจ','อูฐทอง','สามเจดีย์','น้ำใสเสือห้า','เทพเมรัย','ข้าวใจ (2)','อ้อยใจ (2)'],
+        labels: ['สักทองแพร่','เงาจันทร์','ข้าวใจ','อ้อยใจ','อูฐทอง','สามเจดีย์','น้ำใสเสือห้า','เทพเมรัย','รายที่ 9','รายที่ 10'],
         datasets: [
           {
             label: 'มีนาคม 2567',
             data: [4.1, 3.5, 3.3, 2.8, 2.4, 0.4, 0.4, 0.4, 0.4, 0.4],
-            backgroundColor: 'rgba(99,102,241,.85)', borderRadius: 6, borderSkipped: false,
+            backgroundColor: 'rgba(99,102,241,.8)', borderRadius: 6, borderSkipped: false,
           },
           {
             label: 'กุมภาพันธ์ 2567',
             data: [3.5, 2.7, 3.5, 1.6, 1.3, 0.2, 0.1, 0.1, 0.4, 0.1],
-            backgroundColor: 'rgba(148,163,184,.5)', borderRadius: 6, borderSkipped: false,
+            backgroundColor: 'rgba(148,163,184,.45)', borderRadius: 6, borderSkipped: false,
           }
         ]
       },
@@ -1419,37 +1529,33 @@ function initChartsForPage(page) {
         plugins: { legend: { position: 'top', align: 'end' } },
         scales: {
           x: { grid: { display: false }, ticks: { font: { size: 10 } } },
-          y: {
-            grid: { color: '#f1f5f9' }, ticks: { font: { size: 10 },
-            callback: v => v + '%' }
-          }
+          y: { grid: { color: '#f1f5f9' }, ticks: { font: { size: 10 }, callback: v => v + '%' } }
         }
       }
     });
 
-    // Populate brand table rows
-    const data = [
+    // Populate brands table
+    const rows = [
       ['สักทองแพร่','4.1%','3.5%','+0.6','up'],
-      ['เงาจันทร์','3.5%','2.7%','+0.8','up'],
-      ['ข้าวใจ','3.3%','3.5%','-0.2','down'],
-      ['อ้อยใจ','2.8%','1.6%','+1.2','up'],
-      ['อูฐทอง','2.4%','1.3%','+1.1','up'],
-      ['สามเจดีย์','0.4%','0.2%','+0.2','up'],
+      ['เงาจันทร์',  '3.5%','2.7%','+0.8','up'],
+      ['ข้าวใจ',     '3.3%','3.5%','-0.2','dn'],
+      ['อ้อยใจ',     '2.8%','1.6%','+1.2','up'],
+      ['อูฐทอง',     '2.4%','1.3%','+1.1','up'],
+      ['สามเจดีย์',  '0.4%','0.2%','+0.2','up'],
       ['น้ำใสเสือห้า','0.4%','0.1%','+0.3','up'],
-      ['เทพเมรัย','0.4%','0.1%','+0.3','up'],
+      ['เทพเมรัย',   '0.4%','0.1%','+0.3','up'],
     ];
-    const tbody = document.querySelector('#brands-data').parentElement;
-    document.getElementById('brands-data').remove();
-    data.forEach((row, i) => {
+    const tbody = document.getElementById('brands-tbody');
+    rows.forEach((r, i) => {
+      const pct = parseFloat(r[1]) / 4.1 * 100;
       const tr = document.createElement('tr');
       tr.className = 'hover:bg-slate-50 transition-colors';
-      const pct = parseFloat(row[1]) / 4.1 * 100;
       tr.innerHTML = `
-        <td class="py-2.5 px-4 num font-black ${i<3?'text-amber-500':'text-slate-400'} text-sm">${i+1}</td>
-        <td class="py-2.5 px-4 font-semibold text-slate-800">${row[0]}</td>
-        <td class="py-2.5 px-4 num font-bold text-indigo-600">${row[1]}</td>
-        <td class="py-2.5 px-4 text-slate-400 text-xs num">${row[2]}</td>
-        <td class="py-2.5 px-4 num font-semibold text-xs ${row[4]==='up'?'text-emerald-600':'text-rose-500'}">${row[4]==='up'?'▲ ':'▼ '}${row[3]}</td>
+        <td class="py-2.5 px-4 num font-black text-sm ${i<3?'text-amber-500':'text-slate-400'}">${i+1}</td>
+        <td class="py-2.5 px-4 font-semibold text-slate-800">${r[0]}</td>
+        <td class="py-2.5 px-4 num font-bold text-indigo-600">${r[1]}</td>
+        <td class="py-2.5 px-4 num text-slate-400 text-xs">${r[2]}</td>
+        <td class="py-2.5 px-4 num font-semibold text-xs ${r[4]==='up'?'text-emerald-600':'text-rose-500'}">${r[4]==='up'?'▲ ':'▼ '}${r[3]}</td>
         <td class="py-2.5 px-4 hidden sm:table-cell"><div class="w-24 pb"><div class="pf bg-gradient-to-r from-indigo-400 to-indigo-600" style="width:${pct}%"></div></div></td>
       `;
       tbody.appendChild(tr);
@@ -1465,10 +1571,10 @@ function initChartsForPage(page) {
           label: 'จำนวนอินฟลูเอนเซอร์',
           data: [278, 284, 216, 37, 20],
           backgroundColor: [
-            'rgba(59,130,246,.8)','rgba(239,68,68,.8)',
-            'rgba(245,158,11,.8)','rgba(220,38,38,.8)','rgba(100,116,139,.7)'
+            'rgba(59,130,246,.8)','rgba(100,116,139,.75)',
+            'rgba(244,63,94,.75)','rgba(220,38,38,.8)','rgba(100,116,139,.55)'
           ],
-          borderRadius: 8, borderSkipped: false,
+          borderRadius: 7, borderSkipped: false,
         }]
       },
       options: {
@@ -1483,7 +1589,7 @@ function initChartsForPage(page) {
   }
 }
 
-// ─── Init overview on load ───────────────────────────────────
+// ─── Boot ────────────────────────────────────────────────────
 window.addEventListener('DOMContentLoaded', () => {
   initChartsForPage('overview');
 });
