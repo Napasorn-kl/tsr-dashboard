@@ -119,6 +119,113 @@ tailwind.config = {
     display:flex; align-items:center; justify-content:center;
     border-radius:10px; flex-shrink:0;
   }
+
+  /* ── Data Pipeline styles ─────────────────── */
+
+  /* Phase connector arrow */
+  .pipe-arrow {
+    display:flex; align-items:center; justify-content:center;
+    color:#6366f1; flex-shrink:0;
+  }
+  .pipe-arrow::before {
+    content:''; display:block;
+    width:32px; height:2px;
+    background:linear-gradient(90deg,#6366f180,#6366f1);
+  }
+  .pipe-arrow::after {
+    content:''; display:block; width:0; height:0;
+    border-top:5px solid transparent;
+    border-bottom:5px solid transparent;
+    border-left:7px solid #6366f1;
+  }
+
+  /* Phase step card */
+  .step-card {
+    position:relative;
+    border:2px solid transparent;
+    transition: border-color .2s, box-shadow .2s, transform .2s;
+  }
+  .step-card:hover { transform:translateY(-2px); }
+  .step-card.done  { border-color:#10b981; }
+  .step-card.active{ border-color:#6366f1; box-shadow:0 0 0 4px rgba(99,102,241,.1); }
+
+  /* Step number badge */
+  .step-num {
+    position:absolute; top:-12px; left:16px;
+    width:24px; height:24px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-size:11px; font-weight:800;
+    font-family:'Inter',sans-serif;
+    border:2px solid white;
+  }
+  .step-num.done   { background:#10b981; color:white; }
+  .step-num.active { background:#6366f1; color:white; }
+  .step-num.pending{ background:#e2e8f0; color:#94a3b8; }
+
+  /* AI Agent pulse ring */
+  .agent-ring {
+    position:absolute; inset:-8px; border-radius:50%;
+    border:2px solid rgba(99,102,241,.3);
+    animation: agentPulse 2s ease-in-out infinite;
+  }
+  .agent-ring:nth-child(2) { inset:-16px; animation-delay:.6s; opacity:.6; }
+  .agent-ring:nth-child(3) { inset:-24px; animation-delay:1.2s; opacity:.3; }
+
+  @keyframes agentPulse {
+    0%,100% { transform:scale(1); opacity:.5; }
+    50%      { transform:scale(1.06); opacity:1; }
+  }
+
+  /* Data source card */
+  .src-card {
+    border:1.5px solid #e2e8f0;
+    transition: border-color .2s, box-shadow .2s, transform .2s;
+    cursor:default;
+  }
+  .src-card:hover {
+    border-color:#6366f1;
+    box-shadow:0 4px 16px rgba(99,102,241,.1);
+    transform:translateY(-1px);
+  }
+  .src-card.connected { border-color:#10b981; }
+
+  /* Flow connector line */
+  .flow-line {
+    position:absolute; background:linear-gradient(90deg,#6366f120,#6366f1,#6366f120);
+    height:2px; border-radius:1px;
+  }
+
+  /* Activity log */
+  .log-item {
+    display:flex; gap:10px; align-items:flex-start;
+    padding:10px 12px; border-radius:10px;
+    transition:background .15s;
+  }
+  .log-item:hover { background:#f8fafc; }
+  .log-dot {
+    width:8px; height:8px; border-radius:50%;
+    flex-shrink:0; margin-top:5px;
+  }
+
+  /* Processing bar animation */
+  @keyframes shimmer {
+    0%   { background-position:-200% 0; }
+    100% { background-position:200% 0; }
+  }
+  .shimmer {
+    background: linear-gradient(90deg, #e2e8f0 25%, #f1f5f9 50%, #e2e8f0 75%);
+    background-size:200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+
+  /* Phase label badge */
+  .phase-badge {
+    writing-mode:vertical-rl; text-orientation:mixed;
+    transform:rotate(180deg);
+    font-size:9px; font-weight:800; letter-spacing:.12em;
+    text-transform:uppercase; padding:8px 4px;
+    border-radius:6px 0 0 6px;
+  }
 </style>
 </head>
 
@@ -173,6 +280,11 @@ tailwind.config = {
       <button onclick="showPage('spotlight')" data-page="spotlight"
         class="nav-btn px-5 py-3 text-xs font-medium text-slate-500 hover:text-slate-700 whitespace-nowrap transition-all flex items-center gap-1.5">
         <span class="ic-sm text-current"><i data-lucide="star"></i></span>Brand Spotlight
+      </button>
+      <button onclick="showPage('pipeline')" data-page="pipeline"
+        class="nav-btn px-5 py-3 text-xs font-medium text-slate-500 hover:text-slate-700 whitespace-nowrap transition-all flex items-center gap-1.5">
+        <span class="ic-sm text-current"><i data-lucide="workflow"></i></span>Data Pipeline
+        <span class="ml-1 flex h-1.5 w-1.5 rounded-full bg-indigo-500 animate-pulse"></span>
       </button>
 
     </div>
@@ -1377,40 +1489,625 @@ tailwind.config = {
 
 </div><!-- /page-spotlight -->
 
+
+<!-- ════════════════════════════════════
+     PAGE 6 · Data Pipeline
+════════════════════════════════════ -->
+<div id="page-pipeline" class="page space-y-8">
+
+  <!-- Status bar -->
+  <section>
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 stagger">
+      <div class="bg-white rounded-2xl p-4 shadow-sm border border-emerald-100 card">
+        <div class="flex items-center justify-between mb-2">
+          <div class="icon-wrap w-9 h-9 bg-emerald-50 rounded-xl ic-base text-emerald-500"><i data-lucide="check-circle-2"></i></div>
+          <span class="pill bg-emerald-100 text-emerald-700">สำเร็จ</span>
+        </div>
+        <p class="num text-2xl font-black text-slate-800">2</p>
+        <p class="text-xs text-slate-500 font-semibold mt-0.5">Phase เสร็จสมบูรณ์</p>
+      </div>
+      <div class="bg-white rounded-2xl p-4 shadow-sm border border-indigo-100 card">
+        <div class="flex items-center justify-between mb-2">
+          <div class="icon-wrap w-9 h-9 bg-indigo-50 rounded-xl ic-base text-indigo-500"><i data-lucide="database"></i></div>
+          <span class="pill bg-indigo-100 text-indigo-600">Active</span>
+        </div>
+        <p class="num text-2xl font-black text-slate-800">2</p>
+        <p class="text-xs text-slate-500 font-semibold mt-0.5">แหล่งข้อมูลเชื่อมต่อ</p>
+      </div>
+      <div class="bg-white rounded-2xl p-4 shadow-sm border border-violet-100 card">
+        <div class="flex items-center justify-between mb-2">
+          <div class="icon-wrap w-9 h-9 bg-violet-50 rounded-xl ic-base text-violet-500"><i data-lucide="cpu"></i></div>
+          <span class="pill bg-violet-100 text-violet-600">Running</span>
+        </div>
+        <p class="num text-2xl font-black text-slate-800">1</p>
+        <p class="text-xs text-slate-500 font-semibold mt-0.5">AI Agent ทำงานอยู่</p>
+      </div>
+      <div class="bg-white rounded-2xl p-4 shadow-sm border border-amber-100 card">
+        <div class="flex items-center justify-between mb-2">
+          <div class="icon-wrap w-9 h-9 bg-amber-50 rounded-xl ic-base text-amber-500"><i data-lucide="refresh-cw"></i></div>
+          <span class="pill bg-amber-100 text-amber-700">Today</span>
+        </div>
+        <p class="num text-2xl font-black text-slate-800">26</p>
+        <p class="text-xs text-slate-500 font-semibold mt-0.5">มีนาคม 2569 (ล่าสุด)</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PHASE 1 ─────────────────────────────────── -->
+  <section>
+    <div class="sec-head">
+      <div class="sec-bar"></div>
+      <span class="sec-label">Phase 1 · Design &amp; Development</span>
+      <div class="sec-line"></div>
+      <span class="pill bg-emerald-100 text-emerald-700 flex-shrink-0">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>สำเร็จแล้ว
+      </span>
+    </div>
+
+    <!-- Step flow (desktop: horizontal, mobile: vertical) -->
+    <div class="bg-white rounded-2xl p-5 md:p-6 shadow-sm border border-slate-100">
+
+      <!-- Desktop flow -->
+      <div class="hidden md:flex items-stretch gap-0">
+
+        <!-- STEP 1 -->
+        <div class="flex-1 relative">
+          <div class="step-card done bg-white rounded-2xl p-5 h-full">
+            <div class="step-num done">1</div>
+            <div class="icon-wrap w-12 h-12 bg-emerald-50 rounded-2xl mb-3 ic-lg text-emerald-500 mt-2">
+              <i data-lucide="search"></i>
+            </div>
+            <p class="font-bold text-slate-800 text-sm">Data Entity Analysis</p>
+            <p class="text-xs text-emerald-500 font-semibold mt-0.5">วิเคราะห์เอนทิตี้ข้อมูล</p>
+            <div class="mt-3 space-y-1.5 text-xs text-slate-500">
+              <div class="flex items-start gap-1.5 ic-sm text-emerald-500">
+                <i data-lucide="check"></i><span>ตรวจสอบเอนทิตี้ข้อมูล</span>
+              </div>
+              <div class="flex items-start gap-1.5 ic-sm text-emerald-500">
+                <i data-lucide="check"></i><span>วิเคราะห์หน่วยข้อมูลที่จำเป็น</span>
+              </div>
+              <div class="flex items-start gap-1.5 ic-sm text-emerald-500">
+                <i data-lucide="check"></i><span>กำหนด Brand / Influencer / Event</span>
+              </div>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-100 flex items-center gap-1.5 ic-sm text-emerald-500">
+              <i data-lucide="check-circle-2"></i>
+              <span class="text-xs font-semibold text-emerald-600">Completed</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Arrow 1→2 -->
+        <div class="flex items-center px-2 flex-shrink-0">
+          <div class="pipe-arrow"></div>
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="flex-1 relative">
+          <div class="step-card done bg-white rounded-2xl p-5 h-full">
+            <div class="step-num done">2</div>
+            <div class="icon-wrap w-12 h-12 bg-emerald-50 rounded-2xl mb-3 ic-lg text-emerald-500 mt-2">
+              <i data-lucide="database"></i>
+            </div>
+            <p class="font-bold text-slate-800 text-sm">DB Model Structure</p>
+            <p class="text-xs text-emerald-500 font-semibold mt-0.5">โครงสร้างโมเดล DB</p>
+            <div class="mt-3 space-y-1.5 text-xs text-slate-500">
+              <div class="flex items-start gap-1.5 ic-sm text-emerald-500">
+                <i data-lucide="check"></i><span>ออกแบบ Table โครงสร้างข้อมูล</span>
+              </div>
+              <div class="flex items-start gap-1.5 ic-sm text-emerald-500">
+                <i data-lucide="check"></i><span>กำหนด Relationship ระหว่าง Table</span>
+              </div>
+              <div class="flex items-start gap-1.5 ic-sm text-emerald-500">
+                <i data-lucide="check"></i><span>Brands, Influencers, Events, Regions</span>
+              </div>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-100 flex items-center gap-1.5 ic-sm text-emerald-500">
+              <i data-lucide="check-circle-2"></i>
+              <span class="text-xs font-semibold text-emerald-600">Completed</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Arrow 2→3 -->
+        <div class="flex items-center px-2 flex-shrink-0">
+          <div class="pipe-arrow"></div>
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="flex-1 relative">
+          <div class="step-card active bg-white rounded-2xl p-5 h-full">
+            <div class="step-num active">3</div>
+            <div class="icon-wrap w-12 h-12 bg-indigo-50 rounded-2xl mb-3 ic-lg text-indigo-500 mt-2">
+              <i data-lucide="layout-dashboard"></i>
+            </div>
+            <p class="font-bold text-slate-800 text-sm">Dashboard Design</p>
+            <p class="text-xs text-indigo-500 font-semibold mt-0.5">ออกแบบแดชบอร์ด</p>
+            <div class="mt-3 space-y-1.5 text-xs text-slate-500">
+              <div class="flex items-start gap-1.5 ic-sm text-emerald-500">
+                <i data-lucide="check"></i><span>ใช้ข้อมูลจากโมเดล DB</span>
+              </div>
+              <div class="flex items-start gap-1.5 ic-sm text-emerald-500">
+                <i data-lucide="check"></i><span>ออกแบบ 5 หน้าแสดงผล</span>
+              </div>
+              <div class="flex items-start gap-1.5 ic-sm text-indigo-400">
+                <i data-lucide="loader-2"></i><span>Responsive mobile UI (Active)</span>
+              </div>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-100 flex items-center gap-1.5 ic-sm text-indigo-500">
+              <i data-lucide="activity"></i>
+              <span class="text-xs font-semibold text-indigo-600">In Progress — Live</span>
+              <span class="w-1.5 h-1.5 rounded-full bg-indigo-500 animate-pulse ml-auto"></span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Mobile flow (vertical) -->
+      <div class="md:hidden space-y-4">
+        <!-- Step 1 mobile -->
+        <div class="step-card done bg-white rounded-2xl p-4">
+          <div class="step-num done">1</div>
+          <div class="flex items-start gap-3 mt-2">
+            <div class="icon-wrap w-10 h-10 bg-emerald-50 rounded-xl ic-md text-emerald-500 flex-shrink-0">
+              <i data-lucide="search"></i>
+            </div>
+            <div class="flex-1">
+              <p class="font-bold text-slate-800 text-sm">Data Entity Analysis</p>
+              <p class="text-xs text-emerald-500 font-semibold">วิเคราะห์เอนทิตี้ข้อมูล</p>
+              <div class="mt-2 space-y-1 text-xs text-slate-500">
+                <div class="flex items-center gap-1.5 ic-sm text-emerald-500"><i data-lucide="check"></i><span>ตรวจสอบเอนทิตี้ข้อมูล</span></div>
+                <div class="flex items-center gap-1.5 ic-sm text-emerald-500"><i data-lucide="check"></i><span>วิเคราะห์หน่วยข้อมูลที่จำเป็น</span></div>
+              </div>
+            </div>
+            <span class="pill bg-emerald-100 text-emerald-700 flex-shrink-0 self-start">Done</span>
+          </div>
+        </div>
+        <div class="flex justify-center"><div class="w-px h-6 bg-gradient-to-b from-emerald-400 to-indigo-400"></div></div>
+        <!-- Step 2 mobile -->
+        <div class="step-card done bg-white rounded-2xl p-4">
+          <div class="step-num done">2</div>
+          <div class="flex items-start gap-3 mt-2">
+            <div class="icon-wrap w-10 h-10 bg-emerald-50 rounded-xl ic-md text-emerald-500 flex-shrink-0">
+              <i data-lucide="database"></i>
+            </div>
+            <div class="flex-1">
+              <p class="font-bold text-slate-800 text-sm">DB Model Structure</p>
+              <p class="text-xs text-emerald-500 font-semibold">โครงสร้างโมเดล DB</p>
+              <div class="mt-2 space-y-1 text-xs text-slate-500">
+                <div class="flex items-center gap-1.5 ic-sm text-emerald-500"><i data-lucide="check"></i><span>ออกแบบ Table โครงสร้างข้อมูล</span></div>
+                <div class="flex items-center gap-1.5 ic-sm text-emerald-500"><i data-lucide="check"></i><span>กำหนด Relationship</span></div>
+              </div>
+            </div>
+            <span class="pill bg-emerald-100 text-emerald-700 flex-shrink-0 self-start">Done</span>
+          </div>
+        </div>
+        <div class="flex justify-center"><div class="w-px h-6 bg-gradient-to-b from-emerald-400 to-indigo-400"></div></div>
+        <!-- Step 3 mobile -->
+        <div class="step-card active bg-white rounded-2xl p-4">
+          <div class="step-num active">3</div>
+          <div class="flex items-start gap-3 mt-2">
+            <div class="icon-wrap w-10 h-10 bg-indigo-50 rounded-xl ic-md text-indigo-500 flex-shrink-0">
+              <i data-lucide="layout-dashboard"></i>
+            </div>
+            <div class="flex-1">
+              <p class="font-bold text-slate-800 text-sm">Dashboard Design</p>
+              <p class="text-xs text-indigo-500 font-semibold">ออกแบบแดชบอร์ด</p>
+              <div class="mt-2 space-y-1 text-xs text-slate-500">
+                <div class="flex items-center gap-1.5 ic-sm text-emerald-500"><i data-lucide="check"></i><span>ใช้ข้อมูลจากโมเดล DB</span></div>
+                <div class="flex items-center gap-1.5 ic-sm text-indigo-400"><i data-lucide="loader-2"></i><span>Responsive UI (Active)</span></div>
+              </div>
+            </div>
+            <span class="pill bg-indigo-100 text-indigo-600 flex-shrink-0 self-start">Active</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── PHASE 2 ─────────────────────────────────── -->
+  <section>
+    <div class="sec-head">
+      <div class="sec-bar"></div>
+      <span class="sec-label">Phase 2 · AI Agent Cowork</span>
+      <div class="sec-line"></div>
+      <span class="pill bg-violet-100 text-violet-600 flex-shrink-0">
+        <span class="w-1.5 h-1.5 rounded-full bg-violet-500 animate-pulse"></span>AI กำลังทำงาน
+      </span>
+    </div>
+
+    <!-- AI Flow diagram -->
+    <div class="bg-white rounded-2xl p-5 md:p-6 shadow-sm border border-slate-100">
+
+      <p class="text-sm font-bold text-slate-800 mb-1">ขั้นตอนที่ 3 · ใช้ AI Agent เพื่อรวบรวมข้อมูลเพิ่มเติม</p>
+      <p class="text-xs text-slate-400 mb-6">AI Agent รวบรวมจาก Data Sources → ประมวลผล → ส่งข้อมูลเข้า Dashboard</p>
+
+      <div class="flex flex-col lg:flex-row items-center gap-4 lg:gap-0">
+
+        <!-- Data Sources -->
+        <div class="w-full lg:w-auto lg:flex-1 grid grid-cols-2 gap-3">
+          <div class="src-card connected bg-white rounded-2xl p-4">
+            <div class="icon-wrap w-10 h-10 bg-amber-50 rounded-xl mb-2 ic-md text-amber-500">
+              <i data-lucide="file-text"></i>
+            </div>
+            <p class="text-xs font-bold text-slate-700">Brand &amp; Influ Report</p>
+            <p class="text-xs text-slate-400 mt-0.5">PDF · 8.3 MB</p>
+            <div class="mt-2 flex items-center gap-1 ic-sm text-emerald-500">
+              <i data-lucide="check-circle-2"></i>
+              <span class="text-xs font-semibold text-emerald-600">Connected</span>
+            </div>
+          </div>
+          <div class="src-card connected bg-white rounded-2xl p-4">
+            <div class="icon-wrap w-10 h-10 bg-indigo-50 rounded-xl mb-2 ic-md text-indigo-500">
+              <i data-lucide="file-bar-chart"></i>
+            </div>
+            <p class="text-xs font-bold text-slate-700">TSR Daily Report</p>
+            <p class="text-xs text-slate-400 mt-0.5">PDF · 3.6 MB</p>
+            <div class="mt-2 flex items-center gap-1 ic-sm text-emerald-500">
+              <i data-lucide="check-circle-2"></i>
+              <span class="text-xs font-semibold text-emerald-600">Connected</span>
+            </div>
+          </div>
+          <div class="src-card bg-white rounded-2xl p-4 col-span-2">
+            <div class="flex items-center gap-3">
+              <div class="icon-wrap w-10 h-10 bg-slate-100 rounded-xl ic-md text-slate-400 flex-shrink-0">
+                <i data-lucide="plus-circle"></i>
+              </div>
+              <div>
+                <p class="text-xs font-bold text-slate-500">เพิ่มแหล่งข้อมูลใหม่</p>
+                <p class="text-xs text-slate-400">File, URL, API, Database</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Arrow center -->
+        <div class="flex lg:flex-col items-center justify-center px-4 lg:px-6 gap-2">
+          <div class="hidden lg:block w-px h-8 bg-gradient-to-b from-transparent via-indigo-300 to-indigo-500"></div>
+          <div class="lg:hidden h-px w-8 bg-gradient-to-r from-transparent via-indigo-300 to-indigo-500"></div>
+          <div class="flex items-center justify-center w-8 h-8 rounded-full bg-indigo-500 shadow-md shadow-indigo-200 flex-shrink-0 ic-sm text-white">
+            <i data-lucide="arrow-right" class="lg:hidden"></i>
+            <i data-lucide="arrow-down" class="hidden lg:block"></i>
+          </div>
+          <div class="hidden lg:block w-px h-8 bg-gradient-to-b from-indigo-500 via-indigo-300 to-transparent"></div>
+          <div class="lg:hidden h-px w-8 bg-gradient-to-r from-indigo-500 via-indigo-300 to-transparent"></div>
+        </div>
+
+        <!-- AI Agent center -->
+        <div class="flex-shrink-0 flex flex-col items-center gap-3">
+          <div class="relative">
+            <div class="agent-ring"></div>
+            <div class="agent-ring"></div>
+            <div class="agent-ring"></div>
+            <div class="w-20 h-20 rounded-full bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center shadow-xl shadow-indigo-300 relative z-10 ic-2xl text-white">
+              <i data-lucide="bot"></i>
+            </div>
+          </div>
+          <div class="text-center">
+            <p class="text-sm font-bold text-slate-800">AI Agent</p>
+            <p class="text-xs text-indigo-500 font-semibold">Collaboration</p>
+            <div class="flex items-center justify-center gap-1 mt-1 ic-sm text-violet-500">
+              <i data-lucide="loader-2"></i>
+              <span class="text-xs font-semibold text-violet-600">Processing…</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Arrow right -->
+        <div class="flex lg:flex-col items-center justify-center px-4 lg:px-6 gap-2">
+          <div class="hidden lg:block w-px h-8 bg-gradient-to-b from-transparent via-emerald-300 to-emerald-500"></div>
+          <div class="lg:hidden h-px w-8 bg-gradient-to-r from-transparent via-emerald-300 to-emerald-500"></div>
+          <div class="flex items-center justify-center w-8 h-8 rounded-full bg-emerald-500 shadow-md shadow-emerald-200 flex-shrink-0 ic-sm text-white">
+            <i data-lucide="arrow-right" class="lg:hidden"></i>
+            <i data-lucide="arrow-down" class="hidden lg:block"></i>
+          </div>
+          <div class="hidden lg:block w-px h-8 bg-gradient-to-b from-emerald-500 via-emerald-300 to-transparent"></div>
+          <div class="lg:hidden h-px w-8 bg-gradient-to-r from-emerald-500 via-emerald-300 to-transparent"></div>
+        </div>
+
+        <!-- Internet + Dashboard output -->
+        <div class="w-full lg:w-auto lg:flex-1 grid grid-cols-2 gap-3">
+          <div class="src-card connected bg-white rounded-2xl p-4">
+            <div class="icon-wrap w-10 h-10 bg-cyan-50 rounded-xl mb-2 ic-md text-cyan-500">
+              <i data-lucide="globe-2"></i>
+            </div>
+            <p class="text-xs font-bold text-slate-700">Internet Access</p>
+            <p class="text-xs text-slate-400 mt-0.5">การเข้าถึงอินเทอร์เน็ต</p>
+            <div class="mt-2 flex items-center gap-1 ic-sm text-emerald-500">
+              <i data-lucide="wifi"></i>
+              <span class="text-xs font-semibold text-emerald-600">Online</span>
+            </div>
+          </div>
+          <div class="src-card active step-card bg-white rounded-2xl p-4" style="border-color:#6366f1">
+            <div class="icon-wrap w-10 h-10 bg-indigo-50 rounded-xl mb-2 ic-md text-indigo-500">
+              <i data-lucide="layout-dashboard"></i>
+            </div>
+            <p class="text-xs font-bold text-slate-700">Dashboard Output</p>
+            <p class="text-xs text-slate-400 mt-0.5">ผลลัพธ์แดชบอร์ด</p>
+            <div class="mt-2 flex items-center gap-1 ic-sm text-indigo-500">
+              <i data-lucide="activity"></i>
+              <span class="text-xs font-semibold text-indigo-600">Live</span>
+              <span class="w-1.5 h-1.5 rounded-full bg-indigo-500 animate-pulse ml-1"></span>
+            </div>
+          </div>
+          <div class="src-card bg-slate-50 rounded-2xl p-4 col-span-2 border-dashed">
+            <div class="flex items-center gap-3">
+              <div class="icon-wrap w-10 h-10 bg-slate-100 rounded-xl ic-md text-slate-400 flex-shrink-0">
+                <i data-lucide="plus-circle"></i>
+              </div>
+              <div>
+                <p class="text-xs font-bold text-slate-500">เพิ่ม Output ใหม่</p>
+                <p class="text-xs text-slate-400">Export, Webhook, API</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── DATA SOURCES MANAGEMENT ─────────────────── -->
+  <section>
+    <div class="sec-head">
+      <div class="sec-bar"></div>
+      <span class="sec-label">จัดการแหล่งข้อมูล · Data Sources Management</span>
+      <div class="sec-line"></div>
+      <button class="pill bg-indigo-600 text-white flex-shrink-0 flex items-center gap-1 ic-sm cursor-pointer hover:bg-indigo-700 transition-colors">
+        <i data-lucide="upload"></i><span>Upload ไฟล์</span>
+      </button>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+      <!-- Uploaded files -->
+      <div class="bg-white rounded-2xl shadow-sm border border-slate-100 card overflow-hidden">
+        <div class="p-4 border-b border-slate-100 flex items-center justify-between">
+          <div>
+            <p class="text-sm font-bold text-slate-800">ไฟล์ที่นำเข้า · Imported Files</p>
+            <p class="text-xs text-slate-400">แหล่งข้อมูลที่ใช้สร้าง Dashboard</p>
+          </div>
+          <span class="pill bg-slate-100 text-slate-600 num">2 files</span>
+        </div>
+        <div class="divide-y divide-slate-50">
+
+          <div class="p-4 flex items-center gap-3 hover:bg-slate-50 transition-colors">
+            <div class="icon-wrap w-10 h-10 bg-red-50 rounded-xl ic-md text-red-400 flex-shrink-0">
+              <i data-lucide="file-text"></i>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-sm font-semibold text-slate-800 truncate">Brand &amp; Influ Report</p>
+              <p class="text-xs text-slate-400">2026-03-26 · PDF · 8.3 MB</p>
+              <div class="mt-1.5 pb"><div class="pf bg-gradient-to-r from-emerald-400 to-emerald-500" style="width:100%"></div></div>
+            </div>
+            <div class="text-right flex-shrink-0">
+              <span class="pill bg-emerald-100 text-emerald-700">Processed</span>
+              <p class="text-xs text-slate-400 mt-1 num">1,432 brands</p>
+            </div>
+          </div>
+
+          <div class="p-4 flex items-center gap-3 hover:bg-slate-50 transition-colors">
+            <div class="icon-wrap w-10 h-10 bg-red-50 rounded-xl ic-md text-red-400 flex-shrink-0">
+              <i data-lucide="file-bar-chart"></i>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-sm font-semibold text-slate-800 truncate">TSR Daily Report</p>
+              <p class="text-xs text-slate-400">2026-03-26 · PDF · 3.6 MB</p>
+              <div class="mt-1.5 pb"><div class="pf bg-gradient-to-r from-emerald-400 to-emerald-500" style="width:100%"></div></div>
+            </div>
+            <div class="text-right flex-shrink-0">
+              <span class="pill bg-emerald-100 text-emerald-700">Processed</span>
+              <p class="text-xs text-slate-400 mt-1 num">Top 10 brands</p>
+            </div>
+          </div>
+
+          <div class="p-4 flex items-center gap-3 border-2 border-dashed border-slate-200 rounded-xl m-3 mt-2 hover:border-indigo-300 hover:bg-indigo-50/30 transition-colors cursor-pointer">
+            <div class="icon-wrap w-10 h-10 bg-indigo-50 rounded-xl ic-md text-indigo-400 flex-shrink-0">
+              <i data-lucide="upload-cloud"></i>
+            </div>
+            <div>
+              <p class="text-sm font-semibold text-indigo-600">Drop file หรือคลิกเพื่ออัปโหลด</p>
+              <p class="text-xs text-slate-400">รองรับ PDF, Excel, CSV, JSON</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- DB Entity map -->
+      <div class="bg-white rounded-2xl shadow-sm border border-slate-100 card overflow-hidden">
+        <div class="p-4 border-b border-slate-100">
+          <p class="text-sm font-bold text-slate-800">DB Entity Map</p>
+          <p class="text-xs text-slate-400">โครงสร้างข้อมูลที่ AI Agent ใช้</p>
+        </div>
+        <div class="p-4 space-y-2.5">
+
+          <div class="flex items-center gap-3 p-3 rounded-xl bg-indigo-50 border border-indigo-100">
+            <div class="icon-wrap w-8 h-8 bg-indigo-100 rounded-lg ic-sm text-indigo-600 flex-shrink-0">
+              <i data-lucide="table-2"></i>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-xs font-bold text-slate-800">brands</p>
+              <p class="text-xs text-slate-400">id, name, region, type, distribution_rate</p>
+            </div>
+            <span class="num text-xs font-black text-indigo-600 flex-shrink-0">1,432</span>
+          </div>
+
+          <div class="flex items-center gap-3 p-3 rounded-xl bg-violet-50 border border-violet-100">
+            <div class="icon-wrap w-8 h-8 bg-violet-100 rounded-lg ic-sm text-violet-600 flex-shrink-0">
+              <i data-lucide="table-2"></i>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-xs font-bold text-slate-800">influencers</p>
+              <p class="text-xs text-slate-400">id, name, platform, followers, brand_id</p>
+            </div>
+            <span class="num text-xs font-black text-violet-600 flex-shrink-0">835</span>
+          </div>
+
+          <div class="flex items-center gap-3 p-3 rounded-xl bg-amber-50 border border-amber-100">
+            <div class="icon-wrap w-8 h-8 bg-amber-100 rounded-lg ic-sm text-amber-600 flex-shrink-0">
+              <i data-lucide="table-2"></i>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-xs font-bold text-slate-800">events</p>
+              <p class="text-xs text-slate-400">id, name, date, location, brand_count</p>
+            </div>
+            <span class="num text-xs font-black text-amber-600 flex-shrink-0">4</span>
+          </div>
+
+          <div class="flex items-center gap-3 p-3 rounded-xl bg-cyan-50 border border-cyan-100">
+            <div class="icon-wrap w-8 h-8 bg-cyan-100 rounded-lg ic-sm text-cyan-600 flex-shrink-0">
+              <i data-lucide="table-2"></i>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-xs font-bold text-slate-800">regions</p>
+              <p class="text-xs text-slate-400">id, code (R1–R8), name, brand_count</p>
+            </div>
+            <span class="num text-xs font-black text-cyan-600 flex-shrink-0">8</span>
+          </div>
+
+          <div class="flex items-center gap-3 p-3 rounded-xl bg-slate-50 border border-slate-200">
+            <div class="icon-wrap w-8 h-8 bg-slate-100 rounded-lg ic-sm text-slate-400 flex-shrink-0">
+              <i data-lucide="table-2"></i>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-xs font-bold text-slate-500">distribution_history</p>
+              <p class="text-xs text-slate-400">brand_id, month, rate, prev_rate</p>
+            </div>
+            <span class="num text-xs font-black text-slate-400 flex-shrink-0">10</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── AI Activity Log ─────────────────────────── -->
+  <section>
+    <div class="sec-head">
+      <div class="sec-bar"></div>
+      <span class="sec-label">AI Activity Log · บันทึกการทำงานล่าสุด</span>
+      <div class="sec-line"></div>
+      <button class="text-xs text-slate-400 hover:text-slate-600 flex-shrink-0 flex items-center gap-1 ic-sm">
+        <i data-lucide="refresh-cw"></i><span>Refresh</span>
+      </button>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-sm border border-slate-100 card overflow-hidden">
+      <div class="divide-y divide-slate-50">
+
+        <div class="log-item">
+          <div class="log-dot bg-emerald-500 mt-1.5 flex-shrink-0"></div>
+          <div class="flex-1 min-w-0">
+            <p class="text-sm font-semibold text-slate-800">อ่านไฟล์ Brand &amp; Influ Report สำเร็จ</p>
+            <p class="text-xs text-slate-400 mt-0.5">พบแบรนด์ 1,432 รายการ, อินฟลูเอนเซอร์ 835 คน · ประมวลผล 2.3s</p>
+          </div>
+          <span class="num text-xs text-slate-400 flex-shrink-0 whitespace-nowrap">09:14:32</span>
+        </div>
+
+        <div class="log-item">
+          <div class="log-dot bg-emerald-500 mt-1.5 flex-shrink-0"></div>
+          <div class="flex-1 min-w-0">
+            <p class="text-sm font-semibold text-slate-800">อ่านไฟล์ TSR Daily Report สำเร็จ</p>
+            <p class="text-xs text-slate-400 mt-0.5">พบ Top 10 brands, Trending data, Events 4 รายการ · ประมวลผล 1.8s</p>
+          </div>
+          <span class="num text-xs text-slate-400 flex-shrink-0 whitespace-nowrap">09:14:35</span>
+        </div>
+
+        <div class="log-item">
+          <div class="log-dot bg-indigo-500 mt-1.5 flex-shrink-0"></div>
+          <div class="flex-1 min-w-0">
+            <p class="text-sm font-semibold text-slate-800">AI Agent วิเคราะห์ Data Entity</p>
+            <p class="text-xs text-slate-400 mt-0.5">ระบุ Entity: Brands, Influencers, Regions, Events, Distribution · สร้าง DB Model</p>
+          </div>
+          <span class="num text-xs text-slate-400 flex-shrink-0 whitespace-nowrap">09:14:38</span>
+        </div>
+
+        <div class="log-item">
+          <div class="log-dot bg-indigo-500 mt-1.5 flex-shrink-0"></div>
+          <div class="flex-1 min-w-0">
+            <p class="text-sm font-semibold text-slate-800">สร้าง Dashboard Layout สำเร็จ</p>
+            <p class="text-xs text-slate-400 mt-0.5">5 หน้าหลัก + Responsive Mobile + Tailwind CSS + Lucide Icons</p>
+          </div>
+          <span class="num text-xs text-slate-400 flex-shrink-0 whitespace-nowrap">09:15:02</span>
+        </div>
+
+        <div class="log-item">
+          <div class="log-dot bg-violet-500 mt-1.5 flex-shrink-0"></div>
+          <div class="flex-1 min-w-0">
+            <p class="text-sm font-semibold text-slate-800">ค้นหาข้อมูลเพิ่มเติมจาก Internet</p>
+            <p class="text-xs text-slate-400 mt-0.5">ค้นหาข้อมูล Devanom, Grove Brew Fest, Craft Brewing Program · 12 sources</p>
+          </div>
+          <span class="num text-xs text-slate-400 flex-shrink-0 whitespace-nowrap">09:15:15</span>
+        </div>
+
+        <div class="log-item">
+          <div class="log-dot bg-violet-500 mt-1.5 flex-shrink-0"></div>
+          <div class="flex-1 min-w-0">
+            <p class="text-sm font-semibold text-slate-800">Deploy ขึ้น GitHub Pages สำเร็จ</p>
+            <p class="text-xs text-slate-400 mt-0.5">napasorn-kl.github.io/tsr-dashboard · Build time 45s</p>
+          </div>
+          <span class="num text-xs text-slate-400 flex-shrink-0 whitespace-nowrap">09:16:01</span>
+        </div>
+
+        <div class="log-item bg-indigo-50/50">
+          <div class="log-dot bg-indigo-500 mt-1.5 flex-shrink-0 animate-pulse"></div>
+          <div class="flex-1 min-w-0">
+            <p class="text-sm font-semibold text-indigo-700">AI Agent กำลังรอข้อมูลรายงานฉบับถัดไป…</p>
+            <p class="text-xs text-indigo-400 mt-0.5">Listening for new PDF uploads · Auto-update dashboard on new data</p>
+          </div>
+          <span class="num text-xs text-indigo-400 flex-shrink-0 whitespace-nowrap">Now</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</div><!-- /page-pipeline -->
+
 </main>
 
 <!-- ══════════════ MOBILE BOTTOM NAV ══════════════ -->
 <nav class="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-white/95 backdrop-blur border-t border-slate-200 shadow-lg">
-  <div class="flex">
+  <div class="flex overflow-x-auto scrollbar-hide" style="-ms-overflow-style:none;scrollbar-width:none;">
 
     <button onclick="showPage('overview')" data-mob="overview"
-      class="mob-nav-btn active flex-1 flex flex-col items-center justify-center py-2.5 gap-0.5">
+      class="mob-nav-btn active flex-shrink-0 w-16 flex flex-col items-center justify-center py-2.5 gap-0.5">
       <span class="mob-icon ic-base text-slate-400"><i data-lucide="layout-dashboard"></i></span>
       <span class="mob-label text-xs text-slate-400 font-medium">ภาพรวม</span>
     </button>
 
     <button onclick="showPage('brands')" data-mob="brands"
-      class="mob-nav-btn flex-1 flex flex-col items-center justify-center py-2.5 gap-0.5">
+      class="mob-nav-btn flex-shrink-0 w-16 flex flex-col items-center justify-center py-2.5 gap-0.5">
       <span class="mob-icon ic-base text-slate-400"><i data-lucide="tag"></i></span>
       <span class="mob-label text-xs text-slate-400 font-medium">แบรนด์</span>
     </button>
 
     <button onclick="showPage('influencers')" data-mob="influencers"
-      class="mob-nav-btn flex-1 flex flex-col items-center justify-center py-2.5 gap-0.5">
+      class="mob-nav-btn flex-shrink-0 w-16 flex flex-col items-center justify-center py-2.5 gap-0.5">
       <span class="mob-icon ic-base text-slate-400"><i data-lucide="users"></i></span>
       <span class="mob-label text-xs text-slate-400 font-medium">อินฟลู</span>
     </button>
 
     <button onclick="showPage('events')" data-mob="events"
-      class="mob-nav-btn flex-1 flex flex-col items-center justify-center py-2.5 gap-0.5">
+      class="mob-nav-btn flex-shrink-0 w-16 flex flex-col items-center justify-center py-2.5 gap-0.5">
       <span class="mob-icon ic-base text-slate-400"><i data-lucide="calendar"></i></span>
       <span class="mob-label text-xs text-slate-400 font-medium">กิจกรรม</span>
     </button>
 
     <button onclick="showPage('spotlight')" data-mob="spotlight"
-      class="mob-nav-btn flex-1 flex flex-col items-center justify-center py-2.5 gap-0.5">
+      class="mob-nav-btn flex-shrink-0 w-16 flex flex-col items-center justify-center py-2.5 gap-0.5">
       <span class="mob-icon ic-base text-slate-400"><i data-lucide="star"></i></span>
       <span class="mob-label text-xs text-slate-400 font-medium">Spotlight</span>
+    </button>
+
+    <button onclick="showPage('pipeline')" data-mob="pipeline"
+      class="mob-nav-btn flex-shrink-0 w-16 flex flex-col items-center justify-center py-2.5 gap-0.5 relative">
+      <span class="mob-icon ic-base text-slate-400"><i data-lucide="workflow"></i></span>
+      <span class="mob-label text-xs text-slate-400 font-medium">Pipeline</span>
+      <span class="absolute top-1.5 right-2 w-1.5 h-1.5 rounded-full bg-indigo-500 animate-pulse"></span>
     </button>
 
   </div>
