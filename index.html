@@ -524,6 +524,55 @@ tailwind.config = {
     </div>
   </section>
 
+  <!-- Google Trends Live Section -->
+  <section>
+    <div class="sec-head">
+      <div class="sec-bar"></div>
+      <span class="sec-label">Google Trends · ความนิยมในการค้นหา</span>
+      <div class="sec-line"></div>
+      <span id="trends-fetch-time" class="text-xs text-slate-400 flex-shrink-0 hidden"></span>
+    </div>
+
+    <!-- placeholder (ก่อนมีข้อมูล) -->
+    <div id="trends-no-data" class="bg-white rounded-2xl p-8 shadow-sm border border-dashed border-slate-200 text-center">
+      <div class="icon-wrap w-12 h-12 bg-slate-50 rounded-2xl mx-auto mb-3 ic-lg text-slate-300"><i data-lucide="trending-up"></i></div>
+      <p class="text-slate-500 font-semibold text-sm">ยังไม่มีข้อมูล Google Trends</p>
+      <p class="text-slate-400 text-xs mt-1.5">รันสคริปต์เพื่อดึงข้อมูลครั้งแรก</p>
+      <code class="inline-block bg-slate-100 text-slate-600 text-xs px-3 py-1.5 rounded-lg mt-2 font-mono">python fetch_data.py</code>
+    </div>
+
+    <!-- chart + details (ซ่อนไว้จนกว่าข้อมูลจะโหลด) -->
+    <div id="trends-chart-wrap" class="hidden space-y-4">
+      <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100">
+        <div class="flex items-center justify-between mb-4">
+          <div>
+            <p class="font-bold text-slate-800">ความนิยมการค้นหา <span class="text-indigo-600">"สุราชุมชน"</span></p>
+            <p class="text-xs text-slate-400 mt-0.5">Google Trends · ประเทศไทย · 3 เดือนล่าสุด</p>
+          </div>
+          <span id="trends-updated" class="pill bg-indigo-50 text-indigo-500 text-xs hidden"></span>
+        </div>
+        <div class="relative h-56">
+          <canvas id="trendsChart"></canvas>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100">
+          <p class="font-bold text-slate-800 text-sm mb-3 flex items-center gap-2 ic-sm">
+            <i data-lucide="search"></i> คำค้นที่เกี่ยวข้อง
+          </p>
+          <div id="trends-related" class="space-y-2.5"></div>
+        </div>
+        <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100">
+          <p class="font-bold text-slate-800 text-sm mb-3 flex items-center gap-2 ic-sm">
+            <i data-lucide="map-pin"></i> จังหวัดที่ค้นหามากสุด
+          </p>
+          <div id="trends-region" class="space-y-2.5"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </div><!-- /page-overview -->
 
 
@@ -1031,6 +1080,27 @@ tailwind.config = {
         </table>
       </div>
     </div>
+  </section>
+
+  <!-- YouTube Top Videos Live Section -->
+  <section>
+    <div class="sec-head">
+      <div class="sec-bar"></div>
+      <span class="sec-label">YouTube · วิดีโอยอดนิยม</span>
+      <div class="sec-line"></div>
+      <span id="yt-count-badge" class="pill bg-red-50 text-red-600 hidden"></span>
+    </div>
+
+    <!-- placeholder -->
+    <div id="yt-no-data" class="bg-white rounded-2xl p-8 shadow-sm border border-dashed border-slate-200 text-center">
+      <img src="https://cdn.simpleicons.org/youtube/FF0000" class="w-10 h-10 mx-auto mb-3 opacity-25">
+      <p class="text-slate-500 font-semibold text-sm">ยังไม่มีข้อมูล YouTube</p>
+      <p class="text-slate-400 text-xs mt-1.5">ต้องการ YouTube Data API Key</p>
+      <code class="inline-block bg-slate-100 text-slate-600 text-xs px-3 py-1.5 rounded-lg mt-2 font-mono">python fetch_data.py YOUR_API_KEY</code>
+    </div>
+
+    <!-- video grid -->
+    <div id="yt-videos-grid" class="hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
   </section>
 
 </div><!-- /page-influencers -->
@@ -1880,7 +1950,10 @@ function showPage(name) {
 
   setTimeout(() => {
     initChartsForPage(name);
-    lucide.createIcons(); // re-render icons in newly shown page
+    lucide.createIcons();
+    // trigger live-data rendering when navigating to the relevant page
+    if (name === 'overview'    && window._trendsData) initTrendsChart();
+    if (name === 'influencers' && window._ytData)     renderYouTubeVideos();
   }, 50);
 
   window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -2032,6 +2105,7 @@ function initChartsForPage(page) {
 window.addEventListener('DOMContentLoaded', () => {
   initChartsForPage('overview');
   pipelineInit();
+  loadLiveData();
 });
 </script>
 
@@ -2330,6 +2404,182 @@ function fileColor(type) {
   if (type === 'csv')  return 'bg-emerald-50 text-emerald-600';
   if (type === 'xlsx') return 'bg-green-50 text-green-600';
   return 'bg-slate-100 text-slate-500';
+}
+</script>
+
+<!-- ══════════════ LIVE DATA (Trends + YouTube) ══════════════ -->
+<script>
+// ── Loader ────────────────────────────────────────────────────
+async function loadLiveData() {
+  const [tRes, yRes] = await Promise.allSettled([
+    fetch('data/trends.json').then(r => r.ok ? r.json() : null).catch(() => null),
+    fetch('data/youtube.json').then(r => r.ok ? r.json() : null).catch(() => null),
+  ]);
+
+  const trends = tRes.value ?? null;
+  const yt     = yRes.value ?? null;
+
+  if (trends) {
+    window._trendsData = trends;
+    document.getElementById('trends-no-data')?.classList.add('hidden');
+    document.getElementById('trends-chart-wrap')?.classList.remove('hidden');
+    // init chart only if currently on overview page
+    if (document.getElementById('page-overview')?.classList.contains('active')) {
+      initTrendsChart();
+    }
+  }
+
+  if (yt?.videos?.length) {
+    window._ytData = yt;
+    document.getElementById('yt-no-data')?.classList.add('hidden');
+    document.getElementById('yt-videos-grid')?.classList.remove('hidden');
+    const badge = document.getElementById('yt-count-badge');
+    if (badge) { badge.textContent = `${yt.videos.length} วิดีโอ`; badge.classList.remove('hidden'); }
+    // render only if currently on influencers page
+    if (document.getElementById('page-influencers')?.classList.contains('active')) {
+      renderYouTubeVideos();
+    }
+  }
+}
+
+// ── Google Trends Chart ───────────────────────────────────────
+let _trendsChartInst = null;
+
+function initTrendsChart() {
+  const data = window._trendsData;
+  if (!data?.interest_over_time) return;
+  const iot = data.interest_over_time;
+  const kw  = (data.keywords || [])[0] || 'สุราชุมชน';
+  if (!iot[kw] || !iot.dates) return;
+
+  const ctx = document.getElementById('trendsChart');
+  if (!ctx) return;
+  if (_trendsChartInst) { _trendsChartInst.destroy(); _trendsChartInst = null; }
+
+  // Thin out data points (every other week) to keep chart clean
+  const step   = Math.ceil(iot.dates.length / 13);
+  const labels = iot.dates.filter((_, i) => i % step === 0).map(d => {
+    const [, m, day] = d.split('-');
+    const thM = ['','ม.ค.','ก.พ.','มี.ค.','เม.ย.','พ.ค.','มิ.ย.','ก.ค.','ส.ค.','ก.ย.','ต.ค.','พ.ย.','ธ.ค.'];
+    return `${parseInt(day)} ${thM[parseInt(m)]}`;
+  });
+  const values = iot[kw].filter((_, i) => i % step === 0);
+
+  _trendsChartInst = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [{
+        label: kw,
+        data: values,
+        borderColor: '#6366f1',
+        backgroundColor: 'rgba(99,102,241,.07)',
+        borderWidth: 2.5,
+        pointRadius: 3,
+        pointBackgroundColor: '#6366f1',
+        tension: 0.4,
+        fill: true,
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { label: c => `ความนิยม: ${c.parsed.y}` } }
+      },
+      scales: {
+        x: { grid: { display: false }, ticks: { font: { size: 10 }, maxRotation: 0 } },
+        y: { grid: { color: '#f1f5f9' }, min: 0, max: 100, ticks: { font: { size: 10 } } }
+      }
+    }
+  });
+
+  // Fetched-at badge
+  if (data.fetched_at) {
+    const el = document.getElementById('trends-updated');
+    if (el) {
+      el.textContent = `ดึงข้อมูล ${new Date(data.fetched_at).toLocaleDateString('th-TH', { dateStyle: 'short' })}`;
+      el.classList.remove('hidden');
+    }
+  }
+
+  // Related queries
+  const relEl = document.getElementById('trends-related');
+  if (relEl) {
+    if (data.related_queries?.length) {
+      const maxV = data.related_queries[0]?.value || 100;
+      relEl.innerHTML = data.related_queries.slice(0, 8).map(q => `
+        <div class="flex items-center gap-2">
+          <p class="text-xs text-slate-700 flex-1 truncate">${q.query}</p>
+          <div class="w-20 h-1.5 bg-slate-100 rounded-full overflow-hidden flex-shrink-0">
+            <div class="h-full bg-indigo-400 rounded-full" style="width:${Math.round((q.value / maxV) * 100)}%"></div>
+          </div>
+          <span class="text-xs text-slate-400 num w-6 text-right flex-shrink-0">${q.value}</span>
+        </div>`).join('');
+    } else {
+      relEl.innerHTML = '<p class="text-xs text-slate-400">ไม่มีข้อมูล</p>';
+    }
+  }
+
+  // By region
+  const regEl = document.getElementById('trends-region');
+  if (regEl) {
+    if (data.by_region && Object.keys(data.by_region).length) {
+      const entries = Object.entries(data.by_region).sort((a, b) => b[1] - a[1]);
+      const maxV    = entries[0]?.[1] || 100;
+      regEl.innerHTML = entries.slice(0, 8).map(([name, val]) => `
+        <div class="flex items-center gap-2">
+          <p class="text-xs text-slate-700 w-24 flex-shrink-0 truncate">${name}</p>
+          <div class="flex-1 h-1.5 bg-slate-100 rounded-full overflow-hidden">
+            <div class="h-full bg-emerald-400 rounded-full" style="width:${Math.round((val / maxV) * 100)}%"></div>
+          </div>
+          <span class="text-xs text-slate-400 num flex-shrink-0">${val}</span>
+        </div>`).join('');
+    } else {
+      regEl.innerHTML = '<p class="text-xs text-slate-400">ไม่มีข้อมูล</p>';
+    }
+  }
+}
+
+// ── YouTube Videos Grid ───────────────────────────────────────
+function renderYouTubeVideos() {
+  const data = window._ytData;
+  if (!data?.videos?.length) return;
+  const grid = document.getElementById('yt-videos-grid');
+  if (!grid) return;
+
+  const fmt = n =>
+    n >= 1_000_000 ? (n / 1_000_000).toFixed(1) + 'M' :
+    n >= 1_000     ? (n / 1_000).toFixed(0) + 'K' : String(n);
+
+  grid.innerHTML = data.videos.slice(0, 6).map(v => `
+    <a href="https://youtube.com/watch?v=${v.id}" target="_blank" rel="noopener noreferrer"
+       class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 card hover:shadow-md transition-shadow block">
+      ${v.thumbnail
+        ? `<div class="relative">
+             <img src="${v.thumbnail}" alt="" class="w-full h-36 object-cover">
+             <div class="absolute top-2 left-2 bg-white/90 rounded-md px-1.5 py-0.5 flex items-center gap-1">
+               <img src="https://cdn.simpleicons.org/youtube/FF0000" class="w-3.5 h-3.5">
+               <span class="text-xs font-bold text-slate-700">YouTube</span>
+             </div>
+           </div>`
+        : `<div class="w-full h-36 bg-slate-100 flex items-center justify-center">
+             <i data-lucide="play-circle" class="w-10 h-10 text-slate-300"></i>
+           </div>`
+      }
+      <div class="p-3">
+        <p class="text-sm font-semibold text-slate-800 line-clamp-2 leading-snug">${v.title}</p>
+        <p class="text-xs text-slate-400 mt-1 truncate">${v.channel}</p>
+        <div class="flex items-center gap-3 mt-2.5 text-slate-500">
+          <span class="flex items-center gap-1 text-xs ic-sm"><i data-lucide="eye" class="w-3 h-3"></i><span class="num">${fmt(v.views)}</span></span>
+          <span class="flex items-center gap-1 text-xs ic-sm"><i data-lucide="thumbs-up" class="w-3 h-3"></i><span class="num">${fmt(v.likes)}</span></span>
+          <span class="flex items-center gap-1 text-xs ic-sm"><i data-lucide="message-circle" class="w-3 h-3"></i><span class="num">${fmt(v.comments)}</span></span>
+        </div>
+        <p class="text-xs text-slate-300 mt-1.5">${v.published_at}</p>
+      </div>
+    </a>`).join('');
+
+  if (typeof lucide !== 'undefined') lucide.createIcons();
 }
 </script>
 
