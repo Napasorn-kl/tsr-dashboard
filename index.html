@@ -1648,21 +1648,25 @@ tailwind.config = {
         </p>
         <div class="space-y-2">
 
-          <div class="flex items-center justify-between p-3 bg-slate-50 rounded-xl">
+          <!-- Google Trends: active + auto-run -->
+          <div class="flex items-center justify-between p-3 bg-emerald-50 rounded-xl border border-emerald-100">
             <div class="flex items-center gap-3">
-              <div class="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center flex-shrink-0 shadow-sm">
                 <i data-lucide="trending-up" class="w-4 h-4 text-blue-500"></i>
               </div>
               <div>
                 <p class="text-sm font-semibold text-slate-700">Google Trends</p>
-                <p class="text-xs text-slate-400">ความนิยมการค้นหา · ไทย</p>
+                <p class="text-xs text-emerald-600 font-medium flex items-center gap-1 ic-sm mt-0.5">
+                  <i data-lucide="clock" class="w-3 h-3"></i>อัปเดตอัตโนมัติทุกวัน 08:00 น.
+                </p>
               </div>
             </div>
             <span class="pill bg-emerald-100 text-emerald-700 flex items-center gap-1 text-xs ic-sm">
-              <i data-lucide="check-circle" class="w-3 h-3"></i>พร้อม
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>Active
             </span>
           </div>
 
+          <!-- YouTube: needs key -->
           <div class="flex items-center justify-between p-3 bg-slate-50 rounded-xl">
             <div class="flex items-center gap-3">
               <div class="w-8 h-8 bg-red-50 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -1670,13 +1674,18 @@ tailwind.config = {
               </div>
               <div>
                 <p class="text-sm font-semibold text-slate-700">YouTube API</p>
-                <p class="text-xs text-slate-400">วิดีโอและ Influencer</p>
+                <p class="text-xs text-slate-400">ใส่ Key ใน GitHub Secrets → พร้อมใช้ทันที</p>
               </div>
             </div>
-            <span class="pill bg-amber-100 text-amber-700 text-xs">ต้องการ API Key</span>
+            <a href="https://github.com/Napasorn-kl/tsr-dashboard/settings/secrets/actions"
+               target="_blank" rel="noopener"
+               class="pill bg-amber-100 text-amber-700 text-xs flex items-center gap-1 ic-sm hover:bg-amber-200 transition-colors">
+              <i data-lucide="key" class="w-3 h-3"></i>ตั้งค่า Key
+            </a>
           </div>
 
-          <div class="flex items-center justify-between p-3 bg-slate-50 rounded-xl">
+          <!-- Social Media: coming soon -->
+          <div class="flex items-center justify-between p-3 bg-slate-50 rounded-xl opacity-60">
             <div class="flex items-center gap-3">
               <div class="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0">
                 <img src="https://cdn.simpleicons.org/facebook/1877F2" class="w-4 h-4">
@@ -1688,6 +1697,22 @@ tailwind.config = {
             </div>
             <span class="pill bg-slate-100 text-slate-400 text-xs">เร็วๆ นี้</span>
           </div>
+
+          <!-- GitHub Actions status link -->
+          <a href="https://github.com/Napasorn-kl/tsr-dashboard/actions"
+             target="_blank" rel="noopener"
+             class="flex items-center justify-between p-3 bg-slate-900 rounded-xl group hover:bg-slate-800 transition-colors">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center flex-shrink-0 ic-sm text-white">
+                <i data-lucide="github"></i>
+              </div>
+              <div>
+                <p class="text-sm font-semibold text-white">GitHub Actions</p>
+                <p class="text-xs text-slate-400">ดูประวัติการรัน Auto-fetch</p>
+              </div>
+            </div>
+            <i data-lucide="external-link" class="w-4 h-4 text-slate-400 group-hover:text-white transition-colors"></i>
+          </a>
 
         </div>
       </div>
