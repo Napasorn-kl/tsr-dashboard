@@ -1,991 +1,1492 @@
 <!DOCTYPE html>
-<html lang="th" data-theme="light">
+<html lang="th">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TSR Dashboard – สุราชุมชน | 26 มีนาคม 2569</title>
-
-<!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Sarabun:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-<!-- Tailwind CSS Play CDN -->
 <script src="https://cdn.tailwindcss.com"></script>
-
-<!-- DaisyUI -->
 <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet">
-
-<!-- Chart.js -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 
 <script>
 tailwind.config = {
   theme: {
     extend: {
-      fontFamily: {
-        sans: ['Sarabun', 'Inter', 'sans-serif'],
-        mono: ['Inter', 'monospace'],
-      },
+      fontFamily: { sans: ['Sarabun','Inter','sans-serif'] },
       colors: {
-        brand: {
-          50:  '#eef2ff',
-          100: '#e0e7ff',
-          200: '#c7d2fe',
-          500: '#6366f1',
-          600: '#4f46e5',
-          700: '#4338ca',
-        }
-      }
+        brand: { 500:'#6366f1', 600:'#4f46e5' }
+      },
+      screens: { xs: '400px' }
     }
   }
 }
 </script>
 
 <style>
-  body { font-family: 'Sarabun', 'Inter', sans-serif; }
-  .num { font-family: 'Inter', sans-serif; }
+  * { font-family:'Sarabun','Inter',sans-serif; }
+  .num { font-family:'Inter',sans-serif !important; }
 
-  /* Smooth transitions */
-  .card-hover {
-    transition: box-shadow .2s ease, transform .2s ease;
-  }
-  .card-hover:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 40px rgba(99,102,241,.12);
-  }
-
-  /* KPI accent top bar */
-  .kpi-accent::before {
-    content: '';
-    position: absolute; top: 0; left: 0; right: 0; height: 3px;
-    border-radius: 12px 12px 0 0;
-    background: var(--accent-grad);
-  }
-
-  /* Chart.js tooltip style */
-  .chartjs-tooltip { backdrop-filter: blur(8px); }
-
-  /* Scrollbar */
-  ::-webkit-scrollbar { width: 6px; height: 6px; }
-  ::-webkit-scrollbar-track { background: #f1f5f9; }
-  ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
-
-  /* Timeline */
-  .tl-line {
-    position: absolute; left: 19px; top: 32px; bottom: 0;
-    width: 1px; background: linear-gradient(180deg,#6366f1,#a5b4fc,transparent);
-  }
-  .tl-dot {
-    width: 10px; height: 10px; border-radius: 50%;
-    border: 2px solid currentColor;
-    background: white;
-    position: absolute; left: -29px; top: 5px;
-  }
-
-  /* Animated counter */
-  @keyframes countUp {
-    from { opacity: 0; transform: translateY(8px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-  .kpi-val { animation: countUp .5s ease both; }
-
-  /* Stagger */
-  .stagger > *:nth-child(1) { animation-delay: .05s; }
-  .stagger > *:nth-child(2) { animation-delay: .10s; }
-  .stagger > *:nth-child(3) { animation-delay: .15s; }
-  .stagger > *:nth-child(4) { animation-delay: .20s; }
-  .stagger > *:nth-child(5) { animation-delay: .25s; }
+  /* Page transitions */
+  .page { display:none; }
+  .page.active { display:block; animation: fadeUp .35s ease both; }
 
   @keyframes fadeUp {
-    from { opacity:0; transform:translateY(16px); }
+    from { opacity:0; transform:translateY(12px); }
     to   { opacity:1; transform:translateY(0); }
   }
-  .fade-up { animation: fadeUp .45s ease both; }
 
-  /* progress bar */
-  .prog-bar {
-    height: 6px; border-radius: 3px;
-    background: #e2e8f0; overflow: hidden;
-  }
-  .prog-fill {
-    height: 100%; border-radius: 3px;
-    transition: width 1s cubic-bezier(.34,1.56,.64,1);
+  /* Scrollbar */
+  ::-webkit-scrollbar { width:5px; height:5px; }
+  ::-webkit-scrollbar-track { background:#f1f5f9; }
+  ::-webkit-scrollbar-thumb { background:#cbd5e1; border-radius:99px; }
+
+  /* Card hover */
+  .card { transition: box-shadow .2s ease, transform .2s ease; }
+  .card:hover { transform:translateY(-1px); box-shadow:0 8px 32px rgba(99,102,241,.1); }
+
+  /* KPI top accent */
+  .kpi-top::before {
+    content:''; position:absolute; top:0; left:0; right:0; height:3px;
+    border-radius:12px 12px 0 0; background:var(--c);
   }
 
-  /* badge pill */
+  /* Progress */
+  .pb { height:6px; border-radius:99px; background:#e2e8f0; overflow:hidden; }
+  .pf { height:100%; border-radius:99px; transition:width 1.2s cubic-bezier(.34,1.56,.64,1); }
+
+  /* Pill badge */
   .pill {
-    display: inline-flex; align-items: center; gap: 4px;
-    padding: 3px 10px; border-radius: 999px;
-    font-size: 11px; font-weight: 600;
+    display:inline-flex; align-items:center; gap:3px;
+    padding:2px 9px; border-radius:99px;
+    font-size:11px; font-weight:600; line-height:1.6;
   }
+
+  /* Nav active */
+  .nav-btn.active {
+    color:#4f46e5;
+    border-bottom:2px solid #4f46e5;
+    background:rgba(99,102,241,.05);
+  }
+  .nav-btn { border-bottom:2px solid transparent; }
+
+  /* Mobile bottom nav */
+  .mob-nav-btn.active .mob-icon { color:#4f46e5; }
+  .mob-nav-btn.active .mob-label { color:#4f46e5; font-weight:700; }
+
+  /* Table row */
+  tr.hover:hover td { background:#f8fafc; }
+
+  /* Section heading */
+  .sec-head {
+    display:flex; align-items:center; gap:10px; margin-bottom:16px;
+  }
+  .sec-head-bar {
+    width:3px; height:16px; border-radius:99px;
+    background:linear-gradient(180deg,#6366f1,#a855f7);
+    flex-shrink:0;
+  }
+  .sec-head-line { flex:1; height:1px; background:#e2e8f0; }
+  .sec-head-label {
+    font-size:10px; font-weight:700; letter-spacing:.1em;
+    text-transform:uppercase; color:#94a3b8;
+  }
+
+  /* Timeline */
+  .tl-wrap { position:relative; padding-left:40px; }
+  .tl-spine {
+    position:absolute; left:19px; top:20px; bottom:0;
+    width:1px; background:linear-gradient(180deg,#6366f1,#a5b4fc80,transparent);
+  }
+  .tl-dot {
+    position:absolute; left:-29px; top:6px;
+    width:10px; height:10px; border-radius:50%;
+    border:2px solid currentColor; background:white;
+  }
+
+  /* Gradient text */
+  .grad-text {
+    background:linear-gradient(135deg,#6366f1,#a855f7);
+    -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+    background-clip:text;
+  }
+
+  /* Spotlight card */
+  .spotlight-bg {
+    background:linear-gradient(135deg,#faf5ff 0%,#ede9fe 60%,#f0f9ff 100%);
+  }
+  .orb {
+    position:absolute; border-radius:50%; filter:blur(40px); pointer-events:none;
+  }
+
+  /* Stagger animation */
+  .stagger > *:nth-child(1) { animation-delay:.04s; }
+  .stagger > *:nth-child(2) { animation-delay:.08s; }
+  .stagger > *:nth-child(3) { animation-delay:.12s; }
+  .stagger > *:nth-child(4) { animation-delay:.16s; }
+  .stagger > *:nth-child(5) { animation-delay:.20s; }
+  .stagger > * { animation:fadeUp .4s ease both; }
+
+  /* Sticky header blur */
+  .glass { background:rgba(255,255,255,.85); backdrop-filter:blur(12px); }
+
+  /* Mobile padding bottom for bottom nav */
+  .main-wrap { padding-bottom: 80px; }
+  @media(min-width:768px) { .main-wrap { padding-bottom:32px; } }
+
+  /* Rank badges */
+  .rank-1 { background:linear-gradient(135deg,#fbbf24,#f59e0b); color:white; }
+  .rank-2 { background:linear-gradient(135deg,#94a3b8,#64748b); color:white; }
+  .rank-3 { background:linear-gradient(135deg,#fb923c,#ea580c); color:white; }
 </style>
 </head>
 
 <body class="bg-slate-50 text-slate-700 min-h-screen">
 
-<!-- ══════════════════════════════════════
-     TOPBAR
-══════════════════════════════════════ -->
-<header class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-slate-200">
-  <div class="max-w-screen-2xl mx-auto px-6 h-16 flex items-center justify-between gap-4">
+<!-- ══════════════ TOPBAR ══════════════ -->
+<header class="sticky top-0 z-50 glass border-b border-slate-200">
+  <div class="max-w-screen-xl mx-auto px-4 md:px-6 h-14 flex items-center justify-between gap-3">
 
-    <div class="flex items-center gap-3">
-      <!-- Logo -->
-      <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center shadow-md shadow-indigo-200">
-        <span class="text-white font-black text-sm num">T</span>
+    <div class="flex items-center gap-2.5">
+      <div class="w-8 h-8 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center shadow-md shadow-indigo-200 flex-shrink-0">
+        <span class="text-white font-black text-xs num">TSR</span>
       </div>
-      <div>
+      <div class="leading-tight">
         <p class="text-sm font-bold text-slate-800 leading-tight">TSR Situation Room</p>
-        <p class="text-xs text-slate-400 leading-tight">สุราชุมชน · Brand &amp; Influencer Intelligence</p>
+        <p class="text-xs text-slate-400 hidden sm:block">สุราชุมชน · Brand &amp; Influencer</p>
       </div>
     </div>
 
-    <div class="flex items-center gap-2">
-      <!-- Live pill -->
-      <div class="pill bg-emerald-50 text-emerald-700 border border-emerald-200">
-        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-        Live
-      </div>
-      <!-- Date -->
-      <div class="pill bg-slate-100 text-slate-500 border border-slate-200 num">
-        26 มีนาคม 2569
-      </div>
-      <!-- Report ID -->
-      <div class="pill bg-indigo-50 text-indigo-600 border border-indigo-200">
-        #TSR-20260326
-      </div>
+    <div class="flex items-center gap-1.5 flex-wrap justify-end">
+      <span class="pill bg-emerald-50 text-emerald-700 border border-emerald-200">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>Live
+      </span>
+      <span class="pill bg-slate-100 text-slate-500 border border-slate-200 num hidden sm:inline-flex">26 มี.ค. 2569</span>
+      <span class="pill bg-indigo-50 text-indigo-600 border border-indigo-200 hidden md:inline-flex">#TSR-20260326</span>
     </div>
-
   </div>
 </header>
 
-<!-- ══════════════════════════════════════
-     SUB NAV
-══════════════════════════════════════ -->
-<nav class="bg-white border-b border-slate-200">
-  <div class="max-w-screen-2xl mx-auto px-6">
+<!-- ══════════════ DESKTOP NAV ══════════════ -->
+<nav class="bg-white border-b border-slate-200 sticky top-14 z-40 hidden md:block">
+  <div class="max-w-screen-xl mx-auto px-6">
     <div class="flex gap-0 overflow-x-auto">
-      <button class="px-4 py-3 text-xs font-semibold text-indigo-600 border-b-2 border-indigo-500 bg-indigo-50/50 whitespace-nowrap">ภาพรวม</button>
-      <button class="px-4 py-3 text-xs font-medium text-slate-400 hover:text-slate-600 border-b-2 border-transparent whitespace-nowrap transition-colors">แบรนด์</button>
-      <button class="px-4 py-3 text-xs font-medium text-slate-400 hover:text-slate-600 border-b-2 border-transparent whitespace-nowrap transition-colors">อินฟลูเอนเซอร์</button>
-      <button class="px-4 py-3 text-xs font-medium text-slate-400 hover:text-slate-600 border-b-2 border-transparent whitespace-nowrap transition-colors">กิจกรรม</button>
-      <button class="px-4 py-3 text-xs font-medium text-slate-400 hover:text-slate-600 border-b-2 border-transparent whitespace-nowrap transition-colors">Brand Spotlight</button>
+      <button onclick="showPage('overview')" data-page="overview" class="nav-btn active px-5 py-3 text-xs font-semibold whitespace-nowrap transition-all">
+        📊 ภาพรวม
+      </button>
+      <button onclick="showPage('brands')" data-page="brands" class="nav-btn px-5 py-3 text-xs font-medium text-slate-500 hover:text-slate-700 whitespace-nowrap transition-all">
+        🍶 แบรนด์
+      </button>
+      <button onclick="showPage('influencers')" data-page="influencers" class="nav-btn px-5 py-3 text-xs font-medium text-slate-500 hover:text-slate-700 whitespace-nowrap transition-all">
+        📣 อินฟลูเอนเซอร์
+      </button>
+      <button onclick="showPage('events')" data-page="events" class="nav-btn px-5 py-3 text-xs font-medium text-slate-500 hover:text-slate-700 whitespace-nowrap transition-all">
+        📅 กิจกรรม
+      </button>
+      <button onclick="showPage('spotlight')" data-page="spotlight" class="nav-btn px-5 py-3 text-xs font-medium text-slate-500 hover:text-slate-700 whitespace-nowrap transition-all">
+        ✨ Brand Spotlight
+      </button>
     </div>
   </div>
 </nav>
 
-<!-- ══════════════════════════════════════
-     MAIN
-══════════════════════════════════════ -->
-<main class="max-w-screen-2xl mx-auto px-6 py-7 space-y-8 pb-16">
+<!-- ══════════════ MAIN ══════════════ -->
+<main class="max-w-screen-xl mx-auto px-4 md:px-6 py-6 space-y-8 main-wrap">
 
-  <!-- ── SECTION LABEL helper ──
-       Using a div with flex + divider style -->
+<!-- ════════════════════════════════════
+     PAGE 1: ภาพรวม (Overview)
+════════════════════════════════════ -->
+<div id="page-overview" class="page active space-y-8">
 
-  <!-- ════════ KPI CARDS ════════ -->
+  <!-- KPI Cards -->
   <section>
-    <div class="flex items-center gap-3 mb-4">
-      <div class="w-1 h-4 rounded bg-gradient-to-b from-indigo-500 to-purple-500"></div>
-      <span class="text-xs font-bold tracking-widest text-slate-400 uppercase">ตัวชี้วัดหลัก · Key Metrics</span>
-      <div class="flex-1 h-px bg-slate-200"></div>
+    <div class="sec-head">
+      <div class="sec-head-bar"></div>
+      <span class="sec-head-label">ตัวชี้วัดหลัก · Key Metrics</span>
+      <div class="sec-head-line"></div>
     </div>
 
-    <div class="grid grid-cols-5 gap-4 stagger">
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 stagger">
 
-      <!-- KPI 1 -->
-      <div class="relative bg-white rounded-2xl p-5 shadow-sm border border-slate-100 card-hover kpi-accent overflow-hidden fade-up"
-           style="--accent-grad: linear-gradient(90deg,#6366f1,#818cf8)">
-        <div class="absolute top-3 right-3 w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center text-lg">🏭</div>
-        <p class="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-2">แบรนด์ทั้งหมด</p>
-        <p class="num text-3xl font-black text-slate-800 leading-none" id="kpi1">1,432</p>
-        <p class="text-xs text-slate-400 mt-2">ทั่วประเทศ · 8 ภูมิภาค</p>
-        <div class="mt-3 prog-bar">
-          <div class="prog-fill bg-gradient-to-r from-indigo-400 to-indigo-600" style="width:100%"></div>
-        </div>
+      <div class="relative bg-white rounded-2xl p-4 md:p-5 shadow-sm border border-slate-100 card kpi-top overflow-hidden"
+           style="--c:linear-gradient(90deg,#6366f1,#818cf8)">
+        <div class="absolute top-3 right-3 w-9 h-9 rounded-xl bg-indigo-50 flex items-center justify-center text-base">🏭</div>
+        <p class="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-1.5">แบรนด์ทั้งหมด</p>
+        <p class="num text-2xl md:text-3xl font-black text-slate-800 leading-none">1,432</p>
+        <p class="text-xs text-slate-400 mt-1.5">8 ภูมิภาค</p>
+        <div class="mt-3 pb"><div class="pf bg-gradient-to-r from-indigo-400 to-indigo-600" style="width:100%"></div></div>
       </div>
 
-      <!-- KPI 2 -->
-      <div class="relative bg-white rounded-2xl p-5 shadow-sm border border-slate-100 card-hover kpi-accent overflow-hidden fade-up"
-           style="--accent-grad: linear-gradient(90deg,#8b5cf6,#a78bfa)">
-        <div class="absolute top-3 right-3 w-10 h-10 rounded-xl bg-violet-50 flex items-center justify-center text-lg">🍶</div>
-        <p class="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-2">แบรนด์สุรา</p>
-        <p class="num text-3xl font-black text-slate-800 leading-none" id="kpi2">1,198</p>
-        <p class="text-xs text-slate-400 mt-2">83.7% ของทั้งหมด</p>
-        <div class="mt-3 prog-bar">
-          <div class="prog-fill bg-gradient-to-r from-violet-400 to-violet-600" style="width:83.7%"></div>
-        </div>
+      <div class="relative bg-white rounded-2xl p-4 md:p-5 shadow-sm border border-slate-100 card kpi-top overflow-hidden"
+           style="--c:linear-gradient(90deg,#8b5cf6,#a78bfa)">
+        <div class="absolute top-3 right-3 w-9 h-9 rounded-xl bg-violet-50 flex items-center justify-center text-base">🍶</div>
+        <p class="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-1.5">สุรา</p>
+        <p class="num text-2xl md:text-3xl font-black text-slate-800 leading-none">1,198</p>
+        <p class="text-xs text-slate-400 mt-1.5">83.7%</p>
+        <div class="mt-3 pb"><div class="pf bg-gradient-to-r from-violet-400 to-violet-600" style="width:83.7%"></div></div>
       </div>
 
-      <!-- KPI 3 -->
-      <div class="relative bg-white rounded-2xl p-5 shadow-sm border border-slate-100 card-hover kpi-accent overflow-hidden fade-up"
-           style="--accent-grad: linear-gradient(90deg,#f59e0b,#fbbf24)">
-        <div class="absolute top-3 right-3 w-10 h-10 rounded-xl bg-amber-50 flex items-center justify-center text-lg">🍺</div>
-        <p class="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-2">แบรนด์เบียร์</p>
-        <p class="num text-3xl font-black text-slate-800 leading-none" id="kpi3">234</p>
-        <p class="text-xs text-slate-400 mt-2">16.3% ของทั้งหมด</p>
-        <div class="mt-3 prog-bar">
-          <div class="prog-fill bg-gradient-to-r from-amber-400 to-amber-500" style="width:16.3%"></div>
-        </div>
+      <div class="relative bg-white rounded-2xl p-4 md:p-5 shadow-sm border border-slate-100 card kpi-top overflow-hidden"
+           style="--c:linear-gradient(90deg,#f59e0b,#fbbf24)">
+        <div class="absolute top-3 right-3 w-9 h-9 rounded-xl bg-amber-50 flex items-center justify-center text-base">🍺</div>
+        <p class="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-1.5">เบียร์</p>
+        <p class="num text-2xl md:text-3xl font-black text-slate-800 leading-none">234</p>
+        <p class="text-xs text-slate-400 mt-1.5">16.3%</p>
+        <div class="mt-3 pb"><div class="pf bg-gradient-to-r from-amber-400 to-amber-500" style="width:16.3%"></div></div>
       </div>
 
-      <!-- KPI 4 -->
-      <div class="relative bg-white rounded-2xl p-5 shadow-sm border border-slate-100 card-hover kpi-accent overflow-hidden fade-up"
-           style="--accent-grad: linear-gradient(90deg,#06b6d4,#22d3ee)">
-        <div class="absolute top-3 right-3 w-10 h-10 rounded-xl bg-cyan-50 flex items-center justify-center text-lg">📣</div>
-        <p class="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-2">อินฟลูเอนเซอร์</p>
-        <p class="num text-3xl font-black text-slate-800 leading-none" id="kpi4">835</p>
-        <p class="text-xs text-slate-400 mt-2">5 แพลตฟอร์ม</p>
-        <div class="mt-3 prog-bar">
-          <div class="prog-fill bg-gradient-to-r from-cyan-400 to-cyan-500" style="width:75%"></div>
-        </div>
+      <div class="relative bg-white rounded-2xl p-4 md:p-5 shadow-sm border border-slate-100 card kpi-top overflow-hidden"
+           style="--c:linear-gradient(90deg,#06b6d4,#22d3ee)">
+        <div class="absolute top-3 right-3 w-9 h-9 rounded-xl bg-cyan-50 flex items-center justify-center text-base">📣</div>
+        <p class="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-1.5">อินฟลูเอนเซอร์</p>
+        <p class="num text-2xl md:text-3xl font-black text-slate-800 leading-none">835</p>
+        <p class="text-xs text-slate-400 mt-1.5">5 แพลตฟอร์ม</p>
+        <div class="mt-3 pb"><div class="pf bg-gradient-to-r from-cyan-400 to-cyan-500" style="width:75%"></div></div>
       </div>
 
-      <!-- KPI 5 -->
-      <div class="relative bg-white rounded-2xl p-5 shadow-sm border border-slate-100 card-hover kpi-accent overflow-hidden fade-up"
-           style="--accent-grad: linear-gradient(90deg,#f43f5e,#fb7185)">
-        <div class="absolute top-3 right-3 w-10 h-10 rounded-xl bg-rose-50 flex items-center justify-center text-lg">⚠️</div>
-        <p class="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-2">ไม่ระบุภูมิภาค</p>
-        <p class="num text-3xl font-black text-slate-800 leading-none" id="kpi5">254</p>
-        <p class="text-xs text-slate-400 mt-2">17.7% ต้องตรวจสอบ</p>
-        <div class="mt-3 prog-bar">
-          <div class="prog-fill bg-gradient-to-r from-rose-400 to-rose-500" style="width:17.7%"></div>
-        </div>
+      <div class="relative bg-white rounded-2xl p-4 md:p-5 shadow-sm border border-slate-100 card kpi-top overflow-hidden col-span-2 sm:col-span-1"
+           style="--c:linear-gradient(90deg,#f43f5e,#fb7185)">
+        <div class="absolute top-3 right-3 w-9 h-9 rounded-xl bg-rose-50 flex items-center justify-center text-base">⚠️</div>
+        <p class="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-1.5">ไม่ระบุภูมิภาค</p>
+        <p class="num text-2xl md:text-3xl font-black text-slate-800 leading-none">254</p>
+        <p class="text-xs text-slate-400 mt-1.5">17.7% ต้องตรวจสอบ</p>
+        <div class="mt-3 pb"><div class="pf bg-gradient-to-r from-rose-400 to-rose-500" style="width:17.7%"></div></div>
       </div>
 
     </div>
   </section>
 
-  <!-- ════════ ROW: REGIONAL + TYPE ════════ -->
+  <!-- Regional + Type -->
   <section>
-    <div class="flex items-center gap-3 mb-4">
-      <div class="w-1 h-4 rounded bg-gradient-to-b from-indigo-500 to-purple-500"></div>
-      <span class="text-xs font-bold tracking-widest text-slate-400 uppercase">การกระจายตัวแบรนด์ · Brand Distribution</span>
-      <div class="flex-1 h-px bg-slate-200"></div>
+    <div class="sec-head">
+      <div class="sec-head-bar"></div>
+      <span class="sec-head-label">การกระจายแบรนด์ · Brand Distribution</span>
+      <div class="sec-head-line"></div>
     </div>
 
-    <div class="grid grid-cols-3 gap-4" style="grid-template-columns:1.8fr 1fr">
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-4">
 
       <!-- Regional chart -->
-      <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 card-hover fade-up">
+      <div class="lg:col-span-3 bg-white rounded-2xl p-5 shadow-sm border border-slate-100 card">
         <p class="text-sm font-bold text-slate-800">จำนวนแบรนด์แยกตามภูมิภาค</p>
-        <p class="text-xs text-slate-400 mt-0.5 mb-5">Regional Distribution · 8 ภาค + ไม่ระบุ</p>
-        <div class="relative h-72">
+        <p class="text-xs text-slate-400 mt-0.5 mb-4">Regional Distribution · 8 ภาค + ไม่ระบุ</p>
+        <div class="relative h-56 md:h-64">
           <canvas id="regionalChart"></canvas>
         </div>
       </div>
 
-      <!-- Type donut + stat bars -->
-      <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 card-hover fade-up">
+      <!-- Type donut -->
+      <div class="lg:col-span-2 bg-white rounded-2xl p-5 shadow-sm border border-slate-100 card">
         <p class="text-sm font-bold text-slate-800">สัดส่วนประเภทผลิตภัณฑ์</p>
-        <p class="text-xs text-slate-400 mt-0.5 mb-4">Product Type Breakdown</p>
-        <div class="relative h-48">
+        <p class="text-xs text-slate-400 mt-0.5 mb-3">Product Type</p>
+        <div class="relative h-40">
           <canvas id="typeChart"></canvas>
         </div>
-        <div class="mt-4 pt-4 border-t border-slate-100 grid grid-cols-2 gap-3">
+        <div class="mt-3 pt-3 border-t border-slate-100 grid grid-cols-2 gap-2">
           <div class="bg-violet-50 rounded-xl p-3 border border-violet-100">
-            <p class="text-xs text-violet-500 font-semibold mb-1">สุรา</p>
-            <p class="num text-2xl font-black text-violet-700">1,198</p>
-            <div class="mt-2 prog-bar">
-              <div class="prog-fill bg-gradient-to-r from-violet-400 to-violet-600" style="width:83.7%"></div>
-            </div>
+            <p class="text-xs text-violet-500 font-semibold">สุรา</p>
+            <p class="num text-xl font-black text-violet-700">1,198</p>
+            <div class="mt-1.5 pb"><div class="pf bg-gradient-to-r from-violet-400 to-violet-600" style="width:83.7%"></div></div>
           </div>
           <div class="bg-amber-50 rounded-xl p-3 border border-amber-100">
-            <p class="text-xs text-amber-600 font-semibold mb-1">เบียร์</p>
-            <p class="num text-2xl font-black text-amber-700">234</p>
-            <div class="mt-2 prog-bar">
-              <div class="prog-fill bg-gradient-to-r from-amber-400 to-amber-500" style="width:16.3%"></div>
-            </div>
+            <p class="text-xs text-amber-600 font-semibold">เบียร์</p>
+            <p class="num text-xl font-black text-amber-700">234</p>
+            <div class="mt-1.5 pb"><div class="pf bg-gradient-to-r from-amber-400 to-amber-500" style="width:16.3%"></div></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ════════ DISTRIBUTION COMPARISON ════════ -->
+  <!-- Quick Trending -->
   <section>
-    <div class="flex items-center gap-3 mb-4">
-      <div class="w-1 h-4 rounded bg-gradient-to-b from-indigo-500 to-purple-500"></div>
-      <span class="text-xs font-bold tracking-widest text-slate-400 uppercase">อัตราการกระจายสินค้า · Distribution Comparison</span>
-      <div class="flex-1 h-px bg-slate-200"></div>
+    <div class="sec-head">
+      <div class="sec-head-bar"></div>
+      <span class="sec-head-label">แบรนด์เทรนดิ้ง · Trending Now</span>
+      <div class="sec-head-line"></div>
+      <button onclick="showPage('brands')" class="text-xs text-indigo-500 font-semibold hover:underline flex-shrink-0">ดูทั้งหมด →</button>
     </div>
 
-    <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 card-hover fade-up">
-      <div class="flex items-start justify-between mb-5">
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+      <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-100 card flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-indigo-50 border border-indigo-100 flex items-center justify-center font-black text-indigo-500 text-sm num flex-shrink-0">1</div>
+        <div class="flex-1 min-w-0">
+          <p class="font-bold text-slate-800 text-sm truncate">นานวนจันทร์</p>
+          <div class="mt-1 pb"><div class="pf bg-gradient-to-r from-indigo-400 to-indigo-600" style="width:100%"></div></div>
+        </div>
+        <div class="text-right flex-shrink-0">
+          <p class="num font-bold text-slate-800 text-sm">2,491</p>
+          <p class="text-xs font-semibold text-emerald-600">▲ +27.66%</p>
+        </div>
+      </div>
+      <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-100 card flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-violet-50 border border-violet-100 flex items-center justify-center font-black text-violet-500 text-sm num flex-shrink-0">2</div>
+        <div class="flex-1 min-w-0">
+          <p class="font-bold text-slate-800 text-sm truncate">Chaiyaphum</p>
+          <div class="mt-1 pb"><div class="pf bg-gradient-to-r from-violet-400 to-violet-600" style="width:65%"></div></div>
+        </div>
+        <div class="text-right flex-shrink-0">
+          <p class="num font-bold text-slate-800 text-sm">1,632</p>
+          <p class="text-xs font-semibold text-rose-500">▼ -0.33%</p>
+        </div>
+      </div>
+      <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-100 card flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-cyan-50 border border-cyan-100 flex items-center justify-center font-black text-cyan-500 text-sm num flex-shrink-0">3</div>
+        <div class="flex-1 min-w-0">
+          <p class="font-bold text-slate-800 text-sm truncate">ออนซอน</p>
+          <div class="mt-1 pb"><div class="pf bg-gradient-to-r from-cyan-400 to-cyan-600" style="width:61%"></div></div>
+        </div>
+        <div class="text-right flex-shrink-0">
+          <p class="num font-bold text-slate-800 text-sm">1,528</p>
+          <p class="text-xs font-semibold text-emerald-600">▲ +14.75%</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Upcoming events quick view -->
+  <section>
+    <div class="sec-head">
+      <div class="sec-head-bar"></div>
+      <span class="sec-head-label">กิจกรรมใกล้ถึง · Upcoming</span>
+      <div class="sec-head-line"></div>
+      <button onclick="showPage('events')" class="text-xs text-indigo-500 font-semibold hover:underline flex-shrink-0">ดูทั้งหมด →</button>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+      <div class="bg-white rounded-2xl p-4 shadow-sm border border-indigo-100 card">
+        <div class="text-indigo-400 text-xs font-bold uppercase tracking-wide mb-1">28 มี.ค. 2569</div>
+        <p class="font-bold text-slate-800 text-sm">Craft Brewing Program</p>
+        <p class="text-xs text-slate-500 mt-1">รอบที่ 1 · Workshop</p>
+        <span class="pill bg-indigo-100 text-indigo-600 mt-2 inline-block">Workshop</span>
+      </div>
+      <div class="bg-white rounded-2xl p-4 shadow-sm border border-violet-100 card">
+        <div class="text-violet-400 text-xs font-bold uppercase tracking-wide mb-1">3–5 เม.ย. 2569</div>
+        <p class="font-bold text-slate-800 text-sm">Grove Brew Fest</p>
+        <p class="text-xs text-slate-500 mt-1">ภูเก็ต · 60 แบรนด์</p>
+        <span class="pill bg-violet-100 text-violet-600 mt-2 inline-block">Festival</span>
+      </div>
+      <div class="bg-white rounded-2xl p-4 shadow-sm border border-cyan-100 card">
+        <div class="text-cyan-500 text-xs font-bold uppercase tracking-wide mb-1">25 เม.ย. 2569</div>
+        <p class="font-bold text-slate-800 text-sm">Craft Brewing Program</p>
+        <p class="text-xs text-slate-500 mt-1">รอบที่ 2 · Workshop</p>
+        <span class="pill bg-cyan-100 text-cyan-700 mt-2 inline-block">Workshop</span>
+      </div>
+      <div class="bg-white rounded-2xl p-4 shadow-sm border border-amber-100 card">
+        <div class="text-amber-500 text-xs font-bold uppercase tracking-wide mb-1">8–10 พ.ค. 2569</div>
+        <p class="font-bold text-slate-800 text-sm">คราฟต์กลางกรุง</p>
+        <p class="text-xs text-slate-500 mt-1">กรุงเทพฯ · 46 แบรนด์</p>
+        <span class="pill bg-amber-100 text-amber-700 mt-2 inline-block">Festival</span>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /page-overview -->
+
+
+<!-- ════════════════════════════════════
+     PAGE 2: แบรนด์ (Brands)
+════════════════════════════════════ -->
+<div id="page-brands" class="page space-y-8">
+
+  <!-- Distribution Chart -->
+  <section>
+    <div class="sec-head">
+      <div class="sec-head-bar"></div>
+      <span class="sec-head-label">อัตราการกระจายสินค้า · Distribution Rate</span>
+      <div class="sec-head-line"></div>
+    </div>
+
+    <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100 card">
+      <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3 mb-5">
         <div>
           <p class="text-sm font-bold text-slate-800">Top 10 แบรนด์ — อัตราการกระจายสินค้า</p>
-          <p class="text-xs text-slate-400 mt-0.5">มีนาคม 2567 vs กุมภาพันธ์ 2567</p>
+          <p class="text-xs text-slate-400">มีนาคม 2567 vs กุมภาพันธ์ 2567</p>
         </div>
         <div class="flex gap-2">
           <span class="pill bg-indigo-50 text-indigo-600 border border-indigo-100">มี.ค. 2567</span>
           <span class="pill bg-slate-100 text-slate-500 border border-slate-200">ก.พ. 2567</span>
         </div>
       </div>
-      <div class="relative h-72">
+      <div class="relative h-64 md:h-80">
         <canvas id="distChart"></canvas>
       </div>
     </div>
   </section>
 
-  <!-- ════════ TRENDING + EVENTS ════════ -->
+  <!-- Full table -->
   <section>
-    <div class="flex items-center gap-3 mb-4">
-      <div class="w-1 h-4 rounded bg-gradient-to-b from-indigo-500 to-purple-500"></div>
-      <span class="text-xs font-bold tracking-widest text-slate-400 uppercase">แบรนด์เทรนดิ้ง &amp; กิจกรรม</span>
-      <div class="flex-1 h-px bg-slate-200"></div>
+    <div class="sec-head">
+      <div class="sec-head-bar"></div>
+      <span class="sec-head-label">ตารางการกระจายสินค้า · Distribution Table</span>
+      <div class="sec-head-line"></div>
     </div>
 
-    <div class="grid gap-4" style="grid-template-columns:1fr 1.4fr">
+    <div class="bg-white rounded-2xl shadow-sm border border-slate-100 card overflow-hidden">
+      <div class="p-5 border-b border-slate-100">
+        <p class="text-sm font-bold text-slate-800">Top Distribution Brands</p>
+        <p class="text-xs text-slate-400">อัตราการกระจายสินค้า มีนาคม vs กุมภาพันธ์ 2567</p>
+      </div>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="bg-slate-50">
+              <th class="text-left py-3 px-4 text-xs font-semibold text-slate-400 whitespace-nowrap">#</th>
+              <th class="text-left py-3 px-4 text-xs font-semibold text-slate-400 whitespace-nowrap">แบรนด์</th>
+              <th class="text-left py-3 px-4 text-xs font-semibold text-slate-400 whitespace-nowrap">มี.ค. 67</th>
+              <th class="text-left py-3 px-4 text-xs font-semibold text-slate-400 whitespace-nowrap">ก.พ. 67</th>
+              <th class="text-left py-3 px-4 text-xs font-semibold text-slate-400 whitespace-nowrap">เปลี่ยนแปลง</th>
+              <th class="text-left py-3 px-4 text-xs font-semibold text-slate-400 whitespace-nowrap">Progress</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-50">
+            <tr id="brands-data"></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
 
-      <!-- Trending list -->
-      <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 card-hover fade-up">
-        <p class="text-sm font-bold text-slate-800 mb-1">แบรนด์ที่กำลังเติบโต</p>
-        <p class="text-xs text-slate-400 mb-5">Engagement &amp; Distribution Growth</p>
+  <!-- Trending engagement -->
+  <section>
+    <div class="sec-head">
+      <div class="sec-head-bar"></div>
+      <span class="sec-head-label">Engagement Rankings</span>
+      <div class="sec-head-line"></div>
+    </div>
 
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+      <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100 card">
+        <p class="text-sm font-bold text-slate-800 mb-1">Top Engagement Score</p>
+        <p class="text-xs text-slate-400 mb-4">คะแนน Engagement รายแบรนด์</p>
         <div class="space-y-1">
-
-          <div class="flex items-center gap-3 py-2.5 px-2 rounded-xl hover:bg-slate-50 transition-colors">
-            <span class="num w-5 text-center text-xs font-black text-amber-500">1</span>
+          <div class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-slate-50 transition-colors">
+            <div class="w-7 h-7 rounded-xl rank-1 flex items-center justify-center text-xs font-black num flex-shrink-0">1</div>
             <div class="flex-1 min-w-0">
               <p class="text-sm font-semibold text-slate-800">นานวนจันทร์</p>
-              <div class="mt-1.5 prog-bar"><div class="prog-fill bg-gradient-to-r from-indigo-400 to-indigo-600" style="width:100%"></div></div>
+              <div class="mt-1 pb"><div class="pf bg-gradient-to-r from-indigo-400 to-indigo-600" style="width:100%"></div></div>
             </div>
             <div class="text-right flex-shrink-0">
               <p class="num text-sm font-bold text-slate-800">2,491</p>
               <p class="text-xs font-semibold text-emerald-600">▲ +27.66%</p>
             </div>
           </div>
-
-          <div class="flex items-center gap-3 py-2.5 px-2 rounded-xl hover:bg-slate-50 transition-colors">
-            <span class="num w-5 text-center text-xs font-bold text-slate-400">2</span>
+          <div class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-slate-50 transition-colors">
+            <div class="w-7 h-7 rounded-xl rank-2 flex items-center justify-center text-xs font-black num flex-shrink-0">2</div>
             <div class="flex-1 min-w-0">
               <p class="text-sm font-semibold text-slate-800">Chaiyaphum</p>
-              <div class="mt-1.5 prog-bar"><div class="prog-fill bg-gradient-to-r from-violet-400 to-violet-600" style="width:65%"></div></div>
+              <div class="mt-1 pb"><div class="pf bg-gradient-to-r from-violet-400 to-violet-600" style="width:65%"></div></div>
             </div>
             <div class="text-right flex-shrink-0">
               <p class="num text-sm font-bold text-slate-800">1,632</p>
               <p class="text-xs font-semibold text-rose-500">▼ -0.33%</p>
             </div>
           </div>
-
-          <div class="flex items-center gap-3 py-2.5 px-2 rounded-xl hover:bg-slate-50 transition-colors">
-            <span class="num w-5 text-center text-xs font-bold text-slate-400">3</span>
+          <div class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-slate-50 transition-colors">
+            <div class="w-7 h-7 rounded-xl rank-3 flex items-center justify-center text-xs font-black num flex-shrink-0">3</div>
             <div class="flex-1 min-w-0">
               <p class="text-sm font-semibold text-slate-800">ออนซอน</p>
-              <div class="mt-1.5 prog-bar"><div class="prog-fill bg-gradient-to-r from-cyan-400 to-cyan-600" style="width:61%"></div></div>
+              <div class="mt-1 pb"><div class="pf bg-gradient-to-r from-cyan-400 to-cyan-600" style="width:61%"></div></div>
             </div>
             <div class="text-right flex-shrink-0">
               <p class="num text-sm font-bold text-slate-800">1,528</p>
               <p class="text-xs font-semibold text-emerald-600">▲ +14.75%</p>
             </div>
           </div>
-
-          <div class="flex items-center gap-3 py-2.5 px-2 rounded-xl hover:bg-slate-50 transition-colors">
-            <span class="num w-5 text-center text-xs font-bold text-slate-400">4</span>
+          <div class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-slate-50 transition-colors">
+            <div class="w-7 h-7 rounded-xl bg-slate-100 flex items-center justify-center text-xs font-black text-slate-500 num flex-shrink-0">4</div>
             <div class="flex-1 min-w-0">
               <p class="text-sm font-semibold text-slate-800">สักทองแพร่</p>
-              <p class="text-xs text-slate-400">Distribution Rate</p>
-              <div class="mt-1.5 prog-bar"><div class="prog-fill bg-gradient-to-r from-indigo-400 to-indigo-600" style="width:82%"></div></div>
+              <div class="mt-1 pb"><div class="pf bg-gradient-to-r from-amber-400 to-amber-500" style="width:45%"></div></div>
             </div>
             <div class="text-right flex-shrink-0">
               <p class="num text-sm font-bold text-slate-800">4.1%</p>
               <p class="text-xs font-semibold text-emerald-600">▲ +0.6pp</p>
             </div>
           </div>
-
-          <div class="flex items-center gap-3 py-2.5 px-2 rounded-xl hover:bg-slate-50 transition-colors">
-            <span class="num w-5 text-center text-xs font-bold text-slate-400">5</span>
+          <div class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-slate-50 transition-colors">
+            <div class="w-7 h-7 rounded-xl bg-slate-100 flex items-center justify-center text-xs font-black text-slate-500 num flex-shrink-0">5</div>
             <div class="flex-1 min-w-0">
               <p class="text-sm font-semibold text-slate-800">เงาจันทร์</p>
-              <p class="text-xs text-slate-400">Distribution Rate</p>
-              <div class="mt-1.5 prog-bar"><div class="prog-fill bg-gradient-to-r from-indigo-400 to-indigo-600" style="width:70%"></div></div>
+              <div class="mt-1 pb"><div class="pf bg-gradient-to-r from-emerald-400 to-emerald-600" style="width:40%"></div></div>
             </div>
             <div class="text-right flex-shrink-0">
               <p class="num text-sm font-bold text-slate-800">3.5%</p>
               <p class="text-xs font-semibold text-emerald-600">▲ +0.8pp</p>
             </div>
           </div>
-
-          <div class="flex items-center gap-3 py-2.5 px-2 rounded-xl hover:bg-slate-50 transition-colors">
-            <span class="num w-5 text-center text-xs font-bold text-slate-400">6</span>
-            <div class="flex-1 min-w-0">
-              <p class="text-sm font-semibold text-slate-800">อ้อยใจ</p>
-              <p class="text-xs text-slate-400">Distribution Rate</p>
-              <div class="mt-1.5 prog-bar"><div class="prog-fill bg-gradient-to-r from-emerald-400 to-emerald-600" style="width:56%"></div></div>
-            </div>
-            <div class="text-right flex-shrink-0">
-              <p class="num text-sm font-bold text-slate-800">2.8%</p>
-              <p class="text-xs font-semibold text-emerald-600">▲ +1.2pp</p>
-            </div>
-          </div>
-
-          <div class="flex items-center gap-3 py-2.5 px-2 rounded-xl hover:bg-slate-50 transition-colors">
-            <span class="num w-5 text-center text-xs font-bold text-slate-400">7</span>
-            <div class="flex-1 min-w-0">
-              <p class="text-sm font-semibold text-slate-800">อูฐทอง</p>
-              <p class="text-xs text-slate-400">Distribution Rate</p>
-              <div class="mt-1.5 prog-bar"><div class="prog-fill bg-gradient-to-r from-amber-400 to-amber-500" style="width:48%"></div></div>
-            </div>
-            <div class="text-right flex-shrink-0">
-              <p class="num text-sm font-bold text-slate-800">2.4%</p>
-              <p class="text-xs font-semibold text-emerald-600">▲ +1.1pp</p>
-            </div>
-          </div>
-
         </div>
       </div>
 
-      <!-- Events Timeline -->
-      <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 card-hover fade-up">
-        <p class="text-sm font-bold text-slate-800 mb-1">กิจกรรม &amp; Community Events</p>
-        <p class="text-xs text-slate-400 mb-6">Upcoming Events · Q1–Q2 2569</p>
-
-        <div class="relative pl-10 space-y-6">
-          <div class="tl-line"></div>
-
-          <div class="relative fade-up">
-            <div class="tl-dot text-indigo-400"></div>
-            <div class="bg-indigo-50 rounded-xl p-4 border border-indigo-100">
-              <p class="text-xs font-bold text-indigo-400 uppercase tracking-wide mb-1">28 มีนาคม 2569</p>
-              <p class="text-sm font-bold text-slate-800">Craft Brewing Program — รอบที่ 1</p>
-              <p class="text-xs text-slate-500 mt-1">โปรแกรมพัฒนาผู้ผลิตคราฟต์รุ่นใหม่</p>
-              <div class="flex gap-1.5 mt-2.5">
-                <span class="pill bg-indigo-100 text-indigo-600">Craft Brewing</span>
-                <span class="pill bg-emerald-100 text-emerald-700">Workshop</span>
+      <!-- New Entrants -->
+      <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100 card">
+        <p class="text-sm font-bold text-slate-800 mb-1">แบรนด์ใหม่เข้าตลาด</p>
+        <p class="text-xs text-slate-400 mb-4">New Entrants · มีนาคม 2567</p>
+        <div class="space-y-3">
+          <div class="p-4 rounded-xl bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-100">
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="font-bold text-slate-800">สามเจดีย์</p>
+                <p class="text-xs text-slate-500 mt-0.5">New entrant · ก.พ. → มี.ค. 2567</p>
+              </div>
+              <div class="text-right">
+                <p class="num font-black text-emerald-600 text-sm">0.4%</p>
+                <p class="text-xs text-slate-400">ก.พ. 0.2%</p>
               </div>
             </div>
+            <div class="mt-2 pb"><div class="pf bg-gradient-to-r from-emerald-400 to-emerald-600" style="width:100%"></div></div>
           </div>
-
-          <div class="relative fade-up">
-            <div class="tl-dot text-violet-400"></div>
-            <div class="bg-violet-50 rounded-xl p-4 border border-violet-100">
-              <p class="text-xs font-bold text-violet-400 uppercase tracking-wide mb-1">3–5 เมษายน 2569</p>
-              <p class="text-sm font-bold text-slate-800">Grove Brew Fest 2026</p>
-              <p class="text-xs text-slate-500 mt-1">ภูเก็ต · 60 แบรนด์เข้าร่วม · เทศกาลคราฟต์ภาคใต้</p>
-              <div class="flex flex-wrap gap-1.5 mt-2.5">
-                <span class="pill bg-violet-100 text-violet-600">Festival</span>
-                <span class="pill bg-amber-100 text-amber-700">60 Brands</span>
-                <span class="pill bg-cyan-100 text-cyan-700">Phuket</span>
+          <div class="p-4 rounded-xl bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-100">
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="font-bold text-slate-800">น้ำใสเสือห้า</p>
+                <p class="text-xs text-slate-500 mt-0.5">New entrant · ก.พ. → มี.ค. 2567</p>
+              </div>
+              <div class="text-right">
+                <p class="num font-black text-blue-600 text-sm">0.4%</p>
+                <p class="text-xs text-slate-400">ก.พ. 0.1%</p>
               </div>
             </div>
+            <div class="mt-2 pb"><div class="pf bg-gradient-to-r from-blue-400 to-blue-600" style="width:100%"></div></div>
           </div>
-
-          <div class="relative fade-up">
-            <div class="tl-dot text-cyan-400"></div>
-            <div class="bg-cyan-50 rounded-xl p-4 border border-cyan-100">
-              <p class="text-xs font-bold text-cyan-500 uppercase tracking-wide mb-1">25 เมษายน 2569</p>
-              <p class="text-sm font-bold text-slate-800">Craft Brewing Program — รอบที่ 2</p>
-              <p class="text-xs text-slate-500 mt-1">โปรแกรมพัฒนาผู้ผลิตคราฟต์รอบที่สอง</p>
-              <div class="flex gap-1.5 mt-2.5">
-                <span class="pill bg-cyan-100 text-cyan-700">Craft Brewing</span>
-                <span class="pill bg-emerald-100 text-emerald-700">Workshop</span>
+          <div class="p-4 rounded-xl bg-gradient-to-r from-violet-50 to-purple-50 border border-violet-100">
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="font-bold text-slate-800">เทพเมรัย</p>
+                <p class="text-xs text-slate-500 mt-0.5">New entrant · ก.พ. → มี.ค. 2567</p>
+              </div>
+              <div class="text-right">
+                <p class="num font-black text-violet-600 text-sm">0.4%</p>
+                <p class="text-xs text-slate-400">ก.พ. 0.1%</p>
               </div>
             </div>
+            <div class="mt-2 pb"><div class="pf bg-gradient-to-r from-violet-400 to-violet-600" style="width:100%"></div></div>
           </div>
-
-          <div class="relative fade-up">
-            <div class="tl-dot text-amber-400"></div>
-            <div class="bg-amber-50 rounded-xl p-4 border border-amber-100">
-              <p class="text-xs font-bold text-amber-500 uppercase tracking-wide mb-1">8–10 พฤษภาคม 2569</p>
-              <p class="text-sm font-bold text-slate-800">คราฟต์กลางกรุง 2026</p>
-              <p class="text-xs text-slate-500 mt-1">กรุงเทพฯ · 46 แบรนด์เข้าร่วม</p>
-              <div class="flex flex-wrap gap-1.5 mt-2.5">
-                <span class="pill bg-amber-100 text-amber-700">Festival</span>
-                <span class="pill bg-rose-100 text-rose-600">46 Brands</span>
-                <span class="pill bg-indigo-100 text-indigo-600">Bangkok</span>
-              </div>
-            </div>
-          </div>
-
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ════════ INFLUENCERS ════════ -->
+</div><!-- /page-brands -->
+
+
+<!-- ════════════════════════════════════
+     PAGE 3: อินฟลูเอนเซอร์
+════════════════════════════════════ -->
+<div id="page-influencers" class="page space-y-8">
+
+  <!-- Platform KPIs -->
   <section>
-    <div class="flex items-center gap-3 mb-4">
-      <div class="w-1 h-4 rounded bg-gradient-to-b from-indigo-500 to-purple-500"></div>
-      <span class="text-xs font-bold tracking-widest text-slate-400 uppercase">อินฟลูเอนเซอร์ · Influencer Analytics</span>
-      <div class="flex-1 h-px bg-slate-200"></div>
+    <div class="sec-head">
+      <div class="sec-head-bar"></div>
+      <span class="sec-head-label">แพลตฟอร์ม · Platform Overview</span>
+      <div class="sec-head-line"></div>
     </div>
 
-    <div class="grid grid-cols-2 gap-4">
+    <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 stagger">
+      <div class="bg-white rounded-2xl p-4 shadow-sm border border-blue-100 card text-center">
+        <div class="text-2xl mb-2">👥</div>
+        <p class="text-xs text-blue-500 font-bold mb-1">Facebook</p>
+        <p class="num text-2xl font-black text-blue-600">278</p>
+        <p class="text-xs text-slate-400 mt-1">33.3%</p>
+        <div class="mt-2 pb"><div class="pf bg-gradient-to-r from-blue-400 to-blue-600" style="width:33.3%"></div></div>
+      </div>
+      <div class="bg-white rounded-2xl p-4 shadow-sm border border-red-100 card text-center">
+        <div class="text-2xl mb-2">🎵</div>
+        <p class="text-xs text-red-400 font-bold mb-1">TikTok</p>
+        <p class="num text-2xl font-black text-red-500">284</p>
+        <p class="text-xs text-slate-400 mt-1">34.0%</p>
+        <div class="mt-2 pb"><div class="pf bg-gradient-to-r from-red-400 to-rose-500" style="width:34%"></div></div>
+      </div>
+      <div class="bg-white rounded-2xl p-4 shadow-sm border border-amber-100 card text-center">
+        <div class="text-2xl mb-2">📸</div>
+        <p class="text-xs text-amber-500 font-bold mb-1">Instagram</p>
+        <p class="num text-2xl font-black text-amber-600">216</p>
+        <p class="text-xs text-slate-400 mt-1">25.9%</p>
+        <div class="mt-2 pb"><div class="pf bg-gradient-to-r from-amber-400 to-amber-500" style="width:25.9%"></div></div>
+      </div>
+      <div class="bg-white rounded-2xl p-4 shadow-sm border border-red-100 card text-center">
+        <div class="text-2xl mb-2">▶️</div>
+        <p class="text-xs text-red-500 font-bold mb-1">YouTube</p>
+        <p class="num text-2xl font-black text-red-500">37</p>
+        <p class="text-xs text-slate-400 mt-1">4.4%</p>
+        <div class="mt-2 pb"><div class="pf bg-gradient-to-r from-red-500 to-red-600" style="width:4.4%"></div></div>
+      </div>
+      <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-200 card text-center col-span-2 sm:col-span-1">
+        <div class="text-2xl mb-2">✖️</div>
+        <p class="text-xs text-slate-400 font-bold mb-1">X (Twitter)</p>
+        <p class="num text-2xl font-black text-slate-600">20</p>
+        <p class="text-xs text-slate-400 mt-1">2.4%</p>
+        <div class="mt-2 pb"><div class="pf bg-slate-400" style="width:2.4%"></div></div>
+      </div>
+    </div>
+  </section>
 
-      <!-- Platform overview -->
-      <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 card-hover fade-up">
-        <p class="text-sm font-bold text-slate-800 mb-1">แพลตฟอร์ม &amp; จำนวนอินฟลูเอนเซอร์</p>
-        <p class="text-xs text-slate-400 mb-5">835 influencers across 5 platforms</p>
+  <!-- Platform chart + Top influencers -->
+  <section>
+    <div class="sec-head">
+      <div class="sec-head-bar"></div>
+      <span class="sec-head-label">การวิเคราะห์ · Analytics</span>
+      <div class="sec-head-line"></div>
+    </div>
 
-        <!-- Platform mini cards -->
-        <div class="grid grid-cols-5 gap-2 mb-5">
-          <div class="text-center bg-blue-50 rounded-xl p-3 border border-blue-100">
-            <div class="text-xl mb-1">👥</div>
-            <p class="text-xs text-blue-400 font-bold mb-1">FB</p>
-            <p class="num text-lg font-black text-blue-600">278</p>
-            <p class="text-xs text-slate-400">33%</p>
-          </div>
-          <div class="text-center bg-red-50 rounded-xl p-3 border border-red-100">
-            <div class="text-xl mb-1">🎵</div>
-            <p class="text-xs text-red-400 font-bold mb-1">TT</p>
-            <p class="num text-lg font-black text-red-500">284</p>
-            <p class="text-xs text-slate-400">34%</p>
-          </div>
-          <div class="text-center bg-amber-50 rounded-xl p-3 border border-amber-100">
-            <div class="text-xl mb-1">📸</div>
-            <p class="text-xs text-amber-500 font-bold mb-1">IG</p>
-            <p class="num text-lg font-black text-amber-600">216</p>
-            <p class="text-xs text-slate-400">26%</p>
-          </div>
-          <div class="text-center bg-red-50 rounded-xl p-3 border border-red-100">
-            <div class="text-xl mb-1">▶️</div>
-            <p class="text-xs text-red-400 font-bold mb-1">YT</p>
-            <p class="num text-lg font-black text-red-500">37</p>
-            <p class="text-xs text-slate-400">4%</p>
-          </div>
-          <div class="text-center bg-slate-100 rounded-xl p-3 border border-slate-200">
-            <div class="text-xl mb-1">✖️</div>
-            <p class="text-xs text-slate-400 font-bold mb-1">X</p>
-            <p class="num text-lg font-black text-slate-600">20</p>
-            <p class="text-xs text-slate-400">2%</p>
-          </div>
-        </div>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
 
-        <!-- Platform chart -->
-        <div class="relative h-48">
+      <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100 card">
+        <p class="text-sm font-bold text-slate-800 mb-1">สัดส่วนอินฟลูเอนเซอร์ต่อแพลตฟอร์ม</p>
+        <p class="text-xs text-slate-400 mb-4">Platform Distribution</p>
+        <div class="relative h-56">
           <canvas id="platformChart"></canvas>
+        </div>
+        <div class="mt-4 space-y-2">
+          <div>
+            <div class="flex justify-between text-xs mb-1">
+              <span class="font-semibold text-blue-500">Facebook</span>
+              <span class="num font-bold text-slate-700">33.3%</span>
+            </div>
+            <div class="pb"><div class="pf bg-gradient-to-r from-blue-400 to-blue-500" style="width:33.3%"></div></div>
+          </div>
+          <div>
+            <div class="flex justify-between text-xs mb-1">
+              <span class="font-semibold text-red-400">TikTok</span>
+              <span class="num font-bold text-slate-700">34.0%</span>
+            </div>
+            <div class="pb"><div class="pf bg-gradient-to-r from-red-400 to-rose-400" style="width:34%"></div></div>
+          </div>
+          <div>
+            <div class="flex justify-between text-xs mb-1">
+              <span class="font-semibold text-amber-500">Instagram</span>
+              <span class="num font-bold text-slate-700">25.9%</span>
+            </div>
+            <div class="pb"><div class="pf bg-gradient-to-r from-amber-400 to-amber-500" style="width:25.9%"></div></div>
+          </div>
+          <div>
+            <div class="flex justify-between text-xs mb-1">
+              <span class="font-semibold text-red-500">YouTube</span>
+              <span class="num font-bold text-slate-700">4.4%</span>
+            </div>
+            <div class="pb"><div class="pf bg-gradient-to-r from-red-400 to-red-500" style="width:4.4%"></div></div>
+          </div>
+          <div>
+            <div class="flex justify-between text-xs mb-1">
+              <span class="font-semibold text-slate-400">X (Twitter)</span>
+              <span class="num font-bold text-slate-700">2.4%</span>
+            </div>
+            <div class="pb"><div class="pf bg-slate-400" style="width:2.4%"></div></div>
+          </div>
         </div>
       </div>
 
       <!-- Top influencers table -->
-      <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 card-hover fade-up">
+      <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100 card">
         <p class="text-sm font-bold text-slate-800 mb-1">Top Influencers by Platform</p>
-        <p class="text-xs text-slate-400 mb-5">อินฟลูเอนเซอร์ที่มี Reach สูงสุดในแต่ละแพลตฟอร์ม</p>
+        <p class="text-xs text-slate-400 mb-4">อินฟลูเอนเซอร์ที่มี Reach สูงสุด</p>
 
-        <div class="overflow-hidden rounded-xl border border-slate-100">
-          <table class="w-full text-sm">
-            <thead>
-              <tr class="bg-slate-50">
-                <th class="text-left py-3 px-4 text-xs font-semibold text-slate-400 uppercase tracking-wide">Platform</th>
-                <th class="text-left py-3 px-4 text-xs font-semibold text-slate-400 uppercase tracking-wide">Name</th>
-                <th class="text-left py-3 px-4 text-xs font-semibold text-slate-400 uppercase tracking-wide">Reach</th>
-              </tr>
-            </thead>
-            <tbody class="divide-y divide-slate-50">
-              <tr class="hover:bg-slate-50 transition-colors">
-                <td class="py-3 px-4"><span class="pill bg-blue-100 text-blue-600">👥 Facebook</span></td>
-                <td class="py-3 px-4 font-semibold text-slate-800">ป่ะ ไปไหนไปกัน</td>
-                <td class="py-3 px-4">
-                  <div class="flex items-center gap-2">
-                    <div class="w-16 prog-bar"><div class="prog-fill bg-gradient-to-r from-blue-400 to-blue-600" style="width:100%"></div></div>
-                    <span class="num font-bold text-indigo-600 text-xs">12.6M</span>
-                  </div>
-                </td>
-              </tr>
-              <tr class="hover:bg-slate-50 transition-colors">
-                <td class="py-3 px-4"><span class="pill bg-amber-100 text-amber-600">📸 Instagram</span></td>
-                <td class="py-3 px-4 font-semibold text-slate-800">mookworranit</td>
-                <td class="py-3 px-4">
-                  <div class="flex items-center gap-2">
-                    <div class="w-16 prog-bar"><div class="prog-fill bg-gradient-to-r from-amber-400 to-amber-500" style="width:35%"></div></div>
-                    <span class="num font-bold text-indigo-600 text-xs">4.4M</span>
-                  </div>
-                </td>
-              </tr>
-              <tr class="hover:bg-slate-50 transition-colors">
-                <td class="py-3 px-4"><span class="pill bg-red-100 text-red-500">🎵 TikTok</span></td>
-                <td class="py-3 px-4 font-semibold text-slate-800">coco_samui_asmr</td>
-                <td class="py-3 px-4">
-                  <div class="flex items-center gap-2">
-                    <div class="w-16 prog-bar"><div class="prog-fill bg-gradient-to-r from-red-400 to-red-500" style="width:34%"></div></div>
-                    <span class="num font-bold text-indigo-600 text-xs">4.3M</span>
-                  </div>
-                </td>
-              </tr>
-              <tr class="hover:bg-slate-50 transition-colors">
-                <td class="py-3 px-4"><span class="pill bg-red-100 text-red-600">▶️ YouTube</span></td>
-                <td class="py-3 px-4 font-semibold text-slate-800">NANAKE555</td>
-                <td class="py-3 px-4">
-                  <div class="flex items-center gap-2">
-                    <div class="w-16 prog-bar"><div class="prog-fill bg-gradient-to-r from-red-400 to-red-500" style="width:19%"></div></div>
-                    <span class="num font-bold text-indigo-600 text-xs">2.4M</span>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <div class="space-y-3">
+          <div class="p-4 rounded-xl bg-blue-50 border border-blue-100 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-blue-100 border-2 border-blue-300 flex items-center justify-center text-xl flex-shrink-0">👥</div>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-2 flex-wrap">
+                <span class="pill bg-blue-100 text-blue-600 text-xs">Facebook</span>
+                <span class="text-xs text-slate-400">#1</span>
+              </div>
+              <p class="font-bold text-slate-800 mt-1 truncate">ป่ะ ไปไหนไปกัน</p>
+              <div class="mt-1.5 pb"><div class="pf bg-gradient-to-r from-blue-400 to-blue-600" style="width:100%"></div></div>
+            </div>
+            <div class="text-right flex-shrink-0">
+              <p class="num font-black text-blue-600 text-base">12.6M</p>
+              <p class="text-xs text-slate-400">followers</p>
+            </div>
+          </div>
 
-        <div class="mt-5 pt-4 border-t border-slate-100">
-          <p class="text-xs font-bold text-slate-600 mb-3">Platform Share</p>
-          <div class="space-y-2.5">
-            <div>
-              <div class="flex justify-between text-xs mb-1">
-                <span class="font-semibold text-blue-500">Facebook</span>
-                <span class="num font-bold text-slate-700">33.3%</span>
+          <div class="p-4 rounded-xl bg-red-50 border border-red-100 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-red-100 border-2 border-red-300 flex items-center justify-center text-xl flex-shrink-0">🎵</div>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-2 flex-wrap">
+                <span class="pill bg-red-100 text-red-500 text-xs">TikTok</span>
+                <span class="text-xs text-slate-400">#1</span>
               </div>
-              <div class="prog-bar"><div class="prog-fill bg-gradient-to-r from-blue-400 to-blue-500" style="width:33.3%"></div></div>
+              <p class="font-bold text-slate-800 mt-1 truncate">coco_samui_asmr</p>
+              <div class="mt-1.5 pb"><div class="pf bg-gradient-to-r from-red-400 to-rose-500" style="width:34%"></div></div>
             </div>
-            <div>
-              <div class="flex justify-between text-xs mb-1">
-                <span class="font-semibold text-red-400">TikTok</span>
-                <span class="num font-bold text-slate-700">34.0%</span>
-              </div>
-              <div class="prog-bar"><div class="prog-fill bg-gradient-to-r from-red-400 to-rose-400" style="width:34%"></div></div>
+            <div class="text-right flex-shrink-0">
+              <p class="num font-black text-red-500 text-base">4.3M</p>
+              <p class="text-xs text-slate-400">followers</p>
             </div>
-            <div>
-              <div class="flex justify-between text-xs mb-1">
-                <span class="font-semibold text-amber-500">Instagram</span>
-                <span class="num font-bold text-slate-700">25.9%</span>
+          </div>
+
+          <div class="p-4 rounded-xl bg-amber-50 border border-amber-100 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-amber-100 border-2 border-amber-300 flex items-center justify-center text-xl flex-shrink-0">📸</div>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-2 flex-wrap">
+                <span class="pill bg-amber-100 text-amber-600 text-xs">Instagram</span>
+                <span class="text-xs text-slate-400">#1</span>
               </div>
-              <div class="prog-bar"><div class="prog-fill bg-gradient-to-r from-amber-400 to-amber-500" style="width:25.9%"></div></div>
+              <p class="font-bold text-slate-800 mt-1 truncate">mookworranit</p>
+              <div class="mt-1.5 pb"><div class="pf bg-gradient-to-r from-amber-400 to-amber-500" style="width:35%"></div></div>
             </div>
-            <div>
-              <div class="flex justify-between text-xs mb-1">
-                <span class="font-semibold text-red-500">YouTube</span>
-                <span class="num font-bold text-slate-700">4.4%</span>
-              </div>
-              <div class="prog-bar"><div class="prog-fill bg-gradient-to-r from-red-400 to-red-500" style="width:4.4%"></div></div>
+            <div class="text-right flex-shrink-0">
+              <p class="num font-black text-amber-600 text-base">4.4M</p>
+              <p class="text-xs text-slate-400">followers</p>
             </div>
-            <div>
-              <div class="flex justify-between text-xs mb-1">
-                <span class="font-semibold text-slate-400">X (Twitter)</span>
-                <span class="num font-bold text-slate-700">2.4%</span>
+          </div>
+
+          <div class="p-4 rounded-xl bg-red-50 border border-red-100 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-red-100 border-2 border-red-300 flex items-center justify-center text-xl flex-shrink-0">▶️</div>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-2 flex-wrap">
+                <span class="pill bg-red-100 text-red-600 text-xs">YouTube</span>
+                <span class="text-xs text-slate-400">#1</span>
               </div>
-              <div class="prog-bar"><div class="prog-fill bg-slate-400" style="width:2.4%"></div></div>
+              <p class="font-bold text-slate-800 mt-1 truncate">NANAKE555</p>
+              <div class="mt-1.5 pb"><div class="pf bg-gradient-to-r from-red-500 to-red-600" style="width:19%"></div></div>
+            </div>
+            <div class="text-right flex-shrink-0">
+              <p class="num font-black text-red-600 text-base">2.4M</p>
+              <p class="text-xs text-slate-400">subscribers</p>
             </div>
           </div>
         </div>
       </div>
-
     </div>
   </section>
 
-  <!-- ════════ DIST TABLE + BRAND SPOTLIGHT ════════ -->
+  <!-- Influencer count by platform detail -->
   <section>
-    <div class="flex items-center gap-3 mb-4">
-      <div class="w-1 h-4 rounded bg-gradient-to-b from-indigo-500 to-purple-500"></div>
-      <span class="text-xs font-bold tracking-widest text-slate-400 uppercase">Distribution Detail &amp; Brand Spotlight</span>
-      <div class="flex-1 h-px bg-slate-200"></div>
+    <div class="sec-head">
+      <div class="sec-head-bar"></div>
+      <span class="sec-head-label">สรุปจำนวนอินฟลูเอนเซอร์ · Count Summary</span>
+      <div class="sec-head-line"></div>
     </div>
 
-    <div class="grid grid-cols-2 gap-4">
-
-      <!-- Distribution table -->
-      <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 card-hover fade-up">
-        <p class="text-sm font-bold text-slate-800 mb-1">Top Distribution Brands</p>
-        <p class="text-xs text-slate-400 mb-5">อัตราการกระจายสินค้า มีนาคม vs กุมภาพันธ์ 2567</p>
-        <div class="overflow-hidden rounded-xl border border-slate-100">
-          <table class="w-full text-sm">
-            <thead>
-              <tr class="bg-slate-50">
-                <th class="text-left py-2.5 px-4 text-xs font-semibold text-slate-400">#</th>
-                <th class="text-left py-2.5 px-4 text-xs font-semibold text-slate-400">แบรนด์</th>
-                <th class="text-left py-2.5 px-4 text-xs font-semibold text-slate-400">มี.ค. 67</th>
-                <th class="text-left py-2.5 px-4 text-xs font-semibold text-slate-400">ก.พ. 67</th>
-                <th class="text-left py-2.5 px-4 text-xs font-semibold text-slate-400">Δ</th>
-              </tr>
-            </thead>
-            <tbody class="divide-y divide-slate-50">
-              <tr class="hover:bg-slate-50 transition-colors">
-                <td class="py-2.5 px-4 num font-black text-amber-500">1</td>
-                <td class="py-2.5 px-4 font-semibold text-slate-800">สักทองแพร่</td>
-                <td class="py-2.5 px-4 num font-bold text-indigo-600">4.1%</td>
-                <td class="py-2.5 px-4 text-slate-400 text-xs">3.5%</td>
-                <td class="py-2.5 px-4 num font-semibold text-emerald-600 text-xs">▲ +0.6</td>
-              </tr>
-              <tr class="hover:bg-slate-50 transition-colors">
-                <td class="py-2.5 px-4 num font-bold text-slate-400">2</td>
-                <td class="py-2.5 px-4 font-semibold text-slate-800">เงาจันทร์</td>
-                <td class="py-2.5 px-4 num font-bold text-indigo-600">3.5%</td>
-                <td class="py-2.5 px-4 text-slate-400 text-xs">2.7%</td>
-                <td class="py-2.5 px-4 num font-semibold text-emerald-600 text-xs">▲ +0.8</td>
-              </tr>
-              <tr class="hover:bg-slate-50 transition-colors">
-                <td class="py-2.5 px-4 num font-bold text-slate-400">3</td>
-                <td class="py-2.5 px-4 font-semibold text-slate-800">ข้าวใจ</td>
-                <td class="py-2.5 px-4 num font-bold text-indigo-600">3.3%</td>
-                <td class="py-2.5 px-4 text-slate-400 text-xs">3.5%</td>
-                <td class="py-2.5 px-4 num font-semibold text-rose-500 text-xs">▼ -0.2</td>
-              </tr>
-              <tr class="hover:bg-slate-50 transition-colors">
-                <td class="py-2.5 px-4 num font-bold text-slate-400">4</td>
-                <td class="py-2.5 px-4 font-semibold text-slate-800">อ้อยใจ</td>
-                <td class="py-2.5 px-4 num font-bold text-indigo-600">2.8%</td>
-                <td class="py-2.5 px-4 text-slate-400 text-xs">1.6%</td>
-                <td class="py-2.5 px-4 num font-semibold text-emerald-600 text-xs">▲ +1.2</td>
-              </tr>
-              <tr class="hover:bg-slate-50 transition-colors">
-                <td class="py-2.5 px-4 num font-bold text-slate-400">5</td>
-                <td class="py-2.5 px-4 font-semibold text-slate-800">อูฐทอง</td>
-                <td class="py-2.5 px-4 num font-bold text-indigo-600">2.4%</td>
-                <td class="py-2.5 px-4 text-slate-400 text-xs">1.3%</td>
-                <td class="py-2.5 px-4 num font-semibold text-emerald-600 text-xs">▲ +1.1</td>
-              </tr>
-              <tr class="hover:bg-slate-50 transition-colors">
-                <td class="py-2.5 px-4 num font-bold text-slate-400">6</td>
-                <td class="py-2.5 px-4 font-semibold text-slate-800">สามเจดีย์</td>
-                <td class="py-2.5 px-4 num font-bold text-indigo-600">0.4%</td>
-                <td class="py-2.5 px-4 text-slate-400 text-xs">0.2%</td>
-                <td class="py-2.5 px-4 num font-semibold text-emerald-600 text-xs">▲ +0.2</td>
-              </tr>
-              <tr class="hover:bg-slate-50 transition-colors">
-                <td class="py-2.5 px-4 num font-bold text-slate-400">7</td>
-                <td class="py-2.5 px-4 font-semibold text-slate-800">น้ำใสเสือห้า</td>
-                <td class="py-2.5 px-4 num font-bold text-indigo-600">0.4%</td>
-                <td class="py-2.5 px-4 text-slate-400 text-xs">0.1%</td>
-                <td class="py-2.5 px-4 num font-semibold text-emerald-600 text-xs">▲ +0.3</td>
-              </tr>
-              <tr class="hover:bg-slate-50 transition-colors">
-                <td class="py-2.5 px-4 num font-bold text-slate-400">8</td>
-                <td class="py-2.5 px-4 font-semibold text-slate-800">เทพเมรัย</td>
-                <td class="py-2.5 px-4 num font-bold text-indigo-600">0.4%</td>
-                <td class="py-2.5 px-4 text-slate-400 text-xs">0.1%</td>
-                <td class="py-2.5 px-4 num font-semibold text-emerald-600 text-xs">▲ +0.3</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+    <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100 card">
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="bg-slate-50">
+              <th class="text-left py-3 px-4 text-xs font-semibold text-slate-400">แพลตฟอร์ม</th>
+              <th class="text-left py-3 px-4 text-xs font-semibold text-slate-400">จำนวน</th>
+              <th class="text-left py-3 px-4 text-xs font-semibold text-slate-400">สัดส่วน</th>
+              <th class="text-left py-3 px-4 text-xs font-semibold text-slate-400 hidden sm:table-cell">Top Influencer</th>
+              <th class="text-left py-3 px-4 text-xs font-semibold text-slate-400 hidden sm:table-cell">Reach</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-50">
+            <tr class="hover:bg-slate-50 transition-colors">
+              <td class="py-3 px-4"><span class="pill bg-blue-100 text-blue-600">👥 Facebook</span></td>
+              <td class="py-3 px-4 num font-bold text-slate-800">278</td>
+              <td class="py-3 px-4"><div class="flex items-center gap-2"><div class="w-20 pb hidden sm:block"><div class="pf bg-blue-400" style="width:33.3%"></div></div><span class="num text-xs font-bold text-slate-600">33.3%</span></div></td>
+              <td class="py-3 px-4 font-semibold text-slate-700 hidden sm:table-cell">ป่ะ ไปไหนไปกัน</td>
+              <td class="py-3 px-4 num font-bold text-indigo-600 text-xs hidden sm:table-cell">12.6M</td>
+            </tr>
+            <tr class="hover:bg-slate-50 transition-colors">
+              <td class="py-3 px-4"><span class="pill bg-red-100 text-red-500">🎵 TikTok</span></td>
+              <td class="py-3 px-4 num font-bold text-slate-800">284</td>
+              <td class="py-3 px-4"><div class="flex items-center gap-2"><div class="w-20 pb hidden sm:block"><div class="pf bg-red-400" style="width:34%"></div></div><span class="num text-xs font-bold text-slate-600">34.0%</span></div></td>
+              <td class="py-3 px-4 font-semibold text-slate-700 hidden sm:table-cell">coco_samui_asmr</td>
+              <td class="py-3 px-4 num font-bold text-indigo-600 text-xs hidden sm:table-cell">4.3M</td>
+            </tr>
+            <tr class="hover:bg-slate-50 transition-colors">
+              <td class="py-3 px-4"><span class="pill bg-amber-100 text-amber-600">📸 Instagram</span></td>
+              <td class="py-3 px-4 num font-bold text-slate-800">216</td>
+              <td class="py-3 px-4"><div class="flex items-center gap-2"><div class="w-20 pb hidden sm:block"><div class="pf bg-amber-400" style="width:25.9%"></div></div><span class="num text-xs font-bold text-slate-600">25.9%</span></div></td>
+              <td class="py-3 px-4 font-semibold text-slate-700 hidden sm:table-cell">mookworranit</td>
+              <td class="py-3 px-4 num font-bold text-indigo-600 text-xs hidden sm:table-cell">4.4M</td>
+            </tr>
+            <tr class="hover:bg-slate-50 transition-colors">
+              <td class="py-3 px-4"><span class="pill bg-red-100 text-red-600">▶️ YouTube</span></td>
+              <td class="py-3 px-4 num font-bold text-slate-800">37</td>
+              <td class="py-3 px-4"><div class="flex items-center gap-2"><div class="w-20 pb hidden sm:block"><div class="pf bg-red-500" style="width:4.4%"></div></div><span class="num text-xs font-bold text-slate-600">4.4%</span></div></td>
+              <td class="py-3 px-4 font-semibold text-slate-700 hidden sm:table-cell">NANAKE555</td>
+              <td class="py-3 px-4 num font-bold text-indigo-600 text-xs hidden sm:table-cell">2.4M</td>
+            </tr>
+            <tr class="hover:bg-slate-50 transition-colors">
+              <td class="py-3 px-4"><span class="pill bg-slate-100 text-slate-500">✖️ X (Twitter)</span></td>
+              <td class="py-3 px-4 num font-bold text-slate-800">20</td>
+              <td class="py-3 px-4"><div class="flex items-center gap-2"><div class="w-20 pb hidden sm:block"><div class="pf bg-slate-400" style="width:2.4%"></div></div><span class="num text-xs font-bold text-slate-600">2.4%</span></div></td>
+              <td class="py-3 px-4 text-slate-400 text-xs hidden sm:table-cell">—</td>
+              <td class="py-3 px-4 text-slate-400 text-xs hidden sm:table-cell">—</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr class="bg-indigo-50">
+              <td class="py-3 px-4 font-bold text-indigo-700">รวมทั้งหมด</td>
+              <td class="py-3 px-4 num font-black text-indigo-700">835</td>
+              <td class="py-3 px-4 num font-bold text-indigo-600">100%</td>
+              <td colspan="2" class="hidden sm:table-cell"></td>
+            </tr>
+          </tfoot>
+        </table>
       </div>
-
-      <!-- Brand Spotlight -->
-      <div class="relative overflow-hidden rounded-2xl shadow-sm border border-violet-200 fade-up"
-           style="background: linear-gradient(135deg,#faf5ff 0%,#ede9fe 50%,#f5f3ff 100%)">
-        <!-- Decorative orb -->
-        <div class="absolute -top-12 -right-12 w-48 h-48 rounded-full bg-gradient-to-br from-violet-300/40 to-purple-400/20 blur-2xl pointer-events-none"></div>
-        <div class="absolute -bottom-8 -left-8 w-36 h-36 rounded-full bg-gradient-to-tr from-indigo-300/30 to-violet-300/20 blur-2xl pointer-events-none"></div>
-
-        <div class="relative p-6">
-          <!-- Label -->
-          <div class="flex items-center gap-2 mb-4">
-            <div class="w-1 h-4 rounded bg-gradient-to-b from-violet-500 to-purple-600"></div>
-            <span class="text-xs font-bold tracking-widest text-violet-400 uppercase">Brand Spotlight · เดือนนี้</span>
-          </div>
-
-          <!-- Header -->
-          <div class="flex items-start gap-4 mb-5">
-            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-violet-500 to-purple-700 flex items-center justify-center text-3xl shadow-lg shadow-violet-200 flex-shrink-0">
-              🏺
-            </div>
-            <div>
-              <h2 class="num text-xl font-black text-slate-800">Devanom
-                <span class="text-slate-400 font-normal text-sm">เทพนม</span>
-              </h2>
-              <p class="text-xs text-violet-500 font-semibold mt-0.5">Premium Craft Sato · นนทบุรี</p>
-              <div class="flex flex-wrap gap-1.5 mt-2">
-                <span class="pill bg-violet-100 text-violet-600">Craft Sato</span>
-                <span class="pill bg-blue-100 text-blue-600">Mead</span>
-                <span class="pill bg-emerald-100 text-emerald-700">Local Thai Rice</span>
-                <span class="pill bg-amber-100 text-amber-700">นนทบุรี</span>
-              </div>
-            </div>
-          </div>
-
-          <p class="text-sm text-slate-600 leading-relaxed mb-5">
-            ผู้ผลิตสาโทคราฟต์พรีเมียมจากนนทบุรี ใช้ข้าวไทยแท้และกระบวนการหมักแบบดั้งเดิม
-            ผสมผสานกับนวัตกรรมการหมักสมัยใหม่ สร้างเครื่องดื่มคราฟต์คุณภาพระดับ Premium
-          </p>
-
-          <div class="border-t border-violet-200 pt-4 mb-4">
-            <p class="text-xs font-bold text-slate-600 mb-3">Product Line &amp; Pricing</p>
-          </div>
-
-          <!-- Product cards -->
-          <div class="grid grid-cols-3 gap-3">
-            <div class="bg-white/70 backdrop-blur rounded-xl p-4 border border-violet-100 hover:bg-white/90 transition-colors">
-              <div class="text-2xl mb-2">🍶</div>
-              <p class="text-xs text-slate-400 mb-1">Craft Sato</p>
-              <p class="num text-xl font-black text-violet-700">฿180</p>
-              <p class="text-xs text-slate-400 mt-1">สาโทคราฟต์ · ข้าวไทยแท้</p>
-            </div>
-            <div class="bg-white/70 backdrop-blur rounded-xl p-4 border border-violet-100 hover:bg-white/90 transition-colors">
-              <div class="text-2xl mb-2">🌾</div>
-              <p class="text-xs text-slate-400 mb-1">Thai Rice Wine</p>
-              <p class="num text-xl font-black text-violet-700">฿320–740</p>
-              <p class="text-xs text-slate-400 mt-1">ไวน์ข้าวท้องถิ่น · หลายระดับ</p>
-            </div>
-            <div class="bg-white/70 backdrop-blur rounded-xl p-4 border border-violet-100 hover:bg-white/90 transition-colors">
-              <div class="text-2xl mb-2">🍯</div>
-              <p class="text-xs text-slate-400 mb-1">Nonthaburi Mead</p>
-              <p class="num text-xl font-black text-violet-700">฿200</p>
-              <p class="text-xs text-slate-400 mt-1">น้ำผึ้งหมัก · ดอกไม้หอม</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
     </div>
   </section>
 
-</main>
+</div><!-- /page-influencers -->
 
-<!-- Footer -->
-<footer class="border-t border-slate-200 bg-white">
-  <div class="max-w-screen-2xl mx-auto px-6 py-4 flex items-center justify-between">
-    <p class="text-xs text-slate-400">TSR Situation Room · ThaiBev Intelligence · Report #TSR-20260326</p>
-    <p class="text-xs text-slate-400">ข้อมูล ณ วันที่ 26 มีนาคม 2569 · สงวนลิขสิทธิ์</p>
+
+<!-- ════════════════════════════════════
+     PAGE 4: กิจกรรม (Events)
+════════════════════════════════════ -->
+<div id="page-events" class="page space-y-8">
+
+  <!-- Summary -->
+  <section>
+    <div class="sec-head">
+      <div class="sec-head-bar"></div>
+      <span class="sec-head-label">กิจกรรมทั้งหมด · All Events Q1–Q2 2569</span>
+      <div class="sec-head-line"></div>
+    </div>
+
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 stagger">
+      <div class="bg-white rounded-2xl p-4 shadow-sm border border-indigo-100 card text-center">
+        <div class="text-2xl mb-2">🎪</div>
+        <p class="num text-2xl font-black text-indigo-600">4</p>
+        <p class="text-xs text-slate-500 font-semibold mt-1">กิจกรรมทั้งหมด</p>
+      </div>
+      <div class="bg-white rounded-2xl p-4 shadow-sm border border-violet-100 card text-center">
+        <div class="text-2xl mb-2">🍺</div>
+        <p class="num text-2xl font-black text-violet-600">106</p>
+        <p class="text-xs text-slate-500 font-semibold mt-1">แบรนด์เข้าร่วม</p>
+      </div>
+      <div class="bg-white rounded-2xl p-4 shadow-sm border border-amber-100 card text-center">
+        <div class="text-2xl mb-2">🏙️</div>
+        <p class="num text-2xl font-black text-amber-600">2</p>
+        <p class="text-xs text-slate-500 font-semibold mt-1">เมืองหลัก</p>
+      </div>
+      <div class="bg-white rounded-2xl p-4 shadow-sm border border-emerald-100 card text-center">
+        <div class="text-2xl mb-2">📅</div>
+        <p class="num text-2xl font-black text-emerald-600">43</p>
+        <p class="text-xs text-slate-500 font-semibold mt-1">วันจนสิ้นสุด</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section>
+    <div class="sec-head">
+      <div class="sec-head-bar"></div>
+      <span class="sec-head-label">ไทม์ไลน์กิจกรรม · Event Timeline</span>
+      <div class="sec-head-line"></div>
+    </div>
+
+    <div class="bg-white rounded-2xl p-5 md:p-6 shadow-sm border border-slate-100 card">
+      <div class="tl-wrap space-y-5">
+        <div class="tl-spine"></div>
+
+        <!-- Event 1 -->
+        <div class="relative">
+          <div class="tl-dot text-indigo-400"></div>
+          <div class="bg-gradient-to-r from-indigo-50 to-blue-50 rounded-2xl p-4 border border-indigo-100 hover:shadow-md transition-shadow">
+            <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3">
+              <div>
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="pill bg-indigo-100 text-indigo-600">📅 28 มีนาคม 2569</span>
+                  <span class="pill bg-green-100 text-green-700">ใกล้ถึง</span>
+                </div>
+                <h3 class="font-bold text-slate-800 text-base">Craft Brewing Program — รอบที่ 1</h3>
+                <p class="text-sm text-slate-600 mt-1">โปรแกรมพัฒนาผู้ผลิตคราฟต์รุ่นใหม่ รอบแรก สำหรับผู้ผลิตที่ต้องการยกระดับมาตรฐานการผลิต</p>
+              </div>
+              <div class="flex-shrink-0 text-center sm:text-right">
+                <div class="inline-block bg-indigo-100 rounded-xl px-3 py-2">
+                  <p class="num text-xl font-black text-indigo-700">2</p>
+                  <p class="text-xs text-indigo-400 font-semibold">วันอีก</p>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-1.5 mt-3">
+              <span class="pill bg-white text-indigo-600 border border-indigo-200">Craft Brewing</span>
+              <span class="pill bg-white text-emerald-700 border border-emerald-200">Workshop</span>
+              <span class="pill bg-white text-slate-600 border border-slate-200">1 วัน</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Event 2 -->
+        <div class="relative">
+          <div class="tl-dot text-violet-400"></div>
+          <div class="bg-gradient-to-r from-violet-50 to-purple-50 rounded-2xl p-4 border border-violet-100 hover:shadow-md transition-shadow">
+            <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3">
+              <div>
+                <div class="flex items-center gap-2 mb-2 flex-wrap">
+                  <span class="pill bg-violet-100 text-violet-600">📅 3–5 เมษายน 2569</span>
+                  <span class="pill bg-violet-100 text-violet-700">เมษายน</span>
+                </div>
+                <h3 class="font-bold text-slate-800 text-base">Grove Brew Fest 2026</h3>
+                <p class="text-sm text-slate-600 mt-1">เทศกาลคราฟต์ใหญ่ประจำภาคใต้ที่ภูเก็ต รวมแบรนด์คราฟต์ชั้นนำ 60 แบรนด์ พร้อมกิจกรรม workshop และการแข่งขัน</p>
+              </div>
+              <div class="flex-shrink-0 text-center sm:text-right">
+                <div class="inline-block bg-violet-100 rounded-xl px-3 py-2">
+                  <p class="num text-xl font-black text-violet-700">60</p>
+                  <p class="text-xs text-violet-400 font-semibold">แบรนด์</p>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-1.5 mt-3">
+              <span class="pill bg-white text-violet-600 border border-violet-200">Festival</span>
+              <span class="pill bg-white text-amber-700 border border-amber-200">60 Brands</span>
+              <span class="pill bg-white text-cyan-700 border border-cyan-200">📍 Phuket</span>
+              <span class="pill bg-white text-slate-600 border border-slate-200">3 วัน</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Event 3 -->
+        <div class="relative">
+          <div class="tl-dot text-cyan-400"></div>
+          <div class="bg-gradient-to-r from-cyan-50 to-teal-50 rounded-2xl p-4 border border-cyan-100 hover:shadow-md transition-shadow">
+            <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3">
+              <div>
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="pill bg-cyan-100 text-cyan-700">📅 25 เมษายน 2569</span>
+                  <span class="pill bg-cyan-100 text-cyan-600">เมษายน</span>
+                </div>
+                <h3 class="font-bold text-slate-800 text-base">Craft Brewing Program — รอบที่ 2</h3>
+                <p class="text-sm text-slate-600 mt-1">โปรแกรมพัฒนาผู้ผลิตคราฟต์รุ่นใหม่ รอบที่สอง ต่อเนื่องจากรอบแรก เน้นการพัฒนาสูตรและ packaging</p>
+              </div>
+              <div class="flex-shrink-0 text-center sm:text-right">
+                <div class="inline-block bg-cyan-100 rounded-xl px-3 py-2">
+                  <p class="num text-xl font-black text-cyan-700">30</p>
+                  <p class="text-xs text-cyan-400 font-semibold">วันอีก</p>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-1.5 mt-3">
+              <span class="pill bg-white text-cyan-700 border border-cyan-200">Craft Brewing</span>
+              <span class="pill bg-white text-emerald-700 border border-emerald-200">Workshop</span>
+              <span class="pill bg-white text-slate-600 border border-slate-200">1 วัน</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Event 4 -->
+        <div class="relative">
+          <div class="tl-dot text-amber-400"></div>
+          <div class="bg-gradient-to-r from-amber-50 to-orange-50 rounded-2xl p-4 border border-amber-100 hover:shadow-md transition-shadow">
+            <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3">
+              <div>
+                <div class="flex items-center gap-2 mb-2 flex-wrap">
+                  <span class="pill bg-amber-100 text-amber-700">📅 8–10 พฤษภาคม 2569</span>
+                  <span class="pill bg-amber-100 text-amber-600">พฤษภาคม</span>
+                </div>
+                <h3 class="font-bold text-slate-800 text-base">คราฟต์กลางกรุง 2026</h3>
+                <p class="text-sm text-slate-600 mt-1">เทศกาลคราฟต์ในกรุงเทพฯ รวม 46 แบรนด์จากทั่วประเทศ โอกาสพิเศษสำหรับผู้ผลิตรายใหม่ในการเข้าถึงตลาดกรุงเทพฯ</p>
+              </div>
+              <div class="flex-shrink-0 text-center sm:text-right">
+                <div class="inline-block bg-amber-100 rounded-xl px-3 py-2">
+                  <p class="num text-xl font-black text-amber-700">46</p>
+                  <p class="text-xs text-amber-400 font-semibold">แบรนด์</p>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-1.5 mt-3">
+              <span class="pill bg-white text-amber-700 border border-amber-200">Festival</span>
+              <span class="pill bg-white text-rose-600 border border-rose-200">46 Brands</span>
+              <span class="pill bg-white text-indigo-600 border border-indigo-200">📍 Bangkok</span>
+              <span class="pill bg-white text-slate-600 border border-slate-200">3 วัน</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Events calendar grid -->
+  <section>
+    <div class="sec-head">
+      <div class="sec-head-bar"></div>
+      <span class="sec-head-label">สรุปกิจกรรม · Events Summary</span>
+      <div class="sec-head-line"></div>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-sm border border-slate-100 card overflow-hidden">
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="bg-slate-50">
+              <th class="text-left py-3 px-4 text-xs font-semibold text-slate-400 whitespace-nowrap">กิจกรรม</th>
+              <th class="text-left py-3 px-4 text-xs font-semibold text-slate-400 whitespace-nowrap">วันที่</th>
+              <th class="text-left py-3 px-4 text-xs font-semibold text-slate-400 whitespace-nowrap hidden sm:table-cell">สถานที่</th>
+              <th class="text-left py-3 px-4 text-xs font-semibold text-slate-400 whitespace-nowrap">แบรนด์</th>
+              <th class="text-left py-3 px-4 text-xs font-semibold text-slate-400 whitespace-nowrap hidden md:table-cell">ประเภท</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-50">
+            <tr class="hover:bg-slate-50">
+              <td class="py-3 px-4 font-semibold text-slate-800">Craft Brewing Program #1</td>
+              <td class="py-3 px-4 text-xs num text-slate-600 whitespace-nowrap">28 มี.ค. 2569</td>
+              <td class="py-3 px-4 text-xs text-slate-500 hidden sm:table-cell">—</td>
+              <td class="py-3 px-4 num font-bold text-indigo-600">—</td>
+              <td class="py-3 px-4 hidden md:table-cell"><span class="pill bg-indigo-100 text-indigo-600">Workshop</span></td>
+            </tr>
+            <tr class="hover:bg-slate-50">
+              <td class="py-3 px-4 font-semibold text-slate-800">Grove Brew Fest 2026</td>
+              <td class="py-3 px-4 text-xs num text-slate-600 whitespace-nowrap">3–5 เม.ย. 2569</td>
+              <td class="py-3 px-4 text-xs text-slate-500 hidden sm:table-cell">ภูเก็ต</td>
+              <td class="py-3 px-4 num font-bold text-indigo-600">60</td>
+              <td class="py-3 px-4 hidden md:table-cell"><span class="pill bg-violet-100 text-violet-600">Festival</span></td>
+            </tr>
+            <tr class="hover:bg-slate-50">
+              <td class="py-3 px-4 font-semibold text-slate-800">Craft Brewing Program #2</td>
+              <td class="py-3 px-4 text-xs num text-slate-600 whitespace-nowrap">25 เม.ย. 2569</td>
+              <td class="py-3 px-4 text-xs text-slate-500 hidden sm:table-cell">—</td>
+              <td class="py-3 px-4 num font-bold text-indigo-600">—</td>
+              <td class="py-3 px-4 hidden md:table-cell"><span class="pill bg-cyan-100 text-cyan-700">Workshop</span></td>
+            </tr>
+            <tr class="hover:bg-slate-50">
+              <td class="py-3 px-4 font-semibold text-slate-800">คราฟต์กลางกรุง 2026</td>
+              <td class="py-3 px-4 text-xs num text-slate-600 whitespace-nowrap">8–10 พ.ค. 2569</td>
+              <td class="py-3 px-4 text-xs text-slate-500 hidden sm:table-cell">กรุงเทพฯ</td>
+              <td class="py-3 px-4 num font-bold text-indigo-600">46</td>
+              <td class="py-3 px-4 hidden md:table-cell"><span class="pill bg-amber-100 text-amber-700">Festival</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /page-events -->
+
+
+<!-- ════════════════════════════════════
+     PAGE 5: Brand Spotlight
+════════════════════════════════════ -->
+<div id="page-spotlight" class="page space-y-8">
+
+  <!-- Hero -->
+  <section>
+    <div class="relative overflow-hidden rounded-2xl spotlight-bg border border-violet-200 shadow-sm">
+      <div class="orb w-64 h-64 bg-gradient-to-br from-violet-300/40 to-purple-400/20 -top-20 -right-20"></div>
+      <div class="orb w-48 h-48 bg-gradient-to-tr from-indigo-300/30 to-blue-300/20 -bottom-12 -left-12"></div>
+
+      <div class="relative p-6 md:p-8">
+        <div class="flex items-center gap-2 mb-5">
+          <div class="w-1.5 h-5 rounded bg-gradient-to-b from-violet-500 to-purple-600"></div>
+          <span class="text-xs font-bold tracking-widest text-violet-400 uppercase">✨ Brand Spotlight · มีนาคม 2569</span>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-start gap-5">
+          <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-violet-500 to-purple-700 flex items-center justify-center text-4xl shadow-lg shadow-violet-200 flex-shrink-0">
+            🏺
+          </div>
+          <div>
+            <h1 class="text-2xl md:text-3xl font-black text-slate-800">
+              Devanom <span class="text-slate-400 font-normal text-xl">เทพนม</span>
+            </h1>
+            <p class="text-sm text-violet-600 font-semibold mt-1">Premium Craft Sato · Nonthaburi</p>
+            <div class="flex flex-wrap gap-1.5 mt-3">
+              <span class="pill bg-violet-100 text-violet-600">Craft Sato</span>
+              <span class="pill bg-blue-100 text-blue-600">Mead</span>
+              <span class="pill bg-emerald-100 text-emerald-700">Local Thai Rice</span>
+              <span class="pill bg-amber-100 text-amber-700">นนทบุรี</span>
+              <span class="pill bg-rose-100 text-rose-600">Premium</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-sm text-slate-600 leading-relaxed mt-5 md:max-w-2xl">
+          ผู้ผลิตสาโทคราฟต์พรีเมียมจากนนทบุรี ใช้ข้าวไทยแท้และกระบวนการหมักแบบดั้งเดิม
+          ผสมผสานกับนวัตกรรมการหมักสมัยใหม่ สร้างเครื่องดื่มคราฟต์คุณภาพระดับ Premium
+          ที่ได้รับการยอมรับทั้งในตลาดในประเทศและต่างประเทศ
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Line -->
+  <section>
+    <div class="sec-head">
+      <div class="sec-head-bar"></div>
+      <span class="sec-head-label">สายผลิตภัณฑ์ · Product Line</span>
+      <div class="sec-head-line"></div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 stagger">
+      <div class="bg-white rounded-2xl p-5 shadow-sm border border-violet-100 card">
+        <div class="text-3xl mb-3">🍶</div>
+        <p class="text-xs text-slate-400 font-semibold uppercase tracking-wide mb-1">Craft Sato</p>
+        <p class="font-bold text-slate-800 mb-2">สาโทคราฟต์</p>
+        <p class="text-xs text-slate-500 leading-relaxed mb-4">หมักจากข้าวไทยแท้ 100% กระบวนการหมักแบบดั้งเดิมผสมเทคโนโลยีสมัยใหม่ รสชาติกลมกล่อม</p>
+        <div class="pt-3 border-t border-slate-100 flex items-end justify-between">
+          <p class="text-xs text-slate-400">ราคา</p>
+          <p class="num text-2xl font-black text-violet-700">฿180</p>
+        </div>
+        <div class="mt-2 pb"><div class="pf bg-gradient-to-r from-violet-400 to-violet-600" style="width:45%"></div></div>
+      </div>
+
+      <div class="bg-white rounded-2xl p-5 shadow-sm border border-amber-100 card">
+        <div class="text-3xl mb-3">🌾</div>
+        <p class="text-xs text-slate-400 font-semibold uppercase tracking-wide mb-1">Local Thai Rice</p>
+        <p class="font-bold text-slate-800 mb-2">ข้าวไทยท้องถิ่น</p>
+        <p class="text-xs text-slate-500 leading-relaxed mb-4">สุราจากข้าวพันธุ์ท้องถิ่น คัดสรรพิเศษจากแหล่งปลูกทั่วภาค ความหอมของข้าวไทยแท้ระดับ Premium</p>
+        <div class="pt-3 border-t border-slate-100 flex items-end justify-between">
+          <p class="text-xs text-slate-400">ราคา</p>
+          <p class="num text-2xl font-black text-amber-700">฿320–740</p>
+        </div>
+        <div class="mt-2 pb"><div class="pf bg-gradient-to-r from-amber-400 to-amber-600" style="width:75%"></div></div>
+      </div>
+
+      <div class="bg-white rounded-2xl p-5 shadow-sm border border-blue-100 card">
+        <div class="text-3xl mb-3">🍯</div>
+        <p class="text-xs text-slate-400 font-semibold uppercase tracking-wide mb-1">Nonthaburi Mead</p>
+        <p class="font-bold text-slate-800 mb-2">มีดนนทบุรี</p>
+        <p class="text-xs text-slate-500 leading-relaxed mb-4">ไวน์น้ำผึ้งสไตล์ Mead จากน้ำผึ้งธรรมชาติของนนทบุรี สูตรพิเศษเฉพาะตัว ไม่มีใครเหมือน</p>
+        <div class="pt-3 border-t border-slate-100 flex items-end justify-between">
+          <p class="text-xs text-slate-400">ราคา</p>
+          <p class="num text-2xl font-black text-blue-700">฿200</p>
+        </div>
+        <div class="mt-2 pb"><div class="pf bg-gradient-to-r from-blue-400 to-blue-600" style="width:50%"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Price comparison -->
+  <section>
+    <div class="sec-head">
+      <div class="sec-head-bar"></div>
+      <span class="sec-head-label">เปรียบเทียบราคา · Price Comparison</span>
+      <div class="sec-head-line"></div>
+    </div>
+
+    <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100 card">
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="bg-slate-50">
+              <th class="text-left py-3 px-4 text-xs font-semibold text-slate-400">ผลิตภัณฑ์</th>
+              <th class="text-left py-3 px-4 text-xs font-semibold text-slate-400">ประเภท</th>
+              <th class="text-left py-3 px-4 text-xs font-semibold text-slate-400">ราคา (บาท)</th>
+              <th class="text-left py-3 px-4 text-xs font-semibold text-slate-400 hidden md:table-cell">Segment</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-50">
+            <tr class="hover:bg-slate-50">
+              <td class="py-3 px-4 font-semibold text-slate-800">Craft Sato</td>
+              <td class="py-3 px-4"><span class="pill bg-violet-100 text-violet-600">สาโทคราฟต์</span></td>
+              <td class="py-3 px-4 num font-bold text-violet-700">฿180</td>
+              <td class="py-3 px-4 hidden md:table-cell"><span class="pill bg-amber-100 text-amber-600">Premium</span></td>
+            </tr>
+            <tr class="hover:bg-slate-50">
+              <td class="py-3 px-4 font-semibold text-slate-800">Local Thai Rice (Entry)</td>
+              <td class="py-3 px-4"><span class="pill bg-amber-100 text-amber-600">สุราข้าว</span></td>
+              <td class="py-3 px-4 num font-bold text-amber-700">฿320</td>
+              <td class="py-3 px-4 hidden md:table-cell"><span class="pill bg-amber-100 text-amber-600">Premium</span></td>
+            </tr>
+            <tr class="hover:bg-slate-50">
+              <td class="py-3 px-4 font-semibold text-slate-800">Local Thai Rice (Top)</td>
+              <td class="py-3 px-4"><span class="pill bg-amber-100 text-amber-600">สุราข้าว</span></td>
+              <td class="py-3 px-4 num font-bold text-amber-700">฿740</td>
+              <td class="py-3 px-4 hidden md:table-cell"><span class="pill bg-rose-100 text-rose-600">Ultra Premium</span></td>
+            </tr>
+            <tr class="hover:bg-slate-50">
+              <td class="py-3 px-4 font-semibold text-slate-800">Nonthaburi Mead</td>
+              <td class="py-3 px-4"><span class="pill bg-blue-100 text-blue-600">Mead</span></td>
+              <td class="py-3 px-4 num font-bold text-blue-700">฿200</td>
+              <td class="py-3 px-4 hidden md:table-cell"><span class="pill bg-amber-100 text-amber-600">Premium</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Brand story -->
+  <section>
+    <div class="sec-head">
+      <div class="sec-head-bar"></div>
+      <span class="sec-head-label">เรื่องราวแบรนด์ · Brand Story</span>
+      <div class="sec-head-line"></div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100 card">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 rounded-xl bg-violet-50 border border-violet-100 flex items-center justify-center text-xl">🎯</div>
+          <div>
+            <p class="font-bold text-slate-800">จุดเด่น</p>
+            <p class="text-xs text-slate-400">Key Differentiators</p>
+          </div>
+        </div>
+        <ul class="space-y-2.5">
+          <li class="flex items-start gap-2 text-sm text-slate-600">
+            <span class="w-5 h-5 rounded-full bg-violet-100 text-violet-600 flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
+            ใช้ข้าวไทยแท้ 100% คัดสรรจากแหล่งผลิตที่มีคุณภาพ
+          </li>
+          <li class="flex items-start gap-2 text-sm text-slate-600">
+            <span class="w-5 h-5 rounded-full bg-violet-100 text-violet-600 flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
+            กระบวนการหมักแบบดั้งเดิมผสมนวัตกรรมสมัยใหม่
+          </li>
+          <li class="flex items-start gap-2 text-sm text-slate-600">
+            <span class="w-5 h-5 rounded-full bg-violet-100 text-violet-600 flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
+            Packaging ระดับ Premium เหมาะสำหรับเป็นของขวัญ
+          </li>
+          <li class="flex items-start gap-2 text-sm text-slate-600">
+            <span class="w-5 h-5 rounded-full bg-violet-100 text-violet-600 flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">✓</span>
+            ผ่านมาตรฐาน อย. และการรับรองจากหน่วยงานที่เกี่ยวข้อง
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100 card">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 rounded-xl bg-indigo-50 border border-indigo-100 flex items-center justify-center text-xl">📍</div>
+          <div>
+            <p class="font-bold text-slate-800">ข้อมูลแบรนด์</p>
+            <p class="text-xs text-slate-400">Brand Info</p>
+          </div>
+        </div>
+        <div class="space-y-3">
+          <div class="flex justify-between py-2 border-b border-slate-50">
+            <span class="text-xs text-slate-400 font-semibold">ชื่อแบรนด์</span>
+            <span class="text-sm font-bold text-slate-800">Devanom (เทพนม)</span>
+          </div>
+          <div class="flex justify-between py-2 border-b border-slate-50">
+            <span class="text-xs text-slate-400 font-semibold">ที่ตั้ง</span>
+            <span class="text-sm font-bold text-slate-800">นนทบุรี</span>
+          </div>
+          <div class="flex justify-between py-2 border-b border-slate-50">
+            <span class="text-xs text-slate-400 font-semibold">หมวดหมู่</span>
+            <span class="text-sm font-bold text-slate-800">Craft Sato / Mead</span>
+          </div>
+          <div class="flex justify-between py-2 border-b border-slate-50">
+            <span class="text-xs text-slate-400 font-semibold">ระดับราคา</span>
+            <span class="pill bg-amber-100 text-amber-700">Premium</span>
+          </div>
+          <div class="flex justify-between py-2">
+            <span class="text-xs text-slate-400 font-semibold">สถานะ</span>
+            <span class="pill bg-emerald-100 text-emerald-700">Active</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /page-spotlight -->
+
+</main><!-- /main -->
+
+<!-- ══════════════════════════════════════
+     MOBILE BOTTOM NAV
+══════════════════════════════════════ -->
+<nav class="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-white border-t border-slate-200 shadow-lg">
+  <div class="flex">
+    <button onclick="showPage('overview')" data-mob="overview" class="mob-nav-btn active flex-1 flex flex-col items-center justify-center py-2.5 gap-0.5">
+      <span class="mob-icon text-xl text-slate-400">📊</span>
+      <span class="mob-label text-xs text-slate-400 font-medium">ภาพรวม</span>
+    </button>
+    <button onclick="showPage('brands')" data-mob="brands" class="mob-nav-btn flex-1 flex flex-col items-center justify-center py-2.5 gap-0.5">
+      <span class="mob-icon text-xl text-slate-400">🍶</span>
+      <span class="mob-label text-xs text-slate-400 font-medium">แบรนด์</span>
+    </button>
+    <button onclick="showPage('influencers')" data-mob="influencers" class="mob-nav-btn flex-1 flex flex-col items-center justify-center py-2.5 gap-0.5">
+      <span class="mob-icon text-xl text-slate-400">📣</span>
+      <span class="mob-label text-xs text-slate-400 font-medium">อินฟลู</span>
+    </button>
+    <button onclick="showPage('events')" data-mob="events" class="mob-nav-btn flex-1 flex flex-col items-center justify-center py-2.5 gap-0.5">
+      <span class="mob-icon text-xl text-slate-400">📅</span>
+      <span class="mob-label text-xs text-slate-400 font-medium">กิจกรรม</span>
+    </button>
+    <button onclick="showPage('spotlight')" data-mob="spotlight" class="mob-nav-btn flex-1 flex flex-col items-center justify-center py-2.5 gap-0.5">
+      <span class="mob-icon text-xl text-slate-400">✨</span>
+      <span class="mob-label text-xs text-slate-400 font-medium">Spotlight</span>
+    </button>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════
+     FOOTER
+══════════════════════════════════════ -->
+<footer class="hidden md:block bg-white border-t border-slate-200 py-4 pb-6">
+  <div class="max-w-screen-xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-2">
+    <p class="text-xs text-slate-400">© 2569 TSR Situation Room · ThaiBev Intelligence Dashboard</p>
+    <p class="text-xs text-slate-400 num">รายงานวันที่ 26 มีนาคม 2569 · #TSR-20260326</p>
   </div>
 </footer>
 
-<!-- ═══════════════════════════════════
-     CHART.JS
-═══════════════════════════════════ -->
+
+<!-- ══════════════════════════════════════
+     SCRIPTS
+══════════════════════════════════════ -->
 <script>
-Chart.defaults.font.family = "'Inter', 'Sarabun', sans-serif";
-Chart.defaults.color = '#94a3b8';
-Chart.defaults.borderColor = '#f1f5f9';
+// ─── Page Router ────────────────────────────────────────────
+let charts = {};
 
-const TOOLTIP = {
-  backgroundColor: 'rgba(15,23,42,0.9)',
-  titleColor: '#f1f5f9',
-  bodyColor: '#94a3b8',
-  borderColor: 'rgba(255,255,255,0.08)',
-  borderWidth: 1,
-  padding: 12,
-  cornerRadius: 10,
-};
+function showPage(name) {
+  // Hide all pages
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + name).classList.add('active');
 
-/* ── 1. Regional Horizontal Bar ── */
-new Chart(document.getElementById('regionalChart'), {
-  type: 'bar',
-  data: {
-    labels: ['R5 เหนือ','ไม่ระบุ','R8 ใต้','R1 กทม.','R3 อีสานใต้','R2 ตะวันออก','R4 อีสานเหนือ','R7 ตะวันตก','R6 กลางเหนือ'],
-    datasets: [{
-      label: 'จำนวนแบรนด์',
-      data: [625, 254, 114, 107, 78, 76, 69, 57, 52],
-      backgroundColor: [
-        '#818cf8','#fb7185','#34d399','#fbbf24','#a78bfa',
-        '#22d3ee','#f97316','#c084fc','#4ade80'
-      ],
-      borderRadius: 8,
-      borderSkipped: false,
-    }]
-  },
-  options: {
-    responsive: true, maintainAspectRatio: false,
-    indexAxis: 'y',
-    plugins: {
-      legend: { display: false },
-      tooltip: { ...TOOLTIP, callbacks: { label: c => `  ${c.parsed.x.toLocaleString()} แบรนด์` } }
-    },
-    scales: {
-      x: {
-        grid: { color: '#f8fafc' },
-        ticks: { font:{size:11}, color:'#94a3b8' }
-      },
-      y: {
-        grid: { display: false },
-        ticks: { font:{size:11}, color:'#64748b' }
-      }
-    }
-  }
-});
+  // Update desktop nav
+  document.querySelectorAll('[data-page]').forEach(btn => {
+    btn.classList.remove('active');
+    if (btn.dataset.page === name) btn.classList.add('active');
+  });
 
-/* ── 2. Type Donut ── */
-new Chart(document.getElementById('typeChart'), {
-  type: 'doughnut',
-  data: {
-    labels: ['สุรา', 'เบียร์'],
-    datasets: [{
-      data: [1198, 234],
-      backgroundColor: ['#8b5cf6','#f59e0b'],
-      borderColor: ['#fff','#fff'],
-      borderWidth: 3,
-      hoverOffset: 6,
-    }]
-  },
-  options: {
-    responsive: true, maintainAspectRatio: false,
-    cutout: '72%',
-    plugins: {
-      legend: { position:'bottom', labels:{ padding:16, font:{size:12}, usePointStyle:true, pointStyleWidth:8 } },
-      tooltip: { ...TOOLTIP, callbacks:{ label:c => `  ${c.label}: ${c.parsed.toLocaleString()} แบรนด์` } }
-    }
-  }
-});
+  // Update mobile nav
+  document.querySelectorAll('[data-mob]').forEach(btn => {
+    btn.classList.remove('active');
+    if (btn.dataset.mob === name) btn.classList.add('active');
+  });
 
-/* ── 3. Distribution Comparison ── */
-new Chart(document.getElementById('distChart'), {
-  type: 'bar',
-  data: {
-    labels: ['สักทองแพร่','เงาจันทร์','ข้าวใจ','อ้อยใจ','อูฐทอง','สามเจดีย์','น้ำใสเสือห้า','เทพเมรัย'],
-    datasets: [
-      {
-        label: 'มีนาคม 2567',
-        data: [4.1, 3.5, 3.3, 2.8, 2.4, 0.4, 0.4, 0.4],
-        backgroundColor: '#818cf8',
-        borderRadius: { topLeft:6, topRight:6 },
-        borderSkipped: false,
-      },
-      {
-        label: 'กุมภาพันธ์ 2567',
-        data: [3.5, 2.7, 3.5, 1.6, 1.3, 0.2, 0.1, 0.1],
-        backgroundColor: '#e2e8f0',
-        borderRadius: { topLeft:6, topRight:6 },
-        borderSkipped: false,
-      }
-    ]
-  },
-  options: {
-    responsive: true, maintainAspectRatio: false,
-    plugins: {
-      legend: { position:'top', align:'end', labels:{ font:{size:12}, usePointStyle:true, pointStyleWidth:8, padding:16 } },
-      tooltip: { ...TOOLTIP, callbacks:{ label:c => `  ${c.dataset.label}: ${c.parsed.y}%` } }
-    },
-    scales: {
-      x: { grid:{display:false}, ticks:{font:{size:11}, color:'#64748b'} },
-      y: {
-        grid:{color:'#f8fafc'},
-        ticks:{ font:{size:11}, color:'#94a3b8', callback:v => v+'%' },
-        max: 5
-      }
-    }
-  }
-});
-
-/* ── 4. Platform Bar ── */
-new Chart(document.getElementById('platformChart'), {
-  type: 'bar',
-  data: {
-    labels: ['Facebook', 'TikTok', 'Instagram', 'YouTube', 'X'],
-    datasets: [{
-      label: 'อินฟลูเอนเซอร์',
-      data: [278, 284, 216, 37, 20],
-      backgroundColor: ['#93c5fd','#fca5a5','#fde68a','#f87171','#cbd5e1'],
-      borderRadius: 8,
-      borderSkipped: false,
-    }]
-  },
-  options: {
-    responsive: true, maintainAspectRatio: false,
-    plugins: {
-      legend:{display:false},
-      tooltip:{ ...TOOLTIP, callbacks:{label:c => `  ${c.parsed.y} คน`} }
-    },
-    scales: {
-      x:{grid:{display:false}, ticks:{font:{size:11}, color:'#64748b'}},
-      y:{grid:{color:'#f8fafc'}, ticks:{font:{size:11}, color:'#94a3b8'}}
-    }
-  }
-});
-
-/* ── Number counter ── */
-function counter(id, target, dur=1300) {
-  const el = document.getElementById(id);
-  if (!el) return;
-  const fmt = new Intl.NumberFormat('th');
-  const start = performance.now();
-  (function tick(now) {
-    const p = Math.min((now - start) / dur, 1);
-    const ease = 1 - Math.pow(1 - p, 3);
-    el.textContent = fmt.format(Math.round(ease * target));
-    if (p < 1) requestAnimationFrame(tick);
-  })(start);
+  // Init charts for this page
+  setTimeout(() => initChartsForPage(name), 50);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
-counter('kpi1', 1432);
-counter('kpi2', 1198, 1350);
-counter('kpi3',  234, 1200);
-counter('kpi4',  835, 1400);
-counter('kpi5',  254, 1250);
+
+// ─── Chart defaults ─────────────────────────────────────────
+Chart.defaults.font.family = "'Inter', sans-serif";
+Chart.defaults.color = '#94a3b8';
+Chart.defaults.plugins.legend.labels.boxWidth = 10;
+Chart.defaults.plugins.legend.labels.borderRadius = 4;
+Chart.defaults.plugins.tooltip.backgroundColor = 'rgba(255,255,255,0.95)';
+Chart.defaults.plugins.tooltip.titleColor = '#1e293b';
+Chart.defaults.plugins.tooltip.bodyColor = '#64748b';
+Chart.defaults.plugins.tooltip.borderColor = '#e2e8f0';
+Chart.defaults.plugins.tooltip.borderWidth = 1;
+Chart.defaults.plugins.tooltip.padding = 10;
+Chart.defaults.plugins.tooltip.cornerRadius = 10;
+Chart.defaults.plugins.tooltip.boxShadow = '0 4px 12px rgba(0,0,0,.08)';
+
+// ─── Initialize charts ───────────────────────────────────────
+function initChartsForPage(page) {
+  if (page === 'overview' && !charts.regional) {
+    charts.regional = new Chart(document.getElementById('regionalChart'), {
+      type: 'bar',
+      data: {
+        labels: ['R5 เหนือ','ไม่ระบุ','R8 ใต้','R1 กทม.','R3 อีสานใต้','R2 ตะวันออก','R4 อีสานเหนือ','R7 ตะวันตก','R6 กลางบน'],
+        datasets: [{
+          label: 'จำนวนแบรนด์',
+          data: [625, 254, 114, 107, 78, 76, 69, 57, 52],
+          backgroundColor: [
+            'rgba(99,102,241,.85)','rgba(244,63,94,.75)','rgba(139,92,246,.8)',
+            'rgba(6,182,212,.8)','rgba(245,158,11,.8)','rgba(16,185,129,.8)',
+            'rgba(239,68,68,.8)','rgba(249,115,22,.8)','rgba(168,85,247,.8)'
+          ],
+          borderRadius: 8,
+          borderSkipped: false,
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+          x: { grid: { display: false }, ticks: { font: { size: 10 } } },
+          y: { grid: { color: '#f1f5f9' }, ticks: { font: { size: 10 } } }
+        }
+      }
+    });
+
+    charts.type = new Chart(document.getElementById('typeChart'), {
+      type: 'doughnut',
+      data: {
+        labels: ['สุรา (1,198)', 'เบียร์ (234)'],
+        datasets: [{
+          data: [1198, 234],
+          backgroundColor: ['rgba(139,92,246,.85)', 'rgba(245,158,11,.85)'],
+          borderWidth: 0, hoverOffset: 6
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false, cutout: '68%',
+        plugins: { legend: { position: 'bottom', labels: { padding: 12, font: { size: 11 } } } }
+      }
+    });
+  }
+
+  if (page === 'brands' && !charts.dist) {
+    charts.dist = new Chart(document.getElementById('distChart'), {
+      type: 'bar',
+      data: {
+        labels: ['สักทองแพร่','เงาจันทร์','ข้าวใจ','อ้อยใจ','อูฐทอง','สามเจดีย์','น้ำใสเสือห้า','เทพเมรัย','ข้าวใจ (2)','อ้อยใจ (2)'],
+        datasets: [
+          {
+            label: 'มีนาคม 2567',
+            data: [4.1, 3.5, 3.3, 2.8, 2.4, 0.4, 0.4, 0.4, 0.4, 0.4],
+            backgroundColor: 'rgba(99,102,241,.85)', borderRadius: 6, borderSkipped: false,
+          },
+          {
+            label: 'กุมภาพันธ์ 2567',
+            data: [3.5, 2.7, 3.5, 1.6, 1.3, 0.2, 0.1, 0.1, 0.4, 0.1],
+            backgroundColor: 'rgba(148,163,184,.5)', borderRadius: 6, borderSkipped: false,
+          }
+        ]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { position: 'top', align: 'end' } },
+        scales: {
+          x: { grid: { display: false }, ticks: { font: { size: 10 } } },
+          y: {
+            grid: { color: '#f1f5f9' }, ticks: { font: { size: 10 },
+            callback: v => v + '%' }
+          }
+        }
+      }
+    });
+
+    // Populate brand table rows
+    const data = [
+      ['สักทองแพร่','4.1%','3.5%','+0.6','up'],
+      ['เงาจันทร์','3.5%','2.7%','+0.8','up'],
+      ['ข้าวใจ','3.3%','3.5%','-0.2','down'],
+      ['อ้อยใจ','2.8%','1.6%','+1.2','up'],
+      ['อูฐทอง','2.4%','1.3%','+1.1','up'],
+      ['สามเจดีย์','0.4%','0.2%','+0.2','up'],
+      ['น้ำใสเสือห้า','0.4%','0.1%','+0.3','up'],
+      ['เทพเมรัย','0.4%','0.1%','+0.3','up'],
+    ];
+    const tbody = document.querySelector('#brands-data').parentElement;
+    document.getElementById('brands-data').remove();
+    data.forEach((row, i) => {
+      const tr = document.createElement('tr');
+      tr.className = 'hover:bg-slate-50 transition-colors';
+      const pct = parseFloat(row[1]) / 4.1 * 100;
+      tr.innerHTML = `
+        <td class="py-2.5 px-4 num font-black ${i<3?'text-amber-500':'text-slate-400'} text-sm">${i+1}</td>
+        <td class="py-2.5 px-4 font-semibold text-slate-800">${row[0]}</td>
+        <td class="py-2.5 px-4 num font-bold text-indigo-600">${row[1]}</td>
+        <td class="py-2.5 px-4 text-slate-400 text-xs num">${row[2]}</td>
+        <td class="py-2.5 px-4 num font-semibold text-xs ${row[4]==='up'?'text-emerald-600':'text-rose-500'}">${row[4]==='up'?'▲ ':'▼ '}${row[3]}</td>
+        <td class="py-2.5 px-4 hidden sm:table-cell"><div class="w-24 pb"><div class="pf bg-gradient-to-r from-indigo-400 to-indigo-600" style="width:${pct}%"></div></div></td>
+      `;
+      tbody.appendChild(tr);
+    });
+  }
+
+  if (page === 'influencers' && !charts.platform) {
+    charts.platform = new Chart(document.getElementById('platformChart'), {
+      type: 'bar',
+      data: {
+        labels: ['Facebook','TikTok','Instagram','YouTube','X'],
+        datasets: [{
+          label: 'จำนวนอินฟลูเอนเซอร์',
+          data: [278, 284, 216, 37, 20],
+          backgroundColor: [
+            'rgba(59,130,246,.8)','rgba(239,68,68,.8)',
+            'rgba(245,158,11,.8)','rgba(220,38,38,.8)','rgba(100,116,139,.7)'
+          ],
+          borderRadius: 8, borderSkipped: false,
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+          x: { grid: { display: false }, ticks: { font: { size: 11 } } },
+          y: { grid: { color: '#f1f5f9' }, ticks: { font: { size: 10 } } }
+        }
+      }
+    });
+  }
+}
+
+// ─── Init overview on load ───────────────────────────────────
+window.addEventListener('DOMContentLoaded', () => {
+  initChartsForPage('overview');
+});
 </script>
 
 </body>
