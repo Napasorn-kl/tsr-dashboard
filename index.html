@@ -1563,544 +1563,202 @@ tailwind.config = {
 <!-- ════════════════════════════════════
      PAGE 6 · Data Pipeline
 ════════════════════════════════════ -->
-<div id="page-pipeline" class="page space-y-6">
+<div id="page-pipeline" class="page space-y-5">
 
-  <!-- ── STAT BAR ── -->
-  <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 stagger">
-    <div class="bg-white rounded-2xl p-4 shadow-sm border border-emerald-100 card">
-      <div class="flex items-center justify-between mb-2">
-        <div class="icon-wrap w-9 h-9 bg-emerald-50 rounded-xl ic-base text-emerald-500"><i data-lucide="check-circle-2"></i></div>
-        <span class="pill bg-emerald-100 text-emerald-700">เสร็จแล้ว</span>
+  <!-- ══ HERO: AI Agent ══ -->
+  <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-indigo-600 via-violet-600 to-purple-700 p-6 text-white">
+    <!-- decorative rings -->
+    <div class="pointer-events-none absolute -right-16 -top-16 w-72 h-72 rounded-full bg-white/5"></div>
+    <div class="pointer-events-none absolute -right-8 -top-8  w-48 h-48 rounded-full bg-white/5"></div>
+
+    <div class="relative">
+      <!-- Top row -->
+      <div class="flex items-start justify-between mb-5">
+        <div class="flex items-center gap-3">
+          <div class="w-12 h-12 bg-white/20 backdrop-blur rounded-2xl flex items-center justify-center ic-xl flex-shrink-0">
+            <i data-lucide="bot"></i>
+          </div>
+          <div>
+            <p class="font-black text-xl leading-tight">AI Agent</p>
+            <p class="text-white/70 text-sm">TSR Dashboard Intelligence</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-2 bg-white/20 backdrop-blur rounded-full px-3 py-1.5 flex-shrink-0">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse flex-shrink-0"></span>
+          <span class="text-sm font-bold">Online</span>
+        </div>
       </div>
-      <p class="num text-2xl font-black text-slate-800">3/3</p>
-      <p class="text-xs text-slate-500 font-semibold mt-0.5">ขั้นตอนที่เสร็จสมบูรณ์</p>
-    </div>
-    <div class="bg-white rounded-2xl p-4 shadow-sm border border-indigo-100 card">
-      <div class="flex items-center justify-between mb-2">
-        <div class="icon-wrap w-9 h-9 bg-indigo-50 rounded-xl ic-base text-indigo-500"><i data-lucide="files"></i></div>
-        <span class="pill bg-indigo-100 text-indigo-600" id="pl-file-badge">2 ไฟล์</span>
+
+      <!-- Stats row -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+        <div class="bg-white/15 backdrop-blur rounded-2xl p-3">
+          <p class="num font-black text-2xl leading-none" id="pl-file-count">2</p>
+          <p class="text-white/70 text-xs mt-1">ไฟล์ที่ประมวลผล</p>
+          <span class="hidden" id="pl-file-badge"></span>
+        </div>
+        <div class="bg-white/15 backdrop-blur rounded-2xl p-3">
+          <p class="num font-black text-2xl leading-none">835</p>
+          <p class="text-white/70 text-xs mt-1">Records ในระบบ</p>
+        </div>
+        <div class="bg-white/15 backdrop-blur rounded-2xl p-3">
+          <p class="num font-black text-2xl leading-none">3</p>
+          <p class="text-white/70 text-xs mt-1">แหล่งข้อมูล</p>
+        </div>
+        <div class="bg-white/15 backdrop-blur rounded-2xl p-3">
+          <p class="num font-black text-sm leading-none" id="pl-last-update">26 มี.ค. 2569</p>
+          <p class="text-white/70 text-xs mt-1">อัปเดตล่าสุด</p>
+        </div>
       </div>
-      <p class="num text-2xl font-black text-slate-800" id="pl-file-count">2</p>
-      <p class="text-xs text-slate-500 font-semibold mt-0.5">ไฟล์ที่อัปโหลดแล้ว</p>
-    </div>
-    <div class="bg-white rounded-2xl p-4 shadow-sm border border-violet-100 card">
-      <div class="flex items-center justify-between mb-2">
-        <div class="icon-wrap w-9 h-9 bg-violet-50 rounded-xl ic-base text-violet-500"><i data-lucide="bot"></i></div>
-        <span class="pill bg-violet-100 text-violet-600 flex items-center gap-1">
-          <span class="w-1.5 h-1.5 rounded-full bg-violet-500 animate-pulse"></span>พร้อมใช้งาน
-        </span>
-      </div>
-      <p class="num text-2xl font-black text-slate-800">1</p>
-      <p class="text-xs text-slate-500 font-semibold mt-0.5">AI Agent ออนไลน์</p>
-    </div>
-    <div class="bg-white rounded-2xl p-4 shadow-sm border border-amber-100 card">
-      <div class="flex items-center justify-between mb-2">
-        <div class="icon-wrap w-9 h-9 bg-amber-50 rounded-xl ic-base text-amber-500"><i data-lucide="clock"></i></div>
-        <span class="pill bg-amber-100 text-amber-700">วันนี้</span>
-      </div>
-      <p class="num text-sm font-black text-slate-800" id="pl-last-update">26 มี.ค. 2569</p>
-      <p class="text-xs text-slate-500 font-semibold mt-0.5">อัปเดตล่าสุด</p>
     </div>
   </div>
 
-  <!-- ── SYSTEM ARCHITECTURE ── -->
-  <section>
-    <div class="sec-head">
-      <div class="sec-bar"></div>
-      <span class="sec-label">ภาพรวมระบบ · System Architecture</span>
-      <div class="sec-line"></div>
-      <span class="pill bg-slate-100 text-slate-500 flex-shrink-0">2 Steps</span>
-    </div>
+  <!-- ══ MAIN: 2 columns ══ -->
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
 
-    <div class="bg-white rounded-2xl p-5 md:p-6 shadow-sm border border-slate-100 space-y-6">
+    <!-- ── LEFT: Data Sources ── -->
+    <div class="space-y-4">
 
-      <!-- ── STEP 1 ── -->
-      <div>
-        <div class="flex items-center gap-2 mb-4">
-          <span class="w-6 h-6 rounded-full bg-emerald-500 text-white text-xs font-black flex items-center justify-center flex-shrink-0">1</span>
-          <p class="font-bold text-slate-800">Design &amp; Develop</p>
-          <span class="pill bg-emerald-100 text-emerald-700 flex items-center gap-1 ic-sm ml-auto">
-            <i data-lucide="check-circle-2"></i>เสร็จสมบูรณ์
-          </span>
+      <!-- Upload -->
+      <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100">
+        <div class="flex items-center justify-between mb-4">
+          <p class="font-bold text-slate-800 flex items-center gap-2 ic-base text-indigo-500">
+            <i data-lucide="upload-cloud"></i> อัปโหลดข้อมูล
+          </p>
+          <span class="pill bg-slate-100 text-slate-600" id="file-count-badge">2 ไฟล์</span>
         </div>
-
-        <!-- Desktop flow -->
-        <div class="hidden md:flex items-stretch gap-3">
-
-          <!-- Node ①: กำหนด Entity -->
-          <div class="flex-1 bg-emerald-50 border border-emerald-200 rounded-2xl p-4 relative">
-            <span class="absolute -top-2.5 -left-2.5 w-5 h-5 rounded-full bg-emerald-500 text-white text-xs font-black flex items-center justify-center shadow">①</span>
-            <div class="flex items-center gap-2.5 mb-2">
-              <div class="w-8 h-8 bg-emerald-100 rounded-xl flex items-center justify-center flex-shrink-0 ic-base text-emerald-600"><i data-lucide="layers"></i></div>
-              <p class="font-bold text-slate-800 text-sm">กำหนด Data Entity</p>
-            </div>
-            <p class="text-xs text-slate-500 leading-relaxed">วิเคราะห์ว่าจะมีข้อมูลกี่ entity และแต่ละ entity มี attribute อะไรบ้าง</p>
-            <div class="mt-3 flex flex-wrap gap-1">
-              <span class="pill bg-white text-slate-600 text-xs border border-slate-200">Brand</span>
-              <span class="pill bg-white text-slate-600 text-xs border border-slate-200">Influencer</span>
-              <span class="pill bg-white text-slate-600 text-xs border border-slate-200">Event</span>
-              <span class="pill bg-white text-slate-600 text-xs border border-slate-200">Platform</span>
-            </div>
-          </div>
-
-          <div class="flex items-center text-emerald-400 flex-shrink-0"><i data-lucide="arrow-right" class="w-5 h-5"></i></div>
-
-          <!-- Node: DB Model -->
-          <div class="flex-1 bg-emerald-50 border border-emerald-200 rounded-2xl p-4">
-            <div class="flex items-center gap-2.5 mb-2">
-              <div class="w-8 h-8 bg-emerald-100 rounded-xl flex items-center justify-center flex-shrink-0 ic-base text-emerald-600"><i data-lucide="database"></i></div>
-              <p class="font-bold text-slate-800 text-sm">DB Model &amp; Tables</p>
-            </div>
-            <p class="text-xs text-slate-500 leading-relaxed">ออกแบบ Database Schema และ relationships ระหว่าง tables</p>
-            <div class="mt-3 grid grid-cols-2 gap-1">
-              <div class="bg-white border border-slate-200 rounded-lg px-2 py-1 text-xs text-slate-600 font-mono">brands</div>
-              <div class="bg-white border border-slate-200 rounded-lg px-2 py-1 text-xs text-slate-600 font-mono">influencers</div>
-              <div class="bg-white border border-slate-200 rounded-lg px-2 py-1 text-xs text-slate-600 font-mono">events</div>
-              <div class="bg-white border border-slate-200 rounded-lg px-2 py-1 text-xs text-slate-600 font-mono">metrics</div>
-            </div>
-          </div>
-
-          <div class="flex items-center text-emerald-400 flex-shrink-0"><i data-lucide="arrow-right" class="w-5 h-5"></i></div>
-
-          <!-- Node ②: Dashboard -->
-          <div class="flex-1 bg-emerald-50 border border-emerald-200 rounded-2xl p-4 relative">
-            <span class="absolute -top-2.5 -left-2.5 w-5 h-5 rounded-full bg-emerald-500 text-white text-xs font-black flex items-center justify-center shadow">②</span>
-            <div class="flex items-center gap-2.5 mb-2">
-              <div class="w-8 h-8 bg-emerald-100 rounded-xl flex items-center justify-center flex-shrink-0 ic-base text-emerald-600"><i data-lucide="layout-dashboard"></i></div>
-              <p class="font-bold text-slate-800 text-sm">Design Dashboard</p>
-            </div>
-            <p class="text-xs text-slate-500 leading-relaxed">นำ Data ไป Design Dashboard ให้แสดงผลตรงกับความต้องการ</p>
-            <div class="mt-3 space-y-1">
-              <div class="h-3 bg-indigo-100 rounded-full w-full"></div>
-              <div class="flex gap-1">
-                <div class="h-3 bg-violet-100 rounded-full w-1/3"></div>
-                <div class="h-3 bg-slate-100 rounded-full flex-1"></div>
-              </div>
-              <div class="h-3 bg-emerald-100 rounded-full w-2/3"></div>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- Mobile flow -->
-        <div class="md:hidden space-y-2">
-          <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-3 flex items-center gap-3">
-            <span class="w-6 h-6 rounded-full bg-emerald-500 text-white text-xs font-black flex items-center justify-center flex-shrink-0">①</span>
-            <div class="ic-sm text-emerald-600 flex-shrink-0"><i data-lucide="layers"></i></div>
-            <div><p class="font-bold text-slate-800 text-sm">กำหนด Data Entity</p><p class="text-xs text-slate-500">Brand · Influencer · Event · Platform</p></div>
-          </div>
-          <div class="flex justify-center text-emerald-400"><i data-lucide="arrow-down" class="w-4 h-4"></i></div>
-          <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-3 flex items-center gap-3">
-            <div class="w-6 h-6 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0 ic-sm text-emerald-600"><i data-lucide="database"></i></div>
-            <div><p class="font-bold text-slate-800 text-sm">DB Model &amp; Tables</p><p class="text-xs text-slate-500">brands / influencers / events / metrics</p></div>
-          </div>
-          <div class="flex justify-center text-emerald-400"><i data-lucide="arrow-down" class="w-4 h-4"></i></div>
-          <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-3 flex items-center gap-3">
-            <span class="w-6 h-6 rounded-full bg-emerald-500 text-white text-xs font-black flex items-center justify-center flex-shrink-0">②</span>
-            <div class="ic-sm text-emerald-600 flex-shrink-0"><i data-lucide="layout-dashboard"></i></div>
-            <div><p class="font-bold text-slate-800 text-sm">Design Dashboard</p><p class="text-xs text-slate-500">นำ Data ไป Design ให้ใช้งานได้จริง</p></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Divider -->
-      <div class="relative flex items-center gap-3">
-        <div class="flex-1 border-t border-dashed border-slate-200"></div>
-        <span class="text-xs text-slate-300 font-semibold flex-shrink-0">ต่อยอดด้วย</span>
-        <div class="flex-1 border-t border-dashed border-slate-200"></div>
-      </div>
-
-      <!-- ── STEP 2 ── -->
-      <div>
-        <div class="flex items-center gap-2 mb-4">
-          <span class="w-6 h-6 rounded-full bg-indigo-500 text-white text-xs font-black flex items-center justify-center flex-shrink-0">2</span>
-          <p class="font-bold text-slate-800">AI Agent Cowork</p>
-          <span class="pill bg-indigo-100 text-indigo-600 flex items-center gap-1 ic-sm ml-auto">
-            <span class="w-1.5 h-1.5 rounded-full bg-indigo-500 animate-pulse"></span>กำลังพัฒนา
-          </span>
-        </div>
-
-        <!-- Desktop grid -->
-        <div class="hidden md:grid grid-cols-11 items-center gap-2">
-
-          <!-- Inputs (3 rows × col 1-3) -->
-          <div class="col-span-3 space-y-2">
-            <div class="bg-blue-50 border border-blue-200 rounded-xl p-3 relative">
-              <span class="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-blue-500 text-white text-xs font-black flex items-center justify-center shadow">①</span>
-              <div class="flex items-center gap-2 ic-sm text-blue-600 mb-1"><i data-lucide="message-square"></i><p class="font-bold text-slate-800 text-xs">Prompt</p></div>
-              <p class="text-xs text-slate-500">คำสั่งจากผู้ใช้งานโดยตรง</p>
-            </div>
-            <div class="bg-violet-50 border border-violet-200 rounded-xl p-3 relative">
-              <span class="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-violet-500 text-white text-xs font-black flex items-center justify-center shadow">②</span>
-              <div class="flex items-center gap-2 ic-sm text-violet-600 mb-1"><i data-lucide="repeat-2"></i><p class="font-bold text-slate-800 text-xs">Automation with Cowork</p></div>
-              <p class="text-xs text-slate-500">ทำงานอัตโนมัติร่วมกันหลาย Agent</p>
-            </div>
-            <div class="bg-slate-50 border border-slate-200 rounded-xl p-3">
-              <div class="flex items-center gap-2 ic-sm text-slate-500 mb-1"><i data-lucide="file-text"></i><p class="font-bold text-slate-700 text-xs">File / Report</p></div>
-              <p class="text-xs text-slate-400">Data Source จากไฟล์และรายงาน</p>
-            </div>
-          </div>
-
-          <!-- Arrows → AI -->
-          <div class="col-span-1 flex flex-col items-center justify-center gap-5">
-            <i data-lucide="arrow-right" class="w-4 h-4 text-blue-300"></i>
-            <i data-lucide="arrow-right" class="w-4 h-4 text-violet-300"></i>
-            <i data-lucide="arrow-right" class="w-4 h-4 text-slate-300"></i>
-          </div>
-
-          <!-- AI Agent (center) -->
-          <div class="col-span-3 bg-gradient-to-br from-indigo-50 to-violet-50 border-2 border-indigo-300 rounded-2xl p-5 text-center shadow-lg shadow-indigo-100 relative self-stretch flex flex-col justify-center">
-            <span class="absolute -top-3 left-1/2 -translate-x-1/2 w-5 h-5 rounded-full bg-indigo-600 text-white text-xs font-black flex items-center justify-center shadow">③</span>
-            <div class="w-12 h-12 bg-indigo-100 rounded-2xl flex items-center justify-center mx-auto mb-3 ic-lg text-indigo-600"><i data-lucide="bot"></i></div>
-            <p class="font-black text-slate-800">AI Agent</p>
-            <p class="text-xs text-slate-500 mt-1 leading-relaxed">ประมวลผล + ค้นหา<br>ข้อมูลมาเพิ่มเติม</p>
-            <div class="mt-3 flex justify-center gap-1">
-              <span class="w-1.5 h-1.5 rounded-full bg-indigo-500 animate-pulse"></span>
-              <span class="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-pulse" style="animation-delay:.3s"></span>
-              <span class="w-1.5 h-1.5 rounded-full bg-indigo-300 animate-pulse" style="animation-delay:.6s"></span>
-            </div>
-          </div>
-
-          <!-- Arrows AI → outputs -->
-          <div class="col-span-1 flex flex-col items-center justify-center gap-5">
-            <i data-lucide="arrow-right" class="w-4 h-4 text-cyan-400"></i>
-            <i data-lucide="arrow-right" class="w-4 h-4 text-emerald-400"></i>
-          </div>
-
-          <!-- Outputs -->
-          <div class="col-span-3 space-y-2">
-            <div class="bg-cyan-50 border border-cyan-200 rounded-xl p-3">
-              <div class="flex items-center gap-2 ic-sm text-cyan-600 mb-1"><i data-lucide="globe-2"></i><p class="font-bold text-slate-800 text-xs">Internet</p></div>
-              <p class="text-xs text-slate-500">ค้นหาข้อมูลเพิ่มเติมจาก Web</p>
-              <div class="mt-2 flex flex-wrap gap-1">
-                <span class="pill bg-white text-slate-500 text-xs border border-slate-200">Google Trends</span>
-                <span class="pill bg-white text-slate-500 text-xs border border-slate-200">YouTube API</span>
-                <span class="pill bg-white text-slate-500 text-xs border border-slate-200">Social Media</span>
-              </div>
-            </div>
-            <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-3">
-              <div class="flex items-center gap-2 ic-sm text-emerald-600 mb-1"><i data-lucide="database"></i><p class="font-bold text-slate-800 text-xs">DB Update</p></div>
-              <p class="text-xs text-slate-500">บันทึกข้อมูลที่ได้ลงฐานข้อมูล<br>แล้วอัปเดต Dashboard อัตโนมัติ</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Mobile -->
-        <div class="md:hidden space-y-2">
-          <div class="grid grid-cols-3 gap-2">
-            <div class="bg-blue-50 border border-blue-200 rounded-xl p-2.5 text-center">
-              <div class="flex justify-center ic-sm text-blue-500 mb-1"><i data-lucide="message-square"></i></div>
-              <p class="text-xs font-bold text-slate-700">Prompt</p>
-              <p class="text-xs text-slate-400">①</p>
-            </div>
-            <div class="bg-violet-50 border border-violet-200 rounded-xl p-2.5 text-center">
-              <div class="flex justify-center ic-sm text-violet-500 mb-1"><i data-lucide="repeat-2"></i></div>
-              <p class="text-xs font-bold text-slate-700">Automation</p>
-              <p class="text-xs text-slate-400">②</p>
-            </div>
-            <div class="bg-slate-50 border border-slate-200 rounded-xl p-2.5 text-center">
-              <div class="flex justify-center ic-sm text-slate-400 mb-1"><i data-lucide="file-text"></i></div>
-              <p class="text-xs font-bold text-slate-700">File/Report</p>
-              <p class="text-xs text-slate-400">Data Source</p>
-            </div>
-          </div>
-          <div class="flex justify-center text-indigo-300"><i data-lucide="arrow-down" class="w-4 h-4"></i></div>
-          <div class="bg-gradient-to-r from-indigo-50 to-violet-50 border-2 border-indigo-200 rounded-xl p-3 flex items-center gap-3">
-            <div class="w-10 h-10 bg-indigo-100 rounded-xl flex items-center justify-center flex-shrink-0 ic-lg text-indigo-600"><i data-lucide="bot"></i></div>
-            <div class="flex-1">
-              <p class="font-black text-slate-800">AI Agent ③</p>
-              <p class="text-xs text-slate-500">ประมวลผล + ค้นหาข้อมูลมาเพิ่มเติม</p>
-            </div>
-            <div class="flex flex-col gap-0.5 flex-shrink-0">
-              <span class="w-1.5 h-1.5 rounded-full bg-indigo-500 animate-pulse"></span>
-              <span class="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-pulse" style="animation-delay:.3s"></span>
-              <span class="w-1.5 h-1.5 rounded-full bg-indigo-300 animate-pulse" style="animation-delay:.6s"></span>
-            </div>
-          </div>
-          <div class="flex justify-center text-cyan-400"><i data-lucide="arrow-down" class="w-4 h-4"></i></div>
-          <div class="grid grid-cols-2 gap-2">
-            <div class="bg-cyan-50 border border-cyan-200 rounded-xl p-3">
-              <div class="flex items-center gap-2 ic-sm text-cyan-600 mb-1"><i data-lucide="globe-2"></i><p class="font-bold text-slate-700 text-xs">Internet</p></div>
-              <p class="text-xs text-slate-400">Google Trends, YouTube, Social</p>
-            </div>
-            <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-3">
-              <div class="flex items-center gap-2 ic-sm text-emerald-600 mb-1"><i data-lucide="database"></i><p class="font-bold text-slate-700 text-xs">DB Update</p></div>
-              <p class="text-xs text-slate-400">บันทึกและอัปเดต Dashboard</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ── PHASE 1 ── -->
-  <section>
-    <div class="sec-head">
-      <div class="sec-bar"></div>
-      <span class="sec-label">ขั้นตอนที่ 1 · การออกแบบและพัฒนา</span>
-      <div class="sec-line"></div>
-      <span class="pill bg-emerald-100 text-emerald-700 flex-shrink-0 flex items-center gap-1 ic-sm">
-        <i data-lucide="check-circle-2"></i>เสร็จสมบูรณ์
-      </span>
-    </div>
-
-    <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100">
-      <!-- Desktop -->
-      <div class="hidden md:flex items-stretch gap-2">
-
-        <div class="flex-1 relative step-card done bg-emerald-50/40 rounded-2xl p-4">
-          <div class="step-num done">1</div>
-          <div class="flex items-start gap-3 mt-3">
-            <div class="icon-wrap w-10 h-10 bg-emerald-100 rounded-xl ic-md text-emerald-600 flex-shrink-0"><i data-lucide="search"></i></div>
-            <div>
-              <p class="font-bold text-slate-800 text-sm">วิเคราะห์ข้อมูล</p>
-              <p class="text-xs text-slate-500 mt-1 leading-relaxed">ตรวจสอบว่ามีข้อมูลอะไรบ้าง เช่น แบรนด์, อินฟลูเอนเซอร์, กิจกรรม และภูมิภาค</p>
-              <div class="mt-2 space-y-1">
-                <div class="flex items-center gap-1.5 text-xs text-emerald-600 font-medium ic-sm"><i data-lucide="check"></i>ระบุประเภทข้อมูลที่จำเป็น</div>
-                <div class="flex items-center gap-1.5 text-xs text-emerald-600 font-medium ic-sm"><i data-lucide="check"></i>กำหนดความสัมพันธ์ระหว่างข้อมูล</div>
-                <div class="flex items-center gap-1.5 text-xs text-emerald-600 font-medium ic-sm"><i data-lucide="check"></i>วางแผนโครงสร้างการแสดงผล</div>
-              </div>
-            </div>
-          </div>
-          <div class="mt-3 pt-3 border-t border-emerald-100 flex items-center gap-1.5 text-xs font-semibold text-emerald-600 ic-sm">
-            <i data-lucide="check-circle-2"></i>เสร็จสมบูรณ์
-          </div>
-        </div>
-
-        <div class="flex items-center flex-shrink-0"><div class="pipe-arrow"></div></div>
-
-        <div class="flex-1 relative step-card done bg-emerald-50/40 rounded-2xl p-4">
-          <div class="step-num done">2</div>
-          <div class="flex items-start gap-3 mt-3">
-            <div class="icon-wrap w-10 h-10 bg-emerald-100 rounded-xl ic-md text-emerald-600 flex-shrink-0"><i data-lucide="database"></i></div>
-            <div>
-              <p class="font-bold text-slate-800 text-sm">โครงสร้างฐานข้อมูล</p>
-              <p class="text-xs text-slate-500 mt-1 leading-relaxed">ออกแบบตารางและความสัมพันธ์ระหว่างข้อมูล เพื่อให้จัดเก็บและค้นหาได้ง่าย</p>
-              <div class="mt-2 space-y-1">
-                <div class="flex items-center gap-1.5 text-xs text-emerald-600 font-medium ic-sm"><i data-lucide="check"></i>ตาราง brands, influencers, events</div>
-                <div class="flex items-center gap-1.5 text-xs text-emerald-600 font-medium ic-sm"><i data-lucide="check"></i>ตาราง regions, distribution_history</div>
-                <div class="flex items-center gap-1.5 text-xs text-emerald-600 font-medium ic-sm"><i data-lucide="check"></i>เชื่อมโยงข้อมูลทุกตารางเข้าด้วยกัน</div>
-              </div>
-            </div>
-          </div>
-          <div class="mt-3 pt-3 border-t border-emerald-100 flex items-center gap-1.5 text-xs font-semibold text-emerald-600 ic-sm">
-            <i data-lucide="check-circle-2"></i>เสร็จสมบูรณ์
-          </div>
-        </div>
-
-        <div class="flex items-center flex-shrink-0"><div class="pipe-arrow"></div></div>
-
-        <div class="flex-1 relative step-card active bg-indigo-50/40 rounded-2xl p-4">
-          <div class="step-num active">3</div>
-          <div class="flex items-start gap-3 mt-3">
-            <div class="icon-wrap w-10 h-10 bg-indigo-100 rounded-xl ic-md text-indigo-600 flex-shrink-0"><i data-lucide="layout-dashboard"></i></div>
-            <div>
-              <p class="font-bold text-slate-800 text-sm">สร้างแดชบอร์ด <span class="text-indigo-500 font-normal">(หน้านี้)</span></p>
-              <p class="text-xs text-slate-500 mt-1 leading-relaxed">แสดงผลข้อมูลในรูปแบบกราฟและตาราง ให้ทีมงานเข้าใจได้ง่ายและรวดเร็ว</p>
-              <div class="mt-2 space-y-1">
-                <div class="flex items-center gap-1.5 text-xs text-emerald-600 font-medium ic-sm"><i data-lucide="check"></i>6 หน้าข้อมูล + ใช้งานบนมือถือได้</div>
-                <div class="flex items-center gap-1.5 text-xs text-emerald-600 font-medium ic-sm"><i data-lucide="check"></i>เผยแพร่ที่ GitHub Pages แล้ว</div>
-                <div class="flex items-center gap-1.5 text-xs text-indigo-500 font-medium ic-sm"><i data-lucide="loader-2"></i>รับไฟล์ใหม่อัตโนมัติ (กำลังทำงาน)</div>
-              </div>
-            </div>
-          </div>
-          <div class="mt-3 pt-3 border-t border-indigo-100 flex items-center gap-1.5 text-xs font-semibold text-indigo-600 ic-sm">
-            <i data-lucide="activity"></i>กำลังใช้งาน (Live)
-            <span class="w-1.5 h-1.5 rounded-full bg-indigo-500 animate-pulse ml-auto"></span>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Mobile: vertical -->
-      <div class="md:hidden space-y-3">
-        <div class="step-card done bg-emerald-50/40 rounded-2xl p-3.5 flex items-center gap-3">
-          <div class="w-7 h-7 rounded-full bg-emerald-500 text-white flex items-center justify-center font-black text-xs num flex-shrink-0">1</div>
-          <div class="icon-wrap w-9 h-9 bg-emerald-100 rounded-xl ic-base text-emerald-600 flex-shrink-0"><i data-lucide="search"></i></div>
-          <div class="flex-1"><p class="font-bold text-slate-800 text-sm">วิเคราะห์ข้อมูล</p><p class="text-xs text-slate-400">ระบุประเภทและความสัมพันธ์</p></div>
-          <span class="pill bg-emerald-100 text-emerald-700 flex-shrink-0">เสร็จ</span>
-        </div>
-        <div class="flex justify-center"><div class="w-0.5 h-4 bg-gradient-to-b from-emerald-300 to-indigo-300"></div></div>
-        <div class="step-card done bg-emerald-50/40 rounded-2xl p-3.5 flex items-center gap-3">
-          <div class="w-7 h-7 rounded-full bg-emerald-500 text-white flex items-center justify-center font-black text-xs num flex-shrink-0">2</div>
-          <div class="icon-wrap w-9 h-9 bg-emerald-100 rounded-xl ic-base text-emerald-600 flex-shrink-0"><i data-lucide="database"></i></div>
-          <div class="flex-1"><p class="font-bold text-slate-800 text-sm">โครงสร้างฐานข้อมูล</p><p class="text-xs text-slate-400">ออกแบบ 5 ตาราง</p></div>
-          <span class="pill bg-emerald-100 text-emerald-700 flex-shrink-0">เสร็จ</span>
-        </div>
-        <div class="flex justify-center"><div class="w-0.5 h-4 bg-gradient-to-b from-emerald-300 to-indigo-300"></div></div>
-        <div class="step-card active bg-indigo-50/40 rounded-2xl p-3.5 flex items-center gap-3">
-          <div class="w-7 h-7 rounded-full bg-indigo-500 text-white flex items-center justify-center font-black text-xs num flex-shrink-0">3</div>
-          <div class="icon-wrap w-9 h-9 bg-indigo-100 rounded-xl ic-base text-indigo-600 flex-shrink-0"><i data-lucide="layout-dashboard"></i></div>
-          <div class="flex-1"><p class="font-bold text-slate-800 text-sm">แดชบอร์ด (หน้านี้)</p><p class="text-xs text-slate-400">6 หน้า · Responsive · Live</p></div>
-          <span class="pill bg-indigo-100 text-indigo-600 flex-shrink-0">Live</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── PHASE 2: UPLOAD ── -->
-  <section>
-    <div class="sec-head">
-      <div class="sec-bar"></div>
-      <span class="sec-label">ขั้นตอนที่ 2 · อัปโหลดข้อมูลให้ AI ประมวลผล</span>
-      <div class="sec-line"></div>
-      <span class="pill bg-violet-100 text-violet-600 flex-shrink-0 flex items-center gap-1">
-        <span class="w-1.5 h-1.5 rounded-full bg-violet-500 animate-pulse"></span>AI พร้อมรับไฟล์
-      </span>
-    </div>
-
-    <div class="grid grid-cols-1 lg:grid-cols-5 gap-4">
-
-      <!-- Upload + File list (col 1-3) -->
-      <div class="lg:col-span-3 space-y-4">
 
         <!-- Drop zone -->
         <div id="drop-zone"
-          class="bg-white rounded-2xl border-2 border-dashed border-indigo-200 hover:border-indigo-400 hover:bg-indigo-50/30 transition-all cursor-pointer select-none"
-          onclick="document.getElementById('file-input').click()"
-          ondragover="handleDragOver(event)"
-          ondragleave="handleDragLeave(event)"
-          ondrop="handleDrop(event)">
-          <input type="file" id="file-input" class="hidden" multiple accept=".pdf,.xlsx,.xls,.csv,.json"
-            onchange="handleFileSelect(this.files)">
-          <div class="p-7 text-center">
-            <div class="icon-wrap w-14 h-14 bg-indigo-50 rounded-2xl mx-auto mb-3 ic-xl text-indigo-400">
-              <i data-lucide="upload-cloud"></i>
-            </div>
-            <p class="font-bold text-slate-700">ลากไฟล์มาวางที่นี่ หรือ <span class="text-indigo-600 underline underline-offset-2">คลิกเพื่อเลือกไฟล์</span></p>
-            <p class="text-xs text-slate-400 mt-1.5">รองรับ PDF, Excel, CSV, JSON &nbsp;·&nbsp; สูงสุด 50 MB ต่อไฟล์</p>
-            <div class="flex items-center justify-center gap-2 mt-3 flex-wrap">
-              <span class="pill bg-slate-100 text-slate-500 border border-slate-200">PDF</span>
-              <span class="pill bg-slate-100 text-slate-500 border border-slate-200">Excel</span>
-              <span class="pill bg-slate-100 text-slate-500 border border-slate-200">CSV</span>
-              <span class="pill bg-slate-100 text-slate-500 border border-slate-200">JSON</span>
-            </div>
-          </div>
+          class="border-2 border-dashed border-indigo-200 rounded-xl p-6 text-center cursor-pointer hover:border-indigo-400 hover:bg-indigo-50/50 transition-all select-none">
+          <input type="file" id="file-input" class="hidden" multiple accept=".pdf,.xlsx,.xls,.csv,.json">
+          <div class="flex justify-center ic-xl text-indigo-300 mb-2"><i data-lucide="upload-cloud"></i></div>
+          <p class="text-sm font-semibold text-slate-700">ลากไฟล์มาวางที่นี่</p>
+          <p class="text-xs text-slate-400 mt-1">หรือคลิกเพื่อเลือก · PDF, CSV, XLSX</p>
         </div>
 
         <!-- File list -->
-        <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
-          <div class="p-4 border-b border-slate-100 flex items-center justify-between">
-            <div class="flex items-center gap-2 ic-base text-slate-500">
-              <i data-lucide="folder-open"></i>
-              <p class="text-sm font-bold text-slate-800">ไฟล์ที่อัปโหลดแล้ว</p>
-            </div>
-            <span class="pill bg-slate-100 text-slate-600" id="file-count-badge">2 ไฟล์</span>
-          </div>
-          <div id="file-list" class="divide-y divide-slate-50"></div>
-          <div id="file-list-empty" class="hidden p-6 text-center">
-            <div class="icon-wrap w-10 h-10 bg-slate-50 rounded-xl mx-auto mb-2 ic-md text-slate-300"><i data-lucide="file-x"></i></div>
-            <p class="text-sm text-slate-400">ยังไม่มีไฟล์ · ลากหรือคลิกเพื่ออัปโหลด</p>
-          </div>
-        </div>
-
+        <div id="file-list" class="mt-3 space-y-2"></div>
+        <div id="file-list-empty" class="hidden mt-3 p-4 text-center text-sm text-slate-400">ยังไม่มีไฟล์</div>
       </div>
 
-      <!-- AI Agent panel (col 4-5) -->
-      <div class="lg:col-span-2 space-y-4">
+      <!-- Internet sources -->
+      <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100">
+        <p class="font-bold text-slate-800 flex items-center gap-2 ic-base text-cyan-500 mb-4">
+          <i data-lucide="globe-2"></i> แหล่งข้อมูลออนไลน์
+        </p>
+        <div class="space-y-2">
 
-        <div class="bg-white rounded-2xl p-5 shadow-sm border border-violet-100">
-          <div class="flex items-center justify-between mb-4">
-            <p class="text-sm font-bold text-slate-800">AI Agent</p>
-            <span class="pill bg-violet-100 text-violet-600 flex items-center gap-1" id="agent-status-badge">
-              <span class="w-1.5 h-1.5 rounded-full bg-violet-500 animate-pulse"></span>พร้อมทำงาน
+          <div class="flex items-center justify-between p-3 bg-slate-50 rounded-xl">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                <i data-lucide="trending-up" class="w-4 h-4 text-blue-500"></i>
+              </div>
+              <div>
+                <p class="text-sm font-semibold text-slate-700">Google Trends</p>
+                <p class="text-xs text-slate-400">ความนิยมการค้นหา · ไทย</p>
+              </div>
+            </div>
+            <span class="pill bg-emerald-100 text-emerald-700 flex items-center gap-1 text-xs ic-sm">
+              <i data-lucide="check-circle" class="w-3 h-3"></i>พร้อม
             </span>
           </div>
 
-          <!-- Agent avatar -->
-          <div class="flex flex-col items-center py-3">
-            <div class="relative mb-3">
-              <div class="agent-ring"></div>
-              <div class="agent-ring"></div>
-              <div class="w-16 h-16 rounded-full bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center shadow-lg shadow-indigo-200 relative z-10 ic-xl text-white">
-                <i data-lucide="bot"></i>
+          <div class="flex items-center justify-between p-3 bg-slate-50 rounded-xl">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 bg-red-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                <img src="https://cdn.simpleicons.org/youtube/FF0000" class="w-4 h-4">
+              </div>
+              <div>
+                <p class="text-sm font-semibold text-slate-700">YouTube API</p>
+                <p class="text-xs text-slate-400">วิดีโอและ Influencer</p>
               </div>
             </div>
-            <p class="text-xs text-center text-slate-500 leading-relaxed" id="agent-status-text">
-              รออัปโหลดไฟล์ข้อมูล<br>เพื่อเริ่มการวิเคราะห์
-            </p>
+            <span class="pill bg-amber-100 text-amber-700 text-xs">ต้องการ API Key</span>
           </div>
 
-          <!-- Steps -->
-          <div class="mt-3 space-y-1.5">
-            <div class="flex items-center gap-2.5 p-2.5 rounded-xl bg-slate-50" id="ai-step-1">
-              <div class="icon-wrap w-7 h-7 rounded-lg ic-sm bg-indigo-100 text-indigo-600 flex-shrink-0"><i data-lucide="file-search"></i></div>
-              <p class="text-xs font-semibold text-slate-700 flex-1">อ่านและแยกข้อมูลจากไฟล์</p>
-              <span id="ai-s1-icon" class="w-4 h-4 rounded-full bg-slate-200 flex-shrink-0 block"></span>
+          <div class="flex items-center justify-between p-3 bg-slate-50 rounded-xl">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                <img src="https://cdn.simpleicons.org/facebook/1877F2" class="w-4 h-4">
+              </div>
+              <div>
+                <p class="text-sm font-semibold text-slate-700">Social Media</p>
+                <p class="text-xs text-slate-400">Facebook · TikTok · Instagram</p>
+              </div>
             </div>
-            <div class="flex items-center gap-2.5 p-2.5 rounded-xl bg-slate-50" id="ai-step-2">
-              <div class="icon-wrap w-7 h-7 rounded-lg ic-sm bg-violet-100 text-violet-600 flex-shrink-0"><i data-lucide="cpu"></i></div>
-              <p class="text-xs font-semibold text-slate-700 flex-1">วิเคราะห์และจัดหมวดหมู่</p>
-              <span id="ai-s2-icon" class="w-4 h-4 rounded-full bg-slate-200 flex-shrink-0 block"></span>
-            </div>
-            <div class="flex items-center gap-2.5 p-2.5 rounded-xl bg-slate-50" id="ai-step-3">
-              <div class="icon-wrap w-7 h-7 rounded-lg ic-sm bg-cyan-100 text-cyan-600 flex-shrink-0"><i data-lucide="globe-2"></i></div>
-              <p class="text-xs font-semibold text-slate-700 flex-1">ค้นหาข้อมูลเพิ่มจากอินเทอร์เน็ต</p>
-              <span id="ai-s3-icon" class="w-4 h-4 rounded-full bg-slate-200 flex-shrink-0 block"></span>
-            </div>
-            <div class="flex items-center gap-2.5 p-2.5 rounded-xl bg-slate-50" id="ai-step-4">
-              <div class="icon-wrap w-7 h-7 rounded-lg ic-sm bg-emerald-100 text-emerald-600 flex-shrink-0"><i data-lucide="layout-dashboard"></i></div>
-              <p class="text-xs font-semibold text-slate-700 flex-1">อัปเดตข้อมูลบนแดชบอร์ด</p>
-              <span id="ai-s4-icon" class="w-4 h-4 rounded-full bg-slate-200 flex-shrink-0 block"></span>
-            </div>
+            <span class="pill bg-slate-100 text-slate-400 text-xs">เร็วๆ นี้</span>
           </div>
 
-          <button id="run-ai-btn" onclick="runAIProcessing()"
-            class="mt-4 w-full py-2.5 rounded-xl bg-gradient-to-r from-indigo-500 to-violet-600 text-white text-sm font-bold hover:from-indigo-600 hover:to-violet-700 transition-all shadow-md shadow-indigo-200 flex items-center justify-center gap-2 ic-sm">
-            <i data-lucide="play"></i><span id="run-btn-text">เริ่มประมวลผล</span>
-          </button>
         </div>
-
-        <!-- DB summary -->
-        <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-100 card">
-          <div class="flex items-center gap-2 ic-sm text-slate-400 mb-3">
-            <i data-lucide="table-2"></i>
-            <p class="text-xs font-bold text-slate-700">ข้อมูลในระบบปัจจุบัน</p>
-          </div>
-          <div class="space-y-2.5">
-            <div class="flex items-center justify-between">
-              <span class="text-xs text-slate-600 font-semibold flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-indigo-400 flex-shrink-0"></span>แบรนด์</span>
-              <span class="num text-xs font-black text-indigo-600" id="db-brands">1,432</span>
-            </div>
-            <div class="flex items-center justify-between">
-              <span class="text-xs text-slate-600 font-semibold flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-violet-400 flex-shrink-0"></span>อินฟลูเอนเซอร์</span>
-              <span class="num text-xs font-black text-violet-600" id="db-influencers">835</span>
-            </div>
-            <div class="flex items-center justify-between">
-              <span class="text-xs text-slate-600 font-semibold flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-amber-400 flex-shrink-0"></span>กิจกรรม</span>
-              <span class="num text-xs font-black text-amber-600" id="db-events">4</span>
-            </div>
-            <div class="flex items-center justify-between">
-              <span class="text-xs text-slate-600 font-semibold flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-cyan-400 flex-shrink-0"></span>ภูมิภาค</span>
-              <span class="num text-xs font-black text-cyan-600" id="db-regions">8</span>
-            </div>
-          </div>
-        </div>
-
       </div>
     </div>
-  </section>
 
-  <!-- ── ACTIVITY LOG ── -->
-  <section>
-    <div class="sec-head">
-      <div class="sec-bar"></div>
-      <span class="sec-label">บันทึกการทำงาน · Activity Log</span>
-      <div class="sec-line"></div>
-      <button onclick="clearLog()" class="text-xs text-slate-400 hover:text-rose-500 flex-shrink-0 flex items-center gap-1 ic-sm transition-colors">
-        <i data-lucide="trash-2"></i><span>ล้างประวัติ</span>
+    <!-- ── RIGHT: AI Agent ── -->
+    <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100 flex flex-col">
+
+      <!-- Agent visual -->
+      <div class="flex-1 flex flex-col items-center justify-center py-4">
+        <div class="relative flex items-center justify-center mb-4">
+          <div class="absolute w-28 h-28 rounded-full border-2 border-indigo-100 animate-ping opacity-30"></div>
+          <div class="absolute w-20 h-20 rounded-full border-2 border-violet-200 animate-ping opacity-40" style="animation-delay:.6s; animation-duration:2s"></div>
+          <div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-violet-600 rounded-2xl flex items-center justify-center ic-xl text-white shadow-xl shadow-indigo-200 relative z-10">
+            <i data-lucide="bot"></i>
+          </div>
+        </div>
+        <p class="font-black text-slate-800 text-lg">AI Agent</p>
+        <p class="text-xs text-slate-400 mt-1 text-center">รับข้อมูล → วิเคราะห์ → อัปเดต Dashboard</p>
+      </div>
+
+      <!-- Processing steps -->
+      <div class="space-y-2 mb-4">
+        <div class="flex items-center gap-3 p-3 rounded-xl bg-slate-50" id="ai-step-1">
+          <div class="w-7 h-7 bg-indigo-100 rounded-lg flex items-center justify-center ic-sm text-indigo-600 flex-shrink-0"><i data-lucide="file-search"></i></div>
+          <p class="text-sm font-semibold text-slate-700 flex-1">อ่านและแยกข้อมูลจากไฟล์</p>
+          <span id="ai-s1-icon" class="w-4 h-4 rounded-full bg-slate-200 flex-shrink-0 block"></span>
+        </div>
+        <div class="flex items-center gap-3 p-3 rounded-xl bg-slate-50" id="ai-step-2">
+          <div class="w-7 h-7 bg-violet-100 rounded-lg flex items-center justify-center ic-sm text-violet-600 flex-shrink-0"><i data-lucide="cpu"></i></div>
+          <p class="text-sm font-semibold text-slate-700 flex-1">วิเคราะห์และจัดหมวดหมู่</p>
+          <span id="ai-s2-icon" class="w-4 h-4 rounded-full bg-slate-200 flex-shrink-0 block"></span>
+        </div>
+        <div class="flex items-center gap-3 p-3 rounded-xl bg-slate-50" id="ai-step-3">
+          <div class="w-7 h-7 bg-cyan-100 rounded-lg flex items-center justify-center ic-sm text-cyan-600 flex-shrink-0"><i data-lucide="globe-2"></i></div>
+          <p class="text-sm font-semibold text-slate-700 flex-1">ค้นหาข้อมูลเพิ่มจากอินเทอร์เน็ต</p>
+          <span id="ai-s3-icon" class="w-4 h-4 rounded-full bg-slate-200 flex-shrink-0 block"></span>
+        </div>
+        <div class="flex items-center gap-3 p-3 rounded-xl bg-slate-50" id="ai-step-4">
+          <div class="w-7 h-7 bg-emerald-100 rounded-lg flex items-center justify-center ic-sm text-emerald-600 flex-shrink-0"><i data-lucide="layout-dashboard"></i></div>
+          <p class="text-sm font-semibold text-slate-700 flex-1">อัปเดตข้อมูลบนแดชบอร์ด</p>
+          <span id="ai-s4-icon" class="w-4 h-4 rounded-full bg-slate-200 flex-shrink-0 block"></span>
+        </div>
+      </div>
+
+      <!-- CTA button -->
+      <button id="run-ai-btn" onclick="runAIProcessing()"
+        class="w-full py-3 rounded-xl bg-gradient-to-r from-indigo-500 to-violet-600 text-white font-bold shadow-md shadow-indigo-200 hover:from-indigo-600 hover:to-violet-700 active:scale-95 transition-all flex items-center justify-center gap-2 ic-sm">
+        <i data-lucide="play"></i><span id="run-btn-text">เริ่มประมวลผล</span>
+      </button>
+
+    </div>
+  </div>
+
+  <!-- ══ ACTIVITY LOG ══ -->
+  <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
+    <div class="flex items-center justify-between px-5 py-3 border-b border-slate-100">
+      <p class="font-bold text-slate-800 flex items-center gap-2 ic-sm text-slate-500">
+        <i data-lucide="terminal"></i> Activity Log
+      </p>
+      <button onclick="clearLog()"
+        class="text-xs text-slate-400 hover:text-red-400 transition-colors flex items-center gap-1 ic-sm">
+        <i data-lucide="trash-2"></i> ล้าง
       </button>
     </div>
-
-    <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
-      <div id="activity-log" class="divide-y divide-slate-50 max-h-72 overflow-y-auto"></div>
-      <div id="log-empty" class="hidden p-8 text-center">
-        <div class="icon-wrap w-10 h-10 bg-slate-50 rounded-xl mx-auto mb-2 ic-md text-slate-300"><i data-lucide="inbox"></i></div>
-        <p class="text-sm text-slate-400">ยังไม่มีประวัติการทำงาน</p>
-      </div>
+    <div id="activity-log" class="divide-y divide-slate-50 max-h-64 overflow-y-auto p-4 space-y-2"></div>
+    <div id="log-empty" class="hidden p-8 text-center">
+      <div class="icon-wrap w-10 h-10 bg-slate-50 rounded-xl mx-auto mb-2 ic-md text-slate-300"><i data-lucide="inbox"></i></div>
+      <p class="text-sm text-slate-400">ยังไม่มีกิจกรรม</p>
     </div>
-  </section>
+  </div>
 
 </div><!-- /page-pipeline -->
 
