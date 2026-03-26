@@ -1,0 +1,56 @@
+name: 🤖 Auto Fetch Data
+
+on:
+  schedule:
+    - cron: '0 1 * * *'   # ทุกวัน 08:00 น. เวลาไทย (UTC+7 = 01:00 UTC)
+  workflow_dispatch:        # กด Run ด้วยมือจาก GitHub Actions tab ได้เลย
+
+permissions:
+  contents: write           # อนุญาตให้ push commit กลับขึ้น repo
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+
+      # 1. Checkout code
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. Setup Python
+      - name: 🐍 Setup Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      # 3. Install dependencies
+      - name: 📦 Install dependencies
+        run: pip install -r requirements.txt
+
+      # 4. Run fetch script
+      #    - YOUTUBE_API_KEY อ่านจาก GitHub Secret (ตั้งใน repo Settings > Secrets)
+      #    - ถ้าไม่มี key → ดึงแค่ Google Trends (ไม่ error)
+      - name: 🌐 Fetch Google Trends + YouTube
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: python fetch_data.py
+        continue-on-error: true   # ถ้า API หยุด ไม่ให้ workflow fail
+
+      # 5. Commit & push ถ้ามีข้อมูลเปลี่ยน
+      - name: 💾 Commit & push if data changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add data/
+
+          if git diff --staged --quiet; then
+            echo "⏭️  ข้อมูลไม่มีการเปลี่ยนแปลง — ข้ามการ commit"
+          else
+            git commit -m "🤖 Auto-update data: $(TZ='Asia/Bangkok' date +'%d %b %Y %H:%M') ICT"
+            git push origin main
+            echo "✅ อัปเดตข้อมูลสำเร็จ"
+          fi
