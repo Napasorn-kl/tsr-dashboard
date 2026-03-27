@@ -34,6 +34,11 @@ os.makedirs(OUTPUT_DIR, exist_ok=True)
 TREND_KEYWORDS = ['สุราชุมชน', 'สุราท้องถิ่น', 'craft spirits', 'ชุมชนสุรา']
 YT_QUERIES     = ['สุราชุมชน', 'สุราท้องถิ่น ไทย', 'community spirits thailand']
 
+# คำที่ต้องมีอย่างน้อย 1 คำ (กรองให้แน่ใจว่าเกี่ยวกับสุราชุมชน)
+YT_INCLUDE = ['สุรา', 'เหล้า', 'กลั่น', 'spirits', 'craft', 'ท้องถิ่น', 'ชุมชน', 'คราฟท์', 'สาโท', 'distill', 'community']
+# คำที่ต้องไม่มี (ตัดวิดีโอที่ไม่เกี่ยวข้องออก)
+YT_EXCLUDE = ['sprite', 'ghost', 'train', 'techno', 'tibet', 'sikh', 'unity', 'รถไฟ', 'ทะเลสาบ', 'asia', 'ทิเบต', 'ซิกข์', 'ancestors']
+
 
 # ── Google Trends ─────────────────────────────────────────────
 def fetch_trends():
@@ -157,6 +162,17 @@ def fetch_youtube(api_key):
                 'likes':        int(st.get('likeCount',   0)),
                 'comments':     int(st.get('commentCount',0)),
             })
+
+    # กรองวิดีโอที่ไม่เกี่ยวข้องออก
+    def is_relevant(video):
+        text = (video['title'] + ' ' + video['channel']).lower()
+        has_include = any(kw.lower() in text for kw in YT_INCLUDE)
+        has_exclude = any(kw.lower() in text for kw in YT_EXCLUDE)
+        return has_include and not has_exclude
+
+    before = len(result['videos'])
+    result['videos'] = [v for v in result['videos'] if is_relevant(v)]
+    print(f"  🔍 กรองแล้ว: {before} → {len(result['videos'])} วิดีโอ")
 
     # เรียงตาม views มากสุดก่อน
     result['videos'].sort(key=lambda x: x['views'], reverse=True)
