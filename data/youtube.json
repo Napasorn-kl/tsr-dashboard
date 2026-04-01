@@ -6,9 +6,19 @@
       "channel": "เทพลีลา",
       "published_at": "2025-05-29",
       "thumbnail": "https://i.ytimg.com/vi/iURJ96__WAY/mqdefault.jpg",
-      "views": 654283,
-      "likes": 12323,
+      "views": 654593,
+      "likes": 12330,
       "comments": 602
+    },
+    {
+      "id": "F2ftzEuVQHs",
+      "title": "ซิกเนเจอร์เมืองไทย!ที่ต่างชาติมาแล้วต้องลอง ฝรั่งลองเหล้าขาวไทย!รีแอคชั่นนี้ทำ คนไทยดูแล้วยิ้มไม่หุบ",
+      "channel": "Thailand story to day - TSD",
+      "published_at": "2026-03-29",
+      "thumbnail": "https://i.ytimg.com/vi/F2ftzEuVQHs/mqdefault.jpg",
+      "views": 54600,
+      "likes": 1874,
+      "comments": 231
     },
     {
       "id": "KQJhZMV93PA",
@@ -16,7 +26,7 @@
       "channel": "Torpenguin",
       "published_at": "2025-03-12",
       "thumbnail": "https://i.ytimg.com/vi/KQJhZMV93PA/mqdefault.jpg",
-      "views": 40116,
+      "views": 40117,
       "likes": 564,
       "comments": 5
     },
@@ -26,8 +36,8 @@
       "channel": "ข่าวช่องวัน",
       "published_at": "2022-11-02",
       "thumbnail": "https://i.ytimg.com/vi/a5LRMyHT5yc/mqdefault.jpg",
-      "views": 28290,
-      "likes": 724,
+      "views": 28306,
+      "likes": 725,
       "comments": 30
     },
     {
@@ -46,7 +56,7 @@
       "channel": "ThaiFranchiseCenter",
       "published_at": "2023-06-21",
       "thumbnail": "https://i.ytimg.com/vi/kb8R5C1QMXY/mqdefault.jpg",
-      "views": 11168,
+      "views": 11183,
       "likes": 187,
       "comments": 15
     },
@@ -56,7 +66,7 @@
       "channel": "พ่อมดไกด์ Official",
       "published_at": "2023-06-22",
       "thumbnail": "https://i.ytimg.com/vi/pyrChp9Gb5s/mqdefault.jpg",
-      "views": 8547,
+      "views": 8548,
       "likes": 156,
       "comments": 0
     },
@@ -66,7 +76,7 @@
       "channel": "Berm Kanyanan",
       "published_at": "2024-09-07",
       "thumbnail": "https://i.ytimg.com/vi/AThHyfDHEUA/mqdefault.jpg",
-      "views": 6916,
+      "views": 6918,
       "likes": 231,
       "comments": 13
     },
@@ -76,7 +86,7 @@
       "channel": "ตองโรงต้ม TongRongTom",
       "published_at": "2025-01-15",
       "thumbnail": "https://i.ytimg.com/vi/4dMaSYwNp_E/mqdefault.jpg",
-      "views": 3849,
+      "views": 3851,
       "likes": 69,
       "comments": 0
     },
@@ -96,7 +106,7 @@
       "channel": "MEDEE",
       "published_at": "2024-02-02",
       "thumbnail": "https://i.ytimg.com/vi/gHQjFBn9vVA/mqdefault.jpg",
-      "views": 1473,
+      "views": 1476,
       "likes": 11,
       "comments": 2
     },
@@ -106,7 +116,7 @@
       "channel": "Nuchaพาเพลิน",
       "published_at": "2023-08-05",
       "thumbnail": "https://i.ytimg.com/vi/SOEvCoB7m_4/mqdefault.jpg",
-      "views": 765,
+      "views": 766,
       "likes": 8,
       "comments": 1
     },
@@ -116,7 +126,7 @@
       "channel": "Thairath Money",
       "published_at": "2024-12-01",
       "thumbnail": "https://i.ytimg.com/vi/CjFAk4-ED0w/mqdefault.jpg",
-      "views": 689,
+      "views": 690,
       "likes": 6,
       "comments": 0
     },
@@ -141,6 +151,16 @@
       "comments": 0
     },
     {
+      "id": "o_0s-aMNz9I",
+      "title": "THAI FANTASY CINEMATIC – TRILOGY | Forest of Spirits",
+      "channel": "Forest of Spirits",
+      "published_at": "2025-10-31",
+      "thumbnail": "https://i.ytimg.com/vi/o_0s-aMNz9I/mqdefault.jpg",
+      "views": 16,
+      "likes": 1,
+      "comments": 0
+    },
+    {
       "id": "meO1n4P9bRM",
       "title": "สุราชุมชน ธุรกิจท้องถิ่นไทย l เสียงเหนือ",
       "channel": "เสียงเหนือ Voice of The North",
@@ -151,5 +171,5 @@
       "comments": 0
     }
   ],
-  "fetched_at": "2026-03-31T03:46:35.428763"
+  "fetched_at": "2026-04-01T03:58:00.276531"
 }
