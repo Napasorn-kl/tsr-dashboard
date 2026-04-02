@@ -6,9 +6,9 @@
       "channel": "เทพลีลา",
       "published_at": "2025-05-29",
       "thumbnail": "https://i.ytimg.com/vi/iURJ96__WAY/mqdefault.jpg",
-      "views": 654593,
-      "likes": 12330,
-      "comments": 602
+      "views": 654886,
+      "likes": 12332,
+      "comments": 603
     },
     {
       "id": "F2ftzEuVQHs",
@@ -16,9 +16,9 @@
       "channel": "Thailand story to day - TSD",
       "published_at": "2026-03-29",
       "thumbnail": "https://i.ytimg.com/vi/F2ftzEuVQHs/mqdefault.jpg",
-      "views": 54600,
-      "likes": 1874,
-      "comments": 231
+      "views": 62633,
+      "likes": 2065,
+      "comments": 238
     },
     {
       "id": "KQJhZMV93PA",
@@ -36,7 +36,7 @@
       "channel": "ข่าวช่องวัน",
       "published_at": "2022-11-02",
       "thumbnail": "https://i.ytimg.com/vi/a5LRMyHT5yc/mqdefault.jpg",
-      "views": 28306,
+      "views": 28315,
       "likes": 725,
       "comments": 30
     },
@@ -51,12 +51,22 @@
       "comments": 84
     },
     {
+      "id": "g1by_W5ECY8",
+      "title": "ตำนาน! \"เหล้าขาวไทย\" ความลับการกลั่นโบราณที่คนไม่เคยรู้!",
+      "channel": "โง่ลึกลับ",
+      "published_at": "2025-11-23",
+      "thumbnail": "https://i.ytimg.com/vi/g1by_W5ECY8/mqdefault.jpg",
+      "views": 12586,
+      "likes": 224,
+      "comments": 36
+    },
+    {
       "id": "kb8R5C1QMXY",
       "title": "10 เรื่องจริงที่คุณไม่รู้! สุราพื้นบ้าน",
       "channel": "ThaiFranchiseCenter",
       "published_at": "2023-06-21",
       "thumbnail": "https://i.ytimg.com/vi/kb8R5C1QMXY/mqdefault.jpg",
-      "views": 11183,
+      "views": 11192,
       "likes": 187,
       "comments": 15
     },
@@ -66,7 +76,7 @@
       "channel": "พ่อมดไกด์ Official",
       "published_at": "2023-06-22",
       "thumbnail": "https://i.ytimg.com/vi/pyrChp9Gb5s/mqdefault.jpg",
-      "views": 8548,
+      "views": 8549,
       "likes": 156,
       "comments": 0
     },
@@ -76,7 +86,7 @@
       "channel": "Berm Kanyanan",
       "published_at": "2024-09-07",
       "thumbnail": "https://i.ytimg.com/vi/AThHyfDHEUA/mqdefault.jpg",
-      "views": 6918,
+      "views": 6921,
       "likes": 231,
       "comments": 13
     },
@@ -106,9 +116,19 @@
       "channel": "MEDEE",
       "published_at": "2024-02-02",
       "thumbnail": "https://i.ytimg.com/vi/gHQjFBn9vVA/mqdefault.jpg",
-      "views": 1476,
+      "views": 1477,
       "likes": 11,
       "comments": 2
+    },
+    {
+      "id": "TLLDBJjbgb4",
+      "title": "ทางออกสุราไทย : คิดการณ์ใหม่ BRAINSTORM (1 เม.ย. 64)",
+      "channel": "Thai PBS",
+      "published_at": "2021-04-01",
+      "thumbnail": "https://i.ytimg.com/vi/TLLDBJjbgb4/mqdefault.jpg",
+      "views": 1285,
+      "likes": 11,
+      "comments": 1
     },
     {
       "id": "SOEvCoB7m_4",
@@ -121,16 +141,6 @@
       "comments": 1
     },
     {
-      "id": "CjFAk4-ED0w",
-      "title": "จากสุราชุมชน สู่ Soft Power สร้างเศรษฐกิจท้องถิ่น สร้างรายได้ให้ประเทศ  | Thairath Money Talk EP.16",
-      "channel": "Thairath Money",
-      "published_at": "2024-12-01",
-      "thumbnail": "https://i.ytimg.com/vi/CjFAk4-ED0w/mqdefault.jpg",
-      "views": 690,
-      "likes": 6,
-      "comments": 0
-    },
-    {
       "id": "RyyiEbH4FSo",
       "title": "สุราพื้นบ้าน - เมรัยไทยทำ #เวทีชาวบ้าน #ว็อชด็อก #shorts",
       "channel": "รู้ค่าพลังงาน WATCHDOG",
@@ -138,26 +148,6 @@
       "thumbnail": "https://i.ytimg.com/vi/RyyiEbH4FSo/mqdefault.jpg",
       "views": 115,
       "likes": 7,
-      "comments": 0
-    },
-    {
-      "id": "tqw0zkH22P4",
-      "title": "มุมมองผู้ผลิตสุราท้องถิ่น",
-      "channel": "ThaiPBS North",
-      "published_at": "2023-06-07",
-      "thumbnail": "https://i.ytimg.com/vi/tqw0zkH22P4/mqdefault.jpg",
-      "views": 60,
-      "likes": 3,
-      "comments": 0
-    },
-    {
-      "id": "o_0s-aMNz9I",
-      "title": "THAI FANTASY CINEMATIC – TRILOGY | Forest of Spirits",
-      "channel": "Forest of Spirits",
-      "published_at": "2025-10-31",
-      "thumbnail": "https://i.ytimg.com/vi/o_0s-aMNz9I/mqdefault.jpg",
-      "views": 16,
-      "likes": 1,
       "comments": 0
     },
     {
@@ -171,5 +161,5 @@
       "comments": 0
     }
   ],
-  "fetched_at": "2026-04-01T03:58:00.276531"
+  "fetched_at": "2026-04-02T03:39:24.806930"
 }
