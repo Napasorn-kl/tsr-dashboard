@@ -6,9 +6,19 @@
       "channel": "เทพลีลา",
       "published_at": "2025-05-29",
       "thumbnail": "https://i.ytimg.com/vi/iURJ96__WAY/mqdefault.jpg",
-      "views": 657077,
-      "likes": 12363,
+      "views": 657509,
+      "likes": 12372,
       "comments": 603
+    },
+    {
+      "id": "mSPSQgh-fYE",
+      "title": "การกลั่นสุราสาโท แบบใช้น้ำแข็ง สุราชุมชน🥂",
+      "channel": "สาโทผลไม้ YenseRin",
+      "published_at": "2023-10-20",
+      "thumbnail": "https://i.ytimg.com/vi/mSPSQgh-fYE/mqdefault.jpg",
+      "views": 46494,
+      "likes": 405,
+      "comments": 15
     },
     {
       "id": "LuoqC_b0Ufk",
@@ -16,7 +26,7 @@
       "channel": "สรยุทธ สุทัศนะจินดา กรรมกรข่าว",
       "published_at": "2023-06-14",
       "thumbnail": "https://i.ytimg.com/vi/LuoqC_b0Ufk/mqdefault.jpg",
-      "views": 44202,
+      "views": 44203,
       "likes": 656,
       "comments": 98
     },
@@ -26,7 +36,7 @@
       "channel": "ข่าวช่องวัน",
       "published_at": "2022-11-02",
       "thumbnail": "https://i.ytimg.com/vi/a5LRMyHT5yc/mqdefault.jpg",
-      "views": 28421,
+      "views": 28445,
       "likes": 728,
       "comments": 30
     },
@@ -56,19 +66,19 @@
       "channel": "ThaiFranchiseCenter",
       "published_at": "2023-06-21",
       "thumbnail": "https://i.ytimg.com/vi/kb8R5C1QMXY/mqdefault.jpg",
-      "views": 11253,
+      "views": 11261,
       "likes": 190,
       "comments": 15
     },
     {
-      "id": "pyrChp9Gb5s",
-      "title": "ดกไปเลยดิ สุราชุมชน",
-      "channel": "พ่อมดไกด์ Official",
-      "published_at": "2023-06-22",
-      "thumbnail": "https://i.ytimg.com/vi/pyrChp9Gb5s/mqdefault.jpg",
-      "views": 8566,
-      "likes": 156,
-      "comments": 0
+      "id": "0ds2M05naZw",
+      "title": "VLOG 39 : เยี่ยมโรงเหล้าชุมชน 3 โรง ที่เวียงสา จ. น่าน",
+      "channel": "สุราไทย",
+      "published_at": "2021-12-22",
+      "thumbnail": "https://i.ytimg.com/vi/0ds2M05naZw/mqdefault.jpg",
+      "views": 9534,
+      "likes": 157,
+      "comments": 10
     },
     {
       "id": "AThHyfDHEUA",
@@ -76,7 +86,7 @@
       "channel": "Berm Kanyanan",
       "published_at": "2024-09-07",
       "thumbnail": "https://i.ytimg.com/vi/AThHyfDHEUA/mqdefault.jpg",
-      "views": 6947,
+      "views": 6950,
       "likes": 230,
       "comments": 13
     },
@@ -86,7 +96,7 @@
       "channel": "ตองโรงต้ม TongRongTom",
       "published_at": "2025-01-15",
       "thumbnail": "https://i.ytimg.com/vi/4dMaSYwNp_E/mqdefault.jpg",
-      "views": 3877,
+      "views": 3882,
       "likes": 69,
       "comments": 0
     },
@@ -116,7 +126,7 @@
       "channel": "MEDEE",
       "published_at": "2024-02-02",
       "thumbnail": "https://i.ytimg.com/vi/gHQjFBn9vVA/mqdefault.jpg",
-      "views": 1493,
+      "views": 1494,
       "likes": 11,
       "comments": 2
     },
@@ -136,7 +146,7 @@
       "channel": "Prime Video Thailand",
       "published_at": "2026-04-05",
       "thumbnail": "https://i.ytimg.com/vi/ey7MSGE07_I/mqdefault.jpg",
-      "views": 866,
+      "views": 900,
       "likes": 34,
       "comments": 2
     },
@@ -161,16 +171,6 @@
       "comments": 0
     },
     {
-      "id": "o_0s-aMNz9I",
-      "title": "THAI FANTASY CINEMATIC – TRILOGY | Forest of Spirits",
-      "channel": "Forest of Spirits",
-      "published_at": "2025-10-31",
-      "thumbnail": "https://i.ytimg.com/vi/o_0s-aMNz9I/mqdefault.jpg",
-      "views": 16,
-      "likes": 1,
-      "comments": 0
-    },
-    {
       "id": "meO1n4P9bRM",
       "title": "สุราชุมชน ธุรกิจท้องถิ่นไทย l เสียงเหนือ",
       "channel": "เสียงเหนือ Voice of The North",
@@ -181,5 +181,5 @@
       "comments": 0
     }
   ],
-  "fetched_at": "2026-04-09T03:43:06.526017"
+  "fetched_at": "2026-04-10T03:56:06.138359"
 }
