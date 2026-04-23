@@ -6,8 +6,8 @@
       "channel": "เทพลีลา",
       "published_at": "2025-05-29",
       "thumbnail": "https://i.ytimg.com/vi/iURJ96__WAY/mqdefault.jpg",
-      "views": 660975,
-      "likes": 12429,
+      "views": 661472,
+      "likes": 12438,
       "comments": 604
     },
     {
@@ -16,9 +16,19 @@
       "channel": "สาโทผลไม้ YenseRin",
       "published_at": "2023-10-20",
       "thumbnail": "https://i.ytimg.com/vi/mSPSQgh-fYE/mqdefault.jpg",
-      "views": 47808,
+      "views": 47875,
       "likes": 416,
       "comments": 15
+    },
+    {
+      "id": "KQJhZMV93PA",
+      "title": "สุราเสรีคนแห่ทำเพียบ !! สุดท้ายล้นตลาด ? | คุณเท่าพิภพ #torpenguin #ธุรกิจ",
+      "channel": "Torpenguin",
+      "published_at": "2025-03-12",
+      "thumbnail": "https://i.ytimg.com/vi/KQJhZMV93PA/mqdefault.jpg",
+      "views": 40135,
+      "likes": 564,
+      "comments": 5
     },
     {
       "id": "a5LRMyHT5yc",
@@ -26,9 +36,29 @@
       "channel": "ข่าวช่องวัน",
       "published_at": "2022-11-02",
       "thumbnail": "https://i.ytimg.com/vi/a5LRMyHT5yc/mqdefault.jpg",
-      "views": 28715,
+      "views": 28734,
       "likes": 734,
       "comments": 30
+    },
+    {
+      "id": "C0fJWQju4Nc",
+      "title": "กระแส \"สุราก้าวหน้า\" ทำสุราพื้นบ้านขาดสต็อก  | ข่าวช่องวันเสาร์-อาทิตย์ | สำนักข่าววันนิวส์",
+      "channel": "ข่าวช่องวัน",
+      "published_at": "2023-06-04",
+      "thumbnail": "https://i.ytimg.com/vi/C0fJWQju4Nc/mqdefault.jpg",
+      "views": 23299,
+      "likes": 211,
+      "comments": 84
+    },
+    {
+      "id": "nvrzmBDdeKY",
+      "title": "สมาคมสุราท้องถิ่น-คราฟท์เบียร์ไทย ยื่นหนังสือ ‘ก้าวไกล’ ดัน ‘สุราก้าวหน้า’",
+      "channel": "เรื่องเล่าเช้านี้",
+      "published_at": "2023-05-27",
+      "thumbnail": "https://i.ytimg.com/vi/nvrzmBDdeKY/mqdefault.jpg",
+      "views": 12800,
+      "likes": 172,
+      "comments": 96
     },
     {
       "id": "kb8R5C1QMXY",
@@ -36,9 +66,19 @@
       "channel": "ThaiFranchiseCenter",
       "published_at": "2023-06-21",
       "thumbnail": "https://i.ytimg.com/vi/kb8R5C1QMXY/mqdefault.jpg",
-      "views": 11376,
+      "views": 11384,
       "likes": 195,
       "comments": 15
+    },
+    {
+      "id": "0ds2M05naZw",
+      "title": "VLOG 39 : เยี่ยมโรงเหล้าชุมชน 3 โรง ที่เวียงสา จ. น่าน",
+      "channel": "สุราไทย",
+      "published_at": "2021-12-22",
+      "thumbnail": "https://i.ytimg.com/vi/0ds2M05naZw/mqdefault.jpg",
+      "views": 9569,
+      "likes": 159,
+      "comments": 10
     },
     {
       "id": "pyrChp9Gb5s",
@@ -46,19 +86,9 @@
       "channel": "พ่อมดไกด์ Official",
       "published_at": "2023-06-22",
       "thumbnail": "https://i.ytimg.com/vi/pyrChp9Gb5s/mqdefault.jpg",
-      "views": 8596,
+      "views": 8597,
       "likes": 156,
       "comments": 0
-    },
-    {
-      "id": "AThHyfDHEUA",
-      "title": "สุราชุมชน / ขี้เมาเล่าให้ฟัง Ep. 103",
-      "channel": "Berm Kanyanan",
-      "published_at": "2024-09-07",
-      "thumbnail": "https://i.ytimg.com/vi/AThHyfDHEUA/mqdefault.jpg",
-      "views": 6982,
-      "likes": 232,
-      "comments": 13
     },
     {
       "id": "_bYT69nJMeE",
@@ -66,9 +96,29 @@
       "channel": "The Whisky Party",
       "published_at": "2025-02-19",
       "thumbnail": "https://i.ytimg.com/vi/_bYT69nJMeE/mqdefault.jpg",
-      "views": 6933,
+      "views": 6995,
       "likes": 92,
       "comments": 6
+    },
+    {
+      "id": "AThHyfDHEUA",
+      "title": "สุราชุมชน / ขี้เมาเล่าให้ฟัง Ep. 103",
+      "channel": "Berm Kanyanan",
+      "published_at": "2024-09-07",
+      "thumbnail": "https://i.ytimg.com/vi/AThHyfDHEUA/mqdefault.jpg",
+      "views": 6987,
+      "likes": 232,
+      "comments": 13
+    },
+    {
+      "id": "Jhe2ag-Usv8",
+      "title": "สุราชุมชนพร้อมโตต่อ",
+      "channel": "Decode",
+      "published_at": "2025-01-26",
+      "thumbnail": "https://i.ytimg.com/vi/Jhe2ag-Usv8/mqdefault.jpg",
+      "views": 4085,
+      "likes": 95,
+      "comments": 9
     },
     {
       "id": "4dMaSYwNp_E",
@@ -76,19 +126,9 @@
       "channel": "ตองโรงต้ม TongRongTom",
       "published_at": "2025-01-15",
       "thumbnail": "https://i.ytimg.com/vi/4dMaSYwNp_E/mqdefault.jpg",
-      "views": 3916,
+      "views": 3920,
       "likes": 72,
       "comments": 0
-    },
-    {
-      "id": "UWE-mC9m-74",
-      "title": "สภาฯ เอกฉันท์ เห็นชอบร่างกม.สุราชุมชน",
-      "channel": "สรยุทธ สุทัศนะจินดา กรรมกรข่าว",
-      "published_at": "2025-01-16",
-      "thumbnail": "https://i.ytimg.com/vi/UWE-mC9m-74/mqdefault.jpg",
-      "views": 1689,
-      "likes": 25,
-      "comments": 12
     },
     {
       "id": "1Pc6efqHP4w",
@@ -96,7 +136,7 @@
       "channel": "Thairath Plus",
       "published_at": "2026-04-11",
       "thumbnail": "https://i.ytimg.com/vi/1Pc6efqHP4w/mqdefault.jpg",
-      "views": 1630,
+      "views": 1634,
       "likes": 35,
       "comments": 0
     },
@@ -126,7 +166,7 @@
       "channel": "Prime Video Thailand",
       "published_at": "2026-04-05",
       "thumbnail": "https://i.ytimg.com/vi/ey7MSGE07_I/mqdefault.jpg",
-      "views": 1018,
+      "views": 1023,
       "likes": 36,
       "comments": 2
     },
@@ -146,7 +186,7 @@
       "channel": "Thairath Money",
       "published_at": "2024-12-01",
       "thumbnail": "https://i.ytimg.com/vi/CjFAk4-ED0w/mqdefault.jpg",
-      "views": 694,
+      "views": 696,
       "likes": 6,
       "comments": 0
     },
@@ -158,16 +198,6 @@
       "thumbnail": "https://i.ytimg.com/vi/wh8pMInp_3Q/mqdefault.jpg",
       "views": 208,
       "likes": 0,
-      "comments": 0
-    },
-    {
-      "id": "RyyiEbH4FSo",
-      "title": "สุราพื้นบ้าน - เมรัยไทยทำ #เวทีชาวบ้าน #ว็อชด็อก #shorts",
-      "channel": "รู้ค่าพลังงาน WATCHDOG",
-      "published_at": "2023-07-27",
-      "thumbnail": "https://i.ytimg.com/vi/RyyiEbH4FSo/mqdefault.jpg",
-      "views": 115,
-      "likes": 7,
       "comments": 0
     },
     {
@@ -186,9 +216,19 @@
       "channel": "Wonderfruit",
       "published_at": "2026-04-17",
       "thumbnail": "https://i.ytimg.com/vi/ssao1E8-kwM/mqdefault.jpg",
-      "views": 32,
-      "likes": 0,
+      "views": 39,
+      "likes": 1,
       "comments": 0
+    },
+    {
+      "id": "Zg2jh0fH1kQ",
+      "title": "Green Hell : Spirits of Amazonia[Thai] Ep2. วันที่สองแสนเสียใจ เจอเพื่อนตายอยู่ในเรือ",
+      "channel": "Lively Channel",
+      "published_at": "2021-06-29",
+      "thumbnail": "https://i.ytimg.com/vi/Zg2jh0fH1kQ/mqdefault.jpg",
+      "views": 38,
+      "likes": 1,
+      "comments": 1
     },
     {
       "id": "N_UZMiI2hKw",
@@ -231,5 +271,5 @@
       "comments": 0
     }
   ],
-  "fetched_at": "2026-04-22T03:55:50.261738"
+  "fetched_at": "2026-04-23T04:09:32.961397"
 }
