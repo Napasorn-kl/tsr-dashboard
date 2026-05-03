@@ -6,8 +6,8 @@
       "channel": "เทพลีลา",
       "published_at": "2025-05-29",
       "thumbnail": "https://i.ytimg.com/vi/iURJ96__WAY/mqdefault.jpg",
-      "views": 664558,
-      "likes": 12483,
+      "views": 664830,
+      "likes": 12490,
       "comments": 604
     },
     {
@@ -16,8 +16,8 @@
       "channel": "สาโทผลไม้ YenseRin",
       "published_at": "2023-10-20",
       "thumbnail": "https://i.ytimg.com/vi/mSPSQgh-fYE/mqdefault.jpg",
-      "views": 48686,
-      "likes": 424,
+      "views": 48795,
+      "likes": 426,
       "comments": 15
     },
     {
@@ -26,8 +26,8 @@
       "channel": "ข่าวช่องวัน",
       "published_at": "2022-11-02",
       "thumbnail": "https://i.ytimg.com/vi/a5LRMyHT5yc/mqdefault.jpg",
-      "views": 28903,
-      "likes": 738,
+      "views": 28917,
+      "likes": 739,
       "comments": 30
     },
     {
@@ -56,7 +56,7 @@
       "channel": "ThaiFranchiseCenter",
       "published_at": "2023-06-21",
       "thumbnail": "https://i.ytimg.com/vi/kb8R5C1QMXY/mqdefault.jpg",
-      "views": 11473,
+      "views": 11487,
       "likes": 197,
       "comments": 15
     },
@@ -66,7 +66,7 @@
       "channel": "สุราไทย",
       "published_at": "2021-12-22",
       "thumbnail": "https://i.ytimg.com/vi/0ds2M05naZw/mqdefault.jpg",
-      "views": 9596,
+      "views": 9598,
       "likes": 160,
       "comments": 10
     },
@@ -76,7 +76,7 @@
       "channel": "พ่อมดไกด์ Official",
       "published_at": "2023-06-22",
       "thumbnail": "https://i.ytimg.com/vi/pyrChp9Gb5s/mqdefault.jpg",
-      "views": 8614,
+      "views": 8617,
       "likes": 156,
       "comments": 0
     },
@@ -86,8 +86,8 @@
       "channel": "The Whisky Party",
       "published_at": "2025-02-19",
       "thumbnail": "https://i.ytimg.com/vi/_bYT69nJMeE/mqdefault.jpg",
-      "views": 7550,
-      "likes": 99,
+      "views": 7600,
+      "likes": 100,
       "comments": 6
     },
     {
@@ -96,7 +96,7 @@
       "channel": "Berm Kanyanan",
       "published_at": "2024-09-07",
       "thumbnail": "https://i.ytimg.com/vi/AThHyfDHEUA/mqdefault.jpg",
-      "views": 7012,
+      "views": 7015,
       "likes": 232,
       "comments": 13
     },
@@ -106,7 +106,7 @@
       "channel": "Decode",
       "published_at": "2025-01-26",
       "thumbnail": "https://i.ytimg.com/vi/Jhe2ag-Usv8/mqdefault.jpg",
-      "views": 4119,
+      "views": 4122,
       "likes": 95,
       "comments": 9
     },
@@ -116,8 +116,18 @@
       "channel": "ตองโรงต้ม TongRongTom",
       "published_at": "2025-01-15",
       "thumbnail": "https://i.ytimg.com/vi/4dMaSYwNp_E/mqdefault.jpg",
-      "views": 3941,
+      "views": 3946,
       "likes": 73,
+      "comments": 0
+    },
+    {
+      "id": "Rms0BOvt6t4",
+      "title": "Local spirits Thailand (whiskey, rice wine and more)",
+      "channel": "Tours Thailand",
+      "published_at": "2016-03-26",
+      "thumbnail": "https://i.ytimg.com/vi/Rms0BOvt6t4/mqdefault.jpg",
+      "views": 2535,
+      "likes": 3,
       "comments": 0
     },
     {
@@ -126,19 +136,9 @@
       "channel": "วัยรุ่นยุค90’s",
       "published_at": "2023-06-04",
       "thumbnail": "https://i.ytimg.com/vi/U4grOTPNcng/mqdefault.jpg",
-      "views": 1858,
+      "views": 1859,
       "likes": 40,
       "comments": 0
-    },
-    {
-      "id": "UWE-mC9m-74",
-      "title": "สภาฯ เอกฉันท์ เห็นชอบร่างกม.สุราชุมชน",
-      "channel": "สรยุทธ สุทัศนะจินดา กรรมกรข่าว",
-      "published_at": "2025-01-16",
-      "thumbnail": "https://i.ytimg.com/vi/UWE-mC9m-74/mqdefault.jpg",
-      "views": 1689,
-      "likes": 25,
-      "comments": 12
     },
     {
       "id": "1Pc6efqHP4w",
@@ -146,7 +146,7 @@
       "channel": "Thairath Plus",
       "published_at": "2026-04-11",
       "thumbnail": "https://i.ytimg.com/vi/1Pc6efqHP4w/mqdefault.jpg",
-      "views": 1659,
+      "views": 1661,
       "likes": 35,
       "comments": 0
     },
@@ -156,7 +156,7 @@
       "channel": "MEDEE",
       "published_at": "2024-02-02",
       "thumbnail": "https://i.ytimg.com/vi/gHQjFBn9vVA/mqdefault.jpg",
-      "views": 1518,
+      "views": 1520,
       "likes": 11,
       "comments": 2
     },
@@ -176,7 +176,7 @@
       "channel": "Prime Video Thailand",
       "published_at": "2026-04-05",
       "thumbnail": "https://i.ytimg.com/vi/ey7MSGE07_I/mqdefault.jpg",
-      "views": 1070,
+      "views": 1072,
       "likes": 36,
       "comments": 2
     },
@@ -196,7 +196,7 @@
       "channel": "Universal Fine Wine & Spirits Thailand",
       "published_at": "2023-05-23",
       "thumbnail": "https://i.ytimg.com/vi/wh8pMInp_3Q/mqdefault.jpg",
-      "views": 210,
+      "views": 212,
       "likes": 0,
       "comments": 0
     },
@@ -211,26 +211,6 @@
       "comments": 0
     },
     {
-      "id": "IVXHgIct_Po",
-      "title": "Green Hell : Spirits of Amazonia[Thai] Ep1. วันแรกแสนวุ่นวายเพื่อนมาสายแต่มานะ",
-      "channel": "Lively Channel",
-      "published_at": "2021-06-15",
-      "thumbnail": "https://i.ytimg.com/vi/IVXHgIct_Po/mqdefault.jpg",
-      "views": 58,
-      "likes": 5,
-      "comments": 0
-    },
-    {
-      "id": "Zg2jh0fH1kQ",
-      "title": "Green Hell : Spirits of Amazonia[Thai] Ep2. วันที่สองแสนเสียใจ เจอเพื่อนตายอยู่ในเรือ",
-      "channel": "Lively Channel",
-      "published_at": "2021-06-29",
-      "thumbnail": "https://i.ytimg.com/vi/Zg2jh0fH1kQ/mqdefault.jpg",
-      "views": 38,
-      "likes": 1,
-      "comments": 1
-    },
-    {
       "id": "N_UZMiI2hKw",
       "title": "Green Hell : Spirits of Amazonia[Thai] Ep4. วันที่สี่หากันแทบตายก็หากันไม่เจอ",
       "channel": "Lively Channel",
@@ -239,16 +219,6 @@
       "views": 30,
       "likes": 3,
       "comments": 1
-    },
-    {
-      "id": "ERRlUC5kg_4",
-      "title": "Green Hell : Spirits of Amazonia[Thai] Ep3. วันที่สามรีบๆเดินกันหน่อยเดียวไม่ทัน",
-      "channel": "Lively Channel",
-      "published_at": "2021-08-09",
-      "thumbnail": "https://i.ytimg.com/vi/ERRlUC5kg_4/mqdefault.jpg",
-      "views": 29,
-      "likes": 3,
-      "comments": 0
     },
     {
       "id": "LBXW80SChFk",
@@ -271,5 +241,5 @@
       "comments": 0
     }
   ],
-  "fetched_at": "2026-05-02T04:15:00.452184"
+  "fetched_at": "2026-05-03T04:36:20.943506"
 }
