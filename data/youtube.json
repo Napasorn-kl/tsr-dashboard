@@ -6,8 +6,8 @@
       "channel": "เทพลีลา",
       "published_at": "2025-05-29",
       "thumbnail": "https://i.ytimg.com/vi/iURJ96__WAY/mqdefault.jpg",
-      "views": 666346,
-      "likes": 12508,
+      "views": 666785,
+      "likes": 12516,
       "comments": 604
     },
     {
@@ -16,8 +16,8 @@
       "channel": "สาโทผลไม้ YenseRin",
       "published_at": "2023-10-20",
       "thumbnail": "https://i.ytimg.com/vi/mSPSQgh-fYE/mqdefault.jpg",
-      "views": 49281,
-      "likes": 429,
+      "views": 49398,
+      "likes": 430,
       "comments": 15
     },
     {
@@ -26,8 +26,8 @@
       "channel": "ข่าวช่องวัน",
       "published_at": "2022-11-02",
       "thumbnail": "https://i.ytimg.com/vi/a5LRMyHT5yc/mqdefault.jpg",
-      "views": 29016,
-      "likes": 739,
+      "views": 29032,
+      "likes": 740,
       "comments": 30
     },
     {
@@ -56,8 +56,8 @@
       "channel": "ThaiFranchiseCenter",
       "published_at": "2023-06-21",
       "thumbnail": "https://i.ytimg.com/vi/kb8R5C1QMXY/mqdefault.jpg",
-      "views": 11544,
-      "likes": 200,
+      "views": 11553,
+      "likes": 201,
       "comments": 15
     },
     {
@@ -66,7 +66,7 @@
       "channel": "สุราไทย",
       "published_at": "2021-12-22",
       "thumbnail": "https://i.ytimg.com/vi/0ds2M05naZw/mqdefault.jpg",
-      "views": 9608,
+      "views": 9610,
       "likes": 160,
       "comments": 10
     },
@@ -76,7 +76,7 @@
       "channel": "พ่อมดไกด์ Official",
       "published_at": "2023-06-22",
       "thumbnail": "https://i.ytimg.com/vi/pyrChp9Gb5s/mqdefault.jpg",
-      "views": 8628,
+      "views": 8633,
       "likes": 157,
       "comments": 0
     },
@@ -86,7 +86,7 @@
       "channel": "The Whisky Party",
       "published_at": "2025-02-19",
       "thumbnail": "https://i.ytimg.com/vi/_bYT69nJMeE/mqdefault.jpg",
-      "views": 7739,
+      "views": 7763,
       "likes": 106,
       "comments": 6
     },
@@ -96,9 +96,19 @@
       "channel": "Berm Kanyanan",
       "published_at": "2024-09-07",
       "thumbnail": "https://i.ytimg.com/vi/AThHyfDHEUA/mqdefault.jpg",
-      "views": 7032,
+      "views": 7036,
       "likes": 233,
       "comments": 13
+    },
+    {
+      "id": "Jhe2ag-Usv8",
+      "title": "สุราชุมชนพร้อมโตต่อ",
+      "channel": "Decode",
+      "published_at": "2025-01-26",
+      "thumbnail": "https://i.ytimg.com/vi/Jhe2ag-Usv8/mqdefault.jpg",
+      "views": 4149,
+      "likes": 95,
+      "comments": 9
     },
     {
       "id": "4dMaSYwNp_E",
@@ -106,7 +116,7 @@
       "channel": "ตองโรงต้ม TongRongTom",
       "published_at": "2025-01-15",
       "thumbnail": "https://i.ytimg.com/vi/4dMaSYwNp_E/mqdefault.jpg",
-      "views": 3966,
+      "views": 3967,
       "likes": 74,
       "comments": 0
     },
@@ -119,16 +129,6 @@
       "views": 2535,
       "likes": 3,
       "comments": 0
-    },
-    {
-      "id": "UWE-mC9m-74",
-      "title": "สภาฯ เอกฉันท์ เห็นชอบร่างกม.สุราชุมชน",
-      "channel": "สรยุทธ สุทัศนะจินดา กรรมกรข่าว",
-      "published_at": "2025-01-16",
-      "thumbnail": "https://i.ytimg.com/vi/UWE-mC9m-74/mqdefault.jpg",
-      "views": 1689,
-      "likes": 25,
-      "comments": 12
     },
     {
       "id": "gHQjFBn9vVA",
@@ -146,7 +146,7 @@
       "channel": "Prime Video Thailand",
       "published_at": "2026-04-05",
       "thumbnail": "https://i.ytimg.com/vi/ey7MSGE07_I/mqdefault.jpg",
-      "views": 1102,
+      "views": 1109,
       "likes": 36,
       "comments": 3
     },
@@ -156,7 +156,7 @@
       "channel": "Nuchaพาเพลิน",
       "published_at": "2023-08-05",
       "thumbnail": "https://i.ytimg.com/vi/SOEvCoB7m_4/mqdefault.jpg",
-      "views": 838,
+      "views": 840,
       "likes": 8,
       "comments": 1
     },
@@ -176,9 +176,19 @@
       "channel": "กับข้าว กับขี้เมา",
       "published_at": "2025-07-20",
       "thumbnail": "https://i.ytimg.com/vi/NorwBPL0olQ/mqdefault.jpg",
-      "views": 541,
-      "likes": 4,
+      "views": 544,
+      "likes": 5,
       "comments": 1
+    },
+    {
+      "id": "P7IJxNRCtOA",
+      "title": "ไหว้เจ้าที่ประจำปีกับหลวงพ่อเคลือบประเพณีของคนทัพทันหัวหมูต้องมา เหล้าขาว ต้องมี ￼ #thaifood #thai",
+      "channel": "Nowwarat Skk",
+      "published_at": "2026-05-08",
+      "thumbnail": "https://i.ytimg.com/vi/P7IJxNRCtOA/mqdefault.jpg",
+      "views": 488,
+      "likes": 4,
+      "comments": 0
     },
     {
       "id": "wh8pMInp_3Q",
@@ -191,13 +201,23 @@
       "comments": 0
     },
     {
-      "id": "ssao1E8-kwM",
-      "title": "Healing with Spirits: Traditional Herbal Elixirs -  Healing is the New Luxury with Amazing Thailand",
-      "channel": "Wonderfruit",
-      "published_at": "2026-04-17",
-      "thumbnail": "https://i.ytimg.com/vi/ssao1E8-kwM/mqdefault.jpg",
-      "views": 50,
-      "likes": 1,
+      "id": "zbPnv7MzQDQ",
+      "title": "ทิม พิธายังแนะนำ! \"ของแรร์ที่ทุกคนตามหา\" สุราที่สั่นสะเทือนระดับประเทศ!",
+      "channel": "ตกผลึกความคิด",
+      "published_at": "2026-05-09",
+      "thumbnail": "https://i.ytimg.com/vi/zbPnv7MzQDQ/mqdefault.jpg",
+      "views": 115,
+      "likes": 6,
+      "comments": 2
+    },
+    {
+      "id": "oytNV7ZsnX0",
+      "title": "Amazean Jungle Thailand by UTMB 2025 // EP. 2 Festive Spirits",
+      "channel": "Amazean Jungle Thailand by UTMB",
+      "published_at": "2025-05-30",
+      "thumbnail": "https://i.ytimg.com/vi/oytNV7ZsnX0/mqdefault.jpg",
+      "views": 51,
+      "likes": 0,
       "comments": 0
     },
     {
@@ -209,16 +229,6 @@
       "views": 30,
       "likes": 3,
       "comments": 1
-    },
-    {
-      "id": "ERRlUC5kg_4",
-      "title": "Green Hell : Spirits of Amazonia[Thai] Ep3. วันที่สามรีบๆเดินกันหน่อยเดียวไม่ทัน",
-      "channel": "Lively Channel",
-      "published_at": "2021-08-09",
-      "thumbnail": "https://i.ytimg.com/vi/ERRlUC5kg_4/mqdefault.jpg",
-      "views": 29,
-      "likes": 3,
-      "comments": 0
     },
     {
       "id": "LBXW80SChFk",
@@ -241,5 +251,5 @@
       "comments": 0
     }
   ],
-  "fetched_at": "2026-05-08T04:12:41.141385"
+  "fetched_at": "2026-05-09T04:18:52.115839"
 }
