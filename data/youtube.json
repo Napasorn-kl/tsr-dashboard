@@ -6,8 +6,8 @@
       "channel": "เทพลีลา",
       "published_at": "2025-05-29",
       "thumbnail": "https://i.ytimg.com/vi/iURJ96__WAY/mqdefault.jpg",
-      "views": 669338,
-      "likes": 12542,
+      "views": 669666,
+      "likes": 12549,
       "comments": 605
     },
     {
@@ -16,8 +16,8 @@
       "channel": "สาโทผลไม้ YenseRin",
       "published_at": "2023-10-20",
       "thumbnail": "https://i.ytimg.com/vi/mSPSQgh-fYE/mqdefault.jpg",
-      "views": 49820,
-      "likes": 432,
+      "views": 49884,
+      "likes": 433,
       "comments": 15
     },
     {
@@ -26,8 +26,8 @@
       "channel": "ข่าวช่องวัน",
       "published_at": "2022-11-02",
       "thumbnail": "https://i.ytimg.com/vi/a5LRMyHT5yc/mqdefault.jpg",
-      "views": 29129,
-      "likes": 743,
+      "views": 29153,
+      "likes": 745,
       "comments": 30
     },
     {
@@ -56,8 +56,8 @@
       "channel": "ThaiFranchiseCenter",
       "published_at": "2023-06-21",
       "thumbnail": "https://i.ytimg.com/vi/kb8R5C1QMXY/mqdefault.jpg",
-      "views": 11608,
-      "likes": 201,
+      "views": 11618,
+      "likes": 202,
       "comments": 15
     },
     {
@@ -76,7 +76,7 @@
       "channel": "พ่อมดไกด์ Official",
       "published_at": "2023-06-22",
       "thumbnail": "https://i.ytimg.com/vi/pyrChp9Gb5s/mqdefault.jpg",
-      "views": 8651,
+      "views": 8652,
       "likes": 158,
       "comments": 0
     },
@@ -86,7 +86,7 @@
       "channel": "The Whisky Party",
       "published_at": "2025-02-19",
       "thumbnail": "https://i.ytimg.com/vi/_bYT69nJMeE/mqdefault.jpg",
-      "views": 7864,
+      "views": 7877,
       "likes": 107,
       "comments": 6
     },
@@ -96,7 +96,7 @@
       "channel": "Berm Kanyanan",
       "published_at": "2024-09-07",
       "thumbnail": "https://i.ytimg.com/vi/AThHyfDHEUA/mqdefault.jpg",
-      "views": 7048,
+      "views": 7050,
       "likes": 234,
       "comments": 13
     },
@@ -106,7 +106,7 @@
       "channel": "ตองโรงต้ม TongRongTom",
       "published_at": "2025-01-15",
       "thumbnail": "https://i.ytimg.com/vi/4dMaSYwNp_E/mqdefault.jpg",
-      "views": 3982,
+      "views": 3988,
       "likes": 74,
       "comments": 0
     },
@@ -136,7 +136,7 @@
       "channel": "MEDEE",
       "published_at": "2024-02-02",
       "thumbnail": "https://i.ytimg.com/vi/gHQjFBn9vVA/mqdefault.jpg",
-      "views": 1540,
+      "views": 1541,
       "likes": 12,
       "comments": 2
     },
@@ -146,7 +146,7 @@
       "channel": "Prime Video Thailand",
       "published_at": "2026-04-05",
       "thumbnail": "https://i.ytimg.com/vi/ey7MSGE07_I/mqdefault.jpg",
-      "views": 1143,
+      "views": 1161,
       "likes": 37,
       "comments": 3
     },
@@ -176,7 +176,7 @@
       "channel": "ก้อง ท้องถิ่นไทย",
       "published_at": "2026-05-07",
       "thumbnail": "https://i.ytimg.com/vi/Zv381LtheCg/mqdefault.jpg",
-      "views": 150,
+      "views": 153,
       "likes": 3,
       "comments": 0
     },
@@ -186,7 +186,7 @@
       "channel": "ThaiPBS North",
       "published_at": "2023-06-07",
       "thumbnail": "https://i.ytimg.com/vi/tqw0zkH22P4/mqdefault.jpg",
-      "views": 61,
+      "views": 62,
       "likes": 3,
       "comments": 0
     },
@@ -196,7 +196,7 @@
       "channel": "Wonderfruit",
       "published_at": "2026-04-17",
       "thumbnail": "https://i.ytimg.com/vi/ssao1E8-kwM/mqdefault.jpg",
-      "views": 56,
+      "views": 60,
       "likes": 1,
       "comments": 0
     },
@@ -206,7 +206,7 @@
       "channel": "Amazean Jungle Thailand by UTMB",
       "published_at": "2025-05-30",
       "thumbnail": "https://i.ytimg.com/vi/oytNV7ZsnX0/mqdefault.jpg",
-      "views": 53,
+      "views": 54,
       "likes": 0,
       "comments": 0
     },
@@ -219,6 +219,16 @@
       "views": 30,
       "likes": 3,
       "comments": 1
+    },
+    {
+      "id": "ERRlUC5kg_4",
+      "title": "Green Hell : Spirits of Amazonia[Thai] Ep3. วันที่สามรีบๆเดินกันหน่อยเดียวไม่ทัน",
+      "channel": "Lively Channel",
+      "published_at": "2021-08-09",
+      "thumbnail": "https://i.ytimg.com/vi/ERRlUC5kg_4/mqdefault.jpg",
+      "views": 29,
+      "likes": 3,
+      "comments": 0
     },
     {
       "id": "LBXW80SChFk",
@@ -241,5 +251,5 @@
       "comments": 0
     }
   ],
-  "fetched_at": "2026-05-14T04:37:02.740537"
+  "fetched_at": "2026-05-15T04:43:07.768745"
 }
