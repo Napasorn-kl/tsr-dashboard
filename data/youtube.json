@@ -6,8 +6,8 @@
       "channel": "เทพลีลา",
       "published_at": "2025-05-29",
       "thumbnail": "https://i.ytimg.com/vi/iURJ96__WAY/mqdefault.jpg",
-      "views": 669666,
-      "likes": 12549,
+      "views": 670080,
+      "likes": 12552,
       "comments": 605
     },
     {
@@ -16,7 +16,7 @@
       "channel": "สาโทผลไม้ YenseRin",
       "published_at": "2023-10-20",
       "thumbnail": "https://i.ytimg.com/vi/mSPSQgh-fYE/mqdefault.jpg",
-      "views": 49884,
+      "views": 49951,
       "likes": 433,
       "comments": 15
     },
@@ -26,7 +26,7 @@
       "channel": "ข่าวช่องวัน",
       "published_at": "2022-11-02",
       "thumbnail": "https://i.ytimg.com/vi/a5LRMyHT5yc/mqdefault.jpg",
-      "views": 29153,
+      "views": 29174,
       "likes": 745,
       "comments": 30
     },
@@ -56,7 +56,7 @@
       "channel": "ThaiFranchiseCenter",
       "published_at": "2023-06-21",
       "thumbnail": "https://i.ytimg.com/vi/kb8R5C1QMXY/mqdefault.jpg",
-      "views": 11618,
+      "views": 11633,
       "likes": 202,
       "comments": 15
     },
@@ -66,7 +66,7 @@
       "channel": "สุราไทย",
       "published_at": "2021-12-22",
       "thumbnail": "https://i.ytimg.com/vi/0ds2M05naZw/mqdefault.jpg",
-      "views": 9618,
+      "views": 9622,
       "likes": 160,
       "comments": 10
     },
@@ -76,19 +76,9 @@
       "channel": "พ่อมดไกด์ Official",
       "published_at": "2023-06-22",
       "thumbnail": "https://i.ytimg.com/vi/pyrChp9Gb5s/mqdefault.jpg",
-      "views": 8652,
+      "views": 8655,
       "likes": 158,
       "comments": 0
-    },
-    {
-      "id": "_bYT69nJMeE",
-      "title": "🥃Thai Rum, Any good? 🤔 | #whiskeytube #spirits #rum",
-      "channel": "The Whisky Party",
-      "published_at": "2025-02-19",
-      "thumbnail": "https://i.ytimg.com/vi/_bYT69nJMeE/mqdefault.jpg",
-      "views": 7877,
-      "likes": 107,
-      "comments": 6
     },
     {
       "id": "AThHyfDHEUA",
@@ -96,7 +86,7 @@
       "channel": "Berm Kanyanan",
       "published_at": "2024-09-07",
       "thumbnail": "https://i.ytimg.com/vi/AThHyfDHEUA/mqdefault.jpg",
-      "views": 7050,
+      "views": 7056,
       "likes": 234,
       "comments": 13
     },
@@ -106,7 +96,7 @@
       "channel": "ตองโรงต้ม TongRongTom",
       "published_at": "2025-01-15",
       "thumbnail": "https://i.ytimg.com/vi/4dMaSYwNp_E/mqdefault.jpg",
-      "views": 3988,
+      "views": 3992,
       "likes": 74,
       "comments": 0
     },
@@ -136,7 +126,7 @@
       "channel": "MEDEE",
       "published_at": "2024-02-02",
       "thumbnail": "https://i.ytimg.com/vi/gHQjFBn9vVA/mqdefault.jpg",
-      "views": 1541,
+      "views": 1542,
       "likes": 12,
       "comments": 2
     },
@@ -146,7 +136,7 @@
       "channel": "Prime Video Thailand",
       "published_at": "2026-04-05",
       "thumbnail": "https://i.ytimg.com/vi/ey7MSGE07_I/mqdefault.jpg",
-      "views": 1161,
+      "views": 1175,
       "likes": 37,
       "comments": 3
     },
@@ -176,7 +166,7 @@
       "channel": "ก้อง ท้องถิ่นไทย",
       "published_at": "2026-05-07",
       "thumbnail": "https://i.ytimg.com/vi/Zv381LtheCg/mqdefault.jpg",
-      "views": 153,
+      "views": 155,
       "likes": 3,
       "comments": 0
     },
@@ -188,16 +178,6 @@
       "thumbnail": "https://i.ytimg.com/vi/tqw0zkH22P4/mqdefault.jpg",
       "views": 62,
       "likes": 3,
-      "comments": 0
-    },
-    {
-      "id": "ssao1E8-kwM",
-      "title": "Healing with Spirits: Traditional Herbal Elixirs -  Healing is the New Luxury with Amazing Thailand",
-      "channel": "Wonderfruit",
-      "published_at": "2026-04-17",
-      "thumbnail": "https://i.ytimg.com/vi/ssao1E8-kwM/mqdefault.jpg",
-      "views": 60,
-      "likes": 1,
       "comments": 0
     },
     {
@@ -221,16 +201,6 @@
       "comments": 1
     },
     {
-      "id": "ERRlUC5kg_4",
-      "title": "Green Hell : Spirits of Amazonia[Thai] Ep3. วันที่สามรีบๆเดินกันหน่อยเดียวไม่ทัน",
-      "channel": "Lively Channel",
-      "published_at": "2021-08-09",
-      "thumbnail": "https://i.ytimg.com/vi/ERRlUC5kg_4/mqdefault.jpg",
-      "views": 29,
-      "likes": 3,
-      "comments": 0
-    },
-    {
       "id": "LBXW80SChFk",
       "title": "Thai Spirits Unleashed: A Hilarious Guide to Local Drinks!@FunnyThailandNews",
       "channel": "Funny Thailand News",
@@ -251,5 +221,5 @@
       "comments": 0
     }
   ],
-  "fetched_at": "2026-05-15T04:43:07.768745"
+  "fetched_at": "2026-05-16T04:24:10.281353"
 }
