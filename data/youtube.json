@@ -6,19 +6,9 @@
       "channel": "เทพลีลา",
       "published_at": "2025-05-29",
       "thumbnail": "https://i.ytimg.com/vi/iURJ96__WAY/mqdefault.jpg",
-      "views": 674251,
-      "likes": 12607,
+      "views": 674586,
+      "likes": 12608,
       "comments": 606
-    },
-    {
-      "id": "xdhgWLdxugo",
-      "title": "บุกโรงกลั่นสุราพื้นบ้านกลางทุ่งนา…เล่าวีรกรรมสายดื่ม พร้อมเรียนรู้การหมักแบบชุมชนแท้ ๆ",
-      "channel": "ปักหมุดชาแนล",
-      "published_at": "2025-08-30",
-      "thumbnail": "https://i.ytimg.com/vi/xdhgWLdxugo/mqdefault.jpg",
-      "views": 230071,
-      "likes": 6596,
-      "comments": 767
     },
     {
       "id": "mSPSQgh-fYE",
@@ -26,8 +16,8 @@
       "channel": "สาโทผลไม้ YenseRin",
       "published_at": "2023-10-20",
       "thumbnail": "https://i.ytimg.com/vi/mSPSQgh-fYE/mqdefault.jpg",
-      "views": 50842,
-      "likes": 437,
+      "views": 50902,
+      "likes": 439,
       "comments": 15
     },
     {
@@ -36,7 +26,7 @@
       "channel": "ข่าวช่องวัน",
       "published_at": "2022-11-02",
       "thumbnail": "https://i.ytimg.com/vi/a5LRMyHT5yc/mqdefault.jpg",
-      "views": 29356,
+      "views": 29371,
       "likes": 746,
       "comments": 30
     },
@@ -51,12 +41,22 @@
       "comments": 84
     },
     {
+      "id": "nvrzmBDdeKY",
+      "title": "สมาคมสุราท้องถิ่น-คราฟท์เบียร์ไทย ยื่นหนังสือ ‘ก้าวไกล’ ดัน ‘สุราก้าวหน้า’",
+      "channel": "เรื่องเล่าเช้านี้",
+      "published_at": "2023-05-27",
+      "thumbnail": "https://i.ytimg.com/vi/nvrzmBDdeKY/mqdefault.jpg",
+      "views": 12801,
+      "likes": 172,
+      "comments": 96
+    },
+    {
       "id": "kb8R5C1QMXY",
       "title": "10 เรื่องจริงที่คุณไม่รู้! สุราพื้นบ้าน",
       "channel": "ThaiFranchiseCenter",
       "published_at": "2023-06-21",
       "thumbnail": "https://i.ytimg.com/vi/kb8R5C1QMXY/mqdefault.jpg",
-      "views": 11750,
+      "views": 11755,
       "likes": 202,
       "comments": 15
     },
@@ -66,9 +66,19 @@
       "channel": "พ่อมดไกด์ Official",
       "published_at": "2023-06-22",
       "thumbnail": "https://i.ytimg.com/vi/pyrChp9Gb5s/mqdefault.jpg",
-      "views": 8679,
+      "views": 8681,
       "likes": 158,
       "comments": 0
+    },
+    {
+      "id": "_bYT69nJMeE",
+      "title": "🥃Thai Rum, Any good? 🤔 | #whiskeytube #spirits #rum",
+      "channel": "The Whisky Party",
+      "published_at": "2025-02-19",
+      "thumbnail": "https://i.ytimg.com/vi/_bYT69nJMeE/mqdefault.jpg",
+      "views": 8146,
+      "likes": 109,
+      "comments": 6
     },
     {
       "id": "AThHyfDHEUA",
@@ -76,7 +86,7 @@
       "channel": "Berm Kanyanan",
       "published_at": "2024-09-07",
       "thumbnail": "https://i.ytimg.com/vi/AThHyfDHEUA/mqdefault.jpg",
-      "views": 7079,
+      "views": 7081,
       "likes": 235,
       "comments": 13
     },
@@ -86,8 +96,18 @@
       "channel": "ตองโรงต้ม TongRongTom",
       "published_at": "2025-01-15",
       "thumbnail": "https://i.ytimg.com/vi/4dMaSYwNp_E/mqdefault.jpg",
-      "views": 4029,
+      "views": 4033,
       "likes": 75,
+      "comments": 0
+    },
+    {
+      "id": "Rms0BOvt6t4",
+      "title": "Local spirits Thailand (whiskey, rice wine and more)",
+      "channel": "Tours Thailand",
+      "published_at": "2016-03-26",
+      "thumbnail": "https://i.ytimg.com/vi/Rms0BOvt6t4/mqdefault.jpg",
+      "views": 2535,
+      "likes": 3,
       "comments": 0
     },
     {
@@ -96,7 +116,7 @@
       "channel": "วัยรุ่นยุค90’s",
       "published_at": "2023-06-04",
       "thumbnail": "https://i.ytimg.com/vi/U4grOTPNcng/mqdefault.jpg",
-      "views": 1899,
+      "views": 1901,
       "likes": 40,
       "comments": 0
     },
@@ -121,6 +141,16 @@
       "comments": 2
     },
     {
+      "id": "ey7MSGE07_I",
+      "title": "The House of the Spirits (บ้านปรารถนารัก) - ตัวอย่างอย่างเป็นทางการ | Prime Video Thailand",
+      "channel": "Prime Video Thailand",
+      "published_at": "2026-04-05",
+      "thumbnail": "https://i.ytimg.com/vi/ey7MSGE07_I/mqdefault.jpg",
+      "views": 1283,
+      "likes": 38,
+      "comments": 3
+    },
+    {
       "id": "CjFAk4-ED0w",
       "title": "จากสุราชุมชน สู่ Soft Power สร้างเศรษฐกิจท้องถิ่น สร้างรายได้ให้ประเทศ  | Thairath Money Talk EP.16",
       "channel": "Thairath Money",
@@ -136,18 +166,58 @@
       "channel": "สุราไทย",
       "published_at": "2025-12-05",
       "thumbnail": "https://i.ytimg.com/vi/rZ7ZbOIB0RQ/mqdefault.jpg",
-      "views": 448,
-      "likes": 28,
+      "views": 450,
+      "likes": 29,
       "comments": 0
     },
     {
-      "id": "FSoOfb7HmH0",
-      "title": "พิธา จุดประกายสุราพื้นบ้านขายหมด&สถานะเหล้าไทยในตลาดโลก #สุราก้าวหน้า #สุราชุมชน #สุราพื้นบ้าน",
-      "channel": "Worapas Live",
+      "id": "rxFTNu4AqtQ",
+      "title": "อนาคต \"สุราพื้นบ้านไทย\"",
+      "channel": "MCOT News FM 100.5",
       "published_at": "2023-06-05",
-      "thumbnail": "https://i.ytimg.com/vi/FSoOfb7HmH0/mqdefault.jpg",
-      "views": 12,
+      "thumbnail": "https://i.ytimg.com/vi/rxFTNu4AqtQ/mqdefault.jpg",
+      "views": 283,
       "likes": 2,
+      "comments": 1
+    },
+    {
+      "id": "wh8pMInp_3Q",
+      "title": "Universal Fine Wine & Spirits Thailand",
+      "channel": "Universal Fine Wine & Spirits Thailand",
+      "published_at": "2023-05-23",
+      "thumbnail": "https://i.ytimg.com/vi/wh8pMInp_3Q/mqdefault.jpg",
+      "views": 216,
+      "likes": 0,
+      "comments": 0
+    },
+    {
+      "id": "oytNV7ZsnX0",
+      "title": "Amazean Jungle Thailand by UTMB 2025 // EP. 2 Festive Spirits",
+      "channel": "Amazean Jungle Thailand by UTMB",
+      "published_at": "2025-05-30",
+      "thumbnail": "https://i.ytimg.com/vi/oytNV7ZsnX0/mqdefault.jpg",
+      "views": 55,
+      "likes": 0,
+      "comments": 0
+    },
+    {
+      "id": "N_UZMiI2hKw",
+      "title": "Green Hell : Spirits of Amazonia[Thai] Ep4. วันที่สี่หากันแทบตายก็หากันไม่เจอ",
+      "channel": "Lively Channel",
+      "published_at": "2022-06-08",
+      "thumbnail": "https://i.ytimg.com/vi/N_UZMiI2hKw/mqdefault.jpg",
+      "views": 30,
+      "likes": 3,
+      "comments": 1
+    },
+    {
+      "id": "LBXW80SChFk",
+      "title": "Thai Spirits Unleashed: A Hilarious Guide to Local Drinks!@FunnyThailandNews",
+      "channel": "Funny Thailand News",
+      "published_at": "2024-06-11",
+      "thumbnail": "https://i.ytimg.com/vi/LBXW80SChFk/mqdefault.jpg",
+      "views": 20,
+      "likes": 3,
       "comments": 0
     },
     {
@@ -161,5 +231,5 @@
       "comments": 0
     }
   ],
-  "fetched_at": "2026-05-29T05:06:26.493379"
+  "fetched_at": "2026-05-30T04:44:43.950015"
 }
