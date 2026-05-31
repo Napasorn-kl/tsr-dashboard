@@ -6,8 +6,8 @@
       "channel": "เทพลีลา",
       "published_at": "2025-05-29",
       "thumbnail": "https://i.ytimg.com/vi/iURJ96__WAY/mqdefault.jpg",
-      "views": 674586,
-      "likes": 12608,
+      "views": 674900,
+      "likes": 12618,
       "comments": 606
     },
     {
@@ -16,7 +16,7 @@
       "channel": "สาโทผลไม้ YenseRin",
       "published_at": "2023-10-20",
       "thumbnail": "https://i.ytimg.com/vi/mSPSQgh-fYE/mqdefault.jpg",
-      "views": 50902,
+      "views": 50957,
       "likes": 439,
       "comments": 15
     },
@@ -26,7 +26,7 @@
       "channel": "ข่าวช่องวัน",
       "published_at": "2022-11-02",
       "thumbnail": "https://i.ytimg.com/vi/a5LRMyHT5yc/mqdefault.jpg",
-      "views": 29371,
+      "views": 29389,
       "likes": 746,
       "comments": 30
     },
@@ -36,7 +36,7 @@
       "channel": "ข่าวช่องวัน",
       "published_at": "2023-06-04",
       "thumbnail": "https://i.ytimg.com/vi/C0fJWQju4Nc/mqdefault.jpg",
-      "views": 23300,
+      "views": 23301,
       "likes": 210,
       "comments": 84
     },
@@ -56,7 +56,7 @@
       "channel": "ThaiFranchiseCenter",
       "published_at": "2023-06-21",
       "thumbnail": "https://i.ytimg.com/vi/kb8R5C1QMXY/mqdefault.jpg",
-      "views": 11755,
+      "views": 11765,
       "likes": 202,
       "comments": 15
     },
@@ -66,19 +66,9 @@
       "channel": "พ่อมดไกด์ Official",
       "published_at": "2023-06-22",
       "thumbnail": "https://i.ytimg.com/vi/pyrChp9Gb5s/mqdefault.jpg",
-      "views": 8681,
+      "views": 8682,
       "likes": 158,
       "comments": 0
-    },
-    {
-      "id": "_bYT69nJMeE",
-      "title": "🥃Thai Rum, Any good? 🤔 | #whiskeytube #spirits #rum",
-      "channel": "The Whisky Party",
-      "published_at": "2025-02-19",
-      "thumbnail": "https://i.ytimg.com/vi/_bYT69nJMeE/mqdefault.jpg",
-      "views": 8146,
-      "likes": 109,
-      "comments": 6
     },
     {
       "id": "AThHyfDHEUA",
@@ -86,7 +76,7 @@
       "channel": "Berm Kanyanan",
       "published_at": "2024-09-07",
       "thumbnail": "https://i.ytimg.com/vi/AThHyfDHEUA/mqdefault.jpg",
-      "views": 7081,
+      "views": 7083,
       "likes": 235,
       "comments": 13
     },
@@ -96,9 +86,19 @@
       "channel": "ตองโรงต้ม TongRongTom",
       "published_at": "2025-01-15",
       "thumbnail": "https://i.ytimg.com/vi/4dMaSYwNp_E/mqdefault.jpg",
-      "views": 4033,
+      "views": 4036,
       "likes": 75,
       "comments": 0
+    },
+    {
+      "id": "aOeBO52xkUw",
+      "title": "ไทยเบฟ สนับสนุนนิทรรศการ “The Spirits of Maritime Crossing 2026” ณ นครเวนิส Suthichai live 30-5-69",
+      "channel": "suthichai live",
+      "published_at": "2026-05-30",
+      "thumbnail": "https://i.ytimg.com/vi/aOeBO52xkUw/mqdefault.jpg",
+      "views": 2602,
+      "likes": 81,
+      "comments": 3
     },
     {
       "id": "Rms0BOvt6t4",
@@ -116,7 +116,7 @@
       "channel": "วัยรุ่นยุค90’s",
       "published_at": "2023-06-04",
       "thumbnail": "https://i.ytimg.com/vi/U4grOTPNcng/mqdefault.jpg",
-      "views": 1901,
+      "views": 1903,
       "likes": 40,
       "comments": 0
     },
@@ -146,7 +146,7 @@
       "channel": "Prime Video Thailand",
       "published_at": "2026-04-05",
       "thumbnail": "https://i.ytimg.com/vi/ey7MSGE07_I/mqdefault.jpg",
-      "views": 1283,
+      "views": 1291,
       "likes": 38,
       "comments": 3
     },
@@ -166,7 +166,7 @@
       "channel": "สุราไทย",
       "published_at": "2025-12-05",
       "thumbnail": "https://i.ytimg.com/vi/rZ7ZbOIB0RQ/mqdefault.jpg",
-      "views": 450,
+      "views": 452,
       "likes": 29,
       "comments": 0
     },
@@ -231,5 +231,5 @@
       "comments": 0
     }
   ],
-  "fetched_at": "2026-05-30T04:44:43.950015"
+  "fetched_at": "2026-05-31T05:13:12.374573"
 }
