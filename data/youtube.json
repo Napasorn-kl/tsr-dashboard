@@ -6,9 +6,19 @@
       "channel": "เทพลีลา",
       "published_at": "2025-05-29",
       "thumbnail": "https://i.ytimg.com/vi/iURJ96__WAY/mqdefault.jpg",
-      "views": 677257,
-      "likes": 12642,
+      "views": 677493,
+      "likes": 12645,
       "comments": 607
+    },
+    {
+      "id": "xdhgWLdxugo",
+      "title": "บุกโรงกลั่นสุราพื้นบ้านกลางทุ่งนา…เล่าวีรกรรมสายดื่ม พร้อมเรียนรู้การหมักแบบชุมชนแท้ ๆ",
+      "channel": "ปักหมุดชาแนล",
+      "published_at": "2025-08-30",
+      "thumbnail": "https://i.ytimg.com/vi/xdhgWLdxugo/mqdefault.jpg",
+      "views": 231593,
+      "likes": 6622,
+      "comments": 765
     },
     {
       "id": "mSPSQgh-fYE",
@@ -16,7 +26,7 @@
       "channel": "สาโทผลไม้ YenseRin",
       "published_at": "2023-10-20",
       "thumbnail": "https://i.ytimg.com/vi/mSPSQgh-fYE/mqdefault.jpg",
-      "views": 51358,
+      "views": 51399,
       "likes": 441,
       "comments": 15
     },
@@ -26,8 +36,8 @@
       "channel": "ข่าวช่องวัน",
       "published_at": "2022-11-02",
       "thumbnail": "https://i.ytimg.com/vi/a5LRMyHT5yc/mqdefault.jpg",
-      "views": 29487,
-      "likes": 746,
+      "views": 29498,
+      "likes": 747,
       "comments": 30
     },
     {
@@ -36,7 +46,7 @@
       "channel": "ThaiFranchiseCenter",
       "published_at": "2023-06-21",
       "thumbnail": "https://i.ytimg.com/vi/kb8R5C1QMXY/mqdefault.jpg",
-      "views": 11831,
+      "views": 11837,
       "likes": 203,
       "comments": 15
     },
@@ -46,7 +56,7 @@
       "channel": "พ่อมดไกด์ Official",
       "published_at": "2023-06-22",
       "thumbnail": "https://i.ytimg.com/vi/pyrChp9Gb5s/mqdefault.jpg",
-      "views": 8703,
+      "views": 8704,
       "likes": 158,
       "comments": 0
     },
@@ -56,7 +66,7 @@
       "channel": "The Whisky Party",
       "published_at": "2025-02-19",
       "thumbnail": "https://i.ytimg.com/vi/_bYT69nJMeE/mqdefault.jpg",
-      "views": 8254,
+      "views": 8258,
       "likes": 109,
       "comments": 6
     },
@@ -66,7 +76,7 @@
       "channel": "Berm Kanyanan",
       "published_at": "2024-09-07",
       "thumbnail": "https://i.ytimg.com/vi/AThHyfDHEUA/mqdefault.jpg",
-      "views": 7102,
+      "views": 7104,
       "likes": 236,
       "comments": 13
     },
@@ -76,7 +86,7 @@
       "channel": "ตองโรงต้ม TongRongTom",
       "published_at": "2025-01-15",
       "thumbnail": "https://i.ytimg.com/vi/4dMaSYwNp_E/mqdefault.jpg",
-      "views": 4060,
+      "views": 4063,
       "likes": 76,
       "comments": 0
     },
@@ -106,7 +116,7 @@
       "channel": "MEDEE",
       "published_at": "2024-02-02",
       "thumbnail": "https://i.ytimg.com/vi/gHQjFBn9vVA/mqdefault.jpg",
-      "views": 1575,
+      "views": 1577,
       "likes": 12,
       "comments": 2
     },
@@ -116,7 +126,7 @@
       "channel": "Prime Video Thailand",
       "published_at": "2026-04-05",
       "thumbnail": "https://i.ytimg.com/vi/ey7MSGE07_I/mqdefault.jpg",
-      "views": 1381,
+      "views": 1387,
       "likes": 38,
       "comments": 3
     },
@@ -126,9 +136,19 @@
       "channel": "Nuchaพาเพลิน",
       "published_at": "2023-08-05",
       "thumbnail": "https://i.ytimg.com/vi/SOEvCoB7m_4/mqdefault.jpg",
-      "views": 903,
+      "views": 906,
       "likes": 9,
       "comments": 1
+    },
+    {
+      "id": "CjFAk4-ED0w",
+      "title": "จากสุราชุมชน สู่ Soft Power สร้างเศรษฐกิจท้องถิ่น สร้างรายได้ให้ประเทศ  | Thairath Money Talk EP.16",
+      "channel": "Thairath Money",
+      "published_at": "2024-12-01",
+      "thumbnail": "https://i.ytimg.com/vi/CjFAk4-ED0w/mqdefault.jpg",
+      "views": 709,
+      "likes": 6,
+      "comments": 0
     },
     {
       "id": "NorwBPL0olQ",
@@ -136,7 +156,7 @@
       "channel": "กับข้าว กับขี้เมา",
       "published_at": "2025-07-20",
       "thumbnail": "https://i.ytimg.com/vi/NorwBPL0olQ/mqdefault.jpg",
-      "views": 613,
+      "views": 614,
       "likes": 6,
       "comments": 1
     },
@@ -146,7 +166,7 @@
       "channel": "สุราไทย",
       "published_at": "2025-12-05",
       "thumbnail": "https://i.ytimg.com/vi/rZ7ZbOIB0RQ/mqdefault.jpg",
-      "views": 456,
+      "views": 457,
       "likes": 29,
       "comments": 0
     },
@@ -191,5 +211,5 @@
       "comments": 0
     }
   ],
-  "fetched_at": "2026-06-08T05:23:23.865294"
+  "fetched_at": "2026-06-09T04:58:29.107348"
 }
