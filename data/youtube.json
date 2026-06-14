@@ -6,8 +6,8 @@
       "channel": "เทพลีลา",
       "published_at": "2025-05-29",
       "thumbnail": "https://i.ytimg.com/vi/iURJ96__WAY/mqdefault.jpg",
-      "views": 678488,
-      "likes": 12659,
+      "views": 678747,
+      "likes": 12667,
       "comments": 607
     },
     {
@@ -16,19 +16,9 @@
       "channel": "สาโทผลไม้ YenseRin",
       "published_at": "2023-10-20",
       "thumbnail": "https://i.ytimg.com/vi/mSPSQgh-fYE/mqdefault.jpg",
-      "views": 51581,
+      "views": 51628,
       "likes": 441,
       "comments": 15
-    },
-    {
-      "id": "1Sg4eZaTx2k",
-      "title": "สุราสาระ : ว่าด้วย \"วัตถุดิบทำสุรากลั่น\"",
-      "channel": "สุราไทย",
-      "published_at": "2020-07-05",
-      "thumbnail": "https://i.ytimg.com/vi/1Sg4eZaTx2k/mqdefault.jpg",
-      "views": 45733,
-      "likes": 758,
-      "comments": 39
     },
     {
       "id": "a5LRMyHT5yc",
@@ -36,19 +26,19 @@
       "channel": "ข่าวช่องวัน",
       "published_at": "2022-11-02",
       "thumbnail": "https://i.ytimg.com/vi/a5LRMyHT5yc/mqdefault.jpg",
-      "views": 29550,
+      "views": 29559,
       "likes": 748,
       "comments": 30
     },
     {
-      "id": "I8gz0664w3M",
-      "title": "VLOG : เยี่ยมโรงเหล้าลำพูน",
-      "channel": "สุราไทย",
-      "published_at": "2023-07-11",
-      "thumbnail": "https://i.ytimg.com/vi/I8gz0664w3M/mqdefault.jpg",
-      "views": 21408,
-      "likes": 389,
-      "comments": 24
+      "id": "nvrzmBDdeKY",
+      "title": "สมาคมสุราท้องถิ่น-คราฟท์เบียร์ไทย ยื่นหนังสือ ‘ก้าวไกล’ ดัน ‘สุราก้าวหน้า’",
+      "channel": "เรื่องเล่าเช้านี้",
+      "published_at": "2023-05-27",
+      "thumbnail": "https://i.ytimg.com/vi/nvrzmBDdeKY/mqdefault.jpg",
+      "views": 12801,
+      "likes": 172,
+      "comments": 96
     },
     {
       "id": "kb8R5C1QMXY",
@@ -56,9 +46,19 @@
       "channel": "ThaiFranchiseCenter",
       "published_at": "2023-06-21",
       "thumbnail": "https://i.ytimg.com/vi/kb8R5C1QMXY/mqdefault.jpg",
-      "views": 11858,
+      "views": 11869,
       "likes": 203,
       "comments": 15
+    },
+    {
+      "id": "0ds2M05naZw",
+      "title": "VLOG 39 : เยี่ยมโรงเหล้าชุมชน 3 โรง ที่เวียงสา จ. น่าน",
+      "channel": "สุราไทย",
+      "published_at": "2021-12-22",
+      "thumbnail": "https://i.ytimg.com/vi/0ds2M05naZw/mqdefault.jpg",
+      "views": 9665,
+      "likes": 161,
+      "comments": 10
     },
     {
       "id": "pyrChp9Gb5s",
@@ -66,7 +66,7 @@
       "channel": "พ่อมดไกด์ Official",
       "published_at": "2023-06-22",
       "thumbnail": "https://i.ytimg.com/vi/pyrChp9Gb5s/mqdefault.jpg",
-      "views": 8713,
+      "views": 8717,
       "likes": 158,
       "comments": 0
     },
@@ -76,7 +76,7 @@
       "channel": "The Whisky Party",
       "published_at": "2025-02-19",
       "thumbnail": "https://i.ytimg.com/vi/_bYT69nJMeE/mqdefault.jpg",
-      "views": 8305,
+      "views": 8318,
       "likes": 110,
       "comments": 6
     },
@@ -86,7 +86,7 @@
       "channel": "Berm Kanyanan",
       "published_at": "2024-09-07",
       "thumbnail": "https://i.ytimg.com/vi/AThHyfDHEUA/mqdefault.jpg",
-      "views": 7107,
+      "views": 7111,
       "likes": 236,
       "comments": 13
     },
@@ -96,8 +96,18 @@
       "channel": "ตองโรงต้ม TongRongTom",
       "published_at": "2025-01-15",
       "thumbnail": "https://i.ytimg.com/vi/4dMaSYwNp_E/mqdefault.jpg",
-      "views": 4075,
+      "views": 4077,
       "likes": 78,
+      "comments": 0
+    },
+    {
+      "id": "Mf3lf3PDx5A",
+      "title": "เมรัยไทยแลนด์ 2025 เทศกาล Craft Beer & Spirits แห่งปี! #เมรัยไทยแลนด์ #alsociety #มหกรรมสุราชุมชน",
+      "channel": "AL Society",
+      "published_at": "2025-11-28",
+      "thumbnail": "https://i.ytimg.com/vi/Mf3lf3PDx5A/mqdefault.jpg",
+      "views": 2075,
+      "likes": 54,
       "comments": 0
     },
     {
@@ -116,7 +126,7 @@
       "channel": "MEDEE",
       "published_at": "2024-02-02",
       "thumbnail": "https://i.ytimg.com/vi/gHQjFBn9vVA/mqdefault.jpg",
-      "views": 1584,
+      "views": 1587,
       "likes": 12,
       "comments": 2
     },
@@ -126,7 +136,7 @@
       "channel": "Prime Video Thailand",
       "published_at": "2026-04-05",
       "thumbnail": "https://i.ytimg.com/vi/ey7MSGE07_I/mqdefault.jpg",
-      "views": 1402,
+      "views": 1408,
       "likes": 38,
       "comments": 3
     },
@@ -141,14 +151,24 @@
       "comments": 1
     },
     {
-      "id": "CjFAk4-ED0w",
-      "title": "จากสุราชุมชน สู่ Soft Power สร้างเศรษฐกิจท้องถิ่น สร้างรายได้ให้ประเทศ  | Thairath Money Talk EP.16",
-      "channel": "Thairath Money",
-      "published_at": "2024-12-01",
-      "thumbnail": "https://i.ytimg.com/vi/CjFAk4-ED0w/mqdefault.jpg",
-      "views": 709,
-      "likes": 6,
+      "id": "GJ-xU23aWt8",
+      "title": "In Thailand,even spirits have a home #thailand #travel #facts #viral",
+      "channel": "FrescaVizion",
+      "published_at": "2025-06-20",
+      "thumbnail": "https://i.ytimg.com/vi/GJ-xU23aWt8/mqdefault.jpg",
+      "views": 683,
+      "likes": 8,
       "comments": 0
+    },
+    {
+      "id": "NorwBPL0olQ",
+      "title": "สุราท้องถิ่น #หลงเลย #สุราพื้นบ้าน",
+      "channel": "กับข้าว กับขี้เมา",
+      "published_at": "2025-07-20",
+      "thumbnail": "https://i.ytimg.com/vi/NorwBPL0olQ/mqdefault.jpg",
+      "views": 623,
+      "likes": 6,
+      "comments": 1
     },
     {
       "id": "rZ7ZbOIB0RQ",
@@ -161,6 +181,16 @@
       "comments": 0
     },
     {
+      "id": "rxFTNu4AqtQ",
+      "title": "อนาคต \"สุราพื้นบ้านไทย\"",
+      "channel": "MCOT News FM 100.5",
+      "published_at": "2023-06-05",
+      "thumbnail": "https://i.ytimg.com/vi/rxFTNu4AqtQ/mqdefault.jpg",
+      "views": 284,
+      "likes": 2,
+      "comments": 1
+    },
+    {
       "id": "wh8pMInp_3Q",
       "title": "Universal Fine Wine & Spirits Thailand",
       "channel": "Universal Fine Wine & Spirits Thailand",
@@ -168,6 +198,16 @@
       "thumbnail": "https://i.ytimg.com/vi/wh8pMInp_3Q/mqdefault.jpg",
       "views": 218,
       "likes": 0,
+      "comments": 0
+    },
+    {
+      "id": "ssao1E8-kwM",
+      "title": "Healing with Spirits: Traditional Herbal Elixirs -  Healing is the New Luxury with Amazing Thailand",
+      "channel": "Wonderfruit",
+      "published_at": "2026-04-17",
+      "thumbnail": "https://i.ytimg.com/vi/ssao1E8-kwM/mqdefault.jpg",
+      "views": 71,
+      "likes": 1,
       "comments": 0
     },
     {
@@ -181,16 +221,6 @@
       "comments": 1
     },
     {
-      "id": "ERRlUC5kg_4",
-      "title": "Green Hell : Spirits of Amazonia[Thai] Ep3. วันที่สามรีบๆเดินกันหน่อยเดียวไม่ทัน",
-      "channel": "Lively Channel",
-      "published_at": "2021-08-09",
-      "thumbnail": "https://i.ytimg.com/vi/ERRlUC5kg_4/mqdefault.jpg",
-      "views": 29,
-      "likes": 3,
-      "comments": 0
-    },
-    {
       "id": "LBXW80SChFk",
       "title": "Thai Spirits Unleashed: A Hilarious Guide to Local Drinks!@FunnyThailandNews",
       "channel": "Funny Thailand News",
@@ -201,5 +231,5 @@
       "comments": 0
     }
   ],
-  "fetched_at": "2026-06-13T05:15:13.134813"
+  "fetched_at": "2026-06-14T05:24:16.077840"
 }
