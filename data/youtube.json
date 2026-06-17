@@ -6,8 +6,8 @@
       "channel": "เทพลีลา",
       "published_at": "2025-05-29",
       "thumbnail": "https://i.ytimg.com/vi/iURJ96__WAY/mqdefault.jpg",
-      "views": 679294,
-      "likes": 12671,
+      "views": 679573,
+      "likes": 12672,
       "comments": 607
     },
     {
@@ -16,7 +16,7 @@
       "channel": "OTR Food & History",
       "published_at": "2024-07-25",
       "thumbnail": "https://i.ytimg.com/vi/qmabc4KpPV4/mqdefault.jpg",
-      "views": 66513,
+      "views": 66525,
       "likes": 2281,
       "comments": 172
     },
@@ -26,7 +26,7 @@
       "channel": "สาโทผลไม้ YenseRin",
       "published_at": "2023-10-20",
       "thumbnail": "https://i.ytimg.com/vi/mSPSQgh-fYE/mqdefault.jpg",
-      "views": 51731,
+      "views": 51766,
       "likes": 443,
       "comments": 15
     },
@@ -36,9 +36,9 @@
       "channel": "ข่าวช่องวัน",
       "published_at": "2022-11-02",
       "thumbnail": "https://i.ytimg.com/vi/a5LRMyHT5yc/mqdefault.jpg",
-      "views": 29590,
+      "views": 29607,
       "likes": 749,
-      "comments": 30
+      "comments": 31
     },
     {
       "id": "C0fJWQju4Nc",
@@ -49,6 +49,16 @@
       "views": 23301,
       "likes": 210,
       "comments": 84
+    },
+    {
+      "id": "G2i0mXZXoBQ",
+      "title": "ธุรกิจสุราไทย ตัวร้ายในสังคมจริงหรอ?! | Torpenguin",
+      "channel": "Torpenguin",
+      "published_at": "2025-02-09",
+      "thumbnail": "https://i.ytimg.com/vi/G2i0mXZXoBQ/mqdefault.jpg",
+      "views": 14756,
+      "likes": 310,
+      "comments": 30
     },
     {
       "id": "nvrzmBDdeKY",
@@ -66,19 +76,9 @@
       "channel": "ThaiFranchiseCenter",
       "published_at": "2023-06-21",
       "thumbnail": "https://i.ytimg.com/vi/kb8R5C1QMXY/mqdefault.jpg",
-      "views": 11886,
+      "views": 11894,
       "likes": 203,
       "comments": 15
-    },
-    {
-      "id": "0ds2M05naZw",
-      "title": "VLOG 39 : เยี่ยมโรงเหล้าชุมชน 3 โรง ที่เวียงสา จ. น่าน",
-      "channel": "สุราไทย",
-      "published_at": "2021-12-22",
-      "thumbnail": "https://i.ytimg.com/vi/0ds2M05naZw/mqdefault.jpg",
-      "views": 9669,
-      "likes": 161,
-      "comments": 10
     },
     {
       "id": "pyrChp9Gb5s",
@@ -86,7 +86,7 @@
       "channel": "พ่อมดไกด์ Official",
       "published_at": "2023-06-22",
       "thumbnail": "https://i.ytimg.com/vi/pyrChp9Gb5s/mqdefault.jpg",
-      "views": 8728,
+      "views": 8729,
       "likes": 158,
       "comments": 0
     },
@@ -96,7 +96,7 @@
       "channel": "The Whisky Party",
       "published_at": "2025-02-19",
       "thumbnail": "https://i.ytimg.com/vi/_bYT69nJMeE/mqdefault.jpg",
-      "views": 8352,
+      "views": 8365,
       "likes": 111,
       "comments": 6
     },
@@ -111,12 +111,22 @@
       "comments": 13
     },
     {
+      "id": "Jhe2ag-Usv8",
+      "title": "สุราชุมชนพร้อมโตต่อ",
+      "channel": "Decode",
+      "published_at": "2025-01-26",
+      "thumbnail": "https://i.ytimg.com/vi/Jhe2ag-Usv8/mqdefault.jpg",
+      "views": 4291,
+      "likes": 96,
+      "comments": 9
+    },
+    {
       "id": "4dMaSYwNp_E",
       "title": "ดาวดินทัวร์ : ทำโรงผลิตสุราแช่ ทุกวันนี้ยากมั้ย? คุยกับ ชิน ศรีวรกุล  โรงจ๊วดจ๊วด อ.น้ำพอง จ.ขอนแก่น",
       "channel": "ตองโรงต้ม TongRongTom",
       "published_at": "2025-01-15",
       "thumbnail": "https://i.ytimg.com/vi/4dMaSYwNp_E/mqdefault.jpg",
-      "views": 4083,
+      "views": 4085,
       "likes": 78,
       "comments": 0
     },
@@ -131,22 +141,12 @@
       "comments": 0
     },
     {
-      "id": "UWE-mC9m-74",
-      "title": "สภาฯ เอกฉันท์ เห็นชอบร่างกม.สุราชุมชน",
-      "channel": "สรยุทธ สุทัศนะจินดา กรรมกรข่าว",
-      "published_at": "2025-01-16",
-      "thumbnail": "https://i.ytimg.com/vi/UWE-mC9m-74/mqdefault.jpg",
-      "views": 1689,
-      "likes": 25,
-      "comments": 12
-    },
-    {
       "id": "gHQjFBn9vVA",
       "title": "ตะลุย!!โรงกลั่นสุราชุมชน",
       "channel": "MEDEE",
       "published_at": "2024-02-02",
       "thumbnail": "https://i.ytimg.com/vi/gHQjFBn9vVA/mqdefault.jpg",
-      "views": 1593,
+      "views": 1596,
       "likes": 12,
       "comments": 2
     },
@@ -156,7 +156,7 @@
       "channel": "Prime Video Thailand",
       "published_at": "2026-04-05",
       "thumbnail": "https://i.ytimg.com/vi/ey7MSGE07_I/mqdefault.jpg",
-      "views": 1414,
+      "views": 1419,
       "likes": 38,
       "comments": 3
     },
@@ -176,7 +176,7 @@
       "channel": "Nuchaพาเพลิน",
       "published_at": "2023-08-05",
       "thumbnail": "https://i.ytimg.com/vi/SOEvCoB7m_4/mqdefault.jpg",
-      "views": 916,
+      "views": 917,
       "likes": 9,
       "comments": 1
     },
@@ -221,16 +221,6 @@
       "comments": 1
     },
     {
-      "id": "ERRlUC5kg_4",
-      "title": "Green Hell : Spirits of Amazonia[Thai] Ep3. วันที่สามรีบๆเดินกันหน่อยเดียวไม่ทัน",
-      "channel": "Lively Channel",
-      "published_at": "2021-08-09",
-      "thumbnail": "https://i.ytimg.com/vi/ERRlUC5kg_4/mqdefault.jpg",
-      "views": 29,
-      "likes": 3,
-      "comments": 0
-    },
-    {
       "id": "LBXW80SChFk",
       "title": "Thai Spirits Unleashed: A Hilarious Guide to Local Drinks!@FunnyThailandNews",
       "channel": "Funny Thailand News",
@@ -251,5 +241,5 @@
       "comments": 0
     }
   ],
-  "fetched_at": "2026-06-16T06:25:25.661121"
+  "fetched_at": "2026-06-17T06:01:20.776946"
 }
