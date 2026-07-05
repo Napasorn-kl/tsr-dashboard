@@ -6,8 +6,8 @@
       "channel": "เทพลีลา",
       "published_at": "2025-05-29",
       "thumbnail": "https://i.ytimg.com/vi/iURJ96__WAY/mqdefault.jpg",
-      "views": 682860,
-      "likes": 12699,
+      "views": 682954,
+      "likes": 12700,
       "comments": 608
     },
     {
@@ -16,7 +16,7 @@
       "channel": "OTR Food & History",
       "published_at": "2024-07-25",
       "thumbnail": "https://i.ytimg.com/vi/qmabc4KpPV4/mqdefault.jpg",
-      "views": 66770,
+      "views": 66803,
       "likes": 2283,
       "comments": 172
     },
@@ -26,9 +26,19 @@
       "channel": "สาโทผลไม้ YenseRin",
       "published_at": "2023-10-20",
       "thumbnail": "https://i.ytimg.com/vi/mSPSQgh-fYE/mqdefault.jpg",
-      "views": 52655,
+      "views": 52714,
       "likes": 448,
       "comments": 15
+    },
+    {
+      "id": "LuoqC_b0Ufk",
+      "title": "คิดยังไง...โฆษณา สุราพื้นบ้าน",
+      "channel": "สรยุทธ สุทัศนะจินดา กรรมกรข่าว",
+      "published_at": "2023-06-14",
+      "thumbnail": "https://i.ytimg.com/vi/LuoqC_b0Ufk/mqdefault.jpg",
+      "views": 44220,
+      "likes": 655,
+      "comments": 97
     },
     {
       "id": "a5LRMyHT5yc",
@@ -36,29 +46,19 @@
       "channel": "ข่าวช่องวัน",
       "published_at": "2022-11-02",
       "thumbnail": "https://i.ytimg.com/vi/a5LRMyHT5yc/mqdefault.jpg",
-      "views": 29838,
+      "views": 29852,
       "likes": 756,
       "comments": 31
     },
     {
-      "id": "uMbsgOKjfas",
-      "title": "สุราก้าวหน้า: เปิดโรงกลั่นสุรา “สังเวียน” ที่มนุษย์ต้องทำงานแทนเครื่องจักร - BBC News ไทย",
-      "channel": "BBC News ไทย",
-      "published_at": "2023-06-17",
-      "thumbnail": "https://i.ytimg.com/vi/uMbsgOKjfas/mqdefault.jpg",
-      "views": 22464,
-      "likes": 422,
-      "comments": 40
-    },
-    {
-      "id": "I8gz0664w3M",
-      "title": "VLOG : เยี่ยมโรงเหล้าลำพูน",
-      "channel": "สุราไทย",
-      "published_at": "2023-07-11",
-      "thumbnail": "https://i.ytimg.com/vi/I8gz0664w3M/mqdefault.jpg",
-      "views": 21632,
-      "likes": 394,
-      "comments": 24
+      "id": "C0fJWQju4Nc",
+      "title": "กระแส \"สุราก้าวหน้า\" ทำสุราพื้นบ้านขาดสต็อก  | ข่าวช่องวันเสาร์-อาทิตย์ | สำนักข่าววันนิวส์",
+      "channel": "ข่าวช่องวัน",
+      "published_at": "2023-06-04",
+      "thumbnail": "https://i.ytimg.com/vi/C0fJWQju4Nc/mqdefault.jpg",
+      "views": 23305,
+      "likes": 210,
+      "comments": 84
     },
     {
       "id": "CJyVadWpNaM",
@@ -66,19 +66,9 @@
       "channel": "หนุ่ยอยากเล่า",
       "published_at": "2025-07-23",
       "thumbnail": "https://i.ytimg.com/vi/CJyVadWpNaM/mqdefault.jpg",
-      "views": 16471,
-      "likes": 457,
+      "views": 16503,
+      "likes": 458,
       "comments": 18
-    },
-    {
-      "id": "nvrzmBDdeKY",
-      "title": "สมาคมสุราท้องถิ่น-คราฟท์เบียร์ไทย ยื่นหนังสือ ‘ก้าวไกล’ ดัน ‘สุราก้าวหน้า’",
-      "channel": "เรื่องเล่าเช้านี้",
-      "published_at": "2023-05-27",
-      "thumbnail": "https://i.ytimg.com/vi/nvrzmBDdeKY/mqdefault.jpg",
-      "views": 12801,
-      "likes": 172,
-      "comments": 96
     },
     {
       "id": "kb8R5C1QMXY",
@@ -86,7 +76,7 @@
       "channel": "ThaiFranchiseCenter",
       "published_at": "2023-06-21",
       "thumbnail": "https://i.ytimg.com/vi/kb8R5C1QMXY/mqdefault.jpg",
-      "views": 12021,
+      "views": 12026,
       "likes": 203,
       "comments": 15
     },
@@ -96,7 +86,7 @@
       "channel": "พ่อมดไกด์ Official",
       "published_at": "2023-06-22",
       "thumbnail": "https://i.ytimg.com/vi/pyrChp9Gb5s/mqdefault.jpg",
-      "views": 8773,
+      "views": 8776,
       "likes": 158,
       "comments": 0
     },
@@ -106,7 +96,7 @@
       "channel": "The Whisky Party",
       "published_at": "2025-02-19",
       "thumbnail": "https://i.ytimg.com/vi/_bYT69nJMeE/mqdefault.jpg",
-      "views": 8613,
+      "views": 8619,
       "likes": 114,
       "comments": 8
     },
@@ -116,7 +106,7 @@
       "channel": "Berm Kanyanan",
       "published_at": "2024-09-07",
       "thumbnail": "https://i.ytimg.com/vi/AThHyfDHEUA/mqdefault.jpg",
-      "views": 7163,
+      "views": 7166,
       "likes": 237,
       "comments": 13
     },
@@ -126,8 +116,8 @@
       "channel": "ตองโรงต้ม TongRongTom",
       "published_at": "2025-01-15",
       "thumbnail": "https://i.ytimg.com/vi/4dMaSYwNp_E/mqdefault.jpg",
-      "views": 4135,
-      "likes": 78,
+      "views": 4139,
+      "likes": 79,
       "comments": 0
     },
     {
@@ -141,22 +131,12 @@
       "comments": 0
     },
     {
-      "id": "UWE-mC9m-74",
-      "title": "สภาฯ เอกฉันท์ เห็นชอบร่างกม.สุราชุมชน",
-      "channel": "สรยุทธ สุทัศนะจินดา กรรมกรข่าว",
-      "published_at": "2025-01-16",
-      "thumbnail": "https://i.ytimg.com/vi/UWE-mC9m-74/mqdefault.jpg",
-      "views": 1689,
-      "likes": 25,
-      "comments": 12
-    },
-    {
       "id": "gHQjFBn9vVA",
       "title": "ตะลุย!!โรงกลั่นสุราชุมชน",
       "channel": "MEDEE",
       "published_at": "2024-02-02",
       "thumbnail": "https://i.ytimg.com/vi/gHQjFBn9vVA/mqdefault.jpg",
-      "views": 1630,
+      "views": 1633,
       "likes": 12,
       "comments": 2
     },
@@ -166,9 +146,29 @@
       "channel": "Prime Video Thailand",
       "published_at": "2026-04-05",
       "thumbnail": "https://i.ytimg.com/vi/ey7MSGE07_I/mqdefault.jpg",
-      "views": 1466,
+      "views": 1469,
       "likes": 39,
       "comments": 3
+    },
+    {
+      "id": "TLLDBJjbgb4",
+      "title": "ทางออกสุราไทย : คิดการณ์ใหม่ BRAINSTORM (1 เม.ย. 64)",
+      "channel": "Thai PBS",
+      "published_at": "2021-04-01",
+      "thumbnail": "https://i.ytimg.com/vi/TLLDBJjbgb4/mqdefault.jpg",
+      "views": 1286,
+      "likes": 11,
+      "comments": 1
+    },
+    {
+      "id": "SOEvCoB7m_4",
+      "title": "สุราพื้นบ้านไทย",
+      "channel": "Nuchaพาเพลิน",
+      "published_at": "2023-08-05",
+      "thumbnail": "https://i.ytimg.com/vi/SOEvCoB7m_4/mqdefault.jpg",
+      "views": 938,
+      "likes": 10,
+      "comments": 1
     },
     {
       "id": "CjFAk4-ED0w",
@@ -176,8 +176,8 @@
       "channel": "Thairath Money",
       "published_at": "2024-12-01",
       "thumbnail": "https://i.ytimg.com/vi/CjFAk4-ED0w/mqdefault.jpg",
-      "views": 716,
-      "likes": 6,
+      "views": 717,
+      "likes": 7,
       "comments": 0
     },
     {
@@ -186,7 +186,7 @@
       "channel": "กับข้าว กับขี้เมา",
       "published_at": "2025-07-20",
       "thumbnail": "https://i.ytimg.com/vi/NorwBPL0olQ/mqdefault.jpg",
-      "views": 661,
+      "views": 663,
       "likes": 7,
       "comments": 1
     },
@@ -196,7 +196,7 @@
       "channel": "สุราไทย",
       "published_at": "2025-12-05",
       "thumbnail": "https://i.ytimg.com/vi/rZ7ZbOIB0RQ/mqdefault.jpg",
-      "views": 460,
+      "views": 462,
       "likes": 29,
       "comments": 0
     },
@@ -211,13 +211,13 @@
       "comments": 0
     },
     {
-      "id": "ERRlUC5kg_4",
-      "title": "Green Hell : Spirits of Amazonia[Thai] Ep3. วันที่สามรีบๆเดินกันหน่อยเดียวไม่ทัน",
-      "channel": "Lively Channel",
-      "published_at": "2021-08-09",
-      "thumbnail": "https://i.ytimg.com/vi/ERRlUC5kg_4/mqdefault.jpg",
-      "views": 29,
-      "likes": 3,
+      "id": "wHg694sXVII",
+      "title": "แม่โขง vs แสงโสม ตำนานสุราไทย",
+      "channel": "ไวน์ซอมบี้.แซม",
+      "published_at": "2026-07-05",
+      "thumbnail": "https://i.ytimg.com/vi/wHg694sXVII/mqdefault.jpg",
+      "views": 210,
+      "likes": 9,
       "comments": 0
     },
     {
@@ -241,5 +241,5 @@
       "comments": 0
     }
   ],
-  "fetched_at": "2026-07-04T04:28:03.699605"
+  "fetched_at": "2026-07-05T04:50:44.021478"
 }
