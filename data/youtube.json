@@ -6,8 +6,8 @@
       "channel": "เทพลีลา",
       "published_at": "2025-05-29",
       "thumbnail": "https://i.ytimg.com/vi/iURJ96__WAY/mqdefault.jpg",
-      "views": 683202,
-      "likes": 12696,
+      "views": 683328,
+      "likes": 12694,
       "comments": 608
     },
     {
@@ -16,8 +16,8 @@
       "channel": "ปักหมุดชาแนล",
       "published_at": "2025-08-30",
       "thumbnail": "https://i.ytimg.com/vi/xdhgWLdxugo/mqdefault.jpg",
-      "views": 237212,
-      "likes": 6750,
+      "views": 237381,
+      "likes": 6753,
       "comments": 775
     },
     {
@@ -26,7 +26,7 @@
       "channel": "OTR Food & History",
       "published_at": "2024-07-25",
       "thumbnail": "https://i.ytimg.com/vi/qmabc4KpPV4/mqdefault.jpg",
-      "views": 66843,
+      "views": 66853,
       "likes": 2284,
       "comments": 172
     },
@@ -36,7 +36,7 @@
       "channel": "สาโทผลไม้ YenseRin",
       "published_at": "2023-10-20",
       "thumbnail": "https://i.ytimg.com/vi/mSPSQgh-fYE/mqdefault.jpg",
-      "views": 52809,
+      "views": 52856,
       "likes": 448,
       "comments": 15
     },
@@ -46,19 +46,9 @@
       "channel": "ข่าวช่องวัน",
       "published_at": "2022-11-02",
       "thumbnail": "https://i.ytimg.com/vi/a5LRMyHT5yc/mqdefault.jpg",
-      "views": 29867,
+      "views": 29872,
       "likes": 756,
       "comments": 31
-    },
-    {
-      "id": "nvrzmBDdeKY",
-      "title": "สมาคมสุราท้องถิ่น-คราฟท์เบียร์ไทย ยื่นหนังสือ ‘ก้าวไกล’ ดัน ‘สุราก้าวหน้า’",
-      "channel": "เรื่องเล่าเช้านี้",
-      "published_at": "2023-05-27",
-      "thumbnail": "https://i.ytimg.com/vi/nvrzmBDdeKY/mqdefault.jpg",
-      "views": 12801,
-      "likes": 172,
-      "comments": 96
     },
     {
       "id": "kb8R5C1QMXY",
@@ -66,7 +56,7 @@
       "channel": "ThaiFranchiseCenter",
       "published_at": "2023-06-21",
       "thumbnail": "https://i.ytimg.com/vi/kb8R5C1QMXY/mqdefault.jpg",
-      "views": 12041,
+      "views": 12048,
       "likes": 204,
       "comments": 15
     },
@@ -76,7 +66,7 @@
       "channel": "พ่อมดไกด์ Official",
       "published_at": "2023-06-22",
       "thumbnail": "https://i.ytimg.com/vi/pyrChp9Gb5s/mqdefault.jpg",
-      "views": 8778,
+      "views": 8780,
       "likes": 158,
       "comments": 0
     },
@@ -86,7 +76,7 @@
       "channel": "The Whisky Party",
       "published_at": "2025-02-19",
       "thumbnail": "https://i.ytimg.com/vi/_bYT69nJMeE/mqdefault.jpg",
-      "views": 8633,
+      "views": 8638,
       "likes": 114,
       "comments": 8
     },
@@ -96,7 +86,7 @@
       "channel": "Berm Kanyanan",
       "published_at": "2024-09-07",
       "thumbnail": "https://i.ytimg.com/vi/AThHyfDHEUA/mqdefault.jpg",
-      "views": 7168,
+      "views": 7174,
       "likes": 237,
       "comments": 13
     },
@@ -106,18 +96,8 @@
       "channel": "ตองโรงต้ม TongRongTom",
       "published_at": "2025-01-15",
       "thumbnail": "https://i.ytimg.com/vi/4dMaSYwNp_E/mqdefault.jpg",
-      "views": 4143,
+      "views": 4144,
       "likes": 79,
-      "comments": 0
-    },
-    {
-      "id": "Rms0BOvt6t4",
-      "title": "Local spirits Thailand (whiskey, rice wine and more)",
-      "channel": "Tours Thailand",
-      "published_at": "2016-03-26",
-      "thumbnail": "https://i.ytimg.com/vi/Rms0BOvt6t4/mqdefault.jpg",
-      "views": 2536,
-      "likes": 3,
       "comments": 0
     },
     {
@@ -126,7 +106,7 @@
       "channel": "MEDEE",
       "published_at": "2024-02-02",
       "thumbnail": "https://i.ytimg.com/vi/gHQjFBn9vVA/mqdefault.jpg",
-      "views": 1637,
+      "views": 1638,
       "likes": 12,
       "comments": 2
     },
@@ -136,8 +116,8 @@
       "channel": "Prime Video Thailand",
       "published_at": "2026-04-05",
       "thumbnail": "https://i.ytimg.com/vi/ey7MSGE07_I/mqdefault.jpg",
-      "views": 1473,
-      "likes": 39,
+      "views": 1476,
+      "likes": 40,
       "comments": 3
     },
     {
@@ -156,9 +136,19 @@
       "channel": "Nuchaพาเพลิน",
       "published_at": "2023-08-05",
       "thumbnail": "https://i.ytimg.com/vi/SOEvCoB7m_4/mqdefault.jpg",
-      "views": 944,
+      "views": 945,
       "likes": 10,
       "comments": 1
+    },
+    {
+      "id": "CjFAk4-ED0w",
+      "title": "จากสุราชุมชน สู่ Soft Power สร้างเศรษฐกิจท้องถิ่น สร้างรายได้ให้ประเทศ  | Thairath Money Talk EP.16",
+      "channel": "Thairath Money",
+      "published_at": "2024-12-01",
+      "thumbnail": "https://i.ytimg.com/vi/CjFAk4-ED0w/mqdefault.jpg",
+      "views": 718,
+      "likes": 7,
+      "comments": 0
     },
     {
       "id": "NorwBPL0olQ",
@@ -221,5 +211,5 @@
       "comments": 0
     }
   ],
-  "fetched_at": "2026-07-07T04:42:45.732118"
+  "fetched_at": "2026-07-08T04:09:11.766887"
 }
