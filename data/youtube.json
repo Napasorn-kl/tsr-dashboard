@@ -6,8 +6,8 @@
       "channel": "เทพลีลา",
       "published_at": "2025-05-29",
       "thumbnail": "https://i.ytimg.com/vi/iURJ96__WAY/mqdefault.jpg",
-      "views": 683425,
-      "likes": 12695,
+      "views": 683481,
+      "likes": 12696,
       "comments": 608
     },
     {
@@ -16,8 +16,8 @@
       "channel": "ปักหมุดชาแนล",
       "published_at": "2025-08-30",
       "thumbnail": "https://i.ytimg.com/vi/xdhgWLdxugo/mqdefault.jpg",
-      "views": 237530,
-      "likes": 6757,
+      "views": 237687,
+      "likes": 6762,
       "comments": 775
     },
     {
@@ -26,7 +26,7 @@
       "channel": "OTR Food & History",
       "published_at": "2024-07-25",
       "thumbnail": "https://i.ytimg.com/vi/qmabc4KpPV4/mqdefault.jpg",
-      "views": 66875,
+      "views": 66884,
       "likes": 2284,
       "comments": 172
     },
@@ -36,19 +36,9 @@
       "channel": "สาโทผลไม้ YenseRin",
       "published_at": "2023-10-20",
       "thumbnail": "https://i.ytimg.com/vi/mSPSQgh-fYE/mqdefault.jpg",
-      "views": 52902,
+      "views": 52973,
       "likes": 448,
       "comments": 15
-    },
-    {
-      "id": "LuoqC_b0Ufk",
-      "title": "คิดยังไง...โฆษณา สุราพื้นบ้าน",
-      "channel": "สรยุทธ สุทัศนะจินดา กรรมกรข่าว",
-      "published_at": "2023-06-14",
-      "thumbnail": "https://i.ytimg.com/vi/LuoqC_b0Ufk/mqdefault.jpg",
-      "views": 44221,
-      "likes": 655,
-      "comments": 97
     },
     {
       "id": "a5LRMyHT5yc",
@@ -56,7 +46,7 @@
       "channel": "ข่าวช่องวัน",
       "published_at": "2022-11-02",
       "thumbnail": "https://i.ytimg.com/vi/a5LRMyHT5yc/mqdefault.jpg",
-      "views": 29877,
+      "views": 29883,
       "likes": 756,
       "comments": 31
     },
@@ -71,12 +61,22 @@
       "comments": 84
     },
     {
+      "id": "G2i0mXZXoBQ",
+      "title": "ธุรกิจสุราไทย ตัวร้ายในสังคมจริงหรอ?! | Torpenguin",
+      "channel": "Torpenguin",
+      "published_at": "2025-02-09",
+      "thumbnail": "https://i.ytimg.com/vi/G2i0mXZXoBQ/mqdefault.jpg",
+      "views": 14827,
+      "likes": 311,
+      "comments": 30
+    },
+    {
       "id": "kb8R5C1QMXY",
       "title": "10 เรื่องจริงที่คุณไม่รู้! สุราพื้นบ้าน",
       "channel": "ThaiFranchiseCenter",
       "published_at": "2023-06-21",
       "thumbnail": "https://i.ytimg.com/vi/kb8R5C1QMXY/mqdefault.jpg",
-      "views": 12055,
+      "views": 12071,
       "likes": 204,
       "comments": 15
     },
@@ -86,7 +86,7 @@
       "channel": "พ่อมดไกด์ Official",
       "published_at": "2023-06-22",
       "thumbnail": "https://i.ytimg.com/vi/pyrChp9Gb5s/mqdefault.jpg",
-      "views": 8783,
+      "views": 8786,
       "likes": 158,
       "comments": 0
     },
@@ -96,8 +96,8 @@
       "channel": "The Whisky Party",
       "published_at": "2025-02-19",
       "thumbnail": "https://i.ytimg.com/vi/_bYT69nJMeE/mqdefault.jpg",
-      "views": 8646,
-      "likes": 114,
+      "views": 8663,
+      "likes": 115,
       "comments": 8
     },
     {
@@ -106,7 +106,7 @@
       "channel": "Berm Kanyanan",
       "published_at": "2024-09-07",
       "thumbnail": "https://i.ytimg.com/vi/AThHyfDHEUA/mqdefault.jpg",
-      "views": 7176,
+      "views": 7179,
       "likes": 237,
       "comments": 13
     },
@@ -116,8 +116,18 @@
       "channel": "ตองโรงต้ม TongRongTom",
       "published_at": "2025-01-15",
       "thumbnail": "https://i.ytimg.com/vi/4dMaSYwNp_E/mqdefault.jpg",
-      "views": 4150,
+      "views": 4153,
       "likes": 79,
+      "comments": 0
+    },
+    {
+      "id": "Rms0BOvt6t4",
+      "title": "Local spirits Thailand (whiskey, rice wine and more)",
+      "channel": "Tours Thailand",
+      "published_at": "2016-03-26",
+      "thumbnail": "https://i.ytimg.com/vi/Rms0BOvt6t4/mqdefault.jpg",
+      "views": 2536,
+      "likes": 3,
       "comments": 0
     },
     {
@@ -126,7 +136,7 @@
       "channel": "MEDEE",
       "published_at": "2024-02-02",
       "thumbnail": "https://i.ytimg.com/vi/gHQjFBn9vVA/mqdefault.jpg",
-      "views": 1640,
+      "views": 1642,
       "likes": 12,
       "comments": 2
     },
@@ -148,16 +158,6 @@
       "thumbnail": "https://i.ytimg.com/vi/TLLDBJjbgb4/mqdefault.jpg",
       "views": 1286,
       "likes": 11,
-      "comments": 1
-    },
-    {
-      "id": "SOEvCoB7m_4",
-      "title": "สุราพื้นบ้านไทย",
-      "channel": "Nuchaพาเพลิน",
-      "published_at": "2023-08-05",
-      "thumbnail": "https://i.ytimg.com/vi/SOEvCoB7m_4/mqdefault.jpg",
-      "views": 948,
-      "likes": 10,
       "comments": 1
     },
     {
@@ -186,7 +186,7 @@
       "channel": "สุราไทย",
       "published_at": "2025-12-05",
       "thumbnail": "https://i.ytimg.com/vi/rZ7ZbOIB0RQ/mqdefault.jpg",
-      "views": 463,
+      "views": 464,
       "likes": 29,
       "comments": 0
     },
@@ -219,7 +219,17 @@
       "views": 20,
       "likes": 3,
       "comments": 0
+    },
+    {
+      "id": "meO1n4P9bRM",
+      "title": "สุราชุมชน ธุรกิจท้องถิ่นไทย l เสียงเหนือ",
+      "channel": "เสียงเหนือ Voice of The North",
+      "published_at": "2023-01-10",
+      "thumbnail": "https://i.ytimg.com/vi/meO1n4P9bRM/mqdefault.jpg",
+      "views": 7,
+      "likes": 0,
+      "comments": 0
     }
   ],
-  "fetched_at": "2026-07-09T04:41:39.373605"
+  "fetched_at": "2026-07-10T04:43:33.495826"
 }
