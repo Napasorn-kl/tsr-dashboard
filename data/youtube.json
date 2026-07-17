@@ -6,7 +6,7 @@
       "channel": "เทพลีลา",
       "published_at": "2025-05-29",
       "thumbnail": "https://i.ytimg.com/vi/iURJ96__WAY/mqdefault.jpg",
-      "views": 684144,
+      "views": 684281,
       "likes": 12700,
       "comments": 608
     },
@@ -16,9 +16,9 @@
       "channel": "ปักหมุดชาแนล",
       "published_at": "2025-08-30",
       "thumbnail": "https://i.ytimg.com/vi/xdhgWLdxugo/mqdefault.jpg",
-      "views": 238644,
-      "likes": 6781,
-      "comments": 776
+      "views": 238817,
+      "likes": 6785,
+      "comments": 777
     },
     {
       "id": "qmabc4KpPV4",
@@ -26,8 +26,8 @@
       "channel": "OTR Food & History",
       "published_at": "2024-07-25",
       "thumbnail": "https://i.ytimg.com/vi/qmabc4KpPV4/mqdefault.jpg",
-      "views": 66941,
-      "likes": 2285,
+      "views": 66949,
+      "likes": 2286,
       "comments": 172
     },
     {
@@ -36,8 +36,8 @@
       "channel": "สาโทผลไม้ YenseRin",
       "published_at": "2023-10-20",
       "thumbnail": "https://i.ytimg.com/vi/mSPSQgh-fYE/mqdefault.jpg",
-      "views": 53314,
-      "likes": 448,
+      "views": 53510,
+      "likes": 450,
       "comments": 15
     },
     {
@@ -46,8 +46,8 @@
       "channel": "ข่าวช่องวัน",
       "published_at": "2022-11-02",
       "thumbnail": "https://i.ytimg.com/vi/a5LRMyHT5yc/mqdefault.jpg",
-      "views": 29975,
-      "likes": 756,
+      "views": 29990,
+      "likes": 757,
       "comments": 31
     },
     {
@@ -56,7 +56,7 @@
       "channel": "Torpenguin",
       "published_at": "2025-02-09",
       "thumbnail": "https://i.ytimg.com/vi/G2i0mXZXoBQ/mqdefault.jpg",
-      "views": 14848,
+      "views": 14849,
       "likes": 312,
       "comments": 30
     },
@@ -76,7 +76,7 @@
       "channel": "ThaiFranchiseCenter",
       "published_at": "2023-06-21",
       "thumbnail": "https://i.ytimg.com/vi/kb8R5C1QMXY/mqdefault.jpg",
-      "views": 12099,
+      "views": 12104,
       "likes": 204,
       "comments": 15
     },
@@ -86,7 +86,7 @@
       "channel": "พ่อมดไกด์ Official",
       "published_at": "2023-06-22",
       "thumbnail": "https://i.ytimg.com/vi/pyrChp9Gb5s/mqdefault.jpg",
-      "views": 8793,
+      "views": 8794,
       "likes": 158,
       "comments": 0
     },
@@ -96,7 +96,7 @@
       "channel": "The Whisky Party",
       "published_at": "2025-02-19",
       "thumbnail": "https://i.ytimg.com/vi/_bYT69nJMeE/mqdefault.jpg",
-      "views": 8725,
+      "views": 8729,
       "likes": 115,
       "comments": 8
     },
@@ -136,7 +136,7 @@
       "channel": "Prime Video Thailand",
       "published_at": "2026-04-05",
       "thumbnail": "https://i.ytimg.com/vi/ey7MSGE07_I/mqdefault.jpg",
-      "views": 1490,
+      "views": 1493,
       "likes": 40,
       "comments": 3
     },
@@ -186,7 +186,7 @@
       "channel": "Universal Fine Wine & Spirits Thailand",
       "published_at": "2023-05-23",
       "thumbnail": "https://i.ytimg.com/vi/wh8pMInp_3Q/mqdefault.jpg",
-      "views": 218,
+      "views": 219,
       "likes": 0,
       "comments": 0
     },
@@ -211,5 +211,5 @@
       "comments": 0
     }
   ],
-  "fetched_at": "2026-07-16T03:55:39.338430"
+  "fetched_at": "2026-07-17T03:54:55.424132"
 }
