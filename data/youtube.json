@@ -6,8 +6,8 @@
       "channel": "เทพลีลา",
       "published_at": "2025-05-29",
       "thumbnail": "https://i.ytimg.com/vi/iURJ96__WAY/mqdefault.jpg",
-      "views": 684713,
-      "likes": 12705,
+      "views": 684836,
+      "likes": 12706,
       "comments": 602
     },
     {
@@ -16,7 +16,7 @@
       "channel": "ปักหมุดชาแนล",
       "published_at": "2025-08-30",
       "thumbnail": "https://i.ytimg.com/vi/xdhgWLdxugo/mqdefault.jpg",
-      "views": 239546,
+      "views": 239698,
       "likes": 6803,
       "comments": 777
     },
@@ -26,8 +26,8 @@
       "channel": "เกษตรกรไทย สร้างรายได้",
       "published_at": "2023-08-16",
       "thumbnail": "https://i.ytimg.com/vi/GBrFW__hZWk/mqdefault.jpg",
-      "views": 88886,
-      "likes": 1451,
+      "views": 88929,
+      "likes": 1452,
       "comments": 97
     },
     {
@@ -36,7 +36,7 @@
       "channel": "ข่าวช่องวัน",
       "published_at": "2022-11-02",
       "thumbnail": "https://i.ytimg.com/vi/a5LRMyHT5yc/mqdefault.jpg",
-      "views": 30047,
+      "views": 30060,
       "likes": 758,
       "comments": 31
     },
@@ -46,7 +46,7 @@
       "channel": "BBC News ไทย",
       "published_at": "2023-06-17",
       "thumbnail": "https://i.ytimg.com/vi/uMbsgOKjfas/mqdefault.jpg",
-      "views": 22495,
+      "views": 22497,
       "likes": 422,
       "comments": 40
     },
@@ -56,7 +56,7 @@
       "channel": "หนุ่ยอยากเล่า",
       "published_at": "2025-07-23",
       "thumbnail": "https://i.ytimg.com/vi/CJyVadWpNaM/mqdefault.jpg",
-      "views": 16982,
+      "views": 17008,
       "likes": 469,
       "comments": 18
     },
@@ -66,7 +66,7 @@
       "channel": "ThaiFranchiseCenter",
       "published_at": "2023-06-21",
       "thumbnail": "https://i.ytimg.com/vi/kb8R5C1QMXY/mqdefault.jpg",
-      "views": 12124,
+      "views": 12132,
       "likes": 204,
       "comments": 15
     },
@@ -76,7 +76,7 @@
       "channel": "The Whisky Party",
       "published_at": "2025-02-19",
       "thumbnail": "https://i.ytimg.com/vi/_bYT69nJMeE/mqdefault.jpg",
-      "views": 8759,
+      "views": 8775,
       "likes": 115,
       "comments": 8
     },
@@ -86,9 +86,19 @@
       "channel": "Berm Kanyanan",
       "published_at": "2024-09-07",
       "thumbnail": "https://i.ytimg.com/vi/AThHyfDHEUA/mqdefault.jpg",
-      "views": 7201,
+      "views": 7202,
       "likes": 237,
       "comments": 13
+    },
+    {
+      "id": "1ILfOEp3JDs",
+      "title": "ท้องถิ่นสุราษฏร์ฯ เผยยังไม่ได้เอกสาร แจ้งถอนบรรจุเป็นทางการ | ข่าวค่ำ | 20 ก.ค. 69",
+      "channel": "Thai PBS",
+      "published_at": "2026-07-20",
+      "thumbnail": "https://i.ytimg.com/vi/1ILfOEp3JDs/mqdefault.jpg",
+      "views": 5425,
+      "likes": 37,
+      "comments": 6
     },
     {
       "id": "jWcIbPLsaLs",
@@ -106,19 +116,9 @@
       "channel": "ตองโรงต้ม TongRongTom",
       "published_at": "2025-01-15",
       "thumbnail": "https://i.ytimg.com/vi/4dMaSYwNp_E/mqdefault.jpg",
-      "views": 4179,
+      "views": 4182,
       "likes": 79,
       "comments": 0
-    },
-    {
-      "id": "1ILfOEp3JDs",
-      "title": "ท้องถิ่นสุราษฏร์ฯ เผยยังไม่ได้เอกสาร แจ้งถอนบรรจุเป็นทางการ | ข่าวค่ำ | 20 ก.ค. 69",
-      "channel": "Thai PBS",
-      "published_at": "2026-07-20",
-      "thumbnail": "https://i.ytimg.com/vi/1ILfOEp3JDs/mqdefault.jpg",
-      "views": 3756,
-      "likes": 27,
-      "comments": 5
     },
     {
       "id": "OM_VZGojusQ",
@@ -156,7 +156,7 @@
       "channel": "MEDEE",
       "published_at": "2024-02-02",
       "thumbnail": "https://i.ytimg.com/vi/gHQjFBn9vVA/mqdefault.jpg",
-      "views": 1654,
+      "views": 1656,
       "likes": 12,
       "comments": 2
     },
@@ -166,9 +166,19 @@
       "channel": "Prime Video Thailand",
       "published_at": "2026-04-05",
       "thumbnail": "https://i.ytimg.com/vi/ey7MSGE07_I/mqdefault.jpg",
-      "views": 1500,
+      "views": 1501,
       "likes": 40,
       "comments": 3
+    },
+    {
+      "id": "SOEvCoB7m_4",
+      "title": "สุราพื้นบ้านไทย",
+      "channel": "Nuchaพาเพลิน",
+      "published_at": "2023-08-05",
+      "thumbnail": "https://i.ytimg.com/vi/SOEvCoB7m_4/mqdefault.jpg",
+      "views": 962,
+      "likes": 11,
+      "comments": 1
     },
     {
       "id": "rZ7ZbOIB0RQ",
@@ -229,17 +239,7 @@
       "views": 17,
       "likes": 0,
       "comments": 0
-    },
-    {
-      "id": "meO1n4P9bRM",
-      "title": "สุราชุมชน ธุรกิจท้องถิ่นไทย l เสียงเหนือ",
-      "channel": "เสียงเหนือ Voice of The North",
-      "published_at": "2023-01-10",
-      "thumbnail": "https://i.ytimg.com/vi/meO1n4P9bRM/mqdefault.jpg",
-      "views": 7,
-      "likes": 0,
-      "comments": 0
     }
   ],
-  "fetched_at": "2026-07-21T04:10:02.522707"
+  "fetched_at": "2026-07-22T04:11:36.931519"
 }
