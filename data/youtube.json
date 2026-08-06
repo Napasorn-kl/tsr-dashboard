@@ -6,7 +6,7 @@
       "channel": "เทพลีลา",
       "published_at": "2025-05-29",
       "thumbnail": "https://i.ytimg.com/vi/iURJ96__WAY/mqdefault.jpg",
-      "views": 685674,
+      "views": 685731,
       "likes": 12716,
       "comments": 602
     },
@@ -16,7 +16,7 @@
       "channel": "ปักหมุดชาแนล",
       "published_at": "2025-08-30",
       "thumbnail": "https://i.ytimg.com/vi/xdhgWLdxugo/mqdefault.jpg",
-      "views": 244881,
+      "views": 245176,
       "likes": 6902,
       "comments": 782
     },
@@ -26,7 +26,7 @@
       "channel": "ข่าวช่องวัน",
       "published_at": "2022-11-02",
       "thumbnail": "https://i.ytimg.com/vi/a5LRMyHT5yc/mqdefault.jpg",
-      "views": 30233,
+      "views": 30236,
       "likes": 758,
       "comments": 32
     },
@@ -36,7 +36,7 @@
       "channel": "สุกขิน ตันไชยะวง",
       "published_at": "2022-09-05",
       "thumbnail": "https://i.ytimg.com/vi/8rSb2sUL2CM/mqdefault.jpg",
-      "views": 27174,
+      "views": 27222,
       "likes": 269,
       "comments": 10
     },
@@ -46,7 +46,7 @@
       "channel": "หนุ่ยอยากเล่า",
       "published_at": "2025-07-23",
       "thumbnail": "https://i.ytimg.com/vi/CJyVadWpNaM/mqdefault.jpg",
-      "views": 17479,
+      "views": 17513,
       "likes": 481,
       "comments": 18
     },
@@ -56,7 +56,7 @@
       "channel": "AL Society",
       "published_at": "2025-05-29",
       "thumbnail": "https://i.ytimg.com/vi/oBNgiYSAt5A/mqdefault.jpg",
-      "views": 16103,
+      "views": 16111,
       "likes": 415,
       "comments": 10
     },
@@ -66,8 +66,8 @@
       "channel": "ThaiFranchiseCenter",
       "published_at": "2023-06-21",
       "thumbnail": "https://i.ytimg.com/vi/kb8R5C1QMXY/mqdefault.jpg",
-      "views": 12228,
-      "likes": 206,
+      "views": 12240,
+      "likes": 207,
       "comments": 15
     },
     {
@@ -76,8 +76,8 @@
       "channel": "The Whisky Party",
       "published_at": "2025-02-19",
       "thumbnail": "https://i.ytimg.com/vi/_bYT69nJMeE/mqdefault.jpg",
-      "views": 8976,
-      "likes": 117,
+      "views": 8994,
+      "likes": 118,
       "comments": 8
     },
     {
@@ -86,8 +86,8 @@
       "channel": "Berm Kanyanan",
       "published_at": "2024-09-07",
       "thumbnail": "https://i.ytimg.com/vi/AThHyfDHEUA/mqdefault.jpg",
-      "views": 7252,
-      "likes": 239,
+      "views": 7254,
+      "likes": 240,
       "comments": 13
     },
     {
@@ -111,6 +111,16 @@
       "comments": 10
     },
     {
+      "id": "gHQjFBn9vVA",
+      "title": "ตะลุย!!โรงกลั่นสุราชุมชน",
+      "channel": "MEDEE",
+      "published_at": "2024-02-02",
+      "thumbnail": "https://i.ytimg.com/vi/gHQjFBn9vVA/mqdefault.jpg",
+      "views": 1689,
+      "likes": 13,
+      "comments": 2
+    },
+    {
       "id": "-461exuXGE4",
       "title": "ขึ้นสังเวียนครั้งแรก น็อคไหม ไปดู #สุราก้าวหน้า #สุราพื้นบ้าน #สังเวียน",
       "channel": "พาไป จุดจุดจุด",
@@ -119,26 +129,6 @@
       "views": 1688,
       "likes": 0,
       "comments": 0
-    },
-    {
-      "id": "gHQjFBn9vVA",
-      "title": "ตะลุย!!โรงกลั่นสุราชุมชน",
-      "channel": "MEDEE",
-      "published_at": "2024-02-02",
-      "thumbnail": "https://i.ytimg.com/vi/gHQjFBn9vVA/mqdefault.jpg",
-      "views": 1686,
-      "likes": 13,
-      "comments": 2
-    },
-    {
-      "id": "R1V5HklEYrk",
-      "title": "PART 2 : EVIL SPIRITS IN THAILAND #dakotalee #Jesus #God #Thailand #Bangkok #StoryTime #Spirits",
-      "channel": "Heaven is Real",
-      "published_at": "2024-08-25",
-      "thumbnail": "https://i.ytimg.com/vi/R1V5HklEYrk/mqdefault.jpg",
-      "views": 1089,
-      "likes": 61,
-      "comments": 11
     },
     {
       "id": "SOEvCoB7m_4",
@@ -186,7 +176,7 @@
       "channel": "Lukas Wiesflecker",
       "published_at": "2024-07-01",
       "thumbnail": "https://i.ytimg.com/vi/aqJCob3JYts/mqdefault.jpg",
-      "views": 283,
+      "views": 284,
       "likes": 13,
       "comments": 2
     },
@@ -216,7 +206,7 @@
       "channel": "Wonderfruit",
       "published_at": "2026-04-17",
       "thumbnail": "https://i.ytimg.com/vi/ssao1E8-kwM/mqdefault.jpg",
-      "views": 89,
+      "views": 91,
       "likes": 1,
       "comments": 0
     },
@@ -241,5 +231,5 @@
       "comments": 0
     }
   ],
-  "fetched_at": "2026-08-05T03:53:32.525244"
+  "fetched_at": "2026-08-06T03:58:21.429156"
 }
