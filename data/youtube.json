@@ -1,23 +1,13 @@
 {
   "videos": [
     {
-      "id": "wAaXhdCe2T0",
-      "title": "สหายสุรา - Amseatwo x เหลือง อนุกูล (cover version) Original : มาลีฮวนน่า",
-      "channel": "Am Seatwo OFFICIAL",
-      "published_at": "2022-03-12",
-      "thumbnail": "https://i.ytimg.com/vi/wAaXhdCe2T0/mqdefault.jpg",
-      "views": 128729996,
-      "likes": 525610,
-      "comments": 7877
-    },
-    {
       "id": "iURJ96__WAY",
       "title": "รีวิวสุราพื้นบ้าน | เทพลีลา",
       "channel": "เทพลีลา",
       "published_at": "2025-05-29",
       "thumbnail": "https://i.ytimg.com/vi/iURJ96__WAY/mqdefault.jpg",
-      "views": 686393,
-      "likes": 12715,
+      "views": 686481,
+      "likes": 12716,
       "comments": 602
     },
     {
@@ -26,9 +16,19 @@
       "channel": "ปักหมุดชาแนล",
       "published_at": "2025-08-30",
       "thumbnail": "https://i.ytimg.com/vi/xdhgWLdxugo/mqdefault.jpg",
-      "views": 249201,
-      "likes": 6963,
-      "comments": 783
+      "views": 249542,
+      "likes": 6968,
+      "comments": 784
+    },
+    {
+      "id": "a5LRMyHT5yc",
+      "title": "\"สรรพสามิต” ปลดล็อกผลิตสุราชุมชน  | สำนักข่าววันนิวส์",
+      "channel": "ข่าวช่องวัน",
+      "published_at": "2022-11-02",
+      "thumbnail": "https://i.ytimg.com/vi/a5LRMyHT5yc/mqdefault.jpg",
+      "views": 30368,
+      "likes": 760,
+      "comments": 32
     },
     {
       "id": "CJyVadWpNaM",
@@ -36,19 +36,9 @@
       "channel": "หนุ่ยอยากเล่า",
       "published_at": "2025-07-23",
       "thumbnail": "https://i.ytimg.com/vi/CJyVadWpNaM/mqdefault.jpg",
-      "views": 17821,
-      "likes": 490,
+      "views": 17864,
+      "likes": 489,
       "comments": 18
-    },
-    {
-      "id": "oBNgiYSAt5A",
-      "title": "สุราหมัก กับ สุรากลั่น ต่างกันอย่างไร ? #alsociety #เครื่องดื่ม #spirit",
-      "channel": "AL Society",
-      "published_at": "2025-05-29",
-      "thumbnail": "https://i.ytimg.com/vi/oBNgiYSAt5A/mqdefault.jpg",
-      "views": 16210,
-      "likes": 418,
-      "comments": 10
     },
     {
       "id": "kb8R5C1QMXY",
@@ -56,7 +46,7 @@
       "channel": "ThaiFranchiseCenter",
       "published_at": "2023-06-21",
       "thumbnail": "https://i.ytimg.com/vi/kb8R5C1QMXY/mqdefault.jpg",
-      "views": 12316,
+      "views": 12323,
       "likes": 207,
       "comments": 15
     },
@@ -66,7 +56,7 @@
       "channel": "The Whisky Party",
       "published_at": "2025-02-19",
       "thumbnail": "https://i.ytimg.com/vi/_bYT69nJMeE/mqdefault.jpg",
-      "views": 9134,
+      "views": 9151,
       "likes": 120,
       "comments": 8
     },
@@ -76,7 +66,7 @@
       "channel": "Berm Kanyanan",
       "published_at": "2024-09-07",
       "thumbnail": "https://i.ytimg.com/vi/AThHyfDHEUA/mqdefault.jpg",
-      "views": 7277,
+      "views": 7280,
       "likes": 240,
       "comments": 13
     },
@@ -86,29 +76,9 @@
       "channel": "แอมหลง...แล้ว",
       "published_at": "2023-07-01",
       "thumbnail": "https://i.ytimg.com/vi/jWcIbPLsaLs/mqdefault.jpg",
-      "views": 4570,
+      "views": 4572,
       "likes": 69,
       "comments": 3
-    },
-    {
-      "id": "4dMaSYwNp_E",
-      "title": "ดาวดินทัวร์ : ทำโรงผลิตสุราแช่ ทุกวันนี้ยากมั้ย? คุยกับ ชิน ศรีวรกุล  โรงจ๊วดจ๊วด อ.น้ำพอง จ.ขอนแก่น",
-      "channel": "ตองโรงต้ม TongRongTom",
-      "published_at": "2025-01-15",
-      "thumbnail": "https://i.ytimg.com/vi/4dMaSYwNp_E/mqdefault.jpg",
-      "views": 4254,
-      "likes": 80,
-      "comments": 0
-    },
-    {
-      "id": "J0RC3BT20dM",
-      "title": "'พิธา'เตรียมแก้กฎกระทรวงใน100วันปลด'สุราก้าวหน้า'-'กลุ่มผู้ค้าสุราก้าวหน้า' ร่วมยินดีชนะเลือกตั้ง",
-      "channel": "ครอบครัวข่าว3",
-      "published_at": "2023-05-26",
-      "thumbnail": "https://i.ytimg.com/vi/J0RC3BT20dM/mqdefault.jpg",
-      "views": 3541,
-      "likes": 66,
-      "comments": 26
     },
     {
       "id": "OM_VZGojusQ",
@@ -121,14 +91,44 @@
       "comments": 10
     },
     {
+      "id": "Mf3lf3PDx5A",
+      "title": "เมรัยไทยแลนด์ 2025 เทศกาล Craft Beer & Spirits แห่งปี! #เมรัยไทยแลนด์ #alsociety #มหกรรมสุราชุมชน",
+      "channel": "AL Society",
+      "published_at": "2025-11-28",
+      "thumbnail": "https://i.ytimg.com/vi/Mf3lf3PDx5A/mqdefault.jpg",
+      "views": 2095,
+      "likes": 55,
+      "comments": 0
+    },
+    {
       "id": "-461exuXGE4",
       "title": "ขึ้นสังเวียนครั้งแรก น็อคไหม ไปดู #สุราก้าวหน้า #สุราพื้นบ้าน #สังเวียน",
       "channel": "พาไป จุดจุดจุด",
       "published_at": "2023-09-11",
       "thumbnail": "https://i.ytimg.com/vi/-461exuXGE4/mqdefault.jpg",
-      "views": 1704,
+      "views": 1711,
       "likes": 0,
       "comments": 0
+    },
+    {
+      "id": "gHQjFBn9vVA",
+      "title": "ตะลุย!!โรงกลั่นสุราชุมชน",
+      "channel": "MEDEE",
+      "published_at": "2024-02-02",
+      "thumbnail": "https://i.ytimg.com/vi/gHQjFBn9vVA/mqdefault.jpg",
+      "views": 1709,
+      "likes": 13,
+      "comments": 2
+    },
+    {
+      "id": "ey7MSGE07_I",
+      "title": "The House of the Spirits (บ้านปรารถนารัก) - ตัวอย่างอย่างเป็นทางการ | Prime Video Thailand",
+      "channel": "Prime Video Thailand",
+      "published_at": "2026-04-05",
+      "thumbnail": "https://i.ytimg.com/vi/ey7MSGE07_I/mqdefault.jpg",
+      "views": 1543,
+      "likes": 40,
+      "comments": 3
     },
     {
       "id": "SOEvCoB7m_4",
@@ -141,14 +141,24 @@
       "comments": 1
     },
     {
-      "id": "P8atauzn19Q",
-      "title": "เดินเล่น BANDAI SPIRITS HOBBY EXHIBITION THAILAND 2025",
-      "channel": "Tid-Mecha",
-      "published_at": "2025-11-05",
-      "thumbnail": "https://i.ytimg.com/vi/P8atauzn19Q/mqdefault.jpg",
-      "views": 656,
-      "likes": 17,
+      "id": "_QD2WtbxMK8",
+      "title": "Mekhong Elite Table : The Art of Thai Spirits pairing by Chef Henrik Yde-Andersen",
+      "channel": "mekhongthailand",
+      "published_at": "2016-01-15",
+      "thumbnail": "https://i.ytimg.com/vi/_QD2WtbxMK8/mqdefault.jpg",
+      "views": 743,
+      "likes": 2,
       "comments": 0
+    },
+    {
+      "id": "NorwBPL0olQ",
+      "title": "สุราท้องถิ่น #หลงเลย #สุราพื้นบ้าน",
+      "channel": "กับข้าว กับขี้เมา",
+      "published_at": "2025-07-20",
+      "thumbnail": "https://i.ytimg.com/vi/NorwBPL0olQ/mqdefault.jpg",
+      "views": 730,
+      "likes": 7,
+      "comments": 1
     },
     {
       "id": "rZ7ZbOIB0RQ",
@@ -161,23 +171,33 @@
       "comments": 0
     },
     {
-      "id": "aqJCob3JYts",
-      "title": "Thai people offer red Fanta to Spirits 🧃🏯 #thailand #budhism #animism #redfanta",
-      "channel": "Lukas Wiesflecker",
-      "published_at": "2024-07-01",
-      "thumbnail": "https://i.ytimg.com/vi/aqJCob3JYts/mqdefault.jpg",
-      "views": 291,
-      "likes": 14,
-      "comments": 2
+      "id": "K2wand-GTzQ",
+      "title": "Mekhong Elite Table 2015: The Art of Thai Spirits Pairing",
+      "channel": "mekhongthailand",
+      "published_at": "2015-05-27",
+      "thumbnail": "https://i.ytimg.com/vi/K2wand-GTzQ/mqdefault.jpg",
+      "views": 437,
+      "likes": 5,
+      "comments": 0
     },
     {
-      "id": "wh8pMInp_3Q",
-      "title": "Universal Fine Wine & Spirits Thailand",
-      "channel": "Universal Fine Wine & Spirits Thailand",
-      "published_at": "2023-05-23",
-      "thumbnail": "https://i.ytimg.com/vi/wh8pMInp_3Q/mqdefault.jpg",
-      "views": 223,
-      "likes": 0,
+      "id": "rxFTNu4AqtQ",
+      "title": "อนาคต \"สุราพื้นบ้านไทย\"",
+      "channel": "MCOT News FM 100.5",
+      "published_at": "2023-06-05",
+      "thumbnail": "https://i.ytimg.com/vi/rxFTNu4AqtQ/mqdefault.jpg",
+      "views": 284,
+      "likes": 2,
+      "comments": 1
+    },
+    {
+      "id": "v2YBQjw2vXM",
+      "title": "สุราชุมชน พ่อสวาท ขอนแก่น l DOC.KK",
+      "channel": "DOC_KK ",
+      "published_at": "2025-07-04",
+      "thumbnail": "https://i.ytimg.com/vi/v2YBQjw2vXM/mqdefault.jpg",
+      "views": 157,
+      "likes": 8,
       "comments": 0
     },
     {
@@ -191,26 +211,6 @@
       "comments": 0
     },
     {
-      "id": "tqw0zkH22P4",
-      "title": "มุมมองผู้ผลิตสุราท้องถิ่น",
-      "channel": "ThaiPBS North",
-      "published_at": "2023-06-07",
-      "thumbnail": "https://i.ytimg.com/vi/tqw0zkH22P4/mqdefault.jpg",
-      "views": 63,
-      "likes": 3,
-      "comments": 0
-    },
-    {
-      "id": "IbXri8bJ4_0",
-      "title": "จากผลผลิตท้องถิ่น…สู่มูลค่าใหม่ที่หลายคนอาจยังไม่เคยรู้! ผลิตภัณฑ์สุราชุมชน By ARDA",
-      "channel": "ARDA Thailand",
-      "published_at": "2026-07-19",
-      "thumbnail": "https://i.ytimg.com/vi/IbXri8bJ4_0/mqdefault.jpg",
-      "views": 25,
-      "likes": 0,
-      "comments": 0
-    },
-    {
       "id": "meO1n4P9bRM",
       "title": "สุราชุมชน ธุรกิจท้องถิ่นไทย l เสียงเหนือ",
       "channel": "เสียงเหนือ Voice of The North",
@@ -221,5 +221,5 @@
       "comments": 0
     }
   ],
-  "fetched_at": "2026-08-15T02:08:09.165736"
+  "fetched_at": "2026-08-16T02:15:23.431520"
 }
