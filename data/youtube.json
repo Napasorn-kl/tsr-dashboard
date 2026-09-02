@@ -6,8 +6,8 @@
       "channel": "เทพลีลา",
       "published_at": "2025-05-29",
       "thumbnail": "https://i.ytimg.com/vi/iURJ96__WAY/mqdefault.jpg",
-      "views": 687573,
-      "likes": 12723,
+      "views": 687669,
+      "likes": 12724,
       "comments": 602
     },
     {
@@ -16,19 +16,9 @@
       "channel": "ปักหมุดชาแนล",
       "published_at": "2025-08-30",
       "thumbnail": "https://i.ytimg.com/vi/xdhgWLdxugo/mqdefault.jpg",
-      "views": 251790,
-      "likes": 7011,
+      "views": 251919,
+      "likes": 7012,
       "comments": 786
-    },
-    {
-      "id": "a5LRMyHT5yc",
-      "title": "\"สรรพสามิต” ปลดล็อกผลิตสุราชุมชน  | สำนักข่าววันนิวส์",
-      "channel": "ข่าวช่องวัน - one news",
-      "published_at": "2022-11-02",
-      "thumbnail": "https://i.ytimg.com/vi/a5LRMyHT5yc/mqdefault.jpg",
-      "views": 30566,
-      "likes": 765,
-      "comments": 32
     },
     {
       "id": "8rSb2sUL2CM",
@@ -36,7 +26,7 @@
       "channel": "สุกขิน ตันไชยะวง",
       "published_at": "2022-09-05",
       "thumbnail": "https://i.ytimg.com/vi/8rSb2sUL2CM/mqdefault.jpg",
-      "views": 28224,
+      "views": 28260,
       "likes": 277,
       "comments": 10
     },
@@ -56,7 +46,7 @@
       "channel": "หนุ่ยอยากเล่า",
       "published_at": "2025-07-23",
       "thumbnail": "https://i.ytimg.com/vi/CJyVadWpNaM/mqdefault.jpg",
-      "views": 18706,
+      "views": 18778,
       "likes": 516,
       "comments": 20
     },
@@ -66,7 +56,7 @@
       "channel": "ThaiFranchiseCenter",
       "published_at": "2023-06-21",
       "thumbnail": "https://i.ytimg.com/vi/kb8R5C1QMXY/mqdefault.jpg",
-      "views": 12422,
+      "views": 12434,
       "likes": 208,
       "comments": 15
     },
@@ -76,7 +66,7 @@
       "channel": "The Whisky Party",
       "published_at": "2025-02-19",
       "thumbnail": "https://i.ytimg.com/vi/_bYT69nJMeE/mqdefault.jpg",
-      "views": 9735,
+      "views": 9775,
       "likes": 129,
       "comments": 11
     },
@@ -86,7 +76,7 @@
       "channel": "Berm Kanyanan",
       "published_at": "2024-09-07",
       "thumbnail": "https://i.ytimg.com/vi/AThHyfDHEUA/mqdefault.jpg",
-      "views": 7338,
+      "views": 7342,
       "likes": 240,
       "comments": 13
     },
@@ -96,8 +86,18 @@
       "channel": "ตองโรงต้ม TongRongTom",
       "published_at": "2025-01-15",
       "thumbnail": "https://i.ytimg.com/vi/4dMaSYwNp_E/mqdefault.jpg",
-      "views": 4290,
+      "views": 4294,
       "likes": 80,
+      "comments": 0
+    },
+    {
+      "id": "u7Dh3bTaJZ8",
+      "title": "ปัจจุบันโรงกลั่นสุราชุมชนสามารถขยายกำลังการผลิตได้ถึง 50 แรงม้า ทำให้ติดตั้งสายการบรรจุได้",
+      "channel": "สุราไทย",
+      "published_at": "2025-09-06",
+      "thumbnail": "https://i.ytimg.com/vi/u7Dh3bTaJZ8/mqdefault.jpg",
+      "views": 4124,
+      "likes": 51,
       "comments": 0
     },
     {
@@ -111,12 +111,22 @@
       "comments": 10
     },
     {
+      "id": "Mf3lf3PDx5A",
+      "title": "เมรัยไทยแลนด์ 2025 เทศกาล Craft Beer & Spirits แห่งปี! #เมรัยไทยแลนด์ #alsociety #มหกรรมสุราชุมชน",
+      "channel": "AL Society",
+      "published_at": "2025-11-28",
+      "thumbnail": "https://i.ytimg.com/vi/Mf3lf3PDx5A/mqdefault.jpg",
+      "views": 2100,
+      "likes": 56,
+      "comments": 0
+    },
+    {
       "id": "gHQjFBn9vVA",
       "title": "ตะลุย!!โรงกลั่นสุราชุมชน",
       "channel": "MEDEE",
       "published_at": "2024-02-02",
       "thumbnail": "https://i.ytimg.com/vi/gHQjFBn9vVA/mqdefault.jpg",
-      "views": 1752,
+      "views": 1753,
       "likes": 13,
       "comments": 2
     },
@@ -126,9 +136,19 @@
       "channel": "พาไป จุดจุดจุด",
       "published_at": "2023-09-11",
       "thumbnail": "https://i.ytimg.com/vi/-461exuXGE4/mqdefault.jpg",
-      "views": 1745,
+      "views": 1749,
       "likes": 0,
       "comments": 0
+    },
+    {
+      "id": "ey7MSGE07_I",
+      "title": "The House of the Spirits (บ้านปรารถนารัก) - ตัวอย่างอย่างเป็นทางการ | Prime Video Thailand",
+      "channel": "Prime Video Thailand",
+      "published_at": "2026-04-05",
+      "thumbnail": "https://i.ytimg.com/vi/ey7MSGE07_I/mqdefault.jpg",
+      "views": 1567,
+      "likes": 40,
+      "comments": 3
     },
     {
       "id": "g9NkWmS3-Gw",
@@ -141,44 +161,34 @@
       "comments": 0
     },
     {
-      "id": "R1V5HklEYrk",
-      "title": "PART 2 : EVIL SPIRITS IN THAILAND #dakotalee #Jesus #God #Thailand #Bangkok #StoryTime #Spirits",
-      "channel": "Heaven is Real",
-      "published_at": "2024-08-25",
-      "thumbnail": "https://i.ytimg.com/vi/R1V5HklEYrk/mqdefault.jpg",
-      "views": 1100,
-      "likes": 61,
-      "comments": 11
-    },
-    {
       "id": "NorwBPL0olQ",
       "title": "สุราท้องถิ่น #หลงเลย #สุราพื้นบ้าน",
       "channel": "กับข้าว กับขี้เมา",
       "published_at": "2025-07-20",
       "thumbnail": "https://i.ytimg.com/vi/NorwBPL0olQ/mqdefault.jpg",
-      "views": 772,
+      "views": 775,
       "likes": 8,
       "comments": 1
     },
     {
-      "id": "P8atauzn19Q",
-      "title": "เดินเล่น BANDAI SPIRITS HOBBY EXHIBITION THAILAND 2025",
-      "channel": "Tid-Mecha",
-      "published_at": "2025-11-05",
-      "thumbnail": "https://i.ytimg.com/vi/P8atauzn19Q/mqdefault.jpg",
-      "views": 657,
-      "likes": 17,
+      "id": "_QD2WtbxMK8",
+      "title": "Mekhong Elite Table : The Art of Thai Spirits pairing by Chef Henrik Yde-Andersen",
+      "channel": "mekhongthailand",
+      "published_at": "2016-01-15",
+      "thumbnail": "https://i.ytimg.com/vi/_QD2WtbxMK8/mqdefault.jpg",
+      "views": 745,
+      "likes": 2,
       "comments": 0
     },
     {
-      "id": "MV_gjzDENMY",
-      "title": "PART 3 [LAST PART] : EVIL SPIRITS IN THAILAND #dakotalee #Jesus #God #Thailand #Bangkok #StoryTime #",
-      "channel": "Heaven is Real",
-      "published_at": "2024-08-26",
-      "thumbnail": "https://i.ytimg.com/vi/MV_gjzDENMY/mqdefault.jpg",
-      "views": 634,
-      "likes": 63,
-      "comments": 6
+      "id": "38s8Y1SZ6r0",
+      "title": "[Thai Version Cover] Free | Battle Spirits Brave",
+      "channel": "Sucky",
+      "published_at": "2026-09-01",
+      "thumbnail": "https://i.ytimg.com/vi/38s8Y1SZ6r0/mqdefault.jpg",
+      "views": 693,
+      "likes": 30,
+      "comments": 19
     },
     {
       "id": "rZ7ZbOIB0RQ",
@@ -191,34 +201,14 @@
       "comments": 0
     },
     {
-      "id": "aqJCob3JYts",
-      "title": "Thai people offer red Fanta to Spirits 🧃🏯 #thailand #budhism #animism #redfanta",
-      "channel": "Lukas Wiesflecker",
-      "published_at": "2024-07-01",
-      "thumbnail": "https://i.ytimg.com/vi/aqJCob3JYts/mqdefault.jpg",
-      "views": 308,
-      "likes": 14,
-      "comments": 2
-    },
-    {
-      "id": "wh8pMInp_3Q",
-      "title": "Universal Fine Wine & Spirits Thailand",
-      "channel": "Universal Fine Wine & Spirits Thailand",
-      "published_at": "2023-05-23",
-      "thumbnail": "https://i.ytimg.com/vi/wh8pMInp_3Q/mqdefault.jpg",
-      "views": 224,
-      "likes": 0,
+      "id": "K2wand-GTzQ",
+      "title": "Mekhong Elite Table 2015: The Art of Thai Spirits Pairing",
+      "channel": "mekhongthailand",
+      "published_at": "2015-05-27",
+      "thumbnail": "https://i.ytimg.com/vi/K2wand-GTzQ/mqdefault.jpg",
+      "views": 437,
+      "likes": 5,
       "comments": 0
-    },
-    {
-      "id": "38s8Y1SZ6r0",
-      "title": "[Thai Version Cover] Free | Battle Spirits Brave",
-      "channel": "Sucky",
-      "published_at": "2026-09-01",
-      "thumbnail": "https://i.ytimg.com/vi/38s8Y1SZ6r0/mqdefault.jpg",
-      "views": 161,
-      "likes": 21,
-      "comments": 10
     },
     {
       "id": "v2YBQjw2vXM",
@@ -241,16 +231,6 @@
       "comments": 2
     },
     {
-      "id": "ssao1E8-kwM",
-      "title": "Healing with Spirits: Traditional Herbal Elixirs -  Healing is the New Luxury with Amazing Thailand",
-      "channel": "Wonderfruit",
-      "published_at": "2026-04-17",
-      "thumbnail": "https://i.ytimg.com/vi/ssao1E8-kwM/mqdefault.jpg",
-      "views": 95,
-      "likes": 1,
-      "comments": 0
-    },
-    {
       "id": "tqw0zkH22P4",
       "title": "มุมมองผู้ผลิตสุราท้องถิ่น",
       "channel": "ThaiPBS North",
@@ -271,5 +251,5 @@
       "comments": 0
     }
   ],
-  "fetched_at": "2026-09-01T05:52:47.842764"
+  "fetched_at": "2026-09-02T05:15:44.285139"
 }
