@@ -6,8 +6,8 @@
       "channel": "เทพลีลา",
       "published_at": "2025-05-29",
       "thumbnail": "https://i.ytimg.com/vi/iURJ96__WAY/mqdefault.jpg",
-      "views": 688189,
-      "likes": 12715,
+      "views": 688291,
+      "likes": 12716,
       "comments": 602
     },
     {
@@ -16,8 +16,8 @@
       "channel": "ปักหมุดชาแนล",
       "published_at": "2025-08-30",
       "thumbnail": "https://i.ytimg.com/vi/xdhgWLdxugo/mqdefault.jpg",
-      "views": 252531,
-      "likes": 7013,
+      "views": 252652,
+      "likes": 7014,
       "comments": 786
     },
     {
@@ -26,9 +26,19 @@
       "channel": "ข่าวช่องวัน - one news",
       "published_at": "2022-11-02",
       "thumbnail": "https://i.ytimg.com/vi/a5LRMyHT5yc/mqdefault.jpg",
-      "views": 30630,
-      "likes": 765,
+      "views": 30640,
+      "likes": 766,
       "comments": 32
+    },
+    {
+      "id": "8rSb2sUL2CM",
+      "title": "วิธีการผลิตเหล้าขาวใครสนใจช่วยติดต่อประสานงานได้นะครับ",
+      "channel": "สุกขิน ตันไชยะวง",
+      "published_at": "2022-09-05",
+      "thumbnail": "https://i.ytimg.com/vi/8rSb2sUL2CM/mqdefault.jpg",
+      "views": 28583,
+      "likes": 279,
+      "comments": 10
     },
     {
       "id": "uMbsgOKjfas",
@@ -36,7 +46,7 @@
       "channel": "BBC News ไทย",
       "published_at": "2023-06-17",
       "thumbnail": "https://i.ytimg.com/vi/uMbsgOKjfas/mqdefault.jpg",
-      "views": 22595,
+      "views": 22596,
       "likes": 422,
       "comments": 40
     },
@@ -46,7 +56,7 @@
       "channel": "หนุ่ยอยากเล่า",
       "published_at": "2025-07-23",
       "thumbnail": "https://i.ytimg.com/vi/CJyVadWpNaM/mqdefault.jpg",
-      "views": 19075,
+      "views": 19125,
       "likes": 521,
       "comments": 21
     },
@@ -56,7 +66,7 @@
       "channel": "ThaiFranchiseCenter",
       "published_at": "2023-06-21",
       "thumbnail": "https://i.ytimg.com/vi/kb8R5C1QMXY/mqdefault.jpg",
-      "views": 12494,
+      "views": 12502,
       "likes": 207,
       "comments": 15
     },
@@ -66,7 +76,7 @@
       "channel": "The Whisky Party",
       "published_at": "2025-02-19",
       "thumbnail": "https://i.ytimg.com/vi/_bYT69nJMeE/mqdefault.jpg",
-      "views": 10112,
+      "views": 10150,
       "likes": 133,
       "comments": 11
     },
@@ -76,7 +86,7 @@
       "channel": "Berm Kanyanan",
       "published_at": "2024-09-07",
       "thumbnail": "https://i.ytimg.com/vi/AThHyfDHEUA/mqdefault.jpg",
-      "views": 7372,
+      "views": 7375,
       "likes": 240,
       "comments": 13
     },
@@ -86,7 +96,7 @@
       "channel": "ตองโรงต้ม TongRongTom",
       "published_at": "2025-01-15",
       "thumbnail": "https://i.ytimg.com/vi/4dMaSYwNp_E/mqdefault.jpg",
-      "views": 4322,
+      "views": 4324,
       "likes": 80,
       "comments": 0
     },
@@ -106,7 +116,7 @@
       "channel": "AL Society",
       "published_at": "2025-11-28",
       "thumbnail": "https://i.ytimg.com/vi/Mf3lf3PDx5A/mqdefault.jpg",
-      "views": 2100,
+      "views": 2101,
       "likes": 56,
       "comments": 0
     },
@@ -116,7 +126,7 @@
       "channel": "พาไป จุดจุดจุด",
       "published_at": "2023-09-11",
       "thumbnail": "https://i.ytimg.com/vi/-461exuXGE4/mqdefault.jpg",
-      "views": 1773,
+      "views": 1776,
       "likes": 0,
       "comments": 0
     },
@@ -126,19 +136,9 @@
       "channel": "MEDEE",
       "published_at": "2024-02-02",
       "thumbnail": "https://i.ytimg.com/vi/gHQjFBn9vVA/mqdefault.jpg",
-      "views": 1767,
+      "views": 1770,
       "likes": 13,
       "comments": 2
-    },
-    {
-      "id": "ey7MSGE07_I",
-      "title": "The House of the Spirits (บ้านปรารถนารัก) - ตัวอย่างอย่างเป็นทางการ | Prime Video Thailand",
-      "channel": "Prime Video Thailand",
-      "published_at": "2026-04-05",
-      "thumbnail": "https://i.ytimg.com/vi/ey7MSGE07_I/mqdefault.jpg",
-      "views": 1574,
-      "likes": 40,
-      "comments": 3
     },
     {
       "id": "g9NkWmS3-Gw",
@@ -146,7 +146,7 @@
       "channel": "AP Law Office Co., Ltd.",
       "published_at": "2025-02-18",
       "thumbnail": "https://i.ytimg.com/vi/g9NkWmS3-Gw/mqdefault.jpg",
-      "views": 1318,
+      "views": 1320,
       "likes": 10,
       "comments": 0
     },
@@ -156,8 +156,8 @@
       "channel": "Sucky",
       "published_at": "2026-09-01",
       "thumbnail": "https://i.ytimg.com/vi/38s8Y1SZ6r0/mqdefault.jpg",
-      "views": 1079,
-      "likes": 35,
+      "views": 1134,
+      "likes": 37,
       "comments": 19
     },
     {
@@ -166,7 +166,7 @@
       "channel": "กับข้าว กับขี้เมา",
       "published_at": "2025-07-20",
       "thumbnail": "https://i.ytimg.com/vi/NorwBPL0olQ/mqdefault.jpg",
-      "views": 788,
+      "views": 792,
       "likes": 8,
       "comments": 2
     },
@@ -178,26 +178,6 @@
       "thumbnail": "https://i.ytimg.com/vi/rZ7ZbOIB0RQ/mqdefault.jpg",
       "views": 483,
       "likes": 29,
-      "comments": 0
-    },
-    {
-      "id": "kDnp2xZvKG0",
-      "title": "'สุราท้องถิ่นน่าน' ขายดี! หวังรัฐบาลใหม่...ยกระดับฟื้นเศรษฐกิจชุมชน (6 มิ.ย. 66) คุยโขมงบ่าย 3 โมง",
-      "channel": "9MCOT",
-      "published_at": "2023-06-07",
-      "thumbnail": "https://i.ytimg.com/vi/kDnp2xZvKG0/mqdefault.jpg",
-      "views": 437,
-      "likes": 4,
-      "comments": 1
-    },
-    {
-      "id": "K2wand-GTzQ",
-      "title": "Mekhong Elite Table 2015: The Art of Thai Spirits Pairing",
-      "channel": "mekhongthailand",
-      "published_at": "2015-05-27",
-      "thumbnail": "https://i.ytimg.com/vi/K2wand-GTzQ/mqdefault.jpg",
-      "views": 437,
-      "likes": 5,
       "comments": 0
     },
     {
@@ -216,7 +196,7 @@
       "channel": "จารุณี กฐินหอม",
       "published_at": "2023-07-17",
       "thumbnail": "https://i.ytimg.com/vi/KbaNHnG5p7s/mqdefault.jpg",
-      "views": 130,
+      "views": 131,
       "likes": 3,
       "comments": 2
     },
@@ -241,5 +221,5 @@
       "comments": 0
     }
   ],
-  "fetched_at": "2026-09-07T05:27:21.367539"
+  "fetched_at": "2026-09-08T05:27:47.382374"
 }
