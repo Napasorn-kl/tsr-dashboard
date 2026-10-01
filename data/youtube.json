@@ -6,8 +6,8 @@
       "channel": "เทพลีลา",
       "published_at": "2025-05-29",
       "thumbnail": "https://i.ytimg.com/vi/iURJ96__WAY/mqdefault.jpg",
-      "views": 690126,
-      "likes": 12716,
+      "views": 690168,
+      "likes": 12717,
       "comments": 602
     },
     {
@@ -16,7 +16,7 @@
       "channel": "เกษตรกรไทย สร้างรายได้",
       "published_at": "2023-08-16",
       "thumbnail": "https://i.ytimg.com/vi/GBrFW__hZWk/mqdefault.jpg",
-      "views": 92175,
+      "views": 92252,
       "likes": 1492,
       "comments": 99
     },
@@ -26,29 +26,9 @@
       "channel": "ข่าวช่องวัน - one news",
       "published_at": "2022-11-02",
       "thumbnail": "https://i.ytimg.com/vi/a5LRMyHT5yc/mqdefault.jpg",
-      "views": 30865,
+      "views": 30870,
       "likes": 769,
       "comments": 32
-    },
-    {
-      "id": "uMbsgOKjfas",
-      "title": "สุราก้าวหน้า: เปิดโรงกลั่นสุรา “สังเวียน” ที่มนุษย์ต้องทำงานแทนเครื่องจักร - BBC News ไทย",
-      "channel": "BBC News ไทย",
-      "published_at": "2023-06-17",
-      "thumbnail": "https://i.ytimg.com/vi/uMbsgOKjfas/mqdefault.jpg",
-      "views": 22661,
-      "likes": 422,
-      "comments": 40
-    },
-    {
-      "id": "ehF3cRmV62g",
-      "title": "ช่วยเหลือมนุษยชาติจากวิญญาณต่างดาว | FINAL FANTASY: THE SPIRITS WITHIN",
-      "channel": "ClipFlix Thailand",
-      "published_at": "2025-12-04",
-      "thumbnail": "https://i.ytimg.com/vi/ehF3cRmV62g/mqdefault.jpg",
-      "views": 20953,
-      "likes": 556,
-      "comments": 24
     },
     {
       "id": "CJyVadWpNaM",
@@ -56,8 +36,8 @@
       "channel": "หนุ่ยอยากเล่า",
       "published_at": "2025-07-23",
       "thumbnail": "https://i.ytimg.com/vi/CJyVadWpNaM/mqdefault.jpg",
-      "views": 19820,
-      "likes": 533,
+      "views": 19847,
+      "likes": 534,
       "comments": 21
     },
     {
@@ -66,9 +46,19 @@
       "channel": "ThaiFranchiseCenter",
       "published_at": "2023-06-21",
       "thumbnail": "https://i.ytimg.com/vi/kb8R5C1QMXY/mqdefault.jpg",
-      "views": 12769,
+      "views": 12774,
       "likes": 211,
       "comments": 15
+    },
+    {
+      "id": "_bYT69nJMeE",
+      "title": "🥃Thai Rum, Any good? 🤔 | #whiskeytube #spirits #rum",
+      "channel": "The Whisky Party",
+      "published_at": "2025-02-19",
+      "thumbnail": "https://i.ytimg.com/vi/_bYT69nJMeE/mqdefault.jpg",
+      "views": 10922,
+      "likes": 138,
+      "comments": 11
     },
     {
       "id": "AThHyfDHEUA",
@@ -76,7 +66,7 @@
       "channel": "Berm Kanyanan",
       "published_at": "2024-09-07",
       "thumbnail": "https://i.ytimg.com/vi/AThHyfDHEUA/mqdefault.jpg",
-      "views": 7560,
+      "views": 7574,
       "likes": 239,
       "comments": 13
     },
@@ -96,7 +86,7 @@
       "channel": "MEDEE",
       "published_at": "2024-02-02",
       "thumbnail": "https://i.ytimg.com/vi/gHQjFBn9vVA/mqdefault.jpg",
-      "views": 1868,
+      "views": 1878,
       "likes": 13,
       "comments": 2
     },
@@ -106,9 +96,19 @@
       "channel": "พาไป จุดจุดจุด",
       "published_at": "2023-09-11",
       "thumbnail": "https://i.ytimg.com/vi/-461exuXGE4/mqdefault.jpg",
-      "views": 1820,
+      "views": 1823,
       "likes": 0,
       "comments": 0
+    },
+    {
+      "id": "ey7MSGE07_I",
+      "title": "The House of the Spirits (บ้านปรารถนารัก) - ตัวอย่างอย่างเป็นทางการ | Prime Video Thailand",
+      "channel": "Prime Video Thailand",
+      "published_at": "2026-04-05",
+      "thumbnail": "https://i.ytimg.com/vi/ey7MSGE07_I/mqdefault.jpg",
+      "views": 1621,
+      "likes": 40,
+      "comments": 3
     },
     {
       "id": "g9NkWmS3-Gw",
@@ -116,7 +116,7 @@
       "channel": "AP Law Office Co., Ltd.",
       "published_at": "2025-02-18",
       "thumbnail": "https://i.ytimg.com/vi/g9NkWmS3-Gw/mqdefault.jpg",
-      "views": 1352,
+      "views": 1356,
       "likes": 10,
       "comments": 0
     },
@@ -126,7 +126,7 @@
       "channel": "ลั้ลลาพาเที่ยว",
       "published_at": "2025-12-24",
       "thumbnail": "https://i.ytimg.com/vi/KuuqeAoW49U/mqdefault.jpg",
-      "views": 1250,
+      "views": 1251,
       "likes": 29,
       "comments": 1
     },
@@ -136,19 +136,9 @@
       "channel": "กับข้าว กับขี้เมา",
       "published_at": "2025-07-20",
       "thumbnail": "https://i.ytimg.com/vi/NorwBPL0olQ/mqdefault.jpg",
-      "views": 829,
+      "views": 833,
       "likes": 9,
       "comments": 2
-    },
-    {
-      "id": "W2gQ7O654TQ",
-      "title": "โฆษณาเหล้า-เบียร์ไทย อะไรทำได้ - ทำไม่ได้? | THAN NEWS",
-      "channel": "ฐานเศรษฐกิจ",
-      "published_at": "2026-09-21",
-      "thumbnail": "https://i.ytimg.com/vi/W2gQ7O654TQ/mqdefault.jpg",
-      "views": 732,
-      "likes": 2,
-      "comments": 0
     },
     {
       "id": "rZ7ZbOIB0RQ",
@@ -156,9 +146,19 @@
       "channel": "สุราไทย",
       "published_at": "2025-12-05",
       "thumbnail": "https://i.ytimg.com/vi/rZ7ZbOIB0RQ/mqdefault.jpg",
-      "views": 497,
+      "views": 498,
       "likes": 30,
       "comments": 0
+    },
+    {
+      "id": "kDnp2xZvKG0",
+      "title": "'สุราท้องถิ่นน่าน' ขายดี! หวังรัฐบาลใหม่...ยกระดับฟื้นเศรษฐกิจชุมชน (6 มิ.ย. 66) คุยโขมงบ่าย 3 โมง",
+      "channel": "9MCOT",
+      "published_at": "2023-06-07",
+      "thumbnail": "https://i.ytimg.com/vi/kDnp2xZvKG0/mqdefault.jpg",
+      "views": 441,
+      "likes": 4,
+      "comments": 1
     },
     {
       "id": "v2YBQjw2vXM",
@@ -166,7 +166,7 @@
       "channel": "DOC_KK ",
       "published_at": "2025-07-04",
       "thumbnail": "https://i.ytimg.com/vi/v2YBQjw2vXM/mqdefault.jpg",
-      "views": 174,
+      "views": 175,
       "likes": 10,
       "comments": 0
     },
@@ -191,5 +191,5 @@
       "comments": 0
     }
   ],
-  "fetched_at": "2026-09-30T06:10:40.894893"
+  "fetched_at": "2026-10-01T06:41:35.124913"
 }
