@@ -1,12 +1,22 @@
 {
   "videos": [
     {
+      "id": "9vYMwTpvEIo",
+      "title": "ฝรั่งลองเหล้าไทยครั้งแรก...สีหน้าเปลี่ยนทันที! 😂 #youtubeshorts #thaifood #shortsth #ไวรัล #thailand",
+      "channel": "นักสืบข้ามเวลา",
+      "published_at": "2026-06-12",
+      "thumbnail": "https://i.ytimg.com/vi/9vYMwTpvEIo/mqdefault.jpg",
+      "views": 811915,
+      "likes": 20376,
+      "comments": 505
+    },
+    {
       "id": "iURJ96__WAY",
       "title": "รีวิวสุราพื้นบ้าน | เทพลีลา",
       "channel": "เทพลีลา",
       "published_at": "2025-05-29",
       "thumbnail": "https://i.ytimg.com/vi/iURJ96__WAY/mqdefault.jpg",
-      "views": 690762,
+      "views": 690860,
       "likes": 12723,
       "comments": 602
     },
@@ -16,7 +26,7 @@
       "channel": "ปักหมุดชาแนล",
       "published_at": "2025-08-30",
       "thumbnail": "https://i.ytimg.com/vi/xdhgWLdxugo/mqdefault.jpg",
-      "views": 257198,
+      "views": 257306,
       "likes": 7078,
       "comments": 787
     },
@@ -26,7 +36,7 @@
       "channel": "เกษตรกรไทย สร้างรายได้",
       "published_at": "2023-08-16",
       "thumbnail": "https://i.ytimg.com/vi/GBrFW__hZWk/mqdefault.jpg",
-      "views": 92701,
+      "views": 92751,
       "likes": 1497,
       "comments": 99
     },
@@ -36,19 +46,9 @@
       "channel": "Ani-One Thailand",
       "published_at": "2026-10-06",
       "thumbnail": "https://i.ytimg.com/vi/accDkw7T7BU/mqdefault.jpg",
-      "views": 44892,
-      "likes": 779,
-      "comments": 98
-    },
-    {
-      "id": "8rSb2sUL2CM",
-      "title": "วิธีการผลิตเหล้าขาวใครสนใจช่วยติดต่อประสานงานได้นะครับ",
-      "channel": "สุกขิน ตันไชยะวง",
-      "published_at": "2022-09-05",
-      "thumbnail": "https://i.ytimg.com/vi/8rSb2sUL2CM/mqdefault.jpg",
-      "views": 29750,
-      "likes": 286,
-      "comments": 10
+      "views": 51698,
+      "likes": 850,
+      "comments": 113
     },
     {
       "id": "CJyVadWpNaM",
@@ -56,9 +56,19 @@
       "channel": "หนุ่ยอยากเล่า",
       "published_at": "2025-07-23",
       "thumbnail": "https://i.ytimg.com/vi/CJyVadWpNaM/mqdefault.jpg",
-      "views": 19990,
+      "views": 20010,
       "likes": 537,
       "comments": 21
+    },
+    {
+      "id": "oBNgiYSAt5A",
+      "title": "สุราหมัก กับ สุรากลั่น ต่างกันอย่างไร ? #alsociety #เครื่องดื่ม #spirit",
+      "channel": "AL Society",
+      "published_at": "2025-05-29",
+      "thumbnail": "https://i.ytimg.com/vi/oBNgiYSAt5A/mqdefault.jpg",
+      "views": 17110,
+      "likes": 424,
+      "comments": 10
     },
     {
       "id": "kb8R5C1QMXY",
@@ -66,9 +76,19 @@
       "channel": "ThaiFranchiseCenter",
       "published_at": "2023-06-21",
       "thumbnail": "https://i.ytimg.com/vi/kb8R5C1QMXY/mqdefault.jpg",
-      "views": 12849,
+      "views": 12861,
       "likes": 212,
       "comments": 15
+    },
+    {
+      "id": "_bYT69nJMeE",
+      "title": "🥃Thai Rum, Any good? 🤔 | #whiskeytube #spirits #rum",
+      "channel": "The Whisky Party",
+      "published_at": "2025-02-19",
+      "thumbnail": "https://i.ytimg.com/vi/_bYT69nJMeE/mqdefault.jpg",
+      "views": 11130,
+      "likes": 140,
+      "comments": 11
     },
     {
       "id": "AThHyfDHEUA",
@@ -76,9 +96,19 @@
       "channel": "Berm Kanyanan",
       "published_at": "2024-09-07",
       "thumbnail": "https://i.ytimg.com/vi/AThHyfDHEUA/mqdefault.jpg",
-      "views": 7612,
+      "views": 7617,
       "likes": 240,
       "comments": 13
+    },
+    {
+      "id": "4dMaSYwNp_E",
+      "title": "ดาวดินทัวร์ : ทำโรงผลิตสุราแช่ ทุกวันนี้ยากมั้ย? คุยกับ ชิน ศรีวรกุล  โรงจ๊วดจ๊วด อ.น้ำพอง จ.ขอนแก่น",
+      "channel": "ตองโรงต้ม TongRongTom",
+      "published_at": "2025-01-15",
+      "thumbnail": "https://i.ytimg.com/vi/4dMaSYwNp_E/mqdefault.jpg",
+      "views": 4425,
+      "likes": 84,
+      "comments": 0
     },
     {
       "id": "OM_VZGojusQ",
@@ -91,22 +121,12 @@
       "comments": 10
     },
     {
-      "id": "gHQjFBn9vVA",
-      "title": "ตะลุย!!โรงกลั่นสุราชุมชน",
-      "channel": "MEDEE",
-      "published_at": "2024-02-02",
-      "thumbnail": "https://i.ytimg.com/vi/gHQjFBn9vVA/mqdefault.jpg",
-      "views": 1913,
-      "likes": 13,
-      "comments": 2
-    },
-    {
       "id": "-461exuXGE4",
       "title": "ขึ้นสังเวียนครั้งแรก น็อคไหม ไปดู #สุราก้าวหน้า #สุราพื้นบ้าน #สังเวียน",
       "channel": "พาไป จุดจุดจุด",
       "published_at": "2023-09-11",
       "thumbnail": "https://i.ytimg.com/vi/-461exuXGE4/mqdefault.jpg",
-      "views": 1848,
+      "views": 1855,
       "likes": 0,
       "comments": 0
     },
@@ -126,7 +146,7 @@
       "channel": "AP Law Office Co., Ltd.",
       "published_at": "2025-02-18",
       "thumbnail": "https://i.ytimg.com/vi/g9NkWmS3-Gw/mqdefault.jpg",
-      "views": 1367,
+      "views": 1371,
       "likes": 10,
       "comments": 0
     },
@@ -136,7 +156,7 @@
       "channel": "ลั้ลลาพาเที่ยว",
       "published_at": "2025-12-24",
       "thumbnail": "https://i.ytimg.com/vi/KuuqeAoW49U/mqdefault.jpg",
-      "views": 1271,
+      "views": 1274,
       "likes": 30,
       "comments": 1
     },
@@ -146,7 +166,7 @@
       "channel": "กับข้าว กับขี้เมา",
       "published_at": "2025-07-20",
       "thumbnail": "https://i.ytimg.com/vi/NorwBPL0olQ/mqdefault.jpg",
-      "views": 838,
+      "views": 839,
       "likes": 9,
       "comments": 2
     },
@@ -156,19 +176,19 @@
       "channel": "สุราไทย",
       "published_at": "2025-12-05",
       "thumbnail": "https://i.ytimg.com/vi/rZ7ZbOIB0RQ/mqdefault.jpg",
-      "views": 500,
+      "views": 502,
       "likes": 30,
       "comments": 0
     },
     {
-      "id": "v2YBQjw2vXM",
-      "title": "สุราชุมชน พ่อสวาท ขอนแก่น l DOC.KK",
-      "channel": "DOC_KK ",
-      "published_at": "2025-07-04",
-      "thumbnail": "https://i.ytimg.com/vi/v2YBQjw2vXM/mqdefault.jpg",
-      "views": 180,
-      "likes": 10,
-      "comments": 0
+      "id": "kDnp2xZvKG0",
+      "title": "'สุราท้องถิ่นน่าน' ขายดี! หวังรัฐบาลใหม่...ยกระดับฟื้นเศรษฐกิจชุมชน (6 มิ.ย. 66) คุยโขมงบ่าย 3 โมง",
+      "channel": "9MCOT",
+      "published_at": "2023-06-07",
+      "thumbnail": "https://i.ytimg.com/vi/kDnp2xZvKG0/mqdefault.jpg",
+      "views": 442,
+      "likes": 4,
+      "comments": 1
     },
     {
       "id": "tqw0zkH22P4",
@@ -181,6 +201,16 @@
       "comments": 0
     },
     {
+      "id": "1WM8kDXqSBo",
+      "title": "Inviting foreigners to try Original Thai White Spirits #RuangKhao #รวงข้าว #รวงข้าวสนุกดังป๊อก",
+      "channel": "Trever Hatch",
+      "published_at": "2026-10-08",
+      "thumbnail": "https://i.ytimg.com/vi/1WM8kDXqSBo/mqdefault.jpg",
+      "views": 30,
+      "likes": 2,
+      "comments": 1
+    },
+    {
       "id": "meO1n4P9bRM",
       "title": "สุราชุมชน ธุรกิจท้องถิ่นไทย l เสียงเหนือ",
       "channel": "เสียงเหนือ Voice of The North",
@@ -191,5 +221,5 @@
       "comments": 0
     }
   ],
-  "fetched_at": "2026-10-08T06:50:35.982358"
+  "fetched_at": "2026-10-09T06:59:05.798295"
 }
