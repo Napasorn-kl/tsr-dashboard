@@ -1,34 +1,24 @@
 {
   "videos": [
     {
-      "id": "9vYMwTpvEIo",
-      "title": "ฝรั่งลองเหล้าไทยครั้งแรก...สีหน้าเปลี่ยนทันที! 😂 #youtubeshorts #thaifood #shortsth #ไวรัล #thailand",
-      "channel": "นักสืบข้ามเวลา",
-      "published_at": "2026-06-12",
-      "thumbnail": "https://i.ytimg.com/vi/9vYMwTpvEIo/mqdefault.jpg",
-      "views": 814827,
-      "likes": 20410,
-      "comments": 506
-    },
-    {
       "id": "iURJ96__WAY",
       "title": "รีวิวสุราพื้นบ้าน | เทพลีลา",
       "channel": "เทพลีลา",
       "published_at": "2025-05-29",
       "thumbnail": "https://i.ytimg.com/vi/iURJ96__WAY/mqdefault.jpg",
-      "views": 691213,
+      "views": 691286,
       "likes": 12723,
       "comments": 602
     },
     {
-      "id": "GBrFW__hZWk",
-      "title": "เทคนิคการกลั่นเหล้า สุราชุมชน สร้างรายได้ให้ชุมชน l ชมสวนเกษตรกรไทย Ep257",
-      "channel": "เกษตรกรไทย สร้างรายได้",
-      "published_at": "2023-08-16",
-      "thumbnail": "https://i.ytimg.com/vi/GBrFW__hZWk/mqdefault.jpg",
-      "views": 92975,
-      "likes": 1499,
-      "comments": 99
+      "id": "xdhgWLdxugo",
+      "title": "บุกโรงกลั่นสุราพื้นบ้านกลางทุ่งนา…เล่าวีรกรรมสายดื่ม พร้อมเรียนรู้การหมักแบบชุมชนแท้ ๆ",
+      "channel": "ปักหมุดชาแนล",
+      "published_at": "2025-08-30",
+      "thumbnail": "https://i.ytimg.com/vi/xdhgWLdxugo/mqdefault.jpg",
+      "views": 257989,
+      "likes": 7086,
+      "comments": 787
     },
     {
       "id": "accDkw7T7BU",
@@ -36,19 +26,9 @@
       "channel": "Ani-One Thailand",
       "published_at": "2026-10-06",
       "thumbnail": "https://i.ytimg.com/vi/accDkw7T7BU/mqdefault.jpg",
-      "views": 66160,
-      "likes": 970,
-      "comments": 120
-    },
-    {
-      "id": "a5LRMyHT5yc",
-      "title": "\"สรรพสามิต” ปลดล็อกผลิตสุราชุมชน  | สำนักข่าววันนิวส์",
-      "channel": "ข่าวช่องวัน - one news",
-      "published_at": "2022-11-02",
-      "thumbnail": "https://i.ytimg.com/vi/a5LRMyHT5yc/mqdefault.jpg",
-      "views": 30963,
-      "likes": 772,
-      "comments": 32
+      "views": 70801,
+      "likes": 1001,
+      "comments": 121
     },
     {
       "id": "8rSb2sUL2CM",
@@ -56,7 +36,7 @@
       "channel": "สุกขิน ตันไชยะวง",
       "published_at": "2022-09-05",
       "thumbnail": "https://i.ytimg.com/vi/8rSb2sUL2CM/mqdefault.jpg",
-      "views": 29920,
+      "views": 29940,
       "likes": 287,
       "comments": 10
     },
@@ -66,9 +46,19 @@
       "channel": "หนุ่ยอยากเล่า",
       "published_at": "2025-07-23",
       "thumbnail": "https://i.ytimg.com/vi/CJyVadWpNaM/mqdefault.jpg",
-      "views": 20088,
+      "views": 20114,
       "likes": 540,
       "comments": 21
+    },
+    {
+      "id": "fzyL7iWY71o",
+      "title": "Battle Spirits [Re]: ห้วงมิติเขตแดนสัมบูรณ์ ตอนที่ 2  [ซับไทย]【Ani-One Thailand】",
+      "channel": "Ani-One Thailand",
+      "published_at": "2026-10-13",
+      "thumbnail": "https://i.ytimg.com/vi/fzyL7iWY71o/mqdefault.jpg",
+      "views": 17843,
+      "likes": 185,
+      "comments": 24
     },
     {
       "id": "kb8R5C1QMXY",
@@ -76,7 +66,7 @@
       "channel": "ThaiFranchiseCenter",
       "published_at": "2023-06-21",
       "thumbnail": "https://i.ytimg.com/vi/kb8R5C1QMXY/mqdefault.jpg",
-      "views": 12905,
+      "views": 12911,
       "likes": 212,
       "comments": 15
     },
@@ -86,7 +76,7 @@
       "channel": "The Whisky Party",
       "published_at": "2025-02-19",
       "thumbnail": "https://i.ytimg.com/vi/_bYT69nJMeE/mqdefault.jpg",
-      "views": 11241,
+      "views": 11268,
       "likes": 143,
       "comments": 11
     },
@@ -96,7 +86,7 @@
       "channel": "Berm Kanyanan",
       "published_at": "2024-09-07",
       "thumbnail": "https://i.ytimg.com/vi/AThHyfDHEUA/mqdefault.jpg",
-      "views": 7665,
+      "views": 7672,
       "likes": 240,
       "comments": 13
     },
@@ -111,22 +101,12 @@
       "comments": 10
     },
     {
-      "id": "ge6JkPUQfEQ",
-      "title": "Thai soldiers with warrior spirits #ฟีดเถอะ",
-      "channel": "[RTA] 1st lnfnatry Regimen, King's Owm Bodyguar.",
-      "published_at": "2025-09-06",
-      "thumbnail": "https://i.ytimg.com/vi/ge6JkPUQfEQ/mqdefault.jpg",
-      "views": 2582,
-      "likes": 66,
-      "comments": 0
-    },
-    {
       "id": "gHQjFBn9vVA",
       "title": "ตะลุย!!โรงกลั่นสุราชุมชน",
       "channel": "MEDEE",
       "published_at": "2024-02-02",
       "thumbnail": "https://i.ytimg.com/vi/gHQjFBn9vVA/mqdefault.jpg",
-      "views": 1932,
+      "views": 1939,
       "likes": 13,
       "comments": 2
     },
@@ -139,16 +119,6 @@
       "views": 1858,
       "likes": 0,
       "comments": 0
-    },
-    {
-      "id": "ey7MSGE07_I",
-      "title": "The House of the Spirits (บ้านปรารถนารัก) - ตัวอย่างอย่างเป็นทางการ | Prime Video Thailand",
-      "channel": "Prime Video Thailand",
-      "published_at": "2026-04-05",
-      "thumbnail": "https://i.ytimg.com/vi/ey7MSGE07_I/mqdefault.jpg",
-      "views": 1646,
-      "likes": 40,
-      "comments": 3
     },
     {
       "id": "g9NkWmS3-Gw",
@@ -166,7 +136,7 @@
       "channel": "ลั้ลลาพาเที่ยว",
       "published_at": "2025-12-24",
       "thumbnail": "https://i.ytimg.com/vi/KuuqeAoW49U/mqdefault.jpg",
-      "views": 1285,
+      "views": 1292,
       "likes": 31,
       "comments": 1
     },
@@ -176,7 +146,7 @@
       "channel": "กับข้าว กับขี้เมา",
       "published_at": "2025-07-20",
       "thumbnail": "https://i.ytimg.com/vi/NorwBPL0olQ/mqdefault.jpg",
-      "views": 845,
+      "views": 847,
       "likes": 9,
       "comments": 2
     },
@@ -186,7 +156,7 @@
       "channel": "สุราไทย",
       "published_at": "2025-12-05",
       "thumbnail": "https://i.ytimg.com/vi/rZ7ZbOIB0RQ/mqdefault.jpg",
-      "views": 513,
+      "views": 516,
       "likes": 31,
       "comments": 0
     },
@@ -206,7 +176,7 @@
       "channel": "Trever Hatch",
       "published_at": "2026-10-08",
       "thumbnail": "https://i.ytimg.com/vi/1WM8kDXqSBo/mqdefault.jpg",
-      "views": 89,
+      "views": 94,
       "likes": 3,
       "comments": 4
     },
@@ -231,5 +201,5 @@
       "comments": 0
     }
   ],
-  "fetched_at": "2026-10-13T07:13:35.638177"
+  "fetched_at": "2026-10-14T05:37:49.690934"
 }
