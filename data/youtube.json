@@ -6,7 +6,7 @@
       "channel": "เทพลีลา",
       "published_at": "2025-05-29",
       "thumbnail": "https://i.ytimg.com/vi/iURJ96__WAY/mqdefault.jpg",
-      "views": 691742,
+      "views": 691788,
       "likes": 12720,
       "comments": 602
     },
@@ -16,8 +16,8 @@
       "channel": "ปักหมุดชาแนล",
       "published_at": "2025-08-30",
       "thumbnail": "https://i.ytimg.com/vi/xdhgWLdxugo/mqdefault.jpg",
-      "views": 258658,
-      "likes": 7085,
+      "views": 258797,
+      "likes": 7088,
       "comments": 787
     },
     {
@@ -26,8 +26,8 @@
       "channel": "Ani-One Thailand",
       "published_at": "2026-10-06",
       "thumbnail": "https://i.ytimg.com/vi/accDkw7T7BU/mqdefault.jpg",
-      "views": 79401,
-      "likes": 1048,
+      "views": 80632,
+      "likes": 1060,
       "comments": 126
     },
     {
@@ -36,7 +36,7 @@
       "channel": "ข่าวช่องวัน - one news",
       "published_at": "2022-11-02",
       "thumbnail": "https://i.ytimg.com/vi/a5LRMyHT5yc/mqdefault.jpg",
-      "views": 31015,
+      "views": 31019,
       "likes": 773,
       "comments": 32
     },
@@ -46,9 +46,9 @@
       "channel": "Ani-One Thailand",
       "published_at": "2026-10-13",
       "thumbnail": "https://i.ytimg.com/vi/fzyL7iWY71o/mqdefault.jpg",
-      "views": 28991,
-      "likes": 277,
-      "comments": 29
+      "views": 29661,
+      "likes": 282,
+      "comments": 30
     },
     {
       "id": "CJyVadWpNaM",
@@ -56,9 +56,19 @@
       "channel": "หนุ่ยอยากเล่า",
       "published_at": "2025-07-23",
       "thumbnail": "https://i.ytimg.com/vi/CJyVadWpNaM/mqdefault.jpg",
-      "views": 20204,
+      "views": 20241,
       "likes": 542,
       "comments": 21
+    },
+    {
+      "id": "MOCJC4n4jl8",
+      "title": "Battle Spirits [Re]: ห้วงมิติเขตแดนสัมบูรณ์ ตอนที่ 3  [ซับไทย]【Ani-One Thailand】",
+      "channel": "Ani-One Thailand",
+      "published_at": "2026-10-20",
+      "thumbnail": "https://i.ytimg.com/vi/MOCJC4n4jl8/mqdefault.jpg",
+      "views": 13626,
+      "likes": 176,
+      "comments": 39
     },
     {
       "id": "kb8R5C1QMXY",
@@ -66,7 +76,7 @@
       "channel": "ThaiFranchiseCenter",
       "published_at": "2023-06-21",
       "thumbnail": "https://i.ytimg.com/vi/kb8R5C1QMXY/mqdefault.jpg",
-      "views": 12981,
+      "views": 12990,
       "likes": 212,
       "comments": 15
     },
@@ -76,7 +86,7 @@
       "channel": "The Whisky Party",
       "published_at": "2025-02-19",
       "thumbnail": "https://i.ytimg.com/vi/_bYT69nJMeE/mqdefault.jpg",
-      "views": 11391,
+      "views": 11419,
       "likes": 143,
       "comments": 11
     },
@@ -86,7 +96,7 @@
       "channel": "Berm Kanyanan",
       "published_at": "2024-09-07",
       "thumbnail": "https://i.ytimg.com/vi/AThHyfDHEUA/mqdefault.jpg",
-      "views": 7739,
+      "views": 7752,
       "likes": 240,
       "comments": 13
     },
@@ -96,9 +106,19 @@
       "channel": "theREPUBLIC",
       "published_at": "2023-05-26",
       "thumbnail": "https://i.ytimg.com/vi/OM_VZGojusQ/mqdefault.jpg",
-      "views": 2613,
+      "views": 2614,
       "likes": 81,
       "comments": 10
+    },
+    {
+      "id": "38s8Y1SZ6r0",
+      "title": "[Thai Version Cover] Free | Battle Spirits Brave",
+      "channel": "Sucky",
+      "published_at": "2026-09-01",
+      "thumbnail": "https://i.ytimg.com/vi/38s8Y1SZ6r0/mqdefault.jpg",
+      "views": 2266,
+      "likes": 41,
+      "comments": 21
     },
     {
       "id": "gHQjFBn9vVA",
@@ -106,7 +126,7 @@
       "channel": "MEDEE",
       "published_at": "2024-02-02",
       "thumbnail": "https://i.ytimg.com/vi/gHQjFBn9vVA/mqdefault.jpg",
-      "views": 1971,
+      "views": 1981,
       "likes": 13,
       "comments": 2
     },
@@ -116,19 +136,9 @@
       "channel": "พาไป จุดจุดจุด",
       "published_at": "2023-09-11",
       "thumbnail": "https://i.ytimg.com/vi/-461exuXGE4/mqdefault.jpg",
-      "views": 1875,
+      "views": 1877,
       "likes": 0,
       "comments": 0
-    },
-    {
-      "id": "ey7MSGE07_I",
-      "title": "The House of the Spirits (บ้านปรารถนารัก) - ตัวอย่างอย่างเป็นทางการ | Prime Video Thailand",
-      "channel": "Prime Video Thailand",
-      "published_at": "2026-04-05",
-      "thumbnail": "https://i.ytimg.com/vi/ey7MSGE07_I/mqdefault.jpg",
-      "views": 1652,
-      "likes": 39,
-      "comments": 3
     },
     {
       "id": "g9NkWmS3-Gw",
@@ -146,19 +156,19 @@
       "channel": "ลั้ลลาพาเที่ยว",
       "published_at": "2025-12-24",
       "thumbnail": "https://i.ytimg.com/vi/KuuqeAoW49U/mqdefault.jpg",
-      "views": 1316,
+      "views": 1318,
       "likes": 31,
       "comments": 1
     },
     {
-      "id": "NorwBPL0olQ",
-      "title": "สุราท้องถิ่น #หลงเลย #สุราพื้นบ้าน",
-      "channel": "กับข้าว กับขี้เมา",
-      "published_at": "2025-07-20",
-      "thumbnail": "https://i.ytimg.com/vi/NorwBPL0olQ/mqdefault.jpg",
-      "views": 852,
-      "likes": 9,
-      "comments": 2
+      "id": "SOEvCoB7m_4",
+      "title": "สุราพื้นบ้านไทย",
+      "channel": "Nuchaพาเพลิน",
+      "published_at": "2023-08-05",
+      "thumbnail": "https://i.ytimg.com/vi/SOEvCoB7m_4/mqdefault.jpg",
+      "views": 1021,
+      "likes": 11,
+      "comments": 1
     },
     {
       "id": "rxFTNu4AqtQ",
@@ -221,5 +231,5 @@
       "comments": 0
     }
   ],
-  "fetched_at": "2026-10-20T05:33:26.791828"
+  "fetched_at": "2026-10-21T05:33:02.954878"
 }
