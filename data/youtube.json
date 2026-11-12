@@ -6,7 +6,7 @@
       "channel": "เทพลีลา",
       "published_at": "2025-05-29",
       "thumbnail": "https://i.ytimg.com/vi/iURJ96__WAY/mqdefault.jpg",
-      "views": 692875,
+      "views": 692898,
       "likes": 12701,
       "comments": 602
     },
@@ -16,7 +16,7 @@
       "channel": "ปักหมุดชาแนล",
       "published_at": "2025-08-30",
       "thumbnail": "https://i.ytimg.com/vi/xdhgWLdxugo/mqdefault.jpg",
-      "views": 261681,
+      "views": 261843,
       "likes": 7099,
       "comments": 784
     },
@@ -26,8 +26,8 @@
       "channel": "Ani-One Thailand",
       "published_at": "2026-10-06",
       "thumbnail": "https://i.ytimg.com/vi/accDkw7T7BU/mqdefault.jpg",
-      "views": 95133,
-      "likes": 1159,
+      "views": 95562,
+      "likes": 1162,
       "comments": 128
     },
     {
@@ -36,7 +36,7 @@
       "channel": "ข่าวช่องวัน - one news",
       "published_at": "2022-11-02",
       "thumbnail": "https://i.ytimg.com/vi/a5LRMyHT5yc/mqdefault.jpg",
-      "views": 31151,
+      "views": 31157,
       "likes": 775,
       "comments": 32
     },
@@ -46,7 +46,7 @@
       "channel": "หนุ่ยอยากเล่า",
       "published_at": "2025-07-23",
       "thumbnail": "https://i.ytimg.com/vi/CJyVadWpNaM/mqdefault.jpg",
-      "views": 20544,
+      "views": 20560,
       "likes": 547,
       "comments": 22
     },
@@ -56,7 +56,7 @@
       "channel": "ThaiFranchiseCenter",
       "published_at": "2023-06-21",
       "thumbnail": "https://i.ytimg.com/vi/kb8R5C1QMXY/mqdefault.jpg",
-      "views": 13192,
+      "views": 13206,
       "likes": 217,
       "comments": 15
     },
@@ -66,7 +66,7 @@
       "channel": "The Whisky Party",
       "published_at": "2025-02-19",
       "thumbnail": "https://i.ytimg.com/vi/_bYT69nJMeE/mqdefault.jpg",
-      "views": 12007,
+      "views": 12035,
       "likes": 146,
       "comments": 11
     },
@@ -76,19 +76,9 @@
       "channel": "Berm Kanyanan",
       "published_at": "2024-09-07",
       "thumbnail": "https://i.ytimg.com/vi/AThHyfDHEUA/mqdefault.jpg",
-      "views": 7937,
+      "views": 7942,
       "likes": 237,
       "comments": 13
-    },
-    {
-      "id": "Ax4emN0zq3s",
-      "title": "Battle Spirits [Re]: ห้วงมิติเขตแดนสัมบูรณ์ ตอนที่ 6  [ซับไทย]【Ani-One Thailand】",
-      "channel": "Ani-One Thailand",
-      "published_at": "2026-11-10",
-      "thumbnail": "https://i.ytimg.com/vi/Ax4emN0zq3s/mqdefault.jpg",
-      "views": 7062,
-      "likes": 132,
-      "comments": 24
     },
     {
       "id": "OM_VZGojusQ",
@@ -106,7 +96,7 @@
       "channel": "MEDEE",
       "published_at": "2024-02-02",
       "thumbnail": "https://i.ytimg.com/vi/gHQjFBn9vVA/mqdefault.jpg",
-      "views": 2078,
+      "views": 2089,
       "likes": 13,
       "comments": 2
     },
@@ -116,7 +106,7 @@
       "channel": "พาไป จุดจุดจุด",
       "published_at": "2023-09-11",
       "thumbnail": "https://i.ytimg.com/vi/-461exuXGE4/mqdefault.jpg",
-      "views": 1910,
+      "views": 1915,
       "likes": 0,
       "comments": 0
     },
@@ -136,7 +126,7 @@
       "channel": "AP Law Office Co., Ltd.",
       "published_at": "2025-02-18",
       "thumbnail": "https://i.ytimg.com/vi/g9NkWmS3-Gw/mqdefault.jpg",
-      "views": 1425,
+      "views": 1428,
       "likes": 10,
       "comments": 0
     },
@@ -146,7 +136,7 @@
       "channel": "ลั้ลลาพาเที่ยว",
       "published_at": "2025-12-24",
       "thumbnail": "https://i.ytimg.com/vi/KuuqeAoW49U/mqdefault.jpg",
-      "views": 1362,
+      "views": 1366,
       "likes": 32,
       "comments": 1
     },
@@ -166,9 +156,19 @@
       "channel": "กับข้าว กับขี้เมา",
       "published_at": "2025-07-20",
       "thumbnail": "https://i.ytimg.com/vi/NorwBPL0olQ/mqdefault.jpg",
-      "views": 882,
+      "views": 887,
       "likes": 9,
       "comments": 2
+    },
+    {
+      "id": "BsDiDqCVXf0",
+      "title": "ผีพรายชอบนายเรือรูปงาม | Water Spirits Love Handsome Boatmen",
+      "channel": "AI Thai Baan (AI ไทบ้าน)",
+      "published_at": "2026-10-31",
+      "thumbnail": "https://i.ytimg.com/vi/BsDiDqCVXf0/mqdefault.jpg",
+      "views": 292,
+      "likes": 3,
+      "comments": 0
     },
     {
       "id": "v2YBQjw2vXM",
@@ -176,7 +176,7 @@
       "channel": "DOC_KK ",
       "published_at": "2025-07-04",
       "thumbnail": "https://i.ytimg.com/vi/v2YBQjw2vXM/mqdefault.jpg",
-      "views": 193,
+      "views": 194,
       "likes": 10,
       "comments": 0
     },
@@ -201,5 +201,5 @@
       "comments": 0
     }
   ],
-  "fetched_at": "2026-11-11T07:21:51.341908"
+  "fetched_at": "2026-11-12T07:51:51.149957"
 }
