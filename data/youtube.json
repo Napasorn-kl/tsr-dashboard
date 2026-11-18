@@ -6,7 +6,7 @@
       "channel": "เทพลีลา",
       "published_at": "2025-05-29",
       "thumbnail": "https://i.ytimg.com/vi/iURJ96__WAY/mqdefault.jpg",
-      "views": 693071,
+      "views": 693101,
       "likes": 12704,
       "comments": 602
     },
@@ -16,29 +16,9 @@
       "channel": "ปักหมุดชาแนล",
       "published_at": "2025-08-30",
       "thumbnail": "https://i.ytimg.com/vi/xdhgWLdxugo/mqdefault.jpg",
-      "views": 262735,
-      "likes": 7101,
+      "views": 262935,
+      "likes": 7104,
       "comments": 786
-    },
-    {
-      "id": "accDkw7T7BU",
-      "title": "Battle Spirits [Re]: ห้วงมิติเขตแดนสัมบูรณ์ ตอนที่ 1  [ซับไทย]【Ani-One Thailand】",
-      "channel": "Ani-One Thailand",
-      "published_at": "2026-10-06",
-      "thumbnail": "https://i.ytimg.com/vi/accDkw7T7BU/mqdefault.jpg",
-      "views": 97922,
-      "likes": 1171,
-      "comments": 129
-    },
-    {
-      "id": "a5LRMyHT5yc",
-      "title": "\"สรรพสามิต” ปลดล็อกผลิตสุราชุมชน  | สำนักข่าววันนิวส์",
-      "channel": "ข่าวช่องวัน - one news",
-      "published_at": "2022-11-02",
-      "thumbnail": "https://i.ytimg.com/vi/a5LRMyHT5yc/mqdefault.jpg",
-      "views": 31196,
-      "likes": 776,
-      "comments": 32
     },
     {
       "id": "CJyVadWpNaM",
@@ -46,7 +26,7 @@
       "channel": "หนุ่ยอยากเล่า",
       "published_at": "2025-07-23",
       "thumbnail": "https://i.ytimg.com/vi/CJyVadWpNaM/mqdefault.jpg",
-      "views": 20618,
+      "views": 20621,
       "likes": 547,
       "comments": 22
     },
@@ -56,7 +36,7 @@
       "channel": "ThaiFranchiseCenter",
       "published_at": "2023-06-21",
       "thumbnail": "https://i.ytimg.com/vi/kb8R5C1QMXY/mqdefault.jpg",
-      "views": 13259,
+      "views": 13269,
       "likes": 217,
       "comments": 15
     },
@@ -76,7 +56,7 @@
       "channel": "The Whisky Party",
       "published_at": "2025-02-19",
       "thumbnail": "https://i.ytimg.com/vi/_bYT69nJMeE/mqdefault.jpg",
-      "views": 12168,
+      "views": 12204,
       "likes": 147,
       "comments": 11
     },
@@ -86,7 +66,7 @@
       "channel": "Berm Kanyanan",
       "published_at": "2024-09-07",
       "thumbnail": "https://i.ytimg.com/vi/AThHyfDHEUA/mqdefault.jpg",
-      "views": 7985,
+      "views": 7986,
       "likes": 237,
       "comments": 13
     },
@@ -106,7 +86,7 @@
       "channel": "MEDEE",
       "published_at": "2024-02-02",
       "thumbnail": "https://i.ytimg.com/vi/gHQjFBn9vVA/mqdefault.jpg",
-      "views": 2132,
+      "views": 2141,
       "likes": 14,
       "comments": 2
     },
@@ -116,7 +96,7 @@
       "channel": "พาไป จุดจุดจุด",
       "published_at": "2023-09-11",
       "thumbnail": "https://i.ytimg.com/vi/-461exuXGE4/mqdefault.jpg",
-      "views": 1924,
+      "views": 1927,
       "likes": 0,
       "comments": 0
     },
@@ -126,7 +106,7 @@
       "channel": "Prime Video Thailand",
       "published_at": "2026-04-05",
       "thumbnail": "https://i.ytimg.com/vi/ey7MSGE07_I/mqdefault.jpg",
-      "views": 1684,
+      "views": 1685,
       "likes": 40,
       "comments": 3
     },
@@ -146,9 +126,19 @@
       "channel": "ลั้ลลาพาเที่ยว",
       "published_at": "2025-12-24",
       "thumbnail": "https://i.ytimg.com/vi/KuuqeAoW49U/mqdefault.jpg",
-      "views": 1375,
+      "views": 1376,
       "likes": 32,
       "comments": 1
+    },
+    {
+      "id": "yPG2EAgSm_Q",
+      "title": "จับตามกฏหมายใหม่ สุราชุมชน เหล้าสีทำได้ | Thailand Indepth",
+      "channel": "Indepth",
+      "published_at": "2025-02-13",
+      "thumbnail": "https://i.ytimg.com/vi/yPG2EAgSm_Q/mqdefault.jpg",
+      "views": 1037,
+      "likes": 13,
+      "comments": 0
     },
     {
       "id": "SOEvCoB7m_4",
@@ -166,7 +156,7 @@
       "channel": "กับข้าว กับขี้เมา",
       "published_at": "2025-07-20",
       "thumbnail": "https://i.ytimg.com/vi/NorwBPL0olQ/mqdefault.jpg",
-      "views": 896,
+      "views": 898,
       "likes": 9,
       "comments": 2
     },
@@ -181,12 +171,22 @@
       "comments": 0
     },
     {
+      "id": "a_5Arr13P_E",
+      "title": "นายกสมาคมสุราท้องถิ่นไทย ร่วมยินดี “ก้าวไกล”",
+      "channel": "WRN",
+      "published_at": "2023-05-26",
+      "thumbnail": "https://i.ytimg.com/vi/a_5Arr13P_E/mqdefault.jpg",
+      "views": 210,
+      "likes": 3,
+      "comments": 0
+    },
+    {
       "id": "v2YBQjw2vXM",
       "title": "สุราชุมชน พ่อสวาท ขอนแก่น l DOC.KK",
       "channel": "DOC_KK ",
       "published_at": "2025-07-04",
       "thumbnail": "https://i.ytimg.com/vi/v2YBQjw2vXM/mqdefault.jpg",
-      "views": 196,
+      "views": 198,
       "likes": 10,
       "comments": 0
     },
@@ -221,5 +221,5 @@
       "comments": 0
     }
   ],
-  "fetched_at": "2026-11-17T08:40:58.451555"
+  "fetched_at": "2026-11-18T08:03:51.391076"
 }
