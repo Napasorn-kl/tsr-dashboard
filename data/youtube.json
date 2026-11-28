@@ -6,8 +6,8 @@
       "channel": "เทพลีลา",
       "published_at": "2025-05-29",
       "thumbnail": "https://i.ytimg.com/vi/iURJ96__WAY/mqdefault.jpg",
-      "views": 693437,
-      "likes": 12705,
+      "views": 693476,
+      "likes": 12706,
       "comments": 601
     },
     {
@@ -16,8 +16,8 @@
       "channel": "ปักหมุดชาแนล",
       "published_at": "2025-08-30",
       "thumbnail": "https://i.ytimg.com/vi/xdhgWLdxugo/mqdefault.jpg",
-      "views": 265945,
-      "likes": 7128,
+      "views": 266387,
+      "likes": 7131,
       "comments": 787
     },
     {
@@ -26,8 +26,8 @@
       "channel": "หนุ่ยอยากเล่า",
       "published_at": "2025-07-23",
       "thumbnail": "https://i.ytimg.com/vi/CJyVadWpNaM/mqdefault.jpg",
-      "views": 20758,
-      "likes": 550,
+      "views": 20779,
+      "likes": 551,
       "comments": 22
     },
     {
@@ -36,7 +36,7 @@
       "channel": "ThaiFranchiseCenter",
       "published_at": "2023-06-21",
       "thumbnail": "https://i.ytimg.com/vi/kb8R5C1QMXY/mqdefault.jpg",
-      "views": 13331,
+      "views": 13340,
       "likes": 217,
       "comments": 15
     },
@@ -56,7 +56,7 @@
       "channel": "Berm Kanyanan",
       "published_at": "2024-09-07",
       "thumbnail": "https://i.ytimg.com/vi/AThHyfDHEUA/mqdefault.jpg",
-      "views": 8038,
+      "views": 8045,
       "likes": 235,
       "comments": 13
     },
@@ -76,7 +76,7 @@
       "channel": "MEDEE",
       "published_at": "2024-02-02",
       "thumbnail": "https://i.ytimg.com/vi/gHQjFBn9vVA/mqdefault.jpg",
-      "views": 2208,
+      "views": 2221,
       "likes": 15,
       "comments": 2
     },
@@ -86,7 +86,7 @@
       "channel": "เกษตรกรไทย สร้างรายได้",
       "published_at": "2023-08-14",
       "thumbnail": "https://i.ytimg.com/vi/PbDlwxQ_rhM/mqdefault.jpg",
-      "views": 2006,
+      "views": 2007,
       "likes": 56,
       "comments": 5
     },
@@ -96,7 +96,7 @@
       "channel": "พาไป จุดจุดจุด",
       "published_at": "2023-09-11",
       "thumbnail": "https://i.ytimg.com/vi/-461exuXGE4/mqdefault.jpg",
-      "views": 1938,
+      "views": 1939,
       "likes": 0,
       "comments": 0
     },
@@ -116,7 +116,7 @@
       "channel": "AP Law Office Co., Ltd.",
       "published_at": "2025-02-18",
       "thumbnail": "https://i.ytimg.com/vi/g9NkWmS3-Gw/mqdefault.jpg",
-      "views": 1454,
+      "views": 1457,
       "likes": 10,
       "comments": 0
     },
@@ -146,19 +146,9 @@
       "channel": "กับข้าว กับขี้เมา",
       "published_at": "2025-07-20",
       "thumbnail": "https://i.ytimg.com/vi/NorwBPL0olQ/mqdefault.jpg",
-      "views": 906,
+      "views": 912,
       "likes": 9,
       "comments": 2
-    },
-    {
-      "id": "rxFTNu4AqtQ",
-      "title": "อนาคต \"สุราพื้นบ้านไทย\"",
-      "channel": "MCOT News FM 100.5",
-      "published_at": "2023-06-05",
-      "thumbnail": "https://i.ytimg.com/vi/rxFTNu4AqtQ/mqdefault.jpg",
-      "views": 287,
-      "likes": 2,
-      "comments": 1
     },
     {
       "id": "ppe9PU6Srag",
@@ -176,7 +166,7 @@
       "channel": "DOC_KK ",
       "published_at": "2025-07-04",
       "thumbnail": "https://i.ytimg.com/vi/v2YBQjw2vXM/mqdefault.jpg",
-      "views": 201,
+      "views": 204,
       "likes": 10,
       "comments": 0
     },
@@ -201,5 +191,5 @@
       "comments": 0
     }
   ],
-  "fetched_at": "2026-11-27T09:17:36.352042"
+  "fetched_at": "2026-11-28T08:34:31.684404"
 }
